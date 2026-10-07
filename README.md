@@ -1,6 +1,3 @@
-make a full file 
-Here's the complete file — copy everything below into README.md at the repo root:
-
 # SecuEdge Frontier — Website
 
 Marketing site for **SecuEdge Frontier**, India's homegrown next-generation firewall (NGFW) —
