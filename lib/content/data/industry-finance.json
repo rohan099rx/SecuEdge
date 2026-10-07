@@ -1,0 +1,187 @@
+{
+  "slug": "finance",
+  "metaTitle": "Finance Security Solutions",
+  "metaDescription": "SecuEdge provides specialized security solutions for the financial sector, protecting sensitive data, ensuring regulatory compliance, and defending against targeted cyber threats.",
+  "hero": {
+    "headline": "Secure Your Financial Institution",
+    "sub": "Protect sensitive financial data, ensure regulatory compliance, and defend against targeted threats with SecuEdge's specialized financial security solutions."
+  },
+  "challenges": [
+    {
+      "title": "Sophisticated Financial Fraud",
+      "desc": "Financial institutions are prime targets for advanced fraud schemes that exploit digital transformation and faster payment systems."
+    },
+    {
+      "title": "Targeted Attacks",
+      "desc": "Financial organizations face nation-state and sophisticated criminal groups using APTs and zero-day exploits to target high-value assets."
+    },
+    {
+      "title": "Complex Regulatory Landscape",
+      "desc": "Financial institutions must navigate numerous overlapping regulations (GLBA, PCI DSS, SOX, GDPR, etc.) with strict security requirements."
+    },
+    {
+      "title": "Legacy Infrastructure",
+      "desc": "Many financial institutions rely on decades-old core systems that weren't designed with modern security threats in mind."
+    },
+    {
+      "title": "Payment Security",
+      "desc": "Financial institutions must secure multiple payment channels and technologies while balancing security with customer experience."
+    },
+    {
+      "title": "FinTech Ecosystem Security",
+      "desc": "Modern financial services increasingly rely on complex ecosystems of FinTech partners, APIs, and third-party services."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Sophisticated Financial Fraud",
+      "desc": "Financial losses, customer trust erosion, reputational damage, and potential regulatory fines for insufficient fraud controls."
+    },
+    {
+      "title": "Targeted Attacks",
+      "desc": "Data breaches, financial theft, operational disruption, and potential systemic risk to the broader financial system."
+    },
+    {
+      "title": "Complex Regulatory Landscape",
+      "desc": "Regulatory fines, operational restrictions, increased audit costs, and management distraction from core business."
+    },
+    {
+      "title": "Legacy Infrastructure",
+      "desc": "Exploitable vulnerabilities, integration challenges with modern security tools, and difficulty implementing security best practices."
+    },
+    {
+      "title": "Payment Security",
+      "desc": "Payment fraud, card data breaches, unauthorized transactions, and customer friction from excessive security measures."
+    },
+    {
+      "title": "FinTech Ecosystem Security",
+      "desc": "Supply chain attacks, data leakage through third parties, and security blind spots in connected services."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Advanced Fraud Prevention",
+      "desc": "AI-powered fraud detection that analyzes user behavior, transaction patterns, and global threat intelligence to stop financial fraud."
+    },
+    {
+      "title": "Regulatory Compliance Controls",
+      "desc": "Built-in controls mapped to financial regulations including GLBA, PCI DSS, SOX, and more with comprehensive reporting."
+    },
+    {
+      "title": "APT & Zero-Day Defense",
+      "desc": "Multi-layered protection against sophisticated attacks targeting financial institutions, including nation-state threats."
+    },
+    {
+      "title": "Secure Digital Transformation",
+      "desc": "Security solutions that enable safe adoption of cloud services, APIs, and FinTech partnerships while managing risk."
+    },
+    {
+      "title": "Specialized Security for Financial Services",
+      "desc": "SecuEdge for Financial Services delivers comprehensive protection designed specifically for banks, credit unions, insurance companies, and other financial institutions, addressing the unique challenges of securing financial data and transactions. Our solution combines advanced threat prevention, fraud detection, regulatory compliance controls, and secure digital transformation capabilities into a unified platform that protects your most critical assets while enabling business innovation."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Fraud Prevention",
+      "desc": "Detect and prevent fraudulent transactions in real-time across all channels, protecting both your institution and your customers from financial losses.",
+      "features": [
+        "Behavioral analytics",
+        "Transaction monitoring",
+        "Pattern recognition"
+      ]
+    },
+    {
+      "title": "Regulatory Compliance",
+      "desc": "Simplify compliance with GLBA, PCI DSS, SOX, and other regulations through built-in controls, automated assessments, and comprehensive documentation.",
+      "features": [
+        "Mapped controls framework",
+        "Automated reporting",
+        "Policy enforcement"
+      ]
+    },
+    {
+      "title": "Advanced Threat Protection",
+      "desc": "Defend against sophisticated attacks targeting financial institutions with specialized threat intelligence and protection against nation-state level threats.",
+      "features": [
+        "Financial threat intelligence",
+        "APT detection",
+        "Zero-day vulnerability protection"
+      ]
+    },
+    {
+      "title": "Payment Security",
+      "desc": "Secure payment transactions across all channels while maintaining PCI DSS compliance, protecting sensitive financial data without disrupting the customer experience.",
+      "features": [
+        "Card data protection",
+        "Transaction authentication",
+        "Multi-channel protection"
+      ]
+    },
+    {
+      "title": "Legacy System Protection",
+      "desc": "Protect legacy core banking systems and critical financial applications that can't be easily upgraded, preventing exploitation without disruption.",
+      "features": [
+        "Virtual patching",
+        "Mainframe security",
+        "System isolation"
+      ]
+    },
+    {
+      "title": "FinTech Ecosystem Security",
+      "desc": "Safely integrate with FinTech partners, payment processors, and third-party services while maintaining visibility and control over data sharing and access.",
+      "features": [
+        "API security",
+        "Partner risk management",
+        "Third-party monitoring"
+      ]
+    }
+  ],
+  "compliance": [
+    "GLBA",
+    "PCI DSS",
+    "SOX",
+    "GDPR"
+  ],
+  "process": [
+    {
+      "title": "Assessment",
+      "desc": "Financial application analysis, payment system mapping, data flow assessment, regulatory gap analysis."
+    },
+    {
+      "title": "Precision Implementation",
+      "desc": "Non-disruptive deployment, change management controls, initial monitoring phase, controlled enforcement rollout."
+    },
+    {
+      "title": "Optimization",
+      "desc": "False positive reduction, compliance validation, risk threshold tuning, continuous improvement."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge help with financial regulations?",
+      "a": "SecuEdge provides comprehensive controls specifically mapped to financial regulations including GLBA, PCI DSS, SOX, and GDPR. Our solution includes pre-built compliance policies, continuous monitoring for rule violations, detailed audit logging, and automated reporting templates. We maintain a regulatory content library that's updated as requirements change, ensuring your security controls stay aligned with evolving regulations."
+    },
+    {
+      "q": "How does SecuEdge prevent financial fraud?",
+      "a": "Our multi-layered fraud prevention combines AI-powered behavioral analytics, transaction monitoring, and global threat intelligence. The system analyzes customer behavior patterns, transaction characteristics, and contextual data to identify anomalies in real-time. It can detect account takeover attempts, payment fraud, and new account fraud across all channels. The system continuously learns from confirmed fraud cases to improve detection while minimizing false positives."
+    },
+    {
+      "q": "Will implementing SecuEdge impact our financial operations?",
+      "a": "No, we design our implementation specifically to avoid any disruption to financial transactions and banking operations. We use a carefully phased approach that starts with monitoring mode to understand your environment, followed by gradual policy implementation with extensive testing. Our financial security experts work closely with your team to schedule any maintenance activities during non-peak hours, and our solution is designed for high availability with no single points of failure."
+    },
+    {
+      "q": "How does SecuEdge help secure our FinTech partnerships?",
+      "a": "SecuEdge provides specialized API security and third-party risk management capabilities designed for financial services. Our solution monitors API traffic for suspicious patterns, validates data transfers according to defined policies, and provides visibility into partner access to your systems. We help establish secure onboarding processes for new FinTech partners and continuous monitoring to detect changes in risk levels or unusual access patterns."
+    },
+    {
+      "q": "How quickly can SecuEdge be implemented in our financial institution?",
+      "a": "Implementation timelines vary based on your environment complexity, but we typically complete initial deployment within 3-6 weeks, with full optimization over 2-3 months. We begin providing immediate protection from day one using our rapid deployment model. We prioritize protecting your most critical financial systems and sensitive customer data first, then expanding protection methodically across your entire environment."
+    }
+  ],
+  "cta": {
+    "headline": "Secure Your Financial Institution",
+    "sub": "Protect your customers' financial data, ensure regulatory compliance, and defend against sophisticated attacks with SecuEdge's specialized financial security solutions.",
+    "offer": "Schedule a free financial security assessment",
+    "offerNote": "Identify vulnerabilities before regulators or attackers do"
+  }
+}

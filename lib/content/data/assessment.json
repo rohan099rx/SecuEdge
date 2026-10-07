@@ -1,0 +1,334 @@
+{
+  "metaTitle": "Firewall Assessment Tool | SecuEdge",
+  "metaDescription": "Discover why your business needs a firewall with our interactive assessment tool. Get personalized security recommendations based on your specific risks.",
+  "hero": {
+    "eyebrow": "Security Alert",
+    "headline": "65% of businesses like yours are just one click away from a data breach.",
+    "pageHeadlineAlt": "Is your organization protected from today's advanced cyber threats? Find out in just 2 minutes.",
+    "cardTitle": "Personalized Security Risk Scan",
+    "sub": "Discover your company's specific vulnerabilities and get tailored protection recommendations.",
+    "whatYoullDiscover": [
+      "Your specific security risk score",
+      "Industry-specific threat analysis",
+      "Key vulnerability insights",
+      "Custom protection recommendations"
+    ],
+    "estimatedTime": "Estimated time: 2 minutes",
+    "cta": "Scan My Business Risk",
+    "socialProof": "Over 2,500 businesses assessed this month",
+    "quizFooterNote": "Answer honestly to receive the most accurate analysis of your current security posture."
+  },
+  "questions": [
+    {
+      "key": "businessType",
+      "question": "What type of business do you run?",
+      "options": [
+        "eCommerce / Online Store",
+        "SaaS / Technology Company",
+        "Healthcare / Medical",
+        "Educational Institution",
+        "Financial Services",
+        "Retail / Physical Store",
+        "Manufacturing",
+        "Other"
+      ]
+    },
+    {
+      "key": "employeeSize",
+      "question": "How many employees does your organization have?",
+      "options": [
+        "1-10 employees",
+        "11-50 employees",
+        "51-200 employees",
+        "201+ employees"
+      ],
+      "riskNote": "As your team grows, so does your attack surface. Each employee represents a potential entry point for attackers."
+    },
+    {
+      "key": "customerData",
+      "question": "Does your business store customer data (emails, phone numbers, payment information)?",
+      "options": [
+        "Yes, we store customer data",
+        "No, we don't store customer data",
+        "I'm not sure"
+      ],
+      "riskNote": "Storing customer data without adequate protection increases breach risk by 10x and may subject you to regulatory penalties."
+    },
+    {
+      "key": "remoteAccess",
+      "question": "Do employees access company data remotely or work from home?",
+      "options": [
+        "Yes, we have remote workers",
+        "No, all work is done on-site",
+        "Sometimes / I'm not sure"
+      ],
+      "riskNote": "Remote work creates multiple unsecured access points to your network. Without proper protection, attackers can exploit these vulnerabilities."
+    },
+    {
+      "key": "previousAttack",
+      "question": "Has your organization experienced any cyber attacks or data breaches in the past?",
+      "options": [
+        "Yes, we've had security incidents",
+        "No, not that we're aware of",
+        "I'm not sure"
+      ],
+      "riskNote": "60% of businesses that experience one cyber attack are targeted again within 6 months. Your risk is significantly elevated."
+    },
+    {
+      "key": "publicWifi",
+      "question": "Do your employees use public Wi-Fi or unsecured networks for work?",
+      "options": [
+        "Yes, they sometimes do",
+        "No, never",
+        "I'm not sure"
+      ],
+      "riskNote": "Public Wi-Fi is a prime target for man-in-the-middle attacks. Hackers can intercept data transmitted over these networks without proper protection."
+    },
+    {
+      "key": "dedicatedIT",
+      "question": "Do you have dedicated IT personnel handling cybersecurity?",
+      "options": [
+        "Yes, we have dedicated IT security staff",
+        "No, we don't have dedicated security personnel",
+        "We outsource IT / I'm not sure"
+      ],
+      "riskNote": "Businesses without dedicated security personnel take 3x longer to detect breaches, increasing potential damage."
+    }
+  ],
+  "scoring": {
+    "note": "Score starts at 5 (out of 10). +1 customerData yes; +1 remoteAccess yes; +1.5 previousAttack yes; +1 publicWifi yes; +0.5 dedicatedIT no; +1 healthcare or financial; +0.5 for 51-200 or 201+ employees. Level: >=8 High, >=5 Medium, else Low.",
+    "levels": [
+      {
+        "level": "High",
+        "narrative": "Your digital doors are wide open to attackers."
+      },
+      {
+        "level": "Medium",
+        "narrative": "Your security has concerning vulnerabilities that need addressing."
+      },
+      {
+        "level": "Low",
+        "narrative": "Your security foundation is solid, but could be strengthened."
+      }
+    ],
+    "storyLead": "Based on your assessment, your {industry} is currently at {level} risk of a security breach.",
+    "impactLine": "The average cost of a data breach for a business your size is approximately {cost}, not including reputational damage, customer loss, and operational downtime.",
+    "baseCostByEmployeeSize": {
+      "1-10": 50000,
+      "11-50": 150000,
+      "51-200": 500000,
+      "201+": 1500000,
+      "note": "USD; multiplied by score/5 in the original tool"
+    }
+  },
+  "resultsPage": {
+    "eyebrow": "Security Analysis Complete",
+    "headline": "Your Digital Security Report",
+    "sub": "We've analyzed your responses and identified specific vulnerabilities in your organization's security posture.",
+    "snapshotTitle": "Security Risk Snapshot",
+    "snapshotFields": [
+      "Security Risk Score",
+      "Risk Level",
+      "Key Risk Factors",
+      "Industry Type",
+      "Customer Data Storage",
+      "Public Wi-Fi Usage",
+      "Dedicated Security Staff"
+    ],
+    "storyTitle": "Your Security Story",
+    "vulnerabilityListTitle": "Primary Vulnerability Points:",
+    "comparisonTable": {
+      "columns": [
+        "Security Feature",
+        "Your Current Status",
+        "With SecuEdge"
+      ],
+      "rows": [
+        "Real-time Threat Monitoring",
+        "Network Segmentation",
+        "Data Loss Prevention",
+        "Secure Remote Access"
+      ]
+    },
+    "recommendationsTitle": "How SecuEdge Protects Your Business",
+    "industryThreatsTitle": "Industry-Specific Threats"
+  },
+  "riskFactors": [
+    "Customer Data Storage: Your organization stores sensitive customer information without adequate protection, making it a prime target for data theft. This could result in reputation damage, regulatory fines, and customer loss.",
+    "Remote Work Vulnerabilities: Your remote access setup creates multiple entry points for attackers, especially without proper VPN protection, multi-factor authentication, and endpoint security.",
+    "Unsecured Network Usage: Your employees' use of public Wi-Fi exposes company data to interception and man-in-the-middle attacks, potentially leaking sensitive information.",
+    "Security Resource Gap: Without dedicated security personnel, critical vulnerabilities may go undetected for months, allowing attackers plenty of time to compromise your systems.",
+    "Previous Attack History: Having experienced security incidents in the past puts you at higher risk, as attackers often return to previously compromised targets, especially if vulnerabilities weren't fully addressed."
+  ],
+  "riskFactorCards": [
+    {
+      "title": "Customer Data Risk",
+      "desc": "Your business stores sensitive customer information, making you a high-value target for data theft.",
+      "condition": "customerData = yes"
+    },
+    {
+      "title": "Remote Access Vulnerabilities",
+      "desc": "Remote work creates additional entry points for attackers to compromise your network.",
+      "condition": "remoteAccess = yes"
+    },
+    {
+      "title": "Unsecured Connection Risk",
+      "desc": "Using public WiFi exposes sensitive communications to potential interception.",
+      "condition": "publicWifi = yes"
+    },
+    {
+      "title": "Security Resource Gap",
+      "desc": "Without dedicated security personnel, critical vulnerabilities may go undetected.",
+      "condition": "dedicatedIT = no"
+    },
+    {
+      "title": "Recurring Attack Risk",
+      "desc": "Organizations previously attacked are often targeted again, especially if vulnerabilities remain.",
+      "condition": "previousAttack = yes"
+    },
+    {
+      "title": "Network Perimeter Exposure",
+      "desc": "Without proper firewall protection, your network perimeter is exposed to constant probing and attacks.",
+      "condition": "filler if fewer than 3 factors"
+    },
+    {
+      "title": "Business Continuity Risk",
+      "desc": "Security incidents can cause significant downtime, affecting your operations and customer trust.",
+      "condition": "filler if fewer than 3 factors"
+    }
+  ],
+  "industryThreats": {
+    "ecommerce": [
+      {
+        "title": "Payment Card Data Theft",
+        "desc": "eCommerce businesses are prime targets for attackers seeking to steal customer payment information."
+      },
+      {
+        "title": "Shopping Cart Exploits",
+        "desc": "Vulnerabilities in shopping cart software can be exploited to redirect payments or steal customer data."
+      }
+    ],
+    "healthcare": [
+      {
+        "title": "Patient Data Breaches",
+        "desc": "Healthcare organizations face strict HIPAA penalties for exposing patient information."
+      },
+      {
+        "title": "Ransomware Targeting",
+        "desc": "Medical facilities are frequent ransomware targets due to the critical nature of their data."
+      }
+    ],
+    "financial": [
+      {
+        "title": "Financial Fraud",
+        "desc": "Financial institutions face sophisticated attacks targeting monetary transfers and customer accounts."
+      },
+      {
+        "title": "Regulatory Compliance Risk",
+        "desc": "Financial organizations must meet strict security requirements or face significant penalties."
+      }
+    ],
+    "education": [
+      {
+        "title": "Student Data Exposure",
+        "desc": "Educational institutions store sensitive student information that requires protection."
+      },
+      {
+        "title": "Research Theft",
+        "desc": "Universities conducting valuable research are targets for intellectual property theft."
+      }
+    ],
+    "retail": [
+      {
+        "title": "POS System Attacks",
+        "desc": "Physical retail locations face risks to their point-of-sale systems and payment processing."
+      },
+      {
+        "title": "Customer Loyalty Data",
+        "desc": "Customer loyalty programs contain valuable personal data that attackers target."
+      }
+    ],
+    "manufacturing": [
+      {
+        "title": "Intellectual Property Theft",
+        "desc": "Manufacturing processes and designs are valuable targets for corporate espionage."
+      },
+      {
+        "title": "Operational Technology Risk",
+        "desc": "Connected manufacturing equipment can be vulnerable to attacks that disrupt production."
+      }
+    ],
+    "saas": [
+      {
+        "title": "Customer Instance Breaches",
+        "desc": "SaaS companies risk exposing multiple customers' data in a single breach."
+      },
+      {
+        "title": "API Vulnerabilities",
+        "desc": "Insecure APIs can provide attackers with access to sensitive backend systems."
+      }
+    ],
+    "default": [
+      {
+        "title": "Data Theft",
+        "desc": "All businesses face risks of sensitive data being compromised."
+      },
+      {
+        "title": "Business Disruption",
+        "desc": "Cyber attacks can disrupt operations and cause costly downtime."
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "title": "Essential Firewall Protection",
+      "features": [
+        "Real-time threat monitoring and blocking",
+        "Automated security updates",
+        "Malicious traffic filtering",
+        "Basic access controls"
+      ],
+      "condition": "always shown"
+    },
+    {
+      "title": "Advanced Threat Protection",
+      "features": [
+        "Deep packet inspection",
+        "Advanced persistent threat (APT) detection",
+        "Behavioral analysis",
+        "Security information and event management (SIEM)"
+      ],
+      "condition": "healthcare/financial or 51+ employees"
+    },
+    {
+      "title": "Secure Remote Access Solution",
+      "features": [
+        "VPN with strong encryption",
+        "Multi-factor authentication",
+        "Device security posture checking",
+        "Granular access controls"
+      ],
+      "condition": "remote access or public Wi-Fi = yes"
+    },
+    {
+      "title": "Data Protection Controls",
+      "features": [
+        "Data loss prevention",
+        "Encryption for sensitive information",
+        "Compliance reporting and monitoring",
+        "Automated data classification"
+      ],
+      "condition": "customerData = yes"
+    }
+  ],
+  "finalCta": {
+    "headline": "Secure Your Business Now",
+    "urgency": "Every day without proper security puts your business at risk. Take action today to protect your critical assets, customer data, and business reputation.",
+    "buttons": [
+      "Get Your Security Quote",
+      "Schedule a Free Consultation",
+      "Retake Assessment"
+    ]
+  },
+  "disclaimer": "This assessment provides general security recommendations based on the information provided. For a comprehensive security evaluation tailored to your specific environment, contact our team for a personalized consultation."
+}

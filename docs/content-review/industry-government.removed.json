@@ -1,0 +1,117 @@
+{
+  ".challenges[status-claim]": [
+    {
+      "title": "Complex Regulatory Requirements",
+      "desc": "Government systems must adhere to multiple rigorous compliance frameworks including FISMA, FedRAMP, NIST 800-53, and others."
+    }
+  ],
+  ".approach[status-claim]": [
+    {
+      "title": "Regulatory Compliance",
+      "desc": "Built-in controls and reporting designed specifically to meet FISMA, FedRAMP, NIST 800-53, and other government standards."
+    }
+  ],
+  ".capabilities[0].features[str]": [
+    "FISMA controls",
+    "FedRAMP authorization"
+  ],
+  ".compliance[str]": [
+    "FISMA",
+    "FedRAMP"
+  ],
+  ".guarantees": [
+    {
+      "title": "Zero Mission Disruption",
+      "desc": "Our implementation process ensures no disruption to your agency's critical operations and mission-essential functions."
+    },
+    {
+      "title": "Immediate Protection",
+      "desc": "Even during phased implementation, we provide immediate protection for critical systems and sensitive data from day one."
+    },
+    {
+      "title": "Compliance Documentation",
+      "desc": "We provide complete documentation of all security controls specifically formatted for government regulatory requirements and audits."
+    },
+    {
+      "title": "Personnel Training",
+      "desc": "We provide specialized training for government personnel to ensure security practices integrate seamlessly with agency operations."
+    }
+  ],
+  ".stats": [
+    {
+      "label": "Government clients achieve compliance",
+      "value": "100%"
+    },
+    {
+      "label": "Protection against APT attacks",
+      "value": "97%"
+    },
+    {
+      "label": "Critical service disruptions",
+      "value": "0"
+    },
+    {
+      "label": "Average reduction in security costs",
+      "value": "50%"
+    }
+  ],
+  ".caseStudiesUnverified": [
+    {
+      "name": "Federal Agency",
+      "descriptor": "Civilian Federal Department",
+      "profile": "10,000+ employees, nationwide operations",
+      "challenge": "Needed to achieve FedRAMP compliance while protecting against sophisticated nation-state threats and securing legacy systems across a distributed environment.",
+      "solution": "Implemented SecuEdge Government Security with advanced threat protection, legacy system security, and comprehensive compliance controls aligned to federal standards.",
+      "results": [
+        {
+          "value": "100%",
+          "label": "FedRAMP compliance"
+        },
+        {
+          "value": "90%",
+          "label": "Reduction in security incidents"
+        },
+        {
+          "value": "0",
+          "label": "Successful APT breaches"
+        }
+      ]
+    },
+    {
+      "name": "State Government",
+      "descriptor": "State Agency Network",
+      "profile": "Multiple departments, statewide services",
+      "challenge": "Needed to protect citizen data across multiple departments, secure critical infrastructure services, and defend against increasing targeted ransomware attacks.",
+      "solution": "Deployed SecuEdge State Government Security with citizen data protection, critical infrastructure security, and ransomware prevention across all agencies.",
+      "results": [
+        {
+          "value": "100%",
+          "label": "Protection against ransomware"
+        },
+        {
+          "value": "0",
+          "label": "Citizen data breaches"
+        },
+        {
+          "value": "45%",
+          "label": "Cost reduction vs. previous solution"
+        }
+      ]
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge helped us achieve FedRAMP compliance while protecting our critical systems against advanced threats. Their government-specific approach addressed our unique security requirements in ways that standard commercial solutions simply couldn't.",
+      "role": "CISO",
+      "company": "Federal Agency"
+    },
+    {
+      "quote": "SecuEdge's government-specific solution addressed our complex compliance requirements and security challenges in ways generic products couldn't. We've achieved FedRAMP authorization while significantly enhancing our protection against advanced threats.",
+      "company": "Federal Agency"
+    },
+    {
+      "quote": "SecuEdge has transformed our state's cybersecurity posture. Their government-specific approach has protected our citizens' data and critical infrastructure systems while simplifying security management across all our departments and agencies.",
+      "company": "State Government"
+    }
+  ]
+}

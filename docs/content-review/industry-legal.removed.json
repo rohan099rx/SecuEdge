@@ -1,0 +1,103 @@
+{
+  ".guarantees": [
+    {
+      "title": "Confidentiality First",
+      "desc": "We understand the critical importance of attorney-client privilege and design all security solutions to prioritize maintaining confidentiality."
+    },
+    {
+      "title": "Regulatory Expertise",
+      "desc": "Our security specialists understand legal-specific regulations and compliance requirements across multiple jurisdictions."
+    },
+    {
+      "title": "Practice Management Integration",
+      "desc": "Seamless integration with leading legal practice management systems to enhance security without disrupting attorney workflows."
+    },
+    {
+      "title": "Dedicated Legal Support",
+      "desc": "Access to security specialists with experience in the legal sector who understand the unique requirements of law firms."
+    }
+  ],
+  ".stats": [
+    {
+      "label": "Reduction in security incidents",
+      "value": "94%"
+    },
+    {
+      "label": "Regulatory compliance",
+      "value": "100%"
+    },
+    {
+      "label": "Less time spent on compliance reporting",
+      "value": "40%"
+    },
+    {
+      "label": "Client data breaches",
+      "value": "0"
+    }
+  ],
+  ".caseStudiesUnverified": [
+    {
+      "name": "International Law Firm",
+      "descriptor": "Global Legal Practice",
+      "profile": "500+ attorneys across 15 countries",
+      "challenge": "Needed to secure sensitive client data across global offices while facilitating cross-border collaboration and maintaining compliance with multiple jurisdictions' regulations.",
+      "solution": "Implemented SecuEdge's Legal Security Platform with multi-jurisdiction compliance controls, matter-based access permissions, and secure document collaboration features.",
+      "results": [
+        {
+          "value": "100%",
+          "label": "Compliance attainment"
+        },
+        {
+          "value": "0",
+          "label": "Data breaches"
+        },
+        {
+          "value": "40%",
+          "label": "Faster document sharing"
+        }
+      ]
+    },
+    {
+      "name": "Corporate Legal Department",
+      "descriptor": "Fortune 500 Company",
+      "profile": "Legal team supporting global operations",
+      "challenge": "Needed to secure sensitive litigation documents, intellectual property, and contract information while enabling secure collaboration with outside counsel and business units.",
+      "solution": "Deployed SecuEdge's Document Security and Secure Collaboration solutions with specialized controls for matter management and outside counsel access.",
+      "results": [
+        {
+          "value": "75%",
+          "label": "Reduced security risks"
+        },
+        {
+          "value": "60%",
+          "label": "Faster compliance reporting"
+        },
+        {
+          "value": "20+",
+          "label": "Outside firms connected"
+        }
+      ]
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge transformed our security posture while maintaining our attorneys' ability to work efficiently. Their legal-specific solutions address the unique challenges our firm faces with client confidentiality and regulatory requirements.",
+      "role": "Managing Partner",
+      "company": "International Law Firm"
+    },
+    {
+      "quote": "SecuEdge provided us with a unified security platform that protects client confidentiality across all our global offices while making it easier for our attorneys to collaborate securely. The matter-based controls and ethical walls are exactly what a multinational law firm needs.",
+      "company": "International Law Firm"
+    },
+    {
+      "quote": "As a corporate legal department handling high-value IP and sensitive litigation, we needed security that understood our specific requirements. SecuEdge's platform gives us granular control over document access while making it simple to collaborate with our outside counsel securely.",
+      "company": "Corporate Legal Department"
+    }
+  ],
+  ".faqs[faq-integration]": [
+    {
+      "q": "How does SecuEdge integrate with our existing legal practice management software?",
+      "a": "SecuEdge provides seamless integration with major legal practice management systems including Clio, iManage, NetDocuments, ProLaw, and others. Our integration approach allows security controls to leverage existing matter management data, minimizing duplicate data entry and ensuring consistent security across all firm systems while preserving the attorney workflows you already have in place."
+    }
+  ]
+}

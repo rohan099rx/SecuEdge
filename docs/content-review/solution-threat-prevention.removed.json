@@ -1,0 +1,51 @@
+{
+  ".stats": [
+    {
+      "label": "Average cost of a data breach in 2023",
+      "value": "$4.45M"
+    },
+    {
+      "label": "Organizations experienced at least one successful attack",
+      "value": "84%"
+    },
+    {
+      "label": "Average time to identify and contain a breach",
+      "value": "287 days"
+    },
+    {
+      "label": "Of successful breaches involve zero-day exploits",
+      "value": "80%"
+    },
+    {
+      "label": "Of zero-day attacks blocked",
+      "value": "98%"
+    },
+    {
+      "label": "Reduction in security alerts",
+      "value": "75%"
+    },
+    {
+      "label": "Faster threat detection",
+      "value": "90%"
+    },
+    {
+      "label": "Reduction in incident response time",
+      "value": "60%"
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge's advanced threat prevention identified and stopped a sophisticated attack that had evaded our existing security controls. The visibility into the attack chain and automated prevention saved us from what could have been a devastating breach.",
+      "role": "CISO",
+      "company": "Manufacturing Company"
+    },
+    {
+      "quote": "SecuEdge's advanced threat prevention has been game-changing for our security posture. It's detected sophisticated attacks that our previous security stack missed entirely, while requiring less management overhead.",
+      "company": "Global Investment Bank (Financial Services case study, 25,000+ employees, 50+ countries)"
+    },
+    {
+      "quote": "Our previous security solution failed to stop a ransomware attack at a peer company that cost millions in recovery. With SecuEdge, we've stopped multiple attacks that would have had similar impacts, protecting our production and reputation.",
+      "company": "Industrial Manufacturer (Manufacturing case study, 12 production facilities, 8,000 employees)"
+    }
+  ]
+}

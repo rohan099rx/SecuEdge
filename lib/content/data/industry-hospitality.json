@@ -1,0 +1,150 @@
+{
+  "slug": "hospitality",
+  "metaTitle": "Hospitality Security Solutions",
+  "metaDescription": "SecuEdge protects hotels, resorts and restaurants from guest WiFi attacks, POS malware and social engineering — keeping guests safe and operations running.",
+  "hero": {
+    "headline": "Secure Every Stay, Every Table, Every Transaction",
+    "sub": "One vishing call cost MGM Resorts $80–100M. Caesars paid $15M in ransom to protect 65 million loyalty members. SecuEdge ensures the same playbook never works on your property."
+  },
+  "stats": [
+    { "label": "MGM Resorts losses from one vishing call", "value": "$80–100M" },
+    { "label": "Caesars loyalty members exposed in 2023", "value": "65M" },
+    { "label": "Ransom paid by Caesars Entertainment", "value": "$15M" },
+    { "label": "Customer records from Otelier SaaS breach", "value": "437K" }
+  ],
+  "challenges": [
+    {
+      "title": "Guest WiFi Adjacent to Critical Systems",
+      "desc": "Hotel guest networks are physically co-located with POS terminals, property management systems and room controls — segmentation failures are endemic across the industry."
+    },
+    {
+      "title": "POS Malware at Front Desk and Restaurants",
+      "desc": "High transaction volume and often outdated terminals make payment systems a primary target for RAM-scraping malware that silently harvests card data."
+    },
+    {
+      "title": "Property Management System Breaches",
+      "desc": "PMS databases hold passport numbers, payment cards, loyalty points, stay history and travel preferences — a complete guest identity profile worth stealing."
+    },
+    {
+      "title": "IT Helpdesk Social Engineering",
+      "desc": "Scattered Spider actors researched MGM employees on LinkedIn, called the IT helpdesk impersonating them, and got credentials reset — no technical exploit needed."
+    },
+    {
+      "title": "Third-Party SaaS Aggregation Risk",
+      "desc": "Hotel management platforms like Otelier serve Marriott, Hilton and Hyatt simultaneously. One SaaS breach exposes guests across every connected brand."
+    },
+    {
+      "title": "IoT Room Controls on Flat Networks",
+      "desc": "Smart locks, HVAC, minibars and entertainment systems are increasingly IP-connected and often share a flat network with back-office systems."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Ransomware Across All Property Systems",
+      "desc": "ALPHV ransomware shut down MGM slot machines, digital room keys, restaurant POS and hotel check-in simultaneously — a single flat network turned one foothold into total paralysis."
+    },
+    {
+      "title": "Loyalty Program Data Theft",
+      "desc": "Caesars Entertainment had its 6-terabyte loyalty database — containing SSNs and driver's licences for 65 million members — exfiltrated by attackers who entered through a vendor."
+    },
+    {
+      "title": "Supply Chain SaaS Compromise",
+      "desc": "When Otelier (used by Marriott, Hilton and Hyatt) was breached, 437,000 customer records were exposed in an attack the individual hotels had no visibility into."
+    },
+    {
+      "title": "Guest WiFi as Network Pivot",
+      "desc": "Without proper isolation, a guest or attacker on the WiFi network can probe POS terminals, PMS servers and staff workstations on the same physical infrastructure."
+    },
+    {
+      "title": "Credential Reset Fraud",
+      "desc": "Social engineering of outsourced IT helpdesks is the Scattered Spider playbook — and hospitality's high staff turnover and less security-trained support teams make it highly effective."
+    }
+  ],
+  "approach": [
+    {
+      "title": "VPN with MFA Stops Credential Theft",
+      "desc": "Even after a successful helpdesk credential reset, VPN access requires a second factor the social engineer does not have. This single control stops the entire MGM and Caesars attack chain."
+    },
+    {
+      "title": "Captive Portal Isolates Guest Traffic",
+      "desc": "SecuEdge's captive portal authenticates every guest device and places it in a VLAN with no route to PMS, POS or staff systems — isolating the broadest attack surface in any hotel."
+    },
+    {
+      "title": "VLAN Segmentation Across Every Zone",
+      "desc": "Guest, staff, POS, PMS and IoT room controls sit on separate VLANs with explicit allow rules between them. Ransomware hitting one zone cannot propagate to the rest."
+    },
+    {
+      "title": "Bandwidth Monitoring Catches Mass Exfiltration",
+      "desc": "A 6-terabyte loyalty database download is an enormous anomaly. SecuEdge's traffic monitoring flags bulk outbound transfers against a normal baseline within minutes."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Captive Portal & Guest WiFi Management",
+      "desc": "Authenticate guests, enforce acceptable-use policies, and completely isolate guest traffic from PMS, POS and back-office systems — with branded splash pages and per-session bandwidth control.",
+      "features": ["Guest VLAN isolation", "Branded authentication portal", "Per-session bandwidth limits"]
+    },
+    {
+      "title": "VPN with Multi-Factor Authentication",
+      "desc": "Require certificate-based or TOTP second factor before any remote session reaches hotel management systems — eliminating the credential-reset attack that took down MGM Resorts.",
+      "features": ["OpenVPN + IPSec tunnels", "Certificate-based auth", "MFA enforcement"]
+    },
+    {
+      "title": "Firewall Network Segmentation",
+      "desc": "Place guest WiFi, POS, PMS, staff workstations and IoT room controls on separate VLANs with firewall rules controlling exactly which systems can speak to which others.",
+      "features": ["Per-VLAN firewall policy", "POS network isolation", "IoT zone controls"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block known ransomware C2 domains, phishing pages and malware distribution sites across all networks — including guest WiFi where acceptable-use enforcement is also applied.",
+      "features": ["Ransomware C2 blocking", "Phishing domain filtering", "Guest content policies"]
+    },
+    {
+      "title": "Bandwidth Management & Anomaly Detection",
+      "desc": "Prioritise POS transaction traffic over guest streaming, and alert on bulk outbound data transfers that indicate credential or loyalty database exfiltration in progress.",
+      "features": ["POS QoS priority", "Bulk transfer alerting", "Guest fairness controls"]
+    },
+    {
+      "title": "Network Monitoring & Threat Logs",
+      "desc": "Continuous logging of east-west and north-south traffic provides the visibility to detect lateral movement and pre-ransomware reconnaissance before systems are encrypted.",
+      "features": ["Real-time traffic logs", "Lateral movement detection", "Audit trail for PCI DSS"]
+    }
+  ],
+  "compliance": ["PCI DSS", "GDPR"],
+  "process": [
+    {
+      "title": "Network Audit & Zone Mapping",
+      "desc": "Inventory every connected system — PMS, POS, IoT room controls, staff workstations, guest WiFi — and map which zones need which access rules."
+    },
+    {
+      "title": "Segmented Deployment",
+      "desc": "Deploy VLANs for each zone, configure captive portal for guest WiFi, enforce VPN with MFA for remote and vendor access, and enable DNS filtering across all networks."
+    },
+    {
+      "title": "Continuous Monitoring & Policy Tuning",
+      "desc": "Review traffic logs, update DNS block lists, and refine firewall rules as the property grows — with WAN failover ensuring no security gap during ISP outages."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge stop attacks like the MGM Resorts incident?",
+      "a": "Scattered Spider's attack chain required two things: a successful credential reset via vishing, then network access to spread ransomware. SecuEdge breaks both links. VPN with MFA means a reset password alone cannot open a session. VLAN segmentation means even a compromised account cannot reach casino floor systems from the HR network."
+    },
+    {
+      "q": "Can SecuEdge protect guest WiFi while keeping it easy for guests to connect?",
+      "a": "Yes. SecuEdge's captive portal provides a branded splash page — guests connect just like any hotel WiFi — but their traffic is placed in an isolated VLAN with no route to back-office systems. The guest experience is seamless; the security boundary is hard."
+    },
+    {
+      "q": "We use a cloud property management platform. Does SecuEdge help?",
+      "a": "SecuEdge controls the network path between your property and third-party platforms. Firewall rules restrict which internal systems can reach PMS cloud APIs, and egress filtering flags unusual bulk data transfers — providing a detection layer even when the SaaS vendor's own security is compromised."
+    },
+    {
+      "q": "How does SecuEdge handle PCI DSS requirements for our POS systems?",
+      "a": "SecuEdge places POS terminals in a dedicated VLAN with whitelist-only outbound rules permitting connections only to authorised payment processor IPs. Traffic logging provides the audit trail PCI DSS requires, and DNS filtering blocks malware C2 domains from reaching terminals."
+    }
+  ],
+  "cta": {
+    "headline": "Protect Every Guest, Every Transaction",
+    "sub": "Let SecuEdge segment your property network, isolate guest WiFi and enforce MFA — so a single vishing call or vendor breach never shuts down your operations."
+  }
+}

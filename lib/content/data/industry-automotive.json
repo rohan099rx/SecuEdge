@@ -1,0 +1,146 @@
+{
+  "slug": "automotive",
+  "metaTitle": "Automotive Dealership Cybersecurity Solutions",
+  "metaDescription": "SecuEdge protects automotive dealerships and repair shops from DMS vendor ransomware, FTC Safeguards Rule compliance gaps and POS network attacks.",
+  "hero": {
+    "headline": "When CDK Goes Down, Every Sale Stops",
+    "sub": "BlackSuit ransomware hit CDK Global and paralysed 15,000 dealerships for two weeks — J.D. Power estimated $944M–$1B+ in lost vehicle sales. CDK paid $25M. Dealer groups filed SEC material event disclosures. SecuEdge ensures your operations continue when your DMS vendor cannot."
+  },
+  "stats": [
+    { "label": "Dealerships paralysed by CDK Global ransomware", "value": "15,000" },
+    { "label": "Estimated lost vehicle sales from CDK outage", "value": "$944M–$1B+" },
+    { "label": "CDK Global ransom paid to BlackSuit", "value": "$25M" },
+    { "label": "Hyundai Europe: data exfiltrated by Black Basta", "value": "3 TB" }
+  ],
+  "challenges": [
+    {
+      "title": "DMS Vendor Concentration Risk",
+      "desc": "CDK Global, Reynolds & Reynolds and DealerSocket collectively serve the vast majority of US dealerships. One vendor breach cascades to thousands of locations simultaneously — as the CDK attack proved at a $1B scale."
+    },
+    {
+      "title": "Ransomware Disabling All Dealership Operations",
+      "desc": "A dealership's DMS integrates sales, financing, service, parts and inventory. Ransomware on the DMS halts all of these simultaneously — sales staff revert to paper, service bays go dark."
+    },
+    {
+      "title": "FTC Safeguards Rule Compliance",
+      "desc": "The updated FTC Safeguards Rule (2023) mandates financial-grade data protection for dealer-held customer financial data — loan applications, credit checks and income verification. Non-compliance carries regulatory penalties beyond breach costs."
+    },
+    {
+      "title": "Multi-Location Network Security",
+      "desc": "Dealer groups operate dozens or hundreds of locations. Each needs consistent firewall policy, VPN connectivity and network segmentation — without the IT resources of a large enterprise."
+    },
+    {
+      "title": "Guest and Service Bay WiFi",
+      "desc": "Customer-facing waiting areas and service bays offer WiFi. Without segmentation, a customer device or a mechanic's personal phone can probe the same network that hosts DMS terminals and customer financial records."
+    },
+    {
+      "title": "Parts Supplier Phishing and ACH Fraud",
+      "desc": "Parts suppliers and fleet accounts communicate via email with finance staff who are conditioned to process payment requests quickly. BEC attacks impersonating known supplier contacts redirect ACH payments."
+    }
+  ],
+  "threats": [
+    {
+      "title": "DMS Vendor Ransomware Cascade",
+      "desc": "BlackSuit hit CDK on June 18, 2024. 15,000 dealerships went to paper. A second attack hit the day systems were coming back online. Group 1 Automotive filed an SEC 8-K; the material revenue impact appeared in Q2 10-Q filings. June new-vehicle sales dropped 7.2% YoY."
+    },
+    {
+      "title": "Customer Financial Data Exfiltration",
+      "desc": "Dealer customer files contain loan applications with SSNs, income documentation, credit reports and financing terms. Hyundai Europe had 3 TB stolen by Black Basta — the same data profile exists in every dealership's DMS."
+    },
+    {
+      "title": "Service Bay Network Pivot",
+      "desc": "A vehicle brought in for service carries OBD-II diagnostics; an infected mobile device on the service bay WiFi carries potential malware. Without segmentation, either path can reach the DMS on the same network."
+    },
+    {
+      "title": "Supplier Email Compromise",
+      "desc": "Parts suppliers communicate via email with dealership accounts payable. An impersonated supplier email requesting updated ACH details targets the same workflow that processes legitimate payments daily."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Segment DMS From Everything Else",
+      "desc": "SecuEdge places DMS vendor traffic in an isolated VLAN with firewall rules controlling exactly which internal systems can reach it. When CDK's own infrastructure is ransomware'd and tries to propagate back, the segment boundary stops it at the dealership level."
+    },
+    {
+      "title": "Customer and Service Bay WiFi Isolation",
+      "desc": "Captive-portal-authenticated guest WiFi for customer waiting areas and a separate service bay VLAN ensure customer devices and technician phones are completely isolated from DMS terminals and financial records."
+    },
+    {
+      "title": "VPN for Multi-Location Dealer Groups",
+      "desc": "Secure site-to-site IPSec tunnels connect all dealership locations through a single authenticated, monitored network — consistent policy across 200+ locations without per-site IT resources."
+    },
+    {
+      "title": "WAN Failover Keeps Operations Running",
+      "desc": "Dual-ISP load balancing means a single link failure — or an ISP disruption during incident response — does not halt sales or service. DMS connectivity is maintained via the secondary link."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Firewall DMS VLAN Isolation",
+      "desc": "Place DMS vendor traffic, finance systems and customer record databases in dedicated VLANs with explicit allow rules. Secondary ransomware spread from a compromised DMS cannot reach POS terminals, service bay systems or guest WiFi.",
+      "features": ["DMS VLAN isolation", "Finance system segmentation", "Secondary spread containment"]
+    },
+    {
+      "title": "Captive Portal for Guest & Service Bay WiFi",
+      "desc": "Customer waiting area WiFi and service bay technician networks on isolated VLANs via captive portal — complete separation from DMS, finance and customer record systems.",
+      "features": ["Customer WiFi isolation", "Service bay VLAN", "Technician device separation"]
+    },
+    {
+      "title": "VPN for Multi-Location Groups",
+      "desc": "Site-to-site IPSec tunnels connect all dealer group locations through a central SecuEdge gateway — consistent firewall policy, DNS filtering and monitoring across every location.",
+      "features": ["Site-to-site IPSec", "Consistent policy across locations", "Centralised monitoring"]
+    },
+    {
+      "title": "Load Balancing & WAN Failover",
+      "desc": "Dual-ISP configuration keeps DMS connectivity, finance systems and customer-facing operations running when a primary link fails — critical for a business where every hour of downtime is a lost vehicle sale.",
+      "features": ["Dual-ISP failover", "DMS connectivity continuity", "Zero-revenue-impact WAN events"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block phishing pages impersonating parts suppliers and fleet accounts from reaching F&I staff and accounts payable — preventing the credential harvest that enables ACH redirect fraud.",
+      "features": ["Supplier phishing blocking", "BEC domain filtering", "F&I staff protection"]
+    },
+    {
+      "title": "Network Monitoring & Lateral Movement Detection",
+      "desc": "Detect anomalous lateral movement from DMS vendor connections, unusual data volume from finance systems and after-hours access to customer record databases — FTC Safeguards Rule audit trail included.",
+      "features": ["DMS connection monitoring", "Finance system audit trail", "FTC Safeguards compliance logging"]
+    }
+  ],
+  "compliance": ["FTC Safeguards Rule", "PCI DSS"],
+  "process": [
+    {
+      "title": "DMS Network Mapping",
+      "desc": "Map every DMS vendor connection, customer data flow and network adjacency — identify where DMS, finance, service bay and guest WiFi share network paths."
+    },
+    {
+      "title": "Segment and Protect",
+      "desc": "Deploy DMS VLAN isolation, configure captive portal for guest and service bay WiFi, establish VPN for multi-location connectivity and enable DNS blocking."
+    },
+    {
+      "title": "FTC Safeguards Compliance Review",
+      "desc": "Review access controls on customer financial data against FTC Safeguards Rule requirements, verify logging covers all required audit points and generate compliance documentation."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "CDK went down and took our whole dealership with it. How does SecuEdge prevent that?",
+      "a": "SecuEdge places DMS vendor traffic in an isolated VLAN. When CDK's infrastructure attempted to propagate ransomware back through its dealer connections, a firewall rule blocking DMS VLAN traffic from reaching other network segments would have contained the damage. WAN failover also means that disruption to the DMS vendor's internet-facing infrastructure doesn't affect your other systems."
+    },
+    {
+      "q": "We operate 50 locations. How does SecuEdge manage consistent security across all of them?",
+      "a": "SecuEdge site-to-site VPN connects all 50 locations through a central gateway with a shared firewall policy pushed to all sites simultaneously. DNS blocking, captive portal configuration and network monitoring all apply consistently — without per-location IT staff."
+    },
+    {
+      "q": "The FTC Safeguards Rule requires us to protect customer financial data. Does SecuEdge help?",
+      "a": "Yes. SecuEdge's VLAN segmentation isolates customer financial records from general networks. Traffic logging provides the audit trail the Rule requires. VPN with MFA enforces the access control requirements. Network monitoring detects unauthorised access to customer data in real time."
+    },
+    {
+      "q": "Our service technicians use personal phones in the service bay. Is that a risk?",
+      "a": "A service bay VLAN via captive portal means technician personal devices are isolated from DMS terminals, finance systems and customer records. They get internet access and can reach approved internal tools — nothing more."
+    }
+  ],
+  "cta": {
+    "headline": "Protect Every Dealership Location, Every Transaction",
+    "sub": "Isolate your DMS vendor network, enforce guest WiFi separation and keep multi-location operations running with WAN failover — so your business doesn't stop when your vendor does."
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "slug": "entertainment",
+  "metaTitle": "Entertainment & Media Cybersecurity Solutions",
+  "metaDescription": "SecuEdge protects game studios, streaming platforms and media companies from source code exfiltration, DDoS attacks on live events and social engineering of internal collaboration tools.",
+  "hero": {
+    "headline": "Your Source Code and Unreleased Content Are Worth Billions",
+    "sub": "A 17-year-old breached Rockstar Games' internal Slack from a hotel room using a Fire TV Stick — while under police protection — and exfiltrated GTA 6 gameplay footage. Twitch's full source code leaked in a 125 GB torrent. Sony lost employee SSNs via MOVEit and had 260 GB of source code held for ransom."
+  },
+  "stats": [
+    { "label": "Twitch source code leaked in single torrent", "value": "125 GB" },
+    { "label": "Rockstar Games estimated recovery cost from GTA 6 breach", "value": "$5M" },
+    { "label": "Sony employees' SSNs stolen via MOVEit", "value": "6,791" },
+    { "label": "RansomedVC demand for 260 GB of Sony internal data", "value": "$2.5M" }
+  ],
+  "challenges": [
+    {
+      "title": "Source Code and Unreleased IP Exfiltration",
+      "desc": "Game source code, unreleased film and music assets, and internal tooling represent billions in investment and competitive advantage. Bulk exfiltration goes undetected on flat networks until a dark web listing appears."
+    },
+    {
+      "title": "Social Engineering of Internal Collaboration Tools",
+      "desc": "Lapsus$ accessed Rockstar's Slack and Confluence through social engineering — impersonating IT support to get OAuth permissions granted. Internal tools on flat networks are as vulnerable as any external-facing system."
+    },
+    {
+      "title": "DDoS on Gaming Platforms and Live Streams",
+      "desc": "Gaming platforms, streaming services and live event ticketing face volumetric DDoS attacks timed to launches and major events — disrupting the moment of maximum audience and revenue."
+    },
+    {
+      "title": "Third-Party File Transfer Vulnerabilities",
+      "desc": "Production studios and media companies use cloud file transfer platforms for distribution. Cl0p's MOVEit campaign exploited a zero-day in a tool many studios used — Sony was among hundreds of affected organisations."
+    },
+    {
+      "title": "Creator and Talent Data Exposure",
+      "desc": "Twitch's breach exposed three years of creator payout data — the top streamer had received $9.6M. Creator financial and personal data is as sensitive as any corporate HR record."
+    },
+    {
+      "title": "Remote Production and Distributed Teams",
+      "desc": "Production teams, voice actors, game designers and visual effects artists work from home and distributed studios. Every remote workstation accessing production servers over an unprotected connection is an exfiltration risk."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Hotel-Room Social Engineering",
+      "desc": "Arion Kurtaj, 17, breached Rockstar from a hotel room using an Amazon Fire TV Stick and mobile phone — while under UK police protection for a prior offence. He social-engineered Rockstar's Slack and Confluence access, exfiltrated 90 GTA 6 gameplay videos and GTA 5 source code."
+    },
+    {
+      "title": "Server Misconfiguration Mass Leak",
+      "desc": "Twitch's 125 GB breach originated in a server misconfiguration that allowed an anonymous actor to dump the full source code, AWS service configs, internal SDKs, creator payout data and internal security tooling."
+    },
+    {
+      "title": "Supply Chain File Transfer Exploitation",
+      "desc": "Cl0p's zero-day in MOVEit captured Sony employee SSNs alongside thousands of other organisations. At the same time, a separate actor claimed 260 GB of Sony source code and internal documentation — demonstrating how entertainment firms face simultaneous threats from different vectors."
+    },
+    {
+      "title": "Launch-Day DDoS",
+      "desc": "Volumetric DDoS attacks timed to game launches, album drops and live streaming events create the maximum disruption window — and distract security teams from concurrent intrusion attempts."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Put Every Internal Tool Behind VPN",
+      "desc": "Rockstar's Slack and Confluence were accessible from a hotel room. SecuEdge VPN ensures that internal collaboration tools, game development servers and production assets are only reachable via authenticated tunnel — a hotel-room Fire TV Stick cannot even find them."
+    },
+    {
+      "title": "Detect 125 GB Exfiltration in Real Time",
+      "desc": "125 GB leaving a network is an extreme anomaly against a baseline of normal outbound traffic. SecuEdge's bandwidth monitoring flags bulk transfers before they complete — Twitch's entire source code exfiltration would have generated an alert within minutes."
+    },
+    {
+      "title": "Whitelist-Only Outbound from Production Systems",
+      "desc": "Production servers, code repositories and asset stores should only connect to explicitly whitelisted business endpoints. Default-deny egress rules block connections to unknown cloud storage, exfiltration servers and newly-registered domains."
+    },
+    {
+      "title": "DDoS Resilience via WAN Load Balancing",
+      "desc": "Dual-WAN load balancing distributes ingress traffic across multiple links and bandwidth management rate-limits DDoS traffic patterns — keeping streaming, gaming and ticketing platforms available during volumetric attacks."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "VPN for Production and Studio Access",
+      "desc": "All access to game servers, production assets, code repositories and internal collaboration tools (Slack, Confluence, Jira) via authenticated SecuEdge VPN — zero internet-facing access to production systems.",
+      "features": ["Production server VPN access", "Collaboration tool protection", "Zero public-facing access"]
+    },
+    {
+      "title": "Firewall Rule-Based Filtering",
+      "desc": "Whitelist-only outbound from production systems — game servers, asset stores and code repositories can only connect to explicitly approved endpoints. All other outbound connections are blocked by default.",
+      "features": ["Whitelist-only outbound policy", "Production system isolation", "Asset store protection"]
+    },
+    {
+      "title": "Bandwidth Monitoring & Exfil Detection",
+      "desc": "Real-time traffic monitoring against established baselines — alerts on bulk outbound data transfers from production servers and code repositories, detecting exfiltration attempts before they complete.",
+      "features": ["Real-time bulk transfer alerts", "Production traffic baseline", "Exfiltration detection"]
+    },
+    {
+      "title": "Load Balancing & DDoS Resilience",
+      "desc": "Dual-WAN configuration distributes ingress across multiple links; bandwidth management rate-limits traffic matching DDoS patterns — keeping streaming services, gaming APIs and live event platforms available.",
+      "features": ["Dual-WAN load balancing", "DDoS traffic rate limiting", "Launch-day capacity management"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block malware C2 domains, phishing pages targeting studio staff and newly-registered domains used in social engineering campaigns — preventing the credential harvest that enables Lapsus$-style attacks.",
+      "features": ["Social engineering phishing blocking", "Malware C2 filtering", "New domain blocking"]
+    },
+    {
+      "title": "Network Segmentation for Studios",
+      "desc": "Separate VLANs for development, testing, production, creator data and corporate IT — with explicit firewall rules between each. A compromised workstation cannot pivot to production game servers or creator financial data.",
+      "features": ["Dev/prod VLAN isolation", "Creator data protection", "Cross-studio segmentation"]
+    }
+  ],
+  "compliance": ["GDPR", "PCI DSS"],
+  "process": [
+    {
+      "title": "Production Asset & Access Mapping",
+      "desc": "Inventory all production systems, code repositories, internal collaboration tools and cloud file transfer platforms — identify every path that currently allows internet-facing access to production assets."
+    },
+    {
+      "title": "Zero-Exposure Hardening",
+      "desc": "Move all production system access behind VPN, implement whitelist-only outbound egress, segment dev/staging/production, enable DNS blocking and deploy bandwidth monitoring baselines."
+    },
+    {
+      "title": "Launch & Event Security",
+      "desc": "Before major launches or live events, verify WAN failover configuration, test DDoS rate-limiting thresholds, confirm production VPN capacity and review DNS block list currency."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge prevent an attack like the Rockstar Games breach?",
+      "a": "Lapsus$ accessed Rockstar's Slack and Confluence from a hotel room because those tools were internet-accessible to anyone who could get credentials. SecuEdge VPN means internal collaboration tools are only reachable via an authenticated tunnel. A hotel-room device with stolen credentials hits the VPN gateway — not the Confluence server."
+    },
+    {
+      "q": "Can SecuEdge detect if someone is exfiltrating our game source code?",
+      "a": "Yes. SecuEdge establishes baseline outbound traffic from code repositories and production servers. A bulk download of 125 GB or even 1 GB after hours triggers an alert. The traffic logs provide forensic detail on which systems were accessed, which internal IPs made the requests and where the data was sent."
+    },
+    {
+      "q": "Our platform gets DDoS'd every time we announce a new game. How does SecuEdge help?",
+      "a": "SecuEdge's dual-WAN load balancing distributes ingress across multiple links and bandwidth management applies rate-limiting rules to traffic profiles that match DDoS patterns. For volumetric attacks that exceed upstream ISP capacity, SecuEdge works alongside ISP-level scrubbing services — the combination keeps gaming APIs and streaming endpoints available through the launch window."
+    },
+    {
+      "q": "We use cloud file transfer tools to share production assets with contractors. Is that a risk?",
+      "a": "SecuEdge firewall rules control which internal systems can initiate connections to cloud file transfer platforms. Egress filtering restricts outbound transfers to authorised platforms and destinations. Traffic monitoring flags unusual bulk transfers from file transfer endpoints — providing the detection layer that would have caught a MOVEit-style exfiltration in progress."
+    }
+  ],
+  "cta": {
+    "headline": "Protect Every Frame, Every Line of Code, Every Launch",
+    "sub": "Put production systems behind VPN, detect bulk exfiltration in real time and stay online through launch-day DDoS — before the next Lapsus$ or Cl0p campaign targets your studio."
+  }
+}

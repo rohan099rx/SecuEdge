@@ -1,0 +1,146 @@
+{
+  "slug": "construction",
+  "metaTitle": "Construction Cybersecurity Solutions",
+  "metaDescription": "SecuEdge protects construction firms, contractors and engineering companies from ransomware targeting BIM files and project data, subcontractor network abuse and vulnerable VPN appliances.",
+  "hero": {
+    "headline": "Protect Every Blueprint, Every Project, Every Site",
+    "sub": "Bouygues Construction had 1,000+ TB of project data locked. Bird Construction faced a $9M CAD ransom demand. Ransomware attacks on construction doubled from 2023 to 2024 — and construction is now a top-three most attacked sector."
+  },
+  "stats": [
+    { "label": "Bouygues Construction data locked by Maze ransomware", "value": "1,000+ TB" },
+    { "label": "Bird Construction ransom demand (CAD)", "value": "$9M" },
+    { "label": "Ransomware growth in construction 2023→2024", "value": "2×" },
+    { "label": "Construction industry's rank among most attacked sectors", "value": "Top 3" }
+  ],
+  "challenges": [
+    {
+      "title": "Ransomware Targeting Irreplaceable BIM Files",
+      "desc": "Building Information Modelling files and project specifications represent years of engineering work. Losing them is not just a data loss — it can halt active construction sites and trigger contract penalties."
+    },
+    {
+      "title": "Unmanaged Subcontractor Network Access",
+      "desc": "Dozens of subcontractors, site managers and engineers connect to project networks using personal devices with no MDM, no security baseline and no visibility — each one a potential entry point."
+    },
+    {
+      "title": "Vulnerable Third-Party VPN Appliances",
+      "desc": "Akira ransomware specifically targeted SonicWall SSL VPN appliances (CVE-2024-40766) widely used by construction firms for remote site access. Arctic Wolf documented a surge of construction victims through this exact vector."
+    },
+    {
+      "title": "No Segmentation Between Office and Jobsite",
+      "desc": "A compromised laptop on a jobsite WiFi network typically has a routed path to the corporate file server — one infected device from a sub becomes access to the entire project archive."
+    },
+    {
+      "title": "BEC and Wire Fraud on Accounts Payable",
+      "desc": "Construction firms routinely move large sums between principals, contractors and subcontractors. Impersonation of finance contacts via email compromise is a highly lucrative attack given the transaction sizes involved."
+    },
+    {
+      "title": "Remote Site Management Systems Exposed",
+      "desc": "Project management portals, SCADA-adjacent building automation systems and remote monitoring tools are often left internet-facing without VPN protection — reachable from anywhere in the world."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Mass Project Data Encryption",
+      "desc": "Maze ransomware required unrestricted SMB access to network shares to encrypt them. Bouygues had 237 computers locked and 200 GB stolen; Bird Construction lost 60 GB of federal project contracts and subcontractor details."
+    },
+    {
+      "title": "VPN Appliance Exploitation",
+      "desc": "Akira ransomware's dedicated construction campaign exploited SonicWall SSL VPN CVE-2024-40766. Firms that had deployed SonicWall for remote site access found their own VPN was the entry point."
+    },
+    {
+      "title": "Subcontractor Device Propagation",
+      "desc": "A subcontractor device with pre-existing malware connects to the site WiFi. Without segmentation, that device has the same network path to project servers as the project manager's workstation."
+    },
+    {
+      "title": "Pre-Ransomware SMB Reconnaissance",
+      "desc": "Ransomware actors spend days mapping internal file shares via SMB enumeration before encrypting. This reconnaissance phase is detectable — but only with network monitoring in place."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Replace Vulnerable VPN Appliances",
+      "desc": "SecuEdge's OpenVPN and IPSec replace SonicWall, Cisco and Citrix VPN appliances — eliminating the CVE-2024-40766 attack surface entirely. Remote site access is authenticated via hardened SecuEdge tunnels with certificate and MFA."
+    },
+    {
+      "title": "Isolate Subcontractors via Captive Portal",
+      "desc": "Subcontractors get internet access via captive-portal-authenticated WiFi in a dedicated VLAN with no route to project file servers. Site visitors and personal devices are completely isolated from project data."
+    },
+    {
+      "title": "Segment Office, Jobsite and BIM Servers",
+      "desc": "Project file servers, office workstations and jobsite networks sit in separate firewall zones. SMB access from the site VLAN to the BIM server VLAN requires an explicit firewall allow rule — Maze-style propagation stops at the first boundary."
+    },
+    {
+      "title": "Detect Pre-Ransomware Reconnaissance",
+      "desc": "SecuEdge's network monitoring logs SMB enumeration and unusual internal scanning patterns — the pre-encryption reconnaissance phase that ransomware actors conduct. Catching this phase prevents the encryption event entirely."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "VPN (OpenVPN + IPSec) — Replaces Legacy Appliances",
+      "desc": "Harden remote site access with SecuEdge VPN — replacing vulnerable SonicWall, Fortinet and Cisco appliances with a single authenticated, monitored gateway for all remote project access.",
+      "features": ["Certificate-based auth", "MFA enforcement", "Replaces legacy VPN appliances"]
+    },
+    {
+      "title": "Captive Portal for Subcontractor WiFi",
+      "desc": "Authenticate every subcontractor and site visitor at network entry. Their devices land in an isolated VLAN with internet access only — no route to project file shares, BIM servers or corporate systems.",
+      "features": ["Subcontractor VLAN isolation", "Per-device authentication", "Visitor internet-only access"]
+    },
+    {
+      "title": "Firewall Segmentation (Office / Site / BIM)",
+      "desc": "Separate firewall zones for corporate office, project file and BIM servers, jobsite networks and subcontractor WiFi — with explicit allow rules governing which zone can speak to which.",
+      "features": ["BIM server zone isolation", "Jobsite network separation", "Per-zone firewall policy"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block known Maze, Akira and construction-sector ransomware C2 domains at the DNS layer — preventing encryption key exchange even after initial infection on a workstation.",
+      "features": ["Ransomware C2 blocking", "Malware domain filtering", "Phishing domain blocking"]
+    },
+    {
+      "title": "Network Monitoring & SMB Anomaly Detection",
+      "desc": "Detect pre-ransomware reconnaissance — unusual SMB enumeration, internal port scans and after-hours bulk file access — before the encryption event that causes the damage.",
+      "features": ["SMB enumeration detection", "Internal scan alerting", "After-hours access alerts"]
+    },
+    {
+      "title": "Bandwidth Management & Exfil Detection",
+      "desc": "Alert on bulk outbound data transfers from project file servers — the data staging that precedes double-extortion ransomware demands.",
+      "features": ["Outbound bulk transfer alerts", "Project data exfil detection", "Traffic baseline monitoring"]
+    }
+  ],
+  "compliance": ["ISO 27001", "GDPR"],
+  "process": [
+    {
+      "title": "Exposure & Network Assessment",
+      "desc": "Identify all VPN appliances with known CVEs, map SMB-accessible file shares, audit subcontractor network access and locate internet-exposed management systems on jobsite networks."
+    },
+    {
+      "title": "Segment and Harden",
+      "desc": "Deploy hardened VPN replacing legacy appliances, create BIM server and jobsite VLANs, configure captive portal for subcontractor WiFi and enable DNS blocking with SMB anomaly monitoring."
+    },
+    {
+      "title": "Ongoing Site Security",
+      "desc": "Review subcontractor access as teams change across project phases, update DNS block lists, verify firewall rules when new systems are connected to site networks."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge stop ransomware from encrypting our BIM and project files?",
+      "a": "SecuEdge breaks the ransomware chain at two points. First, DNS blocking prevents C2 callbacks — without receiving encryption keys, ransomware cannot proceed. Second, firewall segmentation means a compromised workstation on the office network cannot reach BIM server VLANs without an explicit allow rule — lateral movement stops at the zone boundary."
+    },
+    {
+      "q": "Our subcontractors need to access project portals on site. How does SecuEdge handle that?",
+      "a": "Subcontractors connect to a captive-portal-authenticated SSID that places their devices in an isolated VLAN with internet access only. For portal access to internal project systems, we configure VPN credentials scoped to the specific systems that subcontractor role requires — no broader network access."
+    },
+    {
+      "q": "We use SonicWall for remote site access. Is that a problem?",
+      "a": "CVE-2024-40766 in SonicWall SSL VPN was the specific entry point Akira ransomware used in the documented surge against construction firms. SecuEdge can replace that appliance entirely — your remote site access runs through SecuEdge's hardened OpenVPN or IPSec gateway instead."
+    },
+    {
+      "q": "How quickly can SecuEdge be deployed across multiple active construction sites?",
+      "a": "SecuEdge Frontier appliances are designed for rapid site deployment. Initial VPN hardening and VLAN segmentation for a project office takes hours. Captive portal configuration for a jobsite is a day's work. Sites can be brought online incrementally without disrupting active project operations."
+    }
+  ],
+  "cta": {
+    "headline": "Protect Your Projects From Blueprint to Completion",
+    "sub": "Replace vulnerable VPN appliances, isolate subcontractor networks and detect ransomware reconnaissance before a single file gets encrypted."
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "slug": "technology",
+  "metaTitle": "Technology & SaaS Security Solutions",
+  "metaDescription": "SecuEdge protects SaaS companies, startups and IT firms from supply chain attacks, credential-based intrusions and C2 callbacks — keeping customer data and source code secure.",
+  "hero": {
+    "headline": "Protect Your Platform, Your Code, Your Customers",
+    "sub": "SolarWinds cost an average of $12M per affected organisation. Kaseya's one exposed VSA server became ransomware in 1,500 downstream businesses. The source of trust in your supply chain is your network perimeter."
+  },
+  "stats": [
+    { "label": "Average remediation cost per SolarWinds victim", "value": "$12M" },
+    { "label": "SolarWinds: organisations infected via trusted update", "value": "18,000+" },
+    { "label": "Snowflake campaign: customer data warehouses accessed", "value": "165+" },
+    { "label": "Ticketmaster records stolen via Snowflake credentials", "value": "560M" }
+  ],
+  "challenges": [
+    {
+      "title": "Supply Chain & Trusted Update Compromise",
+      "desc": "APT29's SolarWinds attack embedded a backdoor in a digitally-signed software update. 18,000 organisations installed it — including DHS and the Department of Energy — and went undetected for nine months."
+    },
+    {
+      "title": "Credential Theft via Infostealer Malware",
+      "desc": "The Snowflake campaign used credentials harvested by infostealer malware to access 165+ customer data warehouses without MFA. No exploit was required — just stolen passwords."
+    },
+    {
+      "title": "Exposed Management Consoles",
+      "desc": "REvil exploited an authentication bypass in Kaseya's VSA management console exposed directly to the internet. The result: malicious updates pushed to 60 MSPs and 1,500 downstream businesses."
+    },
+    {
+      "title": "CI/CD Pipeline Secret Exfiltration",
+      "desc": "API keys and GitHub credentials embedded in CI/CD pipelines are high-value targets. Compromise of a single credential set can cascade to every client repository a development firm touches."
+    },
+    {
+      "title": "DDoS as Cover for Simultaneous Intrusion",
+      "desc": "Volumetric DDoS attacks on SaaS platforms and API endpoints are used to distract security teams while a concurrent intrusion exploits weakened perimeter defences."
+    },
+    {
+      "title": "Developer Remote Access Without Boundaries",
+      "desc": "Developers working from home, client sites and co-working spaces access production infrastructure from unmanaged devices on untrusted networks — expanding the credential risk surface enormously."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Trusted Update Channel Weaponisation",
+      "desc": "When a vendor's software update mechanism becomes an attack vector, no endpoint security catches the payload — it arrives pre-trusted. The only detectable signal is the C2 beacon the backdoor makes after installation."
+    },
+    {
+      "title": "Credential-Only Access to Cloud Data",
+      "desc": "Without MFA on cloud data platforms, stolen credentials are all an attacker needs. ShinyHunters and similar groups systematically target Snowflake, Salesforce and similar platforms with infostealer-harvested credentials."
+    },
+    {
+      "title": "Management Console Exploitation",
+      "desc": "Any management interface exposed directly to the internet is a persistent target. Kaseya VSA, Atlassian, RMM tools and similar platforms have all been exploited when left internet-facing without VPN protection."
+    },
+    {
+      "title": "Source Code and IP Exfiltration",
+      "desc": "Game source code, proprietary algorithms, client codebases and internal tooling represent years of investment. Bulk exfiltration goes unnoticed on flat networks without traffic monitoring."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Never Expose Management Ports Publicly",
+      "desc": "Every management console, admin panel, VSA, RMM tool and internal dashboard sits behind SecuEdge's VPN — accessible only via authenticated tunnel. Kaseya-style exploitation requires internet exposure; remove the exposure, remove the risk."
+    },
+    {
+      "title": "DNS Blocking Catches the Inevitable C2 Beacon",
+      "desc": "Even a successfully installed backdoor (SolarWinds model) needs to phone home. SecuEdge's malware and newly-registered domain blocking categories intercept C2 beacons at the DNS layer before data leaves."
+    },
+    {
+      "title": "Force Cloud Platform Access Through Authenticated Networks",
+      "desc": "Restrict Snowflake, GitHub, Salesforce and similar cloud platforms to connections originating from corporate IP ranges via SecuEdge VPN — infostealer credentials from personal devices cannot authenticate."
+    },
+    {
+      "title": "Segment Dev, Staging and Production",
+      "desc": "Firewall rules enforce that development networks cannot initiate connections to production systems without explicit policy. CI/CD pipelines run in isolated zones; a compromised workstation cannot reach production directly."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "VPN-Protected Management Access",
+      "desc": "Every internal management console, admin dashboard, RMM tool and CI/CD system sits behind SecuEdge VPN with certificate and MFA authentication — zero internet-exposed management surfaces.",
+      "features": ["OpenVPN + IPSec tunnels", "Certificate-based MFA", "Zero public management exposure"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block malware distribution domains, known C2 infrastructure and newly-registered domains across all networks — intercepting the C2 beacons that supply-chain backdoors depend on to receive instructions.",
+      "features": ["C2 beacon interception", "Newly-registered domain blocking", "Malware category filtering"]
+    },
+    {
+      "title": "Firewall Network Segmentation",
+      "desc": "Dev, staging, production and client environments on separate VLANs with explicit firewall rules. A compromised developer workstation cannot pivot to production databases or client repositories.",
+      "features": ["Dev/prod isolation", "Client environment separation", "CI/CD zone controls"]
+    },
+    {
+      "title": "Bandwidth Monitoring & Exfil Detection",
+      "desc": "Establish baselines for normal outbound traffic from code repositories and internal servers — bulk downloads and unusual data transfers trigger real-time alerts before exfiltration completes.",
+      "features": ["Traffic baseline monitoring", "Bulk transfer alerting", "Real-time anomaly detection"]
+    },
+    {
+      "title": "Egress Firewall (Default-Deny)",
+      "desc": "Outbound connections to uncategorised, newly-registered or unlisted destinations are blocked by default — internal systems can only reach explicitly whitelisted business endpoints.",
+      "features": ["Default-deny outbound policy", "Whitelist-only egress", "Exfiltration channel blocking"]
+    },
+    {
+      "title": "Load Balancing & DDoS Resilience",
+      "desc": "Dual-WAN load balancing distributes ingress traffic and keeps SaaS platforms and API endpoints available when one link is targeted by volumetric DDoS — with bandwidth management to rate-limit attack traffic.",
+      "features": ["Dual-WAN load balancing", "DDoS traffic rate limiting", "API endpoint availability"]
+    }
+  ],
+  "compliance": ["SOC 2", "ISO 27001", "GDPR"],
+  "process": [
+    {
+      "title": "Exposure Audit",
+      "desc": "Identify every management console, admin panel and internal tool exposed directly to the internet — the Kaseya attack surface. Map cloud platform access and review which networks can reach production."
+    },
+    {
+      "title": "Secure & Segment",
+      "desc": "Move all management access behind VPN with MFA, implement dev/staging/production VLAN segmentation, enforce egress filtering and enable DNS blocking."
+    },
+    {
+      "title": "Monitor & Baseline",
+      "desc": "Establish normal outbound traffic patterns for code repositories and cloud platforms; configure alerts for bulk transfers; review DNS query logs for C2 beacon patterns weekly."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge help against supply chain attacks like SolarWinds?",
+      "a": "SecuEdge cannot prevent a compromised vendor update from installing — but it can catch the next required step: the C2 callback. SUNBURST called out to avsvmcloud.com for instructions. SecuEdge's DNS category blocking intercepts that callback at the network layer before any commands are received or data leaves."
+    },
+    {
+      "q": "Our developers access production from home. How does SecuEdge handle that?",
+      "a": "All production access routes through SecuEdge VPN with certificate and MFA authentication. Remote developers get the same encrypted, authenticated tunnel whether they're at home, a client site or a co-working space — and access is limited to the specific production systems their role requires."
+    },
+    {
+      "q": "We use Snowflake, GitHub and Salesforce for customers. Can SecuEdge protect cloud platform access?",
+      "a": "Yes. SecuEdge firewall rules restrict outbound connections to these platforms to IP ranges associated with your corporate VPN. Staff accessing these platforms from personal devices or non-VPN networks get blocked at the egress layer — infostealer credentials from unmanaged devices cannot authenticate."
+    },
+    {
+      "q": "Can SecuEdge protect against DDoS on our SaaS platform?",
+      "a": "SecuEdge's dual-WAN load balancing distributes ingress traffic across multiple links and bandwidth management rate-limits traffic spikes that match DDoS patterns. For volumetric DDoS at scale, SecuEdge works alongside upstream ISP scrubbing services."
+    }
+  ],
+  "cta": {
+    "headline": "Secure Your Platform From Supply Chain to Production",
+    "sub": "Put every management console behind VPN, block C2 beacons at the DNS layer and segment dev from production — before the next Kaseya or Snowflake campaign finds your environment."
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "slug": "enterprise",
+  "metaTitle": "Enterprise Security Solutions",
+  "metaDescription": "SecuEdge provides advanced threat prevention and unified security across hybrid environments for enterprise organizations. High-performance security at scale.",
+  "hero": {
+    "headline": "Secure Your Boundless Enterprise",
+    "sub": "Gain complete visibility and control, automate threat response, and enforce consistent policy across your data centers, cloud deployments, and distributed workforce with our integrated security platform."
+  },
+  "challenges": [
+    {
+      "title": "Hybrid & Multi-Cloud Security",
+      "desc": "Managing consistent security policies across on-premises, private cloud, and multiple public cloud environments introduces significant complexity."
+    },
+    {
+      "title": "Advanced Persistent Threats",
+      "desc": "Sophisticated attackers use multi-stage, long-term campaigns targeting high-value enterprise assets, evading traditional detection methods."
+    },
+    {
+      "title": "Distributed Workforce",
+      "desc": "Securing remote employees, partners, and third-party access while providing frictionless connectivity introduces new risk vectors."
+    },
+    {
+      "title": "Regulatory Compliance",
+      "desc": "Navigating complex and evolving global regulations (GDPR, CCPA, HIPAA, PCI DSS) requires robust controls and reporting capabilities."
+    },
+    {
+      "title": "Security Tool Sprawl",
+      "desc": "Managing dozens of disconnected security tools creates operational complexity, visibility gaps, and increased costs."
+    },
+    {
+      "title": "DevSecOps Integration",
+      "desc": "Incorporating security into rapid development cycles without sacrificing speed or creating bottlenecks requires careful orchestration."
+    },
+    {
+      "title": "Cybersecurity Skills Gap",
+      "desc": "The global shortage of qualified security professionals makes it difficult to maintain an effective security program."
+    },
+    {
+      "title": "Business Continuity",
+      "desc": "Implementing robust security while ensuring high availability and performance across global operations is a delicate balance."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Centralized Management",
+      "desc": "Single console for consistent policy management across all environments."
+    },
+    {
+      "title": "High Scalability",
+      "desc": "Linear performance scaling from small branch offices to multi-terabit data centers."
+    },
+    {
+      "title": "Integrated AI/ML Engine",
+      "desc": "Advanced analytics for identifying sophisticated threats and automating responses."
+    },
+    {
+      "title": "Unified Security for Complex Networks",
+      "desc": "The SecuEdge Enterprise Platform integrates advanced next-generation firewall capabilities with cloud-native security, zero trust access controls, and AI-driven threat prevention in a single, coherent architecture. Our platform eliminates security gaps and reduces operational complexity by replacing disconnected point products with a comprehensive solution that delivers consistent protection across your entire enterprise network."
+    },
+    {
+      "title": "On-Premises Data Centers",
+      "desc": "Enterprise-grade security appliances with carrier-class performance and reliability."
+    },
+    {
+      "title": "Hybrid & Multi-Cloud",
+      "desc": "Native integration with AWS, Azure, and Google Cloud for consistent security across all environments."
+    },
+    {
+      "title": "Distributed Workforce",
+      "desc": "Secure remote access and endpoint protection for users anywhere, on any device."
+    },
+    {
+      "title": "Innovation Leadership",
+      "desc": "Our dedicated R&D teams are continuously advancing our security technology to address evolving threats before they impact your business."
+    },
+    {
+      "title": "Enterprise Support & Services",
+      "desc": "Our dedicated enterprise support teams provide 24/7 assistance with guaranteed response times. Our professional services experts ensure successful implementation tailored to your unique environment."
+    },
+    {
+      "title": "Integration Ecosystem",
+      "desc": "Our open platform integrates with your existing security investments through open APIs and pre-built connectors for SIEM, SOAR, and IT management systems, maximizing the value of your security ecosystem."
+    },
+    {
+      "title": "Focus on Customer Success",
+      "desc": "Our dedicated customer success teams ensure you achieve optimal value from your investment with regular health checks, optimization recommendations, and strategic guidance for your security journey."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Advanced Threat Prevention",
+      "desc": "Next-Gen Firewall (NGFW), Intrusion Prevention System, AI-Powered Sandboxing, and Global Threat Intelligence. Strategic benefit: proactively neutralize sophisticated and evasive threats, significantly reducing breach likelihood and impact. Protect critical assets and intellectual property."
+    },
+    {
+      "title": "High-Performance & Scalability",
+      "desc": "Terabit-Scale Throughput, Low-Latency Inspection, High Availability Clustering, and Elastic Scalability. Strategic benefit: ensure seamless security enforcement without compromising network speed or user experience, supporting business agility and growth."
+    },
+    {
+      "title": "Hybrid & Multi-Cloud Security",
+      "desc": "Native Cloud Integration, Cloud-to-Cloud Controls, Workload Protection, and CSPM & CWPP Capabilities. Strategic benefit: gain consistent visibility and enforce unified policies across on-premises data centers, private clouds, and public clouds (AWS, Azure, GCP), securing your digital transformation journey."
+    },
+    {
+      "title": "Centralized Management & Automation",
+      "desc": "Single Pane of Glass Management, Automation & Orchestration, Policy Templates & Inheritance, and Zero-Touch Provisioning. Strategic benefit: streamline policy administration, reduce configuration errors, improve operational efficiency, and enable faster incident response through orchestration, resulting in lower TCO."
+    },
+    {
+      "title": "Deep Visibility & Analytics",
+      "desc": "Real-Time Monitoring, Advanced Threat Analytics, Compliance Reporting, and IoC Correlation. Strategic benefit: achieve comprehensive network insight, identify anomalies, accelerate threat hunting, and simplify compliance reporting with customizable dashboards and detailed logs."
+    },
+    {
+      "title": "Secure Access & Zero Trust",
+      "desc": "Identity-Based Access Control, Least Privilege Enforcement, Continuous Trust Verification, and Secure Remote Access. Strategic benefit: implement granular access controls based on identity, context, and device posture, supporting Zero Trust initiatives for users, devices, and applications anywhere."
+    }
+  ],
+  "applications": [
+    {
+      "title": "Financial Services",
+      "desc": "Protecting sensitive financial data and transactions while ensuring regulatory compliance."
+    },
+    {
+      "title": "Healthcare",
+      "desc": "Securing patient data and critical healthcare systems while maintaining HIPAA compliance."
+    },
+    {
+      "title": "Manufacturing",
+      "desc": "Protecting operational technology (OT) environments and intellectual property."
+    }
+  ],
+  "cta": {
+    "headline": "Elevate Your Enterprise Security Strategy",
+    "sub": "Our unified security platform provides advanced protection, scalability, compliance, and operational efficiency for your complex enterprise environment. Let's discuss how we can strengthen your security posture."
+  }
+}

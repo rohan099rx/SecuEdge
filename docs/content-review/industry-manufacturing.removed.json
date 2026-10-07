@@ -1,0 +1,97 @@
+{
+  ".guarantees": [
+    {
+      "title": "Production Continuity",
+      "desc": "Our implementation process ensures zero impact to production operations, with all security enhancements deployed without disrupting manufacturing processes."
+    },
+    {
+      "title": "OT Expertise",
+      "desc": "All implementations are conducted by specialists with extensive experience in industrial environments and operational technology systems."
+    },
+    {
+      "title": "Immediate Protection",
+      "desc": "Our phased approach delivers immediate security benefits from day one, with enhanced protection increasing throughout the implementation process."
+    },
+    {
+      "title": "Legacy System Compatible",
+      "desc": "Our solutions work with your existing industrial systems, even older equipment that cannot be updated or replaced, providing security without requiring upgrades."
+    }
+  ],
+  ".stats": [
+    {
+      "label": "Production uptime maintained",
+      "value": "100%"
+    },
+    {
+      "label": "OT security visibility increase",
+      "value": "92%"
+    },
+    {
+      "label": "Reduction in security incidents",
+      "value": "85%"
+    },
+    {
+      "label": "Faster security response",
+      "value": "40%"
+    }
+  ],
+  ".caseStudiesUnverified": [
+    {
+      "name": "Automotive Manufacturer",
+      "descriptor": "Global Vehicle Manufacturer",
+      "profile": "Multiple production facilities worldwide",
+      "challenge": "Needed to protect diverse manufacturing facilities with both legacy and modern systems while ensuring production continuity and enabling Industry 4.0 initiatives.",
+      "solution": "Implemented SecuEdge's Manufacturing Security Platform with OT network protection, segmentation, and IIoT security across all production facilities.",
+      "results": [
+        {
+          "value": "0",
+          "label": "Production disruptions"
+        },
+        {
+          "value": "95%",
+          "label": "Reduction in OT incidents"
+        },
+        {
+          "value": "100%",
+          "label": "OT visibility achieved"
+        }
+      ]
+    },
+    {
+      "name": "Smart Factory Implementation",
+      "descriptor": "Electronics Manufacturer",
+      "profile": "Industry 4.0 transformation initiative",
+      "challenge": "Needed to implement advanced IIoT sensors and connected systems while ensuring security and protecting intellectual property during a major smart factory transformation.",
+      "solution": "Deployed SecuEdge's IIoT Security solution alongside their OT/IT segmentation platform to enable secure digital transformation of production facilities.",
+      "results": [
+        {
+          "value": "5,000+",
+          "label": "Secured IIoT devices"
+        },
+        {
+          "value": "30%",
+          "label": "Efficiency increase"
+        },
+        {
+          "value": "0",
+          "label": "Security breaches"
+        }
+      ]
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge gave us visibility into our OT networks we never had before. Their manufacturing-specific security solutions help us protect our production systems without impacting operations. We've achieved both improved security and increased uptime.",
+      "role": "CISO",
+      "company": "Global Manufacturing Company"
+    },
+    {
+      "quote": "SecuEdge was the only security provider that truly understood our manufacturing environment. They implemented robust security controls across our global production facilities without a single minute of production disruption. Their OT expertise was invaluable.",
+      "company": "Automotive Manufacturer"
+    },
+    {
+      "quote": "SecuEdge enabled our smart factory initiative to proceed with confidence. Their security solutions protect our connected sensors and systems while ensuring production data flows securely between our OT and IT environments. Security has become an enabler rather than a barrier to innovation.",
+      "company": "Electronics Manufacturer"
+    }
+  ]
+}

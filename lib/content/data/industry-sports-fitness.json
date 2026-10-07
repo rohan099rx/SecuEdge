@@ -1,0 +1,146 @@
+{
+  "slug": "sports-fitness",
+  "metaTitle": "Sports & Fitness Cybersecurity Solutions",
+  "metaDescription": "SecuEdge protects gyms, sports clubs and stadiums from membership data breaches, ransomware on management systems and unsecured venue WiFi adjacent to POS and back-office systems.",
+  "hero": {
+    "headline": "Protect Every Member, Every Game, Every Transaction",
+    "sub": "Town Sports International had 600,000 member records exposed — and filed for bankruptcy the same week. BlackByte hit the San Francisco 49ers the day before Super Bowl LVI. Play ransomware stole the SSNs and passport numbers of nearly 20,000 New York Sports Club members."
+  },
+  "stats": [
+    { "label": "Town Sports member and staff records exposed", "value": "600K+" },
+    { "label": "San Francisco 49ers breach: employees and fans affected", "value": "~20,000" },
+    { "label": "New York Sports Club members notified after Play ransomware", "value": "19,836" },
+    { "label": "BlackByte attack timing: day before Super Bowl LVI", "value": "2022" }
+  ],
+  "challenges": [
+    {
+      "title": "Member PII Including SSNs and Biometrics",
+      "desc": "Gyms collect Social Security numbers for contract credit checks, payment card data, health information and biometric fingerprint data for entry. This combination of PII is among the most sensitive any SMB operator holds."
+    },
+    {
+      "title": "Ransomware on Membership Management Systems",
+      "desc": "Membership management software controls check-in, billing, class scheduling and access control. Ransomware locking these systems stops check-in, prevents billing and disables access management — halting operations without physically touching anything."
+    },
+    {
+      "title": "Member WiFi Adjacent to Back-Office",
+      "desc": "Large fitness facilities and stadiums provide broad WiFi coverage across workout floors, concourses and waiting areas. Member devices share network proximity with back-office workstations and membership servers."
+    },
+    {
+      "title": "Stadium Operational Technology",
+      "desc": "Stadiums run OT systems for turnstile access control, parking payment, concession POS, scoreboard management and HVAC — often with flat network connectivity to corporate IT and ticketing systems."
+    },
+    {
+      "title": "Ticketing Platform Credential Stuffing",
+      "desc": "Fan accounts on ticketing platforms hold stored payment cards and resellable tickets. Credential stuffing attacks with password lists from other breaches systematically try to access high-value fan accounts."
+    },
+    {
+      "title": "Multi-Location Gym Chain Inconsistency",
+      "desc": "National fitness chains operate hundreds of locations with inconsistent network security configurations. A breach at the weakest location exposes membership data for the entire chain if a central database is involved."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Membership Database Exposure",
+      "desc": "Town Sports International's AWS S3 bucket was misconfigured and publicly accessible from November 2019. By September 2020 — when it was disclosed — 600,000 member records including billing history and the last four digits of payment cards had been available for months."
+    },
+    {
+      "title": "High-Pressure Timing Ransomware",
+      "desc": "BlackByte hit the San Francisco 49ers the day before Super Bowl LVI — maximum media scrutiny, maximum pressure to pay and minimum time to investigate. Play ransomware hit New York Sports Club with SSNs and passport numbers as leverage."
+    },
+    {
+      "title": "Stadium OT as Physical Security Risk",
+      "desc": "Turnstile access control and parking payment systems connected to the same network as corporate IT create a path from a compromised ticketing system to physical access controls — a risk with public safety implications at large-scale events."
+    },
+    {
+      "title": "Member WiFi Attack Proximity",
+      "desc": "A member working out with a malware-infected phone is physically co-located with the fitness facility's WiFi infrastructure. Without segmentation, that device has network proximity to membership management systems and POS terminals."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Segment Member Management from Every Other System",
+      "desc": "SecuEdge places membership management software, billing systems and biometric access control in a dedicated VLAN — accessible only from authorised management workstations, not from member WiFi or visitor devices."
+    },
+    {
+      "title": "Captive Portal Authenticates Venue WiFi",
+      "desc": "Members and stadium visitors connect via captive portal to an isolated VLAN. Their devices are authenticated, their access is logged and they have no network path to POS, OT or back-office systems."
+    },
+    {
+      "title": "Detect Mass File Access Before Ransomware Encrypts",
+      "desc": "Ransomware pre-encrypts by reading files across network shares. SecuEdge's network monitoring detects bulk file access anomalies — mass reads from a membership server at 2 AM — before the encryption event occurs."
+    },
+    {
+      "title": "Isolate Stadium OT From Corporate IT",
+      "desc": "Turnstile controllers, scoreboard systems and concession POS in dedicated VLANs with firewall rules preventing any route from corporate IT to physical access control systems — protecting the public safety integrity of stadium OT."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Firewall Network Segmentation",
+      "desc": "Separate VLANs for membership management, POS, stadium OT (turnstiles, scoreboards, HVAC), member WiFi and staff workstations — with explicit firewall rules between each zone.",
+      "features": ["Membership management VLAN", "Stadium OT isolation", "POS network segmentation"]
+    },
+    {
+      "title": "Captive Portal for Venue WiFi",
+      "desc": "Authenticate members and visitors at WiFi entry. Isolated VLAN with internet access and approved member apps — complete separation from back-office, POS and OT systems.",
+      "features": ["Member WiFi authentication", "Visitor isolation", "Stadium concourse WiFi control"]
+    },
+    {
+      "title": "Network Monitoring & Ransomware Early Detection",
+      "desc": "Detect the pre-encryption reconnaissance phase — unusual SMB file enumeration, bulk reads from membership servers and cross-segment scans — before ransomware completes its preparation.",
+      "features": ["SMB enumeration detection", "Bulk read anomaly alerting", "Cross-segment scan detection"]
+    },
+    {
+      "title": "VPN with MFA for Remote Management",
+      "desc": "Gym managers and area directors access membership management systems via authenticated SecuEdge VPN — no direct internet-exposed management interfaces for central membership databases.",
+      "features": ["Manager remote access VPN", "MFA enforcement", "No exposed management portals"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block phishing sites targeting member-facing login pages and staff credential portals — preventing the credential harvest that precedes account takeover of member accounts and admin systems.",
+      "features": ["Member portal phishing blocking", "Staff credential protection", "Malware C2 filtering"]
+    },
+    {
+      "title": "Load Balancing & WAN Failover",
+      "desc": "Dual-ISP failover keeps ticketing systems, access control and event-day operations live during an ISP outage — critical when a stadium hosts a sold-out event with no margin for downtime.",
+      "features": ["Event-day WAN redundancy", "Ticketing system continuity", "Access control uptime"]
+    }
+  ],
+  "compliance": ["PCI DSS", "GDPR"],
+  "process": [
+    {
+      "title": "Venue Network & OT Audit",
+      "desc": "Map all membership systems, POS terminals, turnstile OT, scoreboard controls and member WiFi infrastructure — identify flat network adjacencies and exposed management interfaces."
+    },
+    {
+      "title": "Segment and Protect",
+      "desc": "Deploy membership management VLAN, captive portal for member WiFi, OT isolation for stadium systems and VPN for management access — with DNS blocking across all zones."
+    },
+    {
+      "title": "Event Readiness Reviews",
+      "desc": "Before major events, verify WAN failover, test access control OT isolation, confirm ticketing system network segmentation and review captive portal capacity for peak concurrent connections."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge prevent a breach like the Town Sports data exposure?",
+      "a": "Town Sports had an S3 bucket publicly accessible — a cloud misconfiguration, not a network attack. SecuEdge's contribution is ensuring that internal access to cloud management consoles requires authentication via VPN, and that traffic monitoring detects unusual bulk download activity from cloud storage connections."
+    },
+    {
+      "q": "Our members use WiFi while working out. How do we keep them isolated from our systems?",
+      "a": "SecuEdge's captive portal places members in a VLAN with internet access and any approved member apps. Their devices have no network route to membership management, billing, POS or staff workstations — regardless of WiFi signal overlap with back-office areas."
+    },
+    {
+      "q": "We operate a stadium with turnstiles, scoreboards and HVAC all on our network. How does SecuEdge help?",
+      "a": "SecuEdge creates a dedicated OT VLAN for stadium operational systems — turnstile controllers, scoreboard management, HVAC and concession POS each in isolated segments. Firewall rules prevent any path from corporate IT to physical access control systems, protecting the safety integrity of event access management."
+    },
+    {
+      "q": "We have 150 gym locations across the country. How do we apply consistent security?",
+      "a": "SecuEdge site-to-site VPN connects all 150 locations to a central policy configuration. Membership VLAN rules, captive portal settings and DNS blocking categories deploy consistently across all locations — a single management pane for the entire chain."
+    }
+  ],
+  "cta": {
+    "headline": "Protect Every Member, Every Match Day, Every Location",
+    "sub": "Isolate member WiFi, segment stadium OT and detect ransomware before a single record is encrypted — across every gym and venue in your network."
+  }
+}

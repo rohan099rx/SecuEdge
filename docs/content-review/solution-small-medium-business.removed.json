@@ -1,0 +1,43 @@
+{
+  ".stats": [
+    {
+      "label": "Average cost of a data breach for small businesses",
+      "value": "$200,000"
+    },
+    {
+      "label": "Of small businesses close within 6 months of a cyber attack",
+      "value": "60%"
+    },
+    {
+      "label": "Average cost per hour of downtime",
+      "value": "$8,699"
+    },
+    {
+      "label": "Source",
+      "value": "National Cybersecurity Alliance"
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "After a ransomware attack cost us nearly $30,000 and a week of downtime, we implemented SecuEdge. Their solution was operational in hours, and their team provided support every step of the way. Six months later, they've already blocked three similar attack attempts.",
+      "author": "Michael T.",
+      "role": "Owner",
+      "company": "Regional Manufacturing Company"
+    },
+    {
+      "quote": "As a small agency, we couldn't afford a full-time IT security person. SecuEdge provided the perfect solution - powerful protection that our office manager can easily maintain.",
+      "author": "James Miller",
+      "company": "Marketing Agency, 18 employees"
+    },
+    {
+      "quote": "After being hit with ransomware last year, we knew we needed better protection. SecuEdge was affordable and blocked three major attacks in the first month alone.",
+      "author": "Sarah Chen",
+      "company": "Retail Business, 8 employees"
+    },
+    {
+      "quote": "With strict HIPAA requirements, security is non-negotiable for us. SecuEdge provides the compliance features we need while still being user-friendly for our staff.",
+      "author": "Dr. Paul Davis",
+      "company": "Medical Practice, 12 employees"
+    }
+  ]
+}

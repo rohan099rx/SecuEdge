@@ -1,0 +1,146 @@
+{
+  "slug": "nonprofit",
+  "metaTitle": "Non-Profit & NGO Cybersecurity Solutions",
+  "metaDescription": "SecuEdge protects non-profits, charities and NGOs from donor data breaches, ransomware and BEC wire fraud — with enterprise-grade security built for constrained budgets.",
+  "hero": {
+    "headline": "Protect Your Mission, Your Donors, Your Beneficiaries",
+    "sub": "Blackbaud's breach cascaded to 13,000 non-profits and triggered a $49.5M settlement with 49 state attorneys general. Save the Children had 6.8 TB stolen silently. Attackers know non-profits hold valuable data and lack security teams."
+  },
+  "stats": [
+    { "label": "Blackbaud breach cascaded to this many non-profits", "value": "13,000+" },
+    { "label": "Blackbaud settlement with 49 state AGs", "value": "$49.5M" },
+    { "label": "Save the Children data exfiltrated in 2023", "value": "6.8 TB" },
+    { "label": "ICRC beneficiaries exposed in 2022 breach", "value": "515K" }
+  ],
+  "challenges": [
+    {
+      "title": "High-Value Donor Data with Minimal Protection",
+      "desc": "Non-profits hold donor names, addresses, giving history, bank account details and sometimes religious or political affiliation — data that regulators treat as highly sensitive and that attackers actively seek."
+    },
+    {
+      "title": "Shared CRM Platform Single Points of Failure",
+      "desc": "Most non-profits use Blackbaud, Salesforce Nonprofit or similar shared platforms. A single platform breach cascades to every client organisation simultaneously — as 13,000 non-profits discovered in 2020."
+    },
+    {
+      "title": "Under-Resourced IT Teams",
+      "desc": "Non-profits average 3–5 IT staff with no dedicated security function, older unpatched systems and infrequent security audits — making them attractive soft targets for ransomware groups."
+    },
+    {
+      "title": "BEC Attacks on Finance and Fundraising Staff",
+      "desc": "Business email compromise attacks impersonating major donors, grant agencies or corporate sponsors redirect wire transfers from grant disbursements — smaller non-profits lose entire operating budgets in a single transaction."
+    },
+    {
+      "title": "Volunteer and Partner Device Access",
+      "desc": "Volunteers bring personal devices with no MDM baseline. Without network segmentation, a volunteer's device — infected at home — has a network path to donor database servers."
+    },
+    {
+      "title": "Beneficiary Data with Humanitarian Consequences",
+      "desc": "The ICRC breach exposed data on 515,000 conflict survivors, missing persons and refugees — individuals whose location data could endanger them if disclosed. Non-profit data breaches can have life-or-death consequences."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Third-Party CRM Platform Breaches",
+      "desc": "Blackbaud's attacker used compromised credentials to access donor backup files containing bank details, SSNs and religious beliefs. 13,000 non-profits had no visibility into the attack until it was over."
+    },
+    {
+      "title": "Silent Mass Exfiltration",
+      "desc": "BianLian ransomware group exfiltrated 6.8 TB from Save the Children — including 800 GB of financial records and staff medical data — using a purely exfiltration-based extortion model with no ransomware encryption."
+    },
+    {
+      "title": "State-Actor Sophistication Against NGOs",
+      "desc": "The ICRC breach exploited an unpatched Zoho ManageEngine SSO server and deployed offensive security tools for lateral movement — assessed as state-actor sophistication targeting humanitarian data."
+    },
+    {
+      "title": "BEC Grant Diversion",
+      "desc": "A finance officer at a non-profit receives an email appearing to be from a grant agency updating its wire details. The fund transfer goes to the attacker. Smaller non-profits may not discover the loss until the next audit."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Isolate Volunteer Devices via Captive Portal",
+      "desc": "SecuEdge's captive portal places volunteer and visitor devices in an isolated VLAN with internet access only. No route to donor databases, CRM systems or finance platforms — the most common uncontrolled access path in non-profits."
+    },
+    {
+      "title": "Restrict CRM Access to Authorised Workstations",
+      "desc": "Firewall rules allow CRM platform access only from specific, known workstations in the staff network. Remote fundraising staff reach CRM via SecuEdge VPN — unmanaged devices on unmanaged networks cannot authenticate."
+    },
+    {
+      "title": "Detect Silent Exfiltration via Bandwidth Monitoring",
+      "desc": "6.8 TB leaving a non-profit's network is an extreme anomaly against a typical bandwidth baseline. SecuEdge's traffic monitoring flags bulk outbound transfers before exfiltration completes."
+    },
+    {
+      "title": "Block BEC Phishing Infrastructure at DNS Layer",
+      "desc": "SecuEdge DNS category blocking prevents staff from loading lookalike phishing pages mimicking major donors, grant agencies or corporate partners — catching the credential harvest before it starts."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Captive Portal for Volunteer & Visitor WiFi",
+      "desc": "Authenticate every volunteer and visitor at network entry. Isolated VLAN with internet access only — completely separate from donor databases, CRM systems and finance platforms.",
+      "features": ["Volunteer device isolation", "Visitor authentication", "Internet-only VLAN"]
+    },
+    {
+      "title": "Firewall Rule-Based Access Control",
+      "desc": "CRM and donor database access restricted to explicitly authorised workstations. All other internal devices — including volunteer devices — hit a default-deny rule before reaching sensitive systems.",
+      "features": ["CRM access restrictions", "Donor data VLAN isolation", "Default-deny internal policy"]
+    },
+    {
+      "title": "VPN for Remote Fundraising & Field Staff",
+      "desc": "Fundraisers and field staff in remote locations access CRM and finance systems via authenticated SecuEdge VPN tunnel — not from personal devices on unmanaged networks.",
+      "features": ["OpenVPN remote access", "MFA enforcement", "Field staff secure access"]
+    },
+    {
+      "title": "Bandwidth Management & Exfil Detection",
+      "desc": "Establish baselines for typical outbound traffic and alert on bulk transfers — catching BianLian-style silent exfiltration campaigns that operate for days or weeks without triggering ransomware alerts.",
+      "features": ["Traffic baseline monitoring", "Bulk transfer alerting", "Silent exfil detection"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block BEC phishing pages impersonating grant agencies and major donors, block malware C2 domains, and prevent staff from loading the lookalike sites used to harvest fundraising staff credentials.",
+      "features": ["BEC phishing blocking", "Malware C2 filtering", "Lookalike domain blocking"]
+    },
+    {
+      "title": "Network Monitoring & Audit Trail",
+      "desc": "Log all access to donor systems and financial platforms — providing the audit trail required for GDPR compliance and enabling rapid investigation when a breach notification arrives from a shared platform like Blackbaud.",
+      "features": ["Donor system access logs", "Finance platform audit trail", "GDPR-ready logging"]
+    }
+  ],
+  "compliance": ["GDPR", "SOC 2"],
+  "process": [
+    {
+      "title": "Mission-Critical Data Mapping",
+      "desc": "Identify where donor PII, financial records and beneficiary data is stored and who can access it — map the network path from volunteer WiFi to donor database and eliminate unnecessary routes."
+    },
+    {
+      "title": "Budget-Efficient Hardening",
+      "desc": "Deploy captive portal for volunteer isolation, restrict CRM access to authorised workstations, enable DNS blocking and establish bandwidth monitoring baselines — all from a single SecuEdge appliance."
+    },
+    {
+      "title": "Continuous Protection with Minimal IT Overhead",
+      "desc": "SecuEdge's Quick Mode wizard means non-profits without a security team can manage policies through a simplified interface, with alerts delivered without requiring constant monitoring."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "We use Blackbaud. What can SecuEdge do if Blackbaud is breached again?",
+      "a": "SecuEdge cannot prevent a breach inside Blackbaud's own systems — but it controls the network path between your staff and the platform. Firewall rules restrict which workstations can initiate Blackbaud sessions. VPN ensures remote fundraisers authenticate before reaching the platform. And traffic monitoring flags unusual bulk downloads from the Blackbaud connection."
+    },
+    {
+      "q": "We have volunteers every weekend using personal phones and laptops. How does SecuEdge manage that?",
+      "a": "Volunteers connect to a SecuEdge captive-portal WiFi SSID. They get internet access and whatever shared resources they genuinely need — but their devices are in a VLAN with no route to donor databases, CRM systems or finance platforms. The experience is identical to guest WiFi at any office."
+    },
+    {
+      "q": "Our IT team is one person part-time. Is SecuEdge too complex to manage?",
+      "a": "SecuEdge Frontier's Quick Mode provides a simplified interface specifically designed for organisations without dedicated security staff. Core protections — VPN, DNS filtering, network segmentation, captive portal — are configured through a guided wizard. Daily operations require no security expertise."
+    },
+    {
+      "q": "How does SecuEdge help protect our beneficiary data?",
+      "a": "Beneficiary data (contact information, case notes, location data) sits in restricted firewall zones accessible only by specific authorised systems. Access requires VPN authentication from staff devices. All access is logged. DNS blocking prevents staff from inadvertently loading malware or phishing pages that could compromise their credentials."
+    }
+  ],
+  "cta": {
+    "headline": "Enterprise-Grade Protection for Your Mission",
+    "sub": "Isolate volunteer devices, protect donor data and detect silent exfiltration — with a single SecuEdge appliance designed to work without a full-time security team."
+  }
+}

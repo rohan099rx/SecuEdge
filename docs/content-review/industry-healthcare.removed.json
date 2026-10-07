@@ -1,0 +1,103 @@
+{
+  ".guarantees": [
+    {
+      "title": "No Disruption to Patient Care",
+      "desc": "Our implementation process is carefully designed to ensure zero disruption to critical clinical systems and services. Patient care always comes first."
+    },
+    {
+      "title": "Immediate Protection",
+      "desc": "Even during phased implementation, we provide immediate protection for critical systems and PHI data starting from day one."
+    },
+    {
+      "title": "HIPAA Documentation",
+      "desc": "We provide complete documentation of all security controls specifically formatted for HIPAA compliance requirements and audits."
+    },
+    {
+      "title": "Clinical Staff Training",
+      "desc": "We provide specialized training for clinical staff to ensure security practices integrate seamlessly with healthcare workflows."
+    }
+  ],
+  ".stats": [
+    {
+      "label": "Healthcare clients achieve HIPAA compliance",
+      "value": "96%"
+    },
+    {
+      "label": "Reduction in PHI data breaches",
+      "value": "94%"
+    },
+    {
+      "label": "Implementation without care disruption",
+      "value": "100%"
+    },
+    {
+      "label": "Average reduction in security costs",
+      "value": "45%"
+    }
+  ],
+  ".caseStudiesUnverified": [
+    {
+      "name": "Regional Hospital Network",
+      "descriptor": "Multi-Hospital Health System",
+      "profile": "8 hospitals, 60+ clinics, 12,000 employees",
+      "challenge": "Facing increased ransomware targeting, struggled with securing a complex environment of medical devices, EHR systems, and multiple facilities while maintaining HIPAA compliance.",
+      "solution": "Implemented SecuEdge Healthcare Security with medical device protection, network segmentation, advanced threat prevention, and comprehensive HIPAA controls.",
+      "results": [
+        {
+          "value": "100%",
+          "label": "HIPAA compliance score"
+        },
+        {
+          "value": "85%",
+          "label": "Reduction in security incidents"
+        },
+        {
+          "value": "0",
+          "label": "Successful ransomware attacks"
+        }
+      ]
+    },
+    {
+      "name": "Medical Research Organization",
+      "descriptor": "Clinical Research Institute",
+      "profile": "3,000+ employees, 50+ research programs",
+      "challenge": "Needed to protect sensitive clinical trial data and research intellectual property while allowing collaboration with external partners and maintaining compliance.",
+      "solution": "Deployed SecuEdge Healthcare Security with data loss prevention, secure research collaboration tools, and advanced protection for sensitive intellectual property.",
+      "results": [
+        {
+          "value": "95%",
+          "label": "Reduction in data leakage risks"
+        },
+        {
+          "value": "40%",
+          "label": "Faster partner onboarding"
+        },
+        {
+          "value": "100%",
+          "label": "Protection of research data"
+        }
+      ]
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge helped us achieve complete HIPAA compliance while strengthening our security posture against ransomware. The specialized healthcare capabilities and seamless implementation made it the perfect fit for our organization.",
+      "role": "CIO",
+      "company": "Regional Hospital Network"
+    },
+    {
+      "quote": "SecuEdge's healthcare-specific solution addressed our unique challenges in ways generic security products couldn't. We've achieved full HIPAA compliance while protecting our patients' data and maintaining uninterrupted clinical operations.",
+      "company": "Regional Hospital Network"
+    },
+    {
+      "quote": "SecuEdge enables us to secure our valuable research data and maintain regulatory compliance while still collaborating effectively with partners worldwide. The healthcare-specific features addressed our unique needs in ways generic security solutions couldn't.",
+      "company": "Medical Research Organization"
+    }
+  ],
+  ".faqs[faq-integration]": [
+    {
+      "q": "Can SecuEdge integrate with our Electronic Health Record (EHR) system?",
+      "a": "Yes, SecuEdge integrates with all major EHR systems including Epic, Cerner, Meditech, and Allscripts. Our integration provides additional security layers while maintaining system performance and user experience. We can enforce access controls based on EHR user roles, monitor for suspicious data access patterns, and provide detailed audit logs for compliance purposes, all without impacting clinical workflows."
+    }
+  ]
+}

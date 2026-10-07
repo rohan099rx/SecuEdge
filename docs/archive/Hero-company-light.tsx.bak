@@ -1,0 +1,147 @@
+import Link from "next/link";
+import { FadeUp } from "@/components/motion";
+import { Icon, IconChip, type IconName } from "@/components/Icons";
+import { PRODUCTS } from "@/lib/site";
+
+/**
+ * Company-level homepage hero: SecuEdge is a cybersecurity company — the
+ * flagship Frontier NGFW is available today, SIEM and XDR/EDR are on the
+ * roadmap. The product-family panel makes that explicit and honest
+ * ("Coming soon", never presented as available).
+ */
+const PRODUCT_ICONS: Record<string, IconName> = {
+  frontier: "shield-check",
+  siem: "eye",
+  xdr: "network",
+};
+
+export function Hero() {
+  const frontier = PRODUCTS.find((p) => p.key === "frontier")!;
+  const roadmap = PRODUCTS.filter((p) => p.status === "coming");
+
+  return (
+    <section className="relative overflow-hidden bg-white">
+      {/* faint blue wash behind the product side */}
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 lg:block"
+        style={{
+          background:
+            "radial-gradient(80% 70% at 65% 45%, rgba(1,111,237,0.07), transparent 70%)",
+        }}
+        aria-hidden
+      />
+      <div className="container-wide relative grid items-center gap-14 pb-16 pt-16 sm:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-24">
+        {/* Left — company positioning */}
+        <div>
+          <FadeUp>
+            <p className="eyebrow">India&rsquo;s homegrown cybersecurity company</p>
+          </FadeUp>
+          <FadeUp delay={0.06}>
+            <h1 className="display-1 mt-5">
+              Enterprise security,{" "}
+              <span className="serif-accent text-brand-blue">made simple.</span>
+            </h1>
+          </FadeUp>
+          <FadeUp delay={0.12}>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
+              Most breaches start with security that was too complex to get right. SecuEdge builds
+              security you can&rsquo;t get wrong — starting with{" "}
+              <Link href="/frontier" className="font-medium text-brand-link hover:underline">
+                Frontier
+              </Link>
+              , our next-generation firewall, with SIEM and XDR on the way.
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.18}>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link href="/contact" className="btn-primary">Get a Demo</Link>
+              <Link href="/frontier" className="btn-secondary">Explore Frontier</Link>
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.24}>
+            <div className="mt-8 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-[13px] text-dim">
+              {["Made in India", "ISO 27001:2022", "Common Criteria / NDPP", "DPDP-ready"].map(
+                (t, i) => (
+                  <span key={t} className="flex items-center gap-2.5">
+                    {i > 0 ? <span className="h-1 w-1 rounded-full bg-[#CBD5E4]" aria-hidden /> : null}
+                    {t}
+                  </span>
+                )
+              )}
+            </div>
+          </FadeUp>
+        </div>
+
+        {/* Right — the product family */}
+        <FadeUp delay={0.15} y={32}>
+          <div>
+            <p className="label-mono mb-4">The SecuEdge platform</p>
+
+            {/* Flagship — available now */}
+            <Link
+              href={frontier.href!}
+              className="card card-hover group block overflow-hidden"
+            >
+              {/* dark product strip — Frontier is a real, running product */}
+              <div className="flex items-center justify-between border-b border-white/10 bg-[#0B1424] px-5 py-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex gap-1.5" aria-hidden>
+                    <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+                    <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+                    <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+                  </div>
+                  <span className="text-[13px] font-medium text-white/85">
+                    SecuEdge Console — Security
+                  </span>
+                </div>
+                <span className="flex items-center gap-2 text-xs text-[#35d399]">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#35d399] opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#35d399]" />
+                  </span>
+                  Active
+                </span>
+              </div>
+              <div className="flex items-start gap-4 p-6">
+                <IconChip name={PRODUCT_ICONS[frontier.key]} />
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2.5">
+                    <p className="text-xl font-semibold text-ink">{frontier.fullName}</p>
+                    <span className="rounded-full border border-status-green/25 bg-status-green/[0.07] px-2.5 py-0.5 text-[11px] font-semibold text-status-green">
+                      Available now
+                    </span>
+                  </div>
+                  <p className="mt-0.5 text-[13px] font-medium uppercase tracking-[0.08em] text-dim">
+                    {frontier.category}
+                  </p>
+                  <p className="mt-2.5 text-sm leading-relaxed text-muted">{frontier.desc}</p>
+                  <span className="link-cta mt-3 inline-block text-[15px]">
+                    Explore Frontier ›
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Roadmap — honest "coming soon" */}
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {roadmap.map((p) => (
+                <div key={p.key} className="card-tint p-5">
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-[9px] border border-hair bg-white text-dim">
+                      <Icon name={PRODUCT_ICONS[p.key]} className="h-[18px] w-[18px]" />
+                    </span>
+                    <span className="rounded-full border border-hair2 bg-white px-2.5 py-0.5 text-[11px] font-semibold text-dim">
+                      Coming soon
+                    </span>
+                  </div>
+                  <p className="mt-4 font-semibold text-ink">{p.fullName}</p>
+                  <p className="mt-0.5 text-xs leading-snug text-dim">{p.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeUp>
+      </div>
+    </section>
+  );
+}

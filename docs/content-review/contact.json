@@ -1,0 +1,19 @@
+{
+  "metaTitle": "Contact Us | SecuEdge",
+  "metaDescription": "Get in touch with SecuEdge for custom security solutions, demos, and enterprise support.",
+  "formFields": [
+    "First name",
+    "Last name",
+    "Email",
+    "Phone",
+    "Company",
+    "I'm interested in (Basic Edition / Professional Edition / Enterprise Edition / Custom Solution)",
+    "Message",
+    "Consent checkbox: I agree to receive communications from SecuEdge about products, services, and events."
+  ],
+  "blurbs": [
+    "Get in Touch",
+    "Request a demo or get in touch with our team to discuss your firewall security needs.",
+    "Why Choose Us: 24/7 Security Monitoring; 99.9% Uptime Guarantee; 15+ Years Experience; 500+ Clients Protected (stats block - UNVERIFIED, needs substantiation before reuse)"
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "sectionHeadings": {
+    "features": {
+      "headline": "Advanced Security Features",
+      "sub": "SecuEdge delivers comprehensive protection with cutting-edge firewall technologies.",
+      "cta": "Explore Our Solutions"
+    },
+    "whyChoose": {
+      "eyebrow": "Our Advantage",
+      "headline": "Why Choose SecuEdge",
+      "sub": "We deliver exceptional security solutions backed by the industry's most responsive customer support team",
+      "stat": "Average response time: Under 15 minutes"
+    },
+    "businessSizes": {
+      "eyebrow": "For All Businesses",
+      "headline": "Security Solutions for Every Business Size",
+      "sub": "Whether you're a small business or a global enterprise, we have the perfect firewall solution to fit your needs"
+    },
+    "testimonials": {
+      "eyebrow": "Success Stories",
+      "headline": "Client Security Experiences",
+      "sub": "Discover how organizations have strengthened their security posture with SecuEdge solutions"
+    }
+  },
+  "features": [
+    {
+      "tab": "Security Features",
+      "title": "Stateful Packet Inspection",
+      "desc": "Track sessions of network connections with dynamic packet filtering for fine-grained security policies."
+    },
+    {
+      "tab": "Security Features",
+      "title": "IP/DNS-based Filtering",
+      "desc": "Block web traffic from entire countries to prevent cyber criminals from attacking your business."
+    },
+    {
+      "tab": "Security Features",
+      "title": "Anti-Spoofing",
+      "desc": "Detect packets with false addresses to increase security and prevent identity spoofing attacks."
+    },
+    {
+      "tab": "Security Features",
+      "title": "Captive Portal",
+      "desc": "Display web pages to newly connected users before granting broader access to network resources."
+    },
+    {
+      "tab": "Security Features",
+      "title": "Time-based Rules",
+      "desc": "Activate firewall rules during specified days and time ranges for scheduled security policies."
+    },
+    {
+      "tab": "Security Features",
+      "title": "IDS/IPS Protection",
+      "desc": "Analyze network traffic for attack signatures and prevent malicious packets from being delivered."
+    },
+    {
+      "tab": "VPN Capabilities",
+      "title": "IPsec",
+      "desc": "Set up encrypted connections between devices to keep data sent over public networks secure."
+    },
+    {
+      "tab": "VPN Capabilities",
+      "title": "OpenVPN",
+      "desc": "Implement secure point-to-point or site-to-site connections in routed or bridged configurations."
+    },
+    {
+      "tab": "VPN Capabilities",
+      "title": "Site-to-site & Remote Access",
+      "desc": "Support for both site-to-site and remote-access VPN capabilities via IPsec or OpenVPN."
+    },
+    {
+      "tab": "VPN Capabilities",
+      "title": "SSL Encryption",
+      "desc": "Ensure privacy, authentication, and data integrity in Internet communications with SSL."
+    },
+    {
+      "tab": "VPN Capabilities",
+      "title": "Multi-OS Client Support",
+      "desc": "VPN clients for multiple operating systems including mobile devices, Windows, Mac, and Linux."
+    },
+    {
+      "tab": "VPN Capabilities",
+      "title": "Split Tunneling",
+      "desc": "Access dissimilar security domains at the same time, using the same or different network connections."
+    },
+    {
+      "tab": "Network Management",
+      "title": "NAT Mapping",
+      "desc": "Map IP address spaces by modifying network address information in the IP header of packets."
+    },
+    {
+      "tab": "Network Management",
+      "title": "Policy-based Routing",
+      "desc": "Forward and route data packets based on specified policies or filters using custom parameters."
+    },
+    {
+      "tab": "Network Management",
+      "title": "Static Routing",
+      "desc": "Configure manually-defined routing entries rather than information from dynamic routing traffic."
+    },
+    {
+      "tab": "Network Management",
+      "title": "Multiple IP Addresses",
+      "desc": "Support for multiple IP addresses per network interface for flexible network configurations."
+    },
+    {
+      "tab": "Network Management",
+      "title": "DHCP Server",
+      "desc": "Automatically provide and assign IP addresses, default gateways and other network parameters."
+    },
+    {
+      "tab": "Network Management",
+      "title": "DNS Forwarding",
+      "desc": "Determine how sets of DNS queries are handled by a designated server for efficient name resolution."
+    },
+    {
+      "tab": "Monitoring & Control",
+      "title": "Customizable Dashboard",
+      "desc": "View network information at a glance with configurable widgets for system monitoring."
+    },
+    {
+      "tab": "Monitoring & Control",
+      "title": "Real-time Traffic Graphs",
+      "desc": "Monitor interface traffic as it happens with detailed real-time graphical displays."
+    },
+    {
+      "tab": "Monitoring & Control",
+      "title": "Comprehensive Logging",
+      "desc": "Store logs locally either in memory or written to disk for troubleshooting and monitoring."
+    },
+    {
+      "tab": "Monitoring & Control",
+      "title": "Multi-WAN Support",
+      "desc": "Utilize multiple Internet connections for more reliable connectivity and greater throughput."
+    },
+    {
+      "tab": "Monitoring & Control",
+      "title": "Connection Failover",
+      "desc": "Automatic failover for clients if the first server cannot be reached, maintaining connectivity."
+    },
+    {
+      "tab": "Monitoring & Control",
+      "title": "Bandwidth Management",
+      "desc": "Throttle, reserve, or restrict bandwidth based on traffic priority and user quotas."
+    }
+  ],
+  "whyChoose": [
+    {
+      "title": "Unparalleled Customer Support",
+      "desc": "Industry-leading response times with 24/7 dedicated technical experts. We average response times of under 15 minutes."
+    },
+    {
+      "title": "Rapid Deployment",
+      "desc": "Get up and running quickly with our streamlined implementation process and expert configuration assistance."
+    },
+    {
+      "title": "Comprehensive Protection",
+      "desc": "Multi-layered security architecture with deep packet inspection and advanced threat prevention capabilities."
+    },
+    {
+      "title": "Continuous Improvement",
+      "desc": "Regular updates and improvements to stay ahead of emerging security threats and vulnerabilities."
+    },
+    {
+      "title": "Personalized Service",
+      "desc": "Tailored security solutions designed to meet your specific organizational needs and compliance requirements."
+    },
+    {
+      "title": "Global Expertise",
+      "desc": "Protecting organizations worldwide with local knowledge and international security standards."
+    }
+  ],
+  "businessSizes": [
+    {
+      "name": "Small-Medium Business",
+      "desc": "Cost-effective, comprehensive protection for growing businesses",
+      "bullets": [
+        "Simple deployment and management",
+        "Cost-effective security solutions",
+        "Essential threat protection",
+        "Cloud-managed option available",
+        "Scale with your business growth"
+      ]
+    },
+    {
+      "name": "Enterprise",
+      "desc": "Advanced security infrastructure for large organizations",
+      "bullets": [
+        "Scalable to thousands of users",
+        "Advanced threat intelligence",
+        "High-availability configurations",
+        "Deep packet inspection",
+        "Enterprise-wide management"
+      ]
+    },
+    {
+      "name": "Branch Office",
+      "desc": "Secure connections between your distributed locations",
+      "bullets": [
+        "Centralized management",
+        "Secure site-to-site connectivity",
+        "Zero-touch deployment",
+        "Consistent security policies",
+        "SD-WAN capabilities"
+      ]
+    }
+  ],
+  "trustBanner": {
+    "headline": "Our Clients & Partners",
+    "sub": "Trusted by security professionals worldwide",
+    "logos": "9 partner/client logo images (alt text only: 'Partner logo 1'-'Partner logo 9'; no names or stats in source)"
+  },
+  "cta": {
+    "badge": "Enterprise-Grade Security Solutions",
+    "headline": "Ready to Fortify Your Network Defenses?",
+    "sub": "Join the security-conscious organizations who trust SecuEdge to defend their critical infrastructure against evolving cyber threats.",
+    "buttons": [
+      "Secure Your Network",
+      "Talk to an Expert"
+    ]
+  }
+}

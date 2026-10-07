@@ -1,0 +1,41 @@
+{
+  ".stats": [
+    {
+      "label": "Reduction in branch deployment time",
+      "value": "85%"
+    },
+    {
+      "label": "Decrease in security management overhead",
+      "value": "72%"
+    },
+    {
+      "label": "Customer satisfaction rating",
+      "value": "94%"
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "We reduced our branch deployment time from weeks to days, and our security team can now manage 47 locations as easily as they managed 5. The visibility and control we have now is incredible.",
+      "role": "Network Director",
+      "company": "Global Retail Chain"
+    },
+    {
+      "quote": "With 45 store locations across the country, our IT team was constantly traveling for network setups and troubleshooting. SecuEdge has completely transformed how we manage our branch security. Now we ship a device, have the store manager plug it in, and we're done.",
+      "author": "Robert Kenney",
+      "role": "IT Director",
+      "company": "National Retail Chain"
+    },
+    {
+      "quote": "With HIPAA compliance requirements, we needed consistent security across all 12 clinics. SecuEdge gives us visibility into every location from a single dashboard, and the integrated SD-WAN ensures our critical applications always perform reliably.",
+      "author": "Linda Martinez",
+      "role": "CIO",
+      "company": "Regional Healthcare Provider"
+    },
+    {
+      "quote": "When opening a new branch office, we used to allocate 2-3 weeks for security setup. With SecuEdge, we deployed our entire security infrastructure in just 2 days. The centralized management means we can maintain consistent security policies across all locations.",
+      "author": "David Wilson",
+      "role": "Network Manager",
+      "company": "Financial Services"
+    }
+  ]
+}

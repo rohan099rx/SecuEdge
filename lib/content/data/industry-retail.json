@@ -1,0 +1,188 @@
+{
+  "slug": "retail",
+  "metaTitle": "Retail Security Solutions",
+  "metaDescription": "SecuEdge provides specialized security solutions for retail businesses, protecting customer data, securing payment systems, and defending against targeted cyber threats.",
+  "hero": {
+    "headline": "Secure Your Retail Business",
+    "sub": "Protect customer data, secure payment systems, and defend your brand with SecuEdge's specialized retail security solutions."
+  },
+  "challenges": [
+    {
+      "title": "Payment Card Security",
+      "desc": "Retailers process millions of payment transactions and must protect sensitive card data from breaches while maintaining PCI DSS compliance."
+    },
+    {
+      "title": "Omnichannel Security",
+      "desc": "Modern retailers operate across multiple channels (in-store, online, mobile) requiring consistent security across diverse environments."
+    },
+    {
+      "title": "Point-of-Sale Vulnerabilities",
+      "desc": "POS systems are prime targets for malware designed to steal payment card data at the moment of transaction."
+    },
+    {
+      "title": "E-commerce Attacks",
+      "desc": "Online retail platforms face specialized threats including card skimming, digital skimming, and formjacking attacks."
+    },
+    {
+      "title": "Fraud Prevention",
+      "desc": "Retail businesses are targets for payment fraud, account takeover, gift card fraud, and return fraud across channels."
+    },
+    {
+      "title": "Retail IoT Devices",
+      "desc": "Retail environments increasingly rely on IoT devices like digital signs, inventory trackers, and smart shelves with limited security."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Payment Card Security",
+      "desc": "Payment data breaches leading to financial losses, regulatory fines, brand damage, and loss of customer trust."
+    },
+    {
+      "title": "Omnichannel Security",
+      "desc": "Security gaps between channels creating vulnerabilities that attackers can exploit to access customer and payment data."
+    },
+    {
+      "title": "Point-of-Sale Vulnerabilities",
+      "desc": "Compromised POS terminals leading to large-scale card data theft, as seen in major retail data breaches."
+    },
+    {
+      "title": "E-commerce Attacks",
+      "desc": "Compromised e-commerce platforms silently collecting customer payment details and personal information."
+    },
+    {
+      "title": "Fraud Prevention",
+      "desc": "Financial losses from fraudulent transactions, increased operational costs, and damaged customer relationships."
+    },
+    {
+      "title": "Retail IoT Devices",
+      "desc": "Vulnerable IoT devices providing entry points to corporate networks and access to sensitive customer and business data."
+    }
+  ],
+  "approach": [
+    {
+      "title": "PCI DSS Compliance",
+      "desc": "Built-in controls and reporting designed specifically to meet Payment Card Industry Data Security Standards."
+    },
+    {
+      "title": "Omnichannel Protection",
+      "desc": "Unified security across physical stores, e-commerce, mobile apps, and other retail channels."
+    },
+    {
+      "title": "Point-of-Sale Security",
+      "desc": "Advanced protection for POS systems against specialized retail malware and data theft."
+    },
+    {
+      "title": "Fraud Prevention",
+      "desc": "AI-powered fraud detection and prevention across all retail channels and payment methods."
+    },
+    {
+      "title": "Specialized Security for Retail",
+      "desc": "SecuEdge for Retail delivers comprehensive protection tailored to the specific needs of retail businesses, addressing the unique challenges of securing payment data, protecting customer information, and maintaining seamless omnichannel operations. Our solution combines advanced threat prevention, PCI DSS compliance controls, and fraud detection capabilities into a unified platform that protects your business across all channels while enhancing the customer experience."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Payment Protection",
+      "desc": "Secure payment card data throughout the entire transaction flow, from point of capture through processing and storage, maintaining compliance and customer trust.",
+      "features": [
+        "Point-to-point encryption",
+        "Tokenization",
+        "PCI DSS compliance"
+      ]
+    },
+    {
+      "title": "POS Security",
+      "desc": "Protect in-store POS systems from specialized retail malware that targets payment card data, preventing breaches without disrupting the checkout experience.",
+      "features": [
+        "Terminal protection",
+        "Malware prevention",
+        "Memory scraping defense"
+      ]
+    },
+    {
+      "title": "E-commerce Protection",
+      "desc": "Defend online shopping platforms against formjacking, Magecart attacks, and other e-commerce threats that steal customer payment information.",
+      "features": [
+        "Digital skimming prevention",
+        "Web application firewall",
+        "Shopping cart monitoring"
+      ]
+    },
+    {
+      "title": "Fraud Prevention",
+      "desc": "Detect and prevent fraudulent transactions in real-time across all sales channels while reducing false positives that frustrate legitimate customers.",
+      "features": [
+        "Transaction monitoring",
+        "Behavioral analytics",
+        "Anomaly detection"
+      ]
+    },
+    {
+      "title": "Omnichannel Security",
+      "desc": "Maintain consistent security across all retail channels—in-store, online, mobile, kiosk—without creating silos that attackers can exploit.",
+      "features": [
+        "Unified visibility",
+        "Consistent policies",
+        "Cross-channel threat correlation"
+      ]
+    },
+    {
+      "title": "Retail IoT Security",
+      "desc": "Secure smart retail devices like digital signage, inventory trackers, and sensors without disrupting their functionality or the customer experience.",
+      "features": [
+        "Device discovery",
+        "Segmentation",
+        "Behavioral monitoring"
+      ]
+    }
+  ],
+  "compliance": [
+    "PCI DSS"
+  ],
+  "process": [
+    {
+      "title": "Assessment",
+      "desc": "Channel mapping, payment flow analysis, data inventory, PCI DSS gap analysis."
+    },
+    {
+      "title": "Strategic Implementation",
+      "desc": "Non-disruptive deployment, POS-aware installation, off-peak scheduling, phased rollout."
+    },
+    {
+      "title": "Optimization",
+      "desc": "Retail-specific tuning, compliance validation, staff security training, seasonal adjustment planning."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge help with PCI DSS compliance?",
+      "a": "SecuEdge provides comprehensive controls specifically aligned with PCI DSS requirements. Our solution includes end-to-end encryption for cardholder data, network segmentation, access controls, continuous monitoring, and detailed audit logging. We provide documentation that maps our security controls directly to PCI DSS requirements, simplifying the compliance process and reducing the scope of your PCI audit."
+    },
+    {
+      "q": "How does SecuEdge protect our POS systems?",
+      "a": "Our POS protection includes specialized defenses against retail-specific malware like RAM scrapers and keyloggers. We use application control to prevent unauthorized software, memory protection to detect when applications attempt to access payment card data, file integrity monitoring to identify unauthorized changes, and network controls to prevent POS systems from communicating with unauthorized destinations. All of this is designed to work without disrupting checkout operations."
+    },
+    {
+      "q": "How does SecuEdge protect against e-commerce attacks?",
+      "a": "Our e-commerce protection includes specialized defenses against formjacking and digital skimming. We continuously monitor your website's client-side code for unauthorized changes, block connections to known malicious domains, detect suspicious script behavior, and protect payment forms from unauthorized access. We also provide a web application firewall tailored to e-commerce platforms with rules designed to block common attack patterns targeting online retailers."
+    },
+    {
+      "q": "Will implementing SecuEdge disrupt our retail operations?",
+      "a": "No, we design our implementation specifically to avoid any disruption to retail operations. We use a phased approach that starts with monitoring mode to understand your environment, followed by gradual policy implementation with extensive testing. We schedule implementation activities during off-peak hours and can pause deployments during high-volume retail periods like holidays. Our retail security experts work closely with your team to ensure security measures integrate seamlessly with customer-facing systems."
+    },
+    {
+      "q": "How does SecuEdge address omnichannel security?",
+      "a": "SecuEdge provides unified visibility and protection across all retail channels. Our solution correlates security events between in-store, online, mobile, and other channels to identify cross-channel threats. We apply consistent security policies while still tailoring controls to the unique requirements of each channel. This approach prevents security gaps between channels while enabling you to manage security centrally with a complete view of your retail environment."
+    },
+    {
+      "q": "How quickly can SecuEdge be implemented in our retail environment?",
+      "a": "Implementation timelines vary based on your environment complexity, but we typically complete initial deployment within 2-4 weeks, with full optimization over 1-3 months. However, we begin providing immediate protection from day one using our rapid deployment model. We prioritize protecting your payment systems and customer data first, then methodically expand protection across your entire retail environment while working around your peak business periods."
+    }
+  ],
+  "cta": {
+    "headline": "Secure Your Retail Business",
+    "sub": "Protect your customers, your payment systems, and your brand with SecuEdge's specialized retail security solution.",
+    "offer": "Schedule a free PCI DSS readiness assessment",
+    "offerNote": "Identify vulnerabilities before auditors do"
+  }
+}

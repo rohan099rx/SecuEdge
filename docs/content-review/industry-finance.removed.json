@@ -1,0 +1,103 @@
+{
+  ".guarantees": [
+    {
+      "title": "Zero Transaction Disruption",
+      "desc": "Our implementation process ensures continuous processing of financial transactions with zero interruptions to critical banking operations."
+    },
+    {
+      "title": "Day-One Protection",
+      "desc": "Even during phased implementation, we provide immediate protection for critical financial systems and sensitive customer data."
+    },
+    {
+      "title": "Regulatory Documentation",
+      "desc": "We provide complete documentation of all security controls in formats designed for financial regulatory audits and examinations."
+    },
+    {
+      "title": "Financial Staff Training",
+      "desc": "We provide specialized training for financial staff to ensure security practices integrate seamlessly with banking workflows."
+    }
+  ],
+  ".stats": [
+    {
+      "label": "Financial clients pass regulatory audits",
+      "value": "97%"
+    },
+    {
+      "label": "In prevented fraud losses",
+      "value": "$120M+"
+    },
+    {
+      "label": "Financial system uptime",
+      "value": "99.99%"
+    },
+    {
+      "label": "Average reduction in security costs",
+      "value": "42%"
+    }
+  ],
+  ".caseStudiesUnverified": [
+    {
+      "name": "Regional Banking Group",
+      "descriptor": "Mid-Size Banking Organization",
+      "profile": "15 branches, $4.2B in assets",
+      "challenge": "Struggled with balancing digital transformation initiatives with increasing regulatory requirements and targeted cyber threats against their financial systems.",
+      "solution": "Implemented SecuEdge Financial Security with fraud prevention, regulatory compliance controls, and advanced threat protection integrated with their core banking system.",
+      "results": [
+        {
+          "value": "92%",
+          "label": "Reduction in fraud losses"
+        },
+        {
+          "value": "100%",
+          "label": "Regulatory compliance"
+        },
+        {
+          "value": "40%",
+          "label": "Reduction in security costs"
+        }
+      ]
+    },
+    {
+      "name": "Global Payment Processor",
+      "descriptor": "Payments Technology Company",
+      "profile": "Processing $3.5B in transactions daily",
+      "challenge": "Needed to maintain PCI DSS compliance and protect payment card data while expanding their payment processing platform and integrating with new FinTech partners.",
+      "solution": "Deployed SecuEdge Financial Security with payment security features, API protection, and advanced fraud detection for their global transaction platform.",
+      "results": [
+        {
+          "value": "99.9%",
+          "label": "Uptime with security"
+        },
+        {
+          "value": "85%",
+          "label": "Faster partner onboarding"
+        },
+        {
+          "value": "0",
+          "label": "Card data breaches"
+        }
+      ]
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge helped us modernize our security infrastructure while maintaining compliance with multiple regulations. Their financial industry expertise and purpose-built controls made them the perfect partner for our security needs.",
+      "role": "CISO",
+      "company": "Regional Banking Group"
+    },
+    {
+      "quote": "SecuEdge allowed us to accelerate our digital transformation while strengthening our security and compliance posture. Their financial industry expertise and purpose-built security capabilities made a significant difference in our ability to protect customer assets.",
+      "company": "Regional Banking Group"
+    },
+    {
+      "quote": "SecuEdge's financial security platform has been instrumental in our growth strategy, allowing us to onboard new partners quickly while maintaining strict security standards. Their payment security features have helped us prevent fraud while processing billions in transactions.",
+      "company": "Global Payment Processor"
+    }
+  ],
+  ".faqs[faq-integration]": [
+    {
+      "q": "Can SecuEdge integrate with our core banking system?",
+      "a": "Yes, SecuEdge is designed to integrate with all major core banking platforms and financial services systems. We have pre-built connectors for popular systems like Fiserv, Jack Henry, FIS, and others. For legacy or proprietary systems, our financial services integration team will work with you to develop custom integration solutions that provide security without disrupting critical banking operations."
+    }
+  ]
+}

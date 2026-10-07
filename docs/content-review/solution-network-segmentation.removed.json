@@ -1,0 +1,22 @@
+{
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge's network segmentation solution helped us achieve PCI DSS compliance while improving our overall security posture. Their methodical approach and expert guidance made the implementation smooth and effective.",
+      "author": "Michael Robinson",
+      "role": "CIO",
+      "company": "Regional Bank"
+    },
+    {
+      "quote": "After implementing SecuEdge's segmentation strategy, we successfully contained a ransomware attempt that could have been devastating. The threat was isolated to a single segment, protecting our critical patient data.",
+      "author": "Dr. Sarah Chen",
+      "role": "CISO",
+      "company": "Healthcare Network"
+    },
+    {
+      "quote": "The micro-segmentation capabilities have given us unprecedented control over our network traffic. We can now enforce zero-trust principles across our entire infrastructure, significantly reducing our attack surface.",
+      "author": "David Thompson",
+      "role": "VP of IT Security",
+      "company": "Manufacturing Enterprise"
+    }
+  ]
+}

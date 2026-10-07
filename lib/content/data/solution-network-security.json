@@ -1,0 +1,151 @@
+{
+  "slug": "network-security",
+  "metaTitle": "Network Security Solutions",
+  "metaDescription": "SecuEdge provides comprehensive network security with next-generation firewall protection, intrusion prevention, and advanced threat intelligence to protect your critical infrastructure.",
+  "hero": {
+    "headline": "Protect Your Network Infrastructure",
+    "sub": "Implement comprehensive network security that keeps threats out while ensuring your organization stays connected and productive."
+  },
+  "threats": [
+    {
+      "title": "Advanced Persistent Threats",
+      "desc": "Sophisticated, long-term attacks that quietly infiltrate networks to steal data or establish backdoor access, often undetected for months. The risk: long-term data theft, intellectual property loss, and continued unauthorized access to sensitive systems."
+    },
+    {
+      "title": "Ransomware Attacks",
+      "desc": "Malware that encrypts your data and demands payment for the decryption key, crippling operations and threatening data loss. The risk: operational downtime, financial losses, reputational damage, and permanent data loss even if ransom is paid."
+    },
+    {
+      "title": "DDoS Attacks",
+      "desc": "Distributed denial-of-service attacks that overwhelm your network with traffic, bringing down websites and services. The risk: website outages, service disruptions, customer frustration, and revenue loss from unavailable digital services."
+    },
+    {
+      "title": "Zero-Day Exploits",
+      "desc": "Attacks that target previously unknown vulnerabilities before patches are available, leaving even updated systems at risk. The risk: exploitation of critical systems through unpatched vulnerabilities with no immediate defense available through traditional means."
+    },
+    {
+      "title": "Social Engineering",
+      "desc": "Attackers manipulate employees into revealing credentials or installing malware, bypassing technical security measures. The risk: compromised user accounts, unauthorized access to sensitive data, and malware infections through trusted insiders."
+    },
+    {
+      "title": "IoT Security Gaps",
+      "desc": "Unsecured Internet of Things devices provide easy entry points for attackers to compromise your network. The risk: network intrusions through vulnerable devices, compromised data, and IoT devices being used in botnet attacks."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Next-Generation Firewall",
+      "desc": "Application-aware firewall that provides deep packet inspection and intelligently filters traffic based on context and behavior."
+    },
+    {
+      "title": "Intrusion Prevention System",
+      "desc": "Real-time monitoring and blocking of suspicious network activity before it can exploit vulnerabilities."
+    },
+    {
+      "title": "DDoS Protection",
+      "desc": "Advanced traffic analysis and filtering to mitigate distributed denial-of-service attacks and maintain service availability."
+    },
+    {
+      "title": "Global Threat Intelligence",
+      "desc": "Real-time updates on emerging threats and automatic protection against known malicious IP addresses and domains."
+    },
+    {
+      "title": "Advanced Protection for Modern Networks",
+      "desc": "SecuEdge Network Security provides multi-layered protection that goes beyond traditional firewalls. Our solution combines next-generation security capabilities with advanced traffic inspection to identify and block even the most sophisticated threats. With both on-premises and cloud deployment options, SecuEdge delivers enterprise-grade security that adapts to your network architecture and scales with your business growth."
+    },
+    {
+      "title": "Perimeter Defense",
+      "desc": "Stateful packet inspection, DDoS protection, and network segmentation."
+    },
+    {
+      "title": "Traffic Inspection",
+      "desc": "Deep packet inspection, application identification, and protocol analysis."
+    },
+    {
+      "title": "Threat Prevention",
+      "desc": "Exploit blocking, malware detection, and command & control blocking."
+    },
+    {
+      "title": "Management Console",
+      "desc": "Centralized control and configuration of all security policies and devices from a single interface."
+    },
+    {
+      "title": "Analytics & Reporting",
+      "desc": "Comprehensive visibility into network activity, threats, and performance with customizable dashboards."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Application Control",
+      "desc": "Granular application visibility, policy-based access control, and application usage monitoring. The benefit: control which applications can access your network, minimize shadow IT risks, and ensure business-critical applications get the bandwidth they need."
+    },
+    {
+      "title": "Intrusion Prevention",
+      "desc": "Deep packet inspection, exploit blocking, and protocol anomaly detection. The benefit: detect and block attack attempts in real-time, protecting against both known and unknown threats before they can exploit vulnerabilities in your systems."
+    },
+    {
+      "title": "URL Filtering",
+      "desc": "Category-based control, malicious site blocking, and policy enforcement. The benefit: prevent access to malicious websites and content, enforce acceptable use policies, and limit exposure to web-based threats like phishing and malware."
+    },
+    {
+      "title": "Global Threat Intelligence",
+      "desc": "Real-time threat updates, IP reputation analysis, and advanced correlation. The benefit: stay protected against emerging threats with automatic updates from our global threat intelligence network, identifying and blocking malicious sources in real-time."
+    },
+    {
+      "title": "Network Visibility",
+      "desc": "Traffic monitoring, user activity tracking, and custom reporting. The benefit: gain comprehensive visibility into network traffic, user activity, and threat events with intuitive dashboards and detailed reports for security analysis and compliance."
+    },
+    {
+      "title": "Virtual Private Network",
+      "desc": "Site-to-site encryption, remote access VPN, and identity-based access. The benefit: create secure encrypted connections between offices and for remote workers, protecting sensitive data in transit while ensuring authorized users can connect from anywhere."
+    }
+  ],
+  "process": [
+    {
+      "title": "Identify",
+      "desc": "Continuously monitor and inspect all network traffic to identify applications, users, content, and potential threats."
+    },
+    {
+      "title": "Analyze",
+      "desc": "Apply advanced analytics and threat intelligence to evaluate potential risks and identify malicious behavior."
+    },
+    {
+      "title": "Protect",
+      "desc": "Automatically block threats and enforce security policies based on your organization's requirements."
+    },
+    {
+      "title": "Adapt",
+      "desc": "Learn from new threat patterns and automatically update protection to defend against evolving attack methods."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How is SecuEdge different from traditional firewalls?",
+      "a": "Traditional firewalls only inspect network packets based on port and protocol, while SecuEdge provides full application-level visibility and control. Our next-generation firewall technology identifies and controls applications regardless of port, protocol, or evasive tactics. We also integrate multiple security functions (IPS, URL filtering, anti-malware) into a single platform with centralized management."
+    },
+    {
+      "q": "Can SecuEdge protect against zero-day attacks?",
+      "a": "Yes, SecuEdge uses multiple methods to protect against zero-day threats. Our behavioral analysis engine identifies suspicious activity patterns without relying on signatures. Our advanced sandboxing technology can detect and block unknown malware by analyzing its behavior in a controlled environment. Additionally, our global threat intelligence network rapidly identifies new threats and automatically distributes protection to all SecuEdge customers."
+    },
+    {
+      "q": "How does SecuEdge impact network performance?",
+      "a": "SecuEdge is designed for high-performance environments, with purpose-built hardware and optimized software that perform deep inspection with minimal latency. Our solutions are available in various performance tiers to match your network requirements, from branch offices to large data centers. Most customers experience no noticeable impact on network performance while gaining significantly enhanced security visibility and control."
+    },
+    {
+      "q": "Can SecuEdge integrate with our existing security tools?",
+      "a": "Yes, SecuEdge is designed to integrate with your existing security ecosystem. We support standard protocols like SIEM integration (Syslog, CEF, JSON), RADIUS/LDAP/Active Directory for user identification, and REST APIs for automation and orchestration. Our solutions complement and enhance your existing security investments rather than replacing them entirely."
+    },
+    {
+      "q": "How easy is it to deploy and manage SecuEdge?",
+      "a": "SecuEdge provides an intuitive web-based management interface that simplifies configuration and ongoing administration. Our solutions offer pre-defined security profiles for common use cases, allowing for rapid deployment. The centralized management console enables you to manage all security policies across multiple devices from a single interface, with role-based access control for team collaboration."
+    },
+    {
+      "q": "Does SecuEdge offer cloud-based security options?",
+      "a": "Yes, SecuEdge provides flexible deployment options including hardware appliances, virtual appliances, and cloud-delivered security services. Our cloud-based offerings enable you to protect users and resources regardless of location, providing consistent security for branch offices, mobile users, and cloud applications. All deployment options can be managed through the same unified console."
+    }
+  ],
+  "cta": {
+    "headline": "Ready to Strengthen Your Network Security?",
+    "sub": "Protect your critical infrastructure against today's advanced threats with SecuEdge's comprehensive network security solution. Schedule a free network security assessment — identify vulnerabilities before attackers do."
+  }
+}

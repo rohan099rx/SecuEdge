@@ -1,0 +1,146 @@
+{
+  "slug": "fashion-beauty",
+  "metaTitle": "Fashion & Beauty Cybersecurity Solutions",
+  "metaDescription": "SecuEdge protects fashion brands, retail stores and beauty salons from POS skimming, Magecart e-commerce attacks and ransomware targeting multi-brand parent companies.",
+  "hero": {
+    "headline": "Every Customer's Trust Starts With Their Payment",
+    "sub": "VF Corporation — Vans, North Face, Timberland, Supreme — had 35.5 million customer records stolen during holiday peak. Forever 21 lost SSNs and bank account numbers for 539,207 people. Chanel's Salesforce CRM was accessed via a single OAuth permission. Fashion data is luxury data."
+  },
+  "stats": [
+    { "label": "VF Corporation customer records stolen during holiday peak", "value": "35.5M" },
+    { "label": "Forever 21 individuals affected — SSNs and bank details", "value": "539,207" },
+    { "label": "JD Sports customers exposed in 2023 breach", "value": "10M" },
+    { "label": "VF Corp brands affected by single ransomware event", "value": "6+" }
+  ],
+  "challenges": [
+    {
+      "title": "POS and E-Commerce Payment Card Skimming",
+      "desc": "Fashion and beauty retail runs high card transaction volumes. Magecart-style JavaScript skimmers injected into checkout pages, or physical RAM-scraping malware on POS terminals, silently harvest card data at scale across every transaction."
+    },
+    {
+      "title": "Multi-Brand Parent Company Blast Radius",
+      "desc": "Holding companies like VF Corporation (Vans, North Face, Timberland, Supreme, Dickies) share IT infrastructure across brands. One ransomware event on the parent propagates to every brand simultaneously — 35.5M records across six brands in a single attack."
+    },
+    {
+      "title": "CRM and Loyalty Database Exposure",
+      "desc": "Fashion brands maintain large customer databases holding purchase history, contact data and loyalty points. Salesforce, HubSpot and similar CRM platforms have been targeted via social engineering to grant OAuth permissions."
+    },
+    {
+      "title": "Seasonal Peak Timing",
+      "desc": "Ransomware groups time attacks to holiday seasons when disruption is most costly and payment pressure is highest. VF Corp's attack during peak holiday fulfillment halted orders across all brands at the worst possible moment."
+    },
+    {
+      "title": "Salon and Spa Cloud Booking Platform Risk",
+      "desc": "Independent salons use cloud booking platforms (Fresha, Vagaro, Square) that hold client contact data and payment information. A platform breach affects thousands of salons simultaneously."
+    },
+    {
+      "title": "Third-Party Supplier and EDI Portal Access",
+      "desc": "Fashion supply chains involve hundreds of contract manufacturers, packaging suppliers and logistics providers sharing EDI and B2B portals. Each supplier represents a potential entry point into the brand's production planning data."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Holiday-Peak Ransomware Across All Brands",
+      "desc": "BlackCat/ALPHV ransomware hit VF Corporation on December 13, 2023 — peak holiday fulfillment. Encryption and data theft halted order processing across Supreme, Vans, The North Face, Timberland, Dickies and Kipling simultaneously. 35.5M consumer records were stolen."
+    },
+    {
+      "title": "CRM Social Engineering",
+      "desc": "ShinyHunters used voice phishing to impersonate IT support and trick Chanel customer service employees into granting OAuth app permissions to Chanel's Salesforce CRM. The same campaign targeted multiple luxury retail brands via the identical vector."
+    },
+    {
+      "title": "Employee PII and Bank Account Theft",
+      "desc": "Attackers accessed Forever 21's systems for over two months before detection. SSNs, dates of birth, bank account numbers and health insurance enrollment data for 539,207 employees and dependants were exfiltrated — with notification delayed five months after discovery."
+    },
+    {
+      "title": "Mass Customer Record Exposure",
+      "desc": "JD Sports had names, delivery and billing addresses, email addresses, phone numbers and partial payment card data for 10 million customers exposed in January 2023 — a typical outcome for fashion retailers with large customer databases and inadequate access controls."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Per-Brand VLAN Isolation in Holding Companies",
+      "desc": "SecuEdge firewall segmentation places each brand's systems in its own VLAN. VF Corporation ransomware propagated across brands because they shared infrastructure on flat networks. Per-brand segmentation means a breach in one brand's environment cannot reach another's customer database."
+    },
+    {
+      "title": "DNS Blocking Stops Magecart and OAuth Phishing",
+      "desc": "Magecart C2 domains and OAuth phishing redirects both require DNS resolution. SecuEdge blocks malware categories and newly-registered domains — preventing POS malware from phoning home and stopping staff from loading fake OAuth consent pages."
+    },
+    {
+      "title": "Captive Portal Isolates In-Store Guest WiFi from POS",
+      "desc": "In fashion retail and beauty salons, customer-facing WiFi shares physical infrastructure with POS terminals. SecuEdge's captive portal places customers in an isolated VLAN — no network path to payment terminals."
+    },
+    {
+      "title": "Detect Multi-Month Dwell Before Holiday Detonation",
+      "desc": "VF Corp's attackers likely had network access weeks before the December 13 detonation. SecuEdge's network monitoring would have surfaced the lateral movement and reconnaissance activity during that dwell period."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Per-Brand Firewall Segmentation",
+      "desc": "Separate VLANs for each brand in a holding company, with firewall rules preventing cross-brand lateral movement. A ransomware event on one brand's infrastructure cannot propagate to another brand's customer database or order management system.",
+      "features": ["Per-brand VLAN isolation", "Cross-brand firewall rules", "Blast radius containment"]
+    },
+    {
+      "title": "Firewall POS Network Isolation",
+      "desc": "Dedicated POS VLAN with whitelist-only outbound rules to authorised payment processors. POS terminals cannot initiate connections to Magecart C2 servers or any other unauthorised external destination.",
+      "features": ["POS VLAN isolation", "Payment processor whitelist", "Magecart C2 outbound blocking"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block Magecart C2 domains, OAuth phishing pages, lookalike CRM login portals and malware distribution sites — preventing both POS malware activation and the social engineering campaigns targeting CRM access.",
+      "features": ["Magecart C2 blocking", "OAuth phishing filtering", "CRM lookalike domain blocking"]
+    },
+    {
+      "title": "Network Monitoring for Dwell Detection",
+      "desc": "Detect the multi-month dwell period that precedes holiday-timed ransomware — unusual lateral connections between brand environments, bulk reads from customer databases and after-hours CRM access.",
+      "features": ["Dwell period detection", "Cross-brand movement alerts", "After-hours CRM access monitoring"]
+    },
+    {
+      "title": "Captive Portal for In-Store Guest WiFi",
+      "desc": "Authenticate in-store shoppers and salon clients via branded splash page. Isolated VLAN with internet access only — complete separation from POS terminals, CRM integrations and inventory systems.",
+      "features": ["Shopper WiFi isolation", "Salon client portal", "POS network separation"]
+    },
+    {
+      "title": "VPN for Brand and Regional Management",
+      "desc": "Brand managers and regional directors access CRM systems, ERP platforms and financial data via authenticated SecuEdge VPN — no direct internet-facing access to brand management systems.",
+      "features": ["Brand manager remote access", "Regional director VPN", "ERP access authentication"]
+    }
+  ],
+  "compliance": ["PCI DSS", "GDPR"],
+  "process": [
+    {
+      "title": "Brand Network & POS Audit",
+      "desc": "Map every brand's network environment within the holding company, identify POS terminal adjacencies with guest WiFi, and audit CRM platform access paths."
+    },
+    {
+      "title": "Segment by Brand and Function",
+      "desc": "Deploy per-brand VLANs, configure POS network isolation with whitelist-only egress, implement captive portal for in-store guest WiFi, enable DNS blocking and establish dwell-detection monitoring baselines."
+    },
+    {
+      "title": "Pre-Season Security Hardening",
+      "desc": "Before holiday peak seasons, review and tighten firewall rules, verify network monitoring baselines are current, confirm WAN failover is operational and test POS VLAN isolation."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "VF Corp lost 35.5M records across six brands in one attack. How would SecuEdge have changed that?",
+      "a": "VF Corp's brands shared infrastructure on a flat network — once inside one brand's environment, the attacker had a path to all others. SecuEdge per-brand VLAN isolation means each brand requires a separate firewall rule to cross into. The attacker's blast radius stays within the initially compromised brand, not the entire holding company."
+    },
+    {
+      "q": "How does SecuEdge protect our POS terminals from Magecart-style attacks?",
+      "a": "Magecart operates on two levels: JavaScript injection on e-commerce checkouts (a web application control), and C2 communication from infected POS terminals. SecuEdge addresses the network layer — whitelist-only outbound rules block POS terminals from connecting to Magecart C2 infrastructure, and DNS category blocking prevents C2 domain resolution."
+    },
+    {
+      "q": "Chanel's Salesforce was accessed through a fake OAuth permission. How does SecuEdge help?",
+      "a": "The ShinyHunters attack required a staff member to access a phishing page and grant OAuth permissions. SecuEdge DNS category blocking prevents staff from loading lookalike OAuth consent pages and CRM login portals. Egress firewall rules also restrict CRM access to connections originating from authorised network segments via VPN."
+    },
+    {
+      "q": "We have salon franchise locations across the country. How do we apply consistent security?",
+      "a": "SecuEdge site-to-site VPN connects all franchise locations to a central policy configuration. POS VLAN rules, guest WiFi captive portal settings and DNS blocking deploy consistently across all locations. A policy change at head office applies to every salon simultaneously."
+    }
+  ],
+  "cta": {
+    "headline": "Every Brand, Every Store, Every Customer — Protected",
+    "sub": "Isolate brand environments within your holding company, segment POS from guest WiFi and detect dwell time before holiday ransomware strikes."
+  }
+}

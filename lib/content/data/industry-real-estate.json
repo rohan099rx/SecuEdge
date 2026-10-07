@@ -1,0 +1,146 @@
+{
+  "slug": "real-estate",
+  "metaTitle": "Real Estate Cybersecurity Solutions",
+  "metaDescription": "SecuEdge protects real estate agencies, property managers and commercial property firms from BEC wire fraud, MLS ransomware and smart building IoT attacks.",
+  "hero": {
+    "headline": "Protect Every Transaction, Every Tenant, Every Building",
+    "sub": "A European developer was socially engineered into wiring €38M abroad. The FBI reported $446M in real estate wire fraud in one year alone. Johnson Controls — whose HVAC systems sit in buildings worldwide — lost $27M and had US federal facility security schematics stolen."
+  },
+  "stats": [
+    { "label": "FBI-reported real estate wire fraud losses in 2022", "value": "$446M" },
+    { "label": "Average BEC wire fraud loss per SMB real estate firm", "value": "$98K" },
+    { "label": "US real estate agents paralysed in one 2023 MLS attack", "value": "~5%" },
+    { "label": "Johnson Controls losses from Dark Angels ransomware", "value": "$27M" }
+  ],
+  "challenges": [
+    {
+      "title": "Business Email Compromise and Wire Fraud",
+      "desc": "BEC is the defining threat in real estate. Attackers monitor in-progress transactions, then send fraudulent wire instructions redirecting closing funds. The FBI IC3 reported $446M in real estate wire fraud losses in 2022 — a 72% increase from 2020."
+    },
+    {
+      "title": "MLS and Listing Platform Ransomware",
+      "desc": "In August 2023, a nationally significant MLS provider was struck by ransomware. Approximately 5% of all US real estate agents lost the ability to list homes, change prices, mark properties pending or sold, or schedule open houses — for weeks."
+    },
+    {
+      "title": "Smart Building IoT as Lateral Attack Surface",
+      "desc": "Commercial real estate increasingly deploys IP-connected HVAC, access control, elevators and fire suppression. Johnson Controls — the global building automation leader — had 27 TB stolen including US federal facility security schematics."
+    },
+    {
+      "title": "Property Management Software Breaches",
+      "desc": "Property managers rely on cloud platforms for leasing, maintenance and tenant communications. Keystone Pacific and CRM Residential were both breached in 2024–2025 via email account compromise, exposing SSNs and passport numbers of thousands of tenants."
+    },
+    {
+      "title": "Agent Remote Access from Open Houses and Properties",
+      "desc": "Real estate agents access listing systems, CRM platforms and contract management tools from open houses, client properties and mobile devices — typically without any VPN or network security in place."
+    },
+    {
+      "title": "Time-Pressured Transactions Create Phishing Vulnerability",
+      "desc": "High-value transactions with tight timelines create ideal phishing conditions. Agents conditioned to move quickly on DocuSign requests and MLS updates are more likely to click spoofed emails under deadline pressure."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Wire Transfer Diversion at Closing",
+      "desc": "A Europol-dismantled gang impersonated lawyers via email and persuaded a developer to wire €38M to accounts overseas within days. Once the wire is sent, recovery is extremely difficult — most victims never recover the funds."
+    },
+    {
+      "title": "MLS Operational Paralysis",
+      "desc": "Ransomware on an MLS platform paralyses agents' ability to list, price, mark pending or schedule — the core of their daily business. Agents with active listings face client relationship damage for every day the system is down."
+    },
+    {
+      "title": "Smart Building Data and Safety Schematics Theft",
+      "desc": "Dark Angels ransomware stole 27 TB from Johnson Controls including building floor plans and security schematics for US federal facilities. Building automation firms and the commercial properties they serve are valuable targets for intelligence gathering."
+    },
+    {
+      "title": "Tenant and Buyer PII Exposure",
+      "desc": "Property management breaches expose SSNs, passport numbers, income verification documents and bank statements — the financial documentation tenants provide during lease applications and buyers provide during mortgage qualification."
+    }
+  ],
+  "approach": [
+    {
+      "title": "DNS Blocking Stops BEC Phishing at the Source",
+      "desc": "BEC attacks require harvesting email credentials via lookalike phishing pages. SecuEdge DNS category blocking prevents staff from loading domains impersonating title companies, law firms and real estate portals — stopping the credential harvest before the wire redirect happens."
+    },
+    {
+      "title": "Isolate Smart Building IoT from Corporate IT",
+      "desc": "HVAC, access control and elevator systems sit in an isolated IoT VLAN with explicit firewall rules preventing lateral movement to office workstations and property management systems — the attack path exploited in the Johnson Controls breach."
+    },
+    {
+      "title": "VPN with MFA for Agent Remote Access",
+      "desc": "Agents at open houses and client properties access listing systems via SecuEdge VPN with MFA. Stolen credentials alone cannot open a CRM or contract management session from an unauthenticated device."
+    },
+    {
+      "title": "Monitor for Anomalous Bulk Data Transfers",
+      "desc": "Property management systems contain thousands of tenant records. Unusual bulk access to tenant databases — outside business hours, from unfamiliar devices — is detected by SecuEdge's traffic monitoring before exfiltration completes."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block lookalike phishing domains impersonating title companies, law firms, DocuSign and MLS portals — preventing the credential harvest that enables BEC wire fraud, the dominant financial threat in real estate.",
+      "features": ["BEC phishing domain blocking", "Lookalike site filtering", "Credential harvest prevention"]
+    },
+    {
+      "title": "Firewall IoT/IT Segmentation",
+      "desc": "Place smart building IoT systems — HVAC, access control, elevators, fire suppression — in isolated VLANs with no route to office IT or property management systems. The Johnson Controls attack vector requires IT-OT adjacency; remove the adjacency.",
+      "features": ["Building IoT VLAN isolation", "HVAC/access control segmentation", "IT/OT boundary enforcement"]
+    },
+    {
+      "title": "VPN with MFA for Remote Agents",
+      "desc": "Agents at open houses, client properties and off-site locations access listing systems, CRM and contracts via authenticated SecuEdge VPN. No credential-only access from unmanaged devices.",
+      "features": ["Agent remote access VPN", "MFA enforcement", "Open house WiFi protection"]
+    },
+    {
+      "title": "Network Monitoring & Anomaly Detection",
+      "desc": "Detect unusual bulk access to tenant databases and property management systems — outside-hours access, unfamiliar source devices and high-volume record queries that indicate exfiltration in progress.",
+      "features": ["Tenant data access monitoring", "After-hours anomaly alerts", "Bulk query detection"]
+    },
+    {
+      "title": "Captive Portal for Open House Visitor WiFi",
+      "desc": "Open house visitors connect to authenticated guest WiFi that is completely isolated from the agency's listing systems, CRM and internal network — prospective buyers get connectivity, not access.",
+      "features": ["Open house visitor isolation", "Branded guest portal", "Complete internal network separation"]
+    },
+    {
+      "title": "Load Balancing & WAN Failover",
+      "desc": "Dual-ISP failover keeps MLS access, contract management and client communications live when a primary ISP fails — no deal delayed due to a connectivity outage at the wrong moment.",
+      "features": ["Dual-ISP failover", "MLS connectivity continuity", "Zero-downtime ISP events"]
+    }
+  ],
+  "compliance": ["GDPR", "RESPA"],
+  "process": [
+    {
+      "title": "Network & Transaction Flow Audit",
+      "desc": "Map all smart building IoT connections, agent remote access paths, property management platform integrations and open house WiFi infrastructure — identify flat network risks."
+    },
+    {
+      "title": "Protect and Segment",
+      "desc": "Deploy IoT VLAN isolation, configure VPN with MFA for agent access, enable DNS blocking for BEC phishing prevention and set up captive portal for open house visitor WiFi."
+    },
+    {
+      "title": "Ongoing Monitoring",
+      "desc": "Monitor property management system access patterns, update DNS block lists and review IoT device inventory as new building systems are commissioned."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Our agents work from dozens of locations. How does SecuEdge protect them?",
+      "a": "Every agent accesses listing systems, CRM and contract management via SecuEdge VPN with MFA — regardless of whether they're at an open house, a client property or a coffee shop. The VPN tunnel is the only route to internal systems; no direct internet-facing access exists."
+    },
+    {
+      "q": "How does SecuEdge help prevent wire fraud at closing?",
+      "a": "SecuEdge DNS category blocking prevents staff from loading phishing pages that impersonate title companies, law firms and settlement agencies. This blocks the credential harvest step that enables BEC attacks. Combined with egress filtering on internal mail servers, it reduces the attack surface for email compromise that precedes wire redirect fraud."
+    },
+    {
+      "q": "We manage commercial properties with smart building systems. What does SecuEdge do for IoT?",
+      "a": "SecuEdge places building automation systems — HVAC, access control, elevators, fire suppression — in a dedicated IoT VLAN with firewall rules preventing connections to office IT. The Johnson Controls breach required a path from building OT to corporate IT; SecuEdge's segmentation closes that path at the network layer."
+    },
+    {
+      "q": "We use a cloud property management platform. Does SecuEdge still help?",
+      "a": "Yes. SecuEdge controls the network boundary between your staff and the cloud platform. Firewall rules restrict which workstations can reach property management APIs. VPN ensures off-site access is authenticated. Traffic monitoring flags unusual bulk record downloads from the platform connection."
+    }
+  ],
+  "cta": {
+    "headline": "Every Transaction and Every Tenant Deserves Protection",
+    "sub": "Block BEC phishing, isolate smart building IoT and protect agent remote access — before a wire fraud or MLS ransomware attack disrupts your business."
+  }
+}

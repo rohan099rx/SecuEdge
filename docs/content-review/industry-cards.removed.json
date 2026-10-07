@@ -1,0 +1,15 @@
+{
+  ".cards[status-claim]": [
+    {
+      "industry": "Government",
+      "desc": "Secure infrastructure for government agencies with compliance for FISMA and other regulations",
+      "features": [
+        "FISMA compliance",
+        "Classified data protection",
+        "Advanced threat defense",
+        "Zero trust architecture",
+        "Critical infrastructure security"
+      ]
+    }
+  ]
+}

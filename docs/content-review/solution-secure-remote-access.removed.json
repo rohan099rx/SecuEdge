@@ -1,0 +1,35 @@
+{
+  ".stats": [
+    {
+      "label": "Reduction in remote access security incidents",
+      "value": "96%"
+    },
+    {
+      "label": "Remote access availability",
+      "value": "99.9%"
+    },
+    {
+      "label": "User satisfaction with security",
+      "value": "92%"
+    },
+    {
+      "label": "Average reduction in support tickets",
+      "value": "30%"
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge transformed our remote access approach. We moved from a traditional VPN that created security blind spots to a Zero Trust model that gives us complete visibility and control while improving the user experience for our remote teams.",
+      "role": "CIO",
+      "company": "Global Corporation"
+    },
+    {
+      "quote": "SecuEdge transformed our approach to remote access. We've moved from a traditional VPN that created security blind spots to a Zero Trust model that gives us complete visibility and control while actually improving the experience for our global teams.",
+      "company": "Multinational Tech Enterprise (Global Technology Company case study, 15,000+ remote workers globally)"
+    },
+    {
+      "quote": "SecuEdge's approach to secure remote access addressed our unique requirements as a financial organization. We can now confidently enable remote work while maintaining compliance and protecting sensitive client financial information across all locations.",
+      "company": "Investment Management Organization (Financial Services Firm case study, 3,500 employees, strict regulatory requirements)"
+    }
+  ]
+}

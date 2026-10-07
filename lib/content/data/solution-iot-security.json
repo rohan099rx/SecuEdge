@@ -1,0 +1,207 @@
+{
+  "slug": "iot-security",
+  "metaTitle": "IoT Security Solutions",
+  "metaDescription": "Secure your IoT devices and networks with SecuEdge's comprehensive IoT security solutions. Protect against IoT-specific threats and vulnerabilities.",
+  "hero": {
+    "headline": "IoT Security Solutions",
+    "sub": "Protect your expanding IoT ecosystem from emerging threats with SecuEdge's comprehensive security solutions designed specifically for the unique challenges of IoT environments."
+  },
+  "challenges": [
+    {
+      "title": "Vulnerable Connectivity",
+      "desc": "Many IoT devices connect using insecure protocols and may lack encryption, creating easy entry points for attackers."
+    },
+    {
+      "title": "Device Heterogeneity",
+      "desc": "IoT ecosystems include diverse devices with different operating systems, creating complex security management challenges."
+    },
+    {
+      "title": "Limited Resources",
+      "desc": "Many IoT devices lack the processing power and memory to run traditional security software or regular updates."
+    },
+    {
+      "title": "Default Configurations",
+      "desc": "Devices shipped with default passwords and unnecessary open ports create significant security vulnerabilities."
+    },
+    {
+      "title": "Weak Authentication",
+      "desc": "Many IoT devices implement poor authentication mechanisms, making it easy for unauthorized users to gain access."
+    },
+    {
+      "title": "Privacy Concerns",
+      "desc": "IoT devices often collect sensitive data about users and environments, creating privacy and compliance risks."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Botnet Recruitment",
+      "desc": "Attackers compromise large numbers of IoT devices to create botnets for DDoS attacks or cryptocurrency mining."
+    },
+    {
+      "title": "Man-in-the-Middle Attacks",
+      "desc": "Intercepting communications between IoT devices and management systems to steal data or inject malicious commands."
+    },
+    {
+      "title": "Firmware Exploitation",
+      "desc": "Targeting vulnerabilities in device firmware to gain persistent access and control over IoT devices."
+    },
+    {
+      "title": "Data Exfiltration",
+      "desc": "Stealing sensitive data collected by IoT sensors and devices for espionage or financial gain."
+    },
+    {
+      "title": "Real-World Case Study: Manufacturing IoT Compromise",
+      "desc": "A large manufacturing company's industrial IoT sensors were compromised through unpatched vulnerabilities in their network controllers. Attackers gained control of critical production systems, causing $4.7M in downtime and compromising proprietary manufacturing data. After implementing SecuEdge's IoT security solution, the company established device authentication, network segmentation, and continuous monitoring, preventing similar attacks. Impact of security breach: $4.7M financial loss, 87 hours production downtime, 27,000+ devices affected, 12 TB data compromised."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Zero-Trust Device Authentication",
+      "desc": "Ensure only authorized devices can connect to your network with robust authentication mechanisms and digital certificates."
+    },
+    {
+      "title": "IoT Network Segmentation",
+      "desc": "Isolate IoT devices in separate network segments to prevent lateral movement and contain potential breaches."
+    },
+    {
+      "title": "Continuous Monitoring & Threat Detection",
+      "desc": "Identify abnormal device behavior and potential threats with AI-powered monitoring and analytics."
+    },
+    {
+      "title": "Secure Device Management",
+      "desc": "Centrally manage device configurations, updates, and security policies across your entire IoT ecosystem."
+    },
+    {
+      "title": "SecuEdge IoT Security Framework",
+      "desc": "IoT devices & endpoints (smart devices, sensors, controllers, gateways); security controls (authentication, encryption, device integrity, network controls); management & analytics (monitoring, analytics, reporting, updates, policies, response). Key benefits: end-to-end visibility of all IoT devices and connections, reduced attack surface through network segmentation, real-time threat detection and automated response, and simplified compliance with regulatory requirements."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Device Identity & Authentication",
+      "desc": "Establish and verify the identity of every IoT device connecting to your network."
+    },
+    {
+      "title": "Secure Communications",
+      "desc": "Encrypt all data transmitted between IoT devices, gateways, and cloud platforms."
+    },
+    {
+      "title": "Network Segmentation",
+      "desc": "Isolate IoT devices in separate network segments to limit lateral movement of threats."
+    },
+    {
+      "title": "Certificate Management",
+      "desc": "Deploy and manage digital certificates for strong device authentication and encryption."
+    },
+    {
+      "title": "Behavioral Monitoring",
+      "desc": "Detect anomalous device behavior using AI-powered analytics to identify potential threats."
+    },
+    {
+      "title": "Secure Firmware Updates",
+      "desc": "Deploy authenticated and encrypted firmware updates to maintain device security."
+    },
+    {
+      "title": "Vulnerability Management",
+      "desc": "Identify and remediate security vulnerabilities across your IoT ecosystem."
+    },
+    {
+      "title": "Threat Prevention",
+      "desc": "Block malicious connections and activities targeting your IoT devices."
+    },
+    {
+      "title": "Compliance Reporting",
+      "desc": "Generate detailed reports to demonstrate compliance with industry regulations."
+    }
+  ],
+  "applications": [
+    {
+      "title": "Manufacturing & Industrial IoT",
+      "desc": "Protect critical industrial control systems, manufacturing equipment, and operational technology from cyberattacks while ensuring production continuity.",
+      "benefits": [
+        "Secure integration of OT and IT networks",
+        "Protect industrial protocols and legacy systems",
+        "Ensure production continuity and safety",
+        "Prevent intellectual property theft"
+      ]
+    },
+    {
+      "title": "Smart Buildings & Facilities",
+      "desc": "Secure building automation systems, HVAC controls, access control systems, and other smart building technologies against cyber threats.",
+      "benefits": [
+        "Protect connected building systems",
+        "Prevent unauthorized access to critical controls",
+        "Secure occupant data and privacy",
+        "Maintain building operation continuity"
+      ]
+    },
+    {
+      "title": "Healthcare IoT",
+      "desc": "Ensure the security and integrity of connected medical devices, patient monitoring systems, and healthcare IoT infrastructure.",
+      "benefits": [
+        "Protect sensitive patient data",
+        "Ensure medical device reliability",
+        "Maintain HIPAA compliance",
+        "Prevent disruption to critical care"
+      ]
+    },
+    {
+      "title": "Smart City Infrastructure",
+      "desc": "Secure connected urban infrastructure including traffic systems, utilities, lighting, environmental sensors, and public safety systems.",
+      "benefits": [
+        "Protect critical infrastructure",
+        "Secure citizen data and privacy",
+        "Prevent service disruptions",
+        "Enable safe smart city expansion"
+      ]
+    }
+  ],
+  "process": [
+    {
+      "title": "Discovery & Assessment",
+      "desc": "We begin with a comprehensive inventory of your IoT ecosystem, identifying all devices, connections, and potential vulnerabilities."
+    },
+    {
+      "title": "Security Architecture Design",
+      "desc": "Based on the assessment, we develop a tailored security architecture that addresses your specific IoT security requirements and constraints."
+    },
+    {
+      "title": "Implementation",
+      "desc": "Our experts deploy the IoT security solution, starting with critical security controls and gradually expanding protection across your entire ecosystem."
+    },
+    {
+      "title": "Testing & Verification",
+      "desc": "We thoroughly test the security implementation to ensure all controls are functioning properly and providing the expected protection."
+    },
+    {
+      "title": "Monitoring & Optimization",
+      "desc": "After deployment, we continuously monitor your IoT security posture, providing regular updates and optimizations to address evolving threats."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge address the challenge of securing legacy IoT devices?",
+      "a": "Many organizations have deployed IoT devices that lack modern security features or can't be updated. Our solution addresses this challenge through network-based security controls that don't require changes to the devices themselves. We implement network segmentation to isolate legacy devices, deep packet inspection to monitor their communications, and behavioral analytics to detect anomalies that might indicate compromise. Additionally, we can deploy gateway-based security to provide a protective layer around legacy devices without modifying them."
+    },
+    {
+      "q": "Can your IoT security solution scale to accommodate thousands of devices?",
+      "a": "Absolutely. Our platform is designed from the ground up for large-scale IoT deployments. The architecture employs distributed security controls with centralized management, allowing it to scale horizontally as your IoT ecosystem grows. The management platform uses efficient data processing techniques to handle the high volume of security telemetry generated by large IoT deployments, ensuring that performance remains consistent as your device count increases."
+    },
+    {
+      "q": "How does your solution handle device authentication for IoT devices?",
+      "a": "We implement a multi-layered approach to device authentication. For devices that support it, we deploy X.509 digital certificates for strong cryptographic authentication. For simpler devices, we combine multiple authentication factors including MAC address validation, behavioral fingerprinting, and connection pattern analysis. Our platform also supports integration with hardware-based security modules like TPM (Trusted Platform Module) when available. All device authentication methods are centrally managed, allowing you to establish consistent policies across heterogeneous IoT environments."
+    },
+    {
+      "q": "What impact does your IoT security solution have on device performance and battery life?",
+      "a": "We've designed our solution to have minimal impact on device performance and battery life. Rather than installing agents on IoT devices, we primarily use network-based and gateway-based security controls that don't consume device resources. For devices where on-device security is necessary, our lightweight agents are optimized for resource-constrained environments, using efficient algorithms that minimize CPU, memory, and battery usage. In most deployments, customers report negligible impact on device performance and battery life after implementing our security controls."
+    },
+    {
+      "q": "How does SecuEdge help with regulatory compliance for IoT deployments?",
+      "a": "Our solution helps address IoT-related compliance requirements across multiple regulatory frameworks including HIPAA, PCI DSS, GDPR, and industry-specific regulations. We provide comprehensive visibility into device inventory, connectivity, and security status – all critical for compliance documentation. The platform includes pre-built compliance reports that map our security controls to specific regulatory requirements. For industries with specialized needs, such as healthcare or industrial control systems, we offer tailored compliance packages that address unique regulatory requirements for connected devices in those environments."
+    }
+  ],
+  "cta": {
+    "headline": "Ready to Secure Your IoT Ecosystem?",
+    "sub": "Contact our IoT security experts today to discuss your specific requirements and discover how SecuEdge can protect your connected devices and infrastructure."
+  }
+}

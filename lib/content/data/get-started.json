@@ -1,0 +1,132 @@
+{
+  "metaTitle": "Get Started with SecuEdge | Enterprise-Grade Security Solutions",
+  "metaDescription": "Take the first step toward robust network security. Get started with SecuEdge's customized firewall solutions for your business.",
+  "hero": {
+    "eyebrow": "Start Your Security Journey",
+    "headline": "Secure Your Network Today",
+    "sub": "Take the first step toward comprehensive network protection with SecuEdge. Our expert team will guide you through every step of implementing your custom security solution.",
+    "ctas": [
+      "Get Started Now",
+      "Explore Solutions"
+    ],
+    "salesContact": {
+      "label": "Contact our Enterprise Sales team directly",
+      "phone": "1800-123-0966"
+    }
+  },
+  "benefitsIntro": {
+    "eyebrow": "Why Choose SecuEdge",
+    "headline": "Benefits of Getting Started",
+    "sub": "When you partner with SecuEdge, you gain more than just security technology. You gain a dedicated team committed to your ongoing protection."
+  },
+  "benefits": [
+    {
+      "title": "Advanced Network Protection",
+      "desc": "Comprehensive security against sophisticated threats with next-gen firewall technology"
+    },
+    {
+      "title": "Rapid Deployment",
+      "desc": "Get up and running quickly with our streamlined setup and configuration process"
+    },
+    {
+      "title": "24/7 Monitoring",
+      "desc": "Continuous threat detection and response to keep your network secure around the clock"
+    },
+    {
+      "title": "Performance Optimization",
+      "desc": "Maintain network speed while implementing robust security measures"
+    }
+  ],
+  "processIntro": {
+    "eyebrow": "Simple Process",
+    "headline": "How It Works",
+    "sub": "Our straightforward approach ensures a smooth implementation of your security solution without disrupting your operations."
+  },
+  "process": [
+    {
+      "title": "Consultation",
+      "desc": "We'll assess your security needs and recommend the right solution"
+    },
+    {
+      "title": "Implementation",
+      "desc": "Our team handles the setup, configuration, and integration"
+    },
+    {
+      "title": "Training",
+      "desc": "Learn how to use and get the most from your security solution"
+    },
+    {
+      "title": "Ongoing Support",
+      "desc": "Continuous assistance, updates, and optimization for your protection"
+    }
+  ],
+  "formSection": {
+    "eyebrow": "Ready to Begin?",
+    "headline": "Let's Build Your Security Solution",
+    "sub": "Fill out the form and one of our security experts will get in touch to discuss your specific needs and recommend the perfect solution.",
+    "sidebarPoints": [
+      {
+        "title": "No-Obligation Consultation",
+        "desc": "Get expert advice tailored to your specific security challenges"
+      },
+      {
+        "title": "Customized Proposal",
+        "desc": "Receive a detailed plan and pricing tailored to your needs"
+      },
+      {
+        "title": "Fast Response",
+        "desc": "We'll get back to you within 24 hours to schedule your consultation"
+      }
+    ],
+    "formFields": [
+      "Full Name",
+      "Business Email",
+      "Company Name",
+      "Phone Number (Optional)",
+      "Company Size (1-10 / 11-50 / 51-200 / 201-500 / 501-1000 / 1000+ employees)",
+      "Industry (Healthcare / Finance / Retail / Education / Government / Manufacturing / Technology / Other)",
+      "Your Security Needs (message)"
+    ],
+    "submitLabel": "Request a Consultation"
+  },
+  "faqsIntro": {
+    "eyebrow": "Common Questions",
+    "headline": "Frequently Asked Questions",
+    "sub": "Find answers to common questions about getting started with SecuEdge security solutions."
+  },
+  "faqs": [
+    {
+      "q": "How long does implementation typically take?",
+      "a": "Implementation time varies based on your organization's size and requirements. For small to medium businesses, our solutions can be fully implemented in 1-2 weeks. Enterprise deployments may take 3-4 weeks to ensure proper integration with your existing infrastructure."
+    },
+    {
+      "q": "Do you offer trial periods for your solutions?",
+      "a": "Yes, we offer a 30-day evaluation period for qualified businesses. This allows you to experience the benefits of our security solutions before making a long-term commitment. During this period, you'll have access to our full support team and resources."
+    },
+    {
+      "q": "What kind of support is included?",
+      "a": "All our security solutions include 24/7 technical support, regular updates, and proactive monitoring. Our team of security experts is always available to assist with any issues or questions. We also provide quarterly security reviews to ensure your protection remains optimal."
+    },
+    {
+      "q": "Can you integrate with our existing systems?",
+      "a": "Absolutely. Our solutions are designed to integrate seamlessly with your existing IT infrastructure. We support all major network equipment vendors and can customize our implementation to work with your unique environment and applications."
+    },
+    {
+      "q": "What sets SecuEdge apart from other security providers?",
+      "a": "SecuEdge combines next-generation technology with a human approach to security. Beyond providing cutting-edge firewall solutions, we partner with your team to understand your specific challenges and business goals. Our customized approach ensures you get exactly the protection you need without unnecessary complexity."
+    }
+  ],
+  "cta": {
+    "headline": "Ready to Secure Your Network?",
+    "sub": "Join the thousands of businesses that trust SecuEdge to protect their most valuable digital assets.",
+    "buttons": [
+      "Get Started Today",
+      "Contact Sales"
+    ],
+    "badges": [
+      "30-Day Risk-Free Trial",
+      "24/7 Global Support",
+      "Enterprise-Grade Security"
+    ]
+  }
+}

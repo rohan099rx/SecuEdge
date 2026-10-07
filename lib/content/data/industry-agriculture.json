@@ -1,0 +1,146 @@
+{
+  "slug": "agriculture",
+  "metaTitle": "Agriculture & Food Supply Cybersecurity",
+  "metaDescription": "SecuEdge protects farm cooperatives, grain elevators and food producers from ransomware attacks timed to planting and harvest — and keeps food supply chains secure.",
+  "hero": {
+    "headline": "Harvest Season Shouldn't Be Ransomware Season",
+    "sub": "BlackMatter hit NEW Cooperative during harvest and demanded $5.9M. Crystal Valley Cooperative was struck the same week. JBS Foods paid $11M after a 2-month undetected breach shut all US beef plants. Agriculture is a target — SecuEdge closes the gaps attackers exploit."
+  },
+  "stats": [
+    { "label": "Ransom demanded from NEW Cooperative during harvest", "value": "$5.9M" },
+    { "label": "JBS Foods ransom paid after US beef plants shut", "value": "$11M" },
+    { "label": "JBS breach dwell time before ransomware detonated", "value": "2 months" },
+    { "label": "US meat supply impacted by JBS attack", "value": "~20%" }
+  ],
+  "challenges": [
+    {
+      "title": "Harvest-Timed Ransomware",
+      "desc": "Attackers deliberately strike cooperatives and grain elevators during planting or harvest when operational disruption is maximally painful — grain cannot be sold, feed cannot be delivered, and payment pressure is extreme."
+    },
+    {
+      "title": "IoT and Smart Farming Devices on Flat Networks",
+      "desc": "GPS-guided tractors, soil sensors, irrigation controllers and livestock monitors are increasingly IP-connected — and they typically share a flat network with cooperative management systems and back-office PCs."
+    },
+    {
+      "title": "Grain Co-op OT Systems with Minimal Security",
+      "desc": "Grain elevator software, feed scheduling systems and grain transport logistics platforms are operational technology with no perimeter security, minimal patching and no network monitoring."
+    },
+    {
+      "title": "Remote Management Over Public Internet",
+      "desc": "Farm sites, grain elevators and remote irrigation systems are managed remotely without VPN — SCADA-like control systems accessible directly over the internet, visible to anyone scanning agricultural IP ranges."
+    },
+    {
+      "title": "No Dedicated Security Staff",
+      "desc": "Agriculture has the lowest cybersecurity spend per employee of any industry. Cooperatives have no security team, no incident response plan and no monitoring — breaches go undetected for months."
+    },
+    {
+      "title": "Food Supply Chain as Critical Infrastructure",
+      "desc": "CISA designated food and agriculture as critical infrastructure after the JBS attack. The national security dimension means attackers know payments come faster when the food supply is at stake."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Grain Management Systems Encrypted at Harvest",
+      "desc": "BlackMatter encrypted NEW Cooperative's grain transportation logistics and animal feed scheduling during peak Iowa harvest. Farmers could not sell grain, feed could not be delivered to livestock facilities — a direct food supply chain disruption."
+    },
+    {
+      "title": "Multi-Month Undetected Dwell Time",
+      "desc": "REvil had 2 months of undetected access to JBS Foods before detonating ransomware across all 9 US meatpacking plants. No monitoring meant no detection until encryption was complete."
+    },
+    {
+      "title": "Dual Simultaneous Attacks",
+      "desc": "NEW Cooperative and Crystal Valley Cooperative were both hit in the same week during harvest 2021 — demonstrating that ransomware groups coordinate attacks on agricultural targets during the highest-pressure period of the agricultural calendar."
+    },
+    {
+      "title": "IoT Device as Network Entry Point",
+      "desc": "A compromised irrigation controller or GPS tractor module on a flat network provides a foothold into the same network as cooperative management systems, grain elevator controls and office workstations."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Monitor for Long Dwell Time",
+      "desc": "JBS's 2-month undetected breach was possible because there was no network monitoring. SecuEdge logs all traffic — anomalous authentication attempts, new lateral connections between farm OT and cooperative IT, and bulk internal data access are visible in real time."
+    },
+    {
+      "title": "Secure Remote Site Management via VPN",
+      "desc": "Every remote grain elevator, irrigation system and farm site connects via SecuEdge VPN tunnel — no internet-exposed management interfaces. Authenticated access replaces open public connectivity."
+    },
+    {
+      "title": "Segment Operational Technology from Office IT",
+      "desc": "Grain elevator controls, feed scheduling systems and IoT farm devices sit in isolated VLANs with firewall rules preventing lateral movement to cooperative management and accounting systems."
+    },
+    {
+      "title": "Block Ransomware C2 at DNS Layer",
+      "desc": "BlackMatter, REvil and DarkSide all require DNS callbacks to receive encryption keys. SecuEdge's malware and botnet DNS category blocking prevents this callback — ransomware stalls before it can encrypt."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Network Monitoring & Long Dwell Detection",
+      "desc": "Continuous traffic logging surfaces the anomalous patterns — unusual authentication, new cross-segment connections, after-hours bulk file access — that characterise multi-month dwell periods before ransomware detonates.",
+      "features": ["Real-time traffic logs", "Cross-segment connection alerts", "After-hours anomaly detection"]
+    },
+    {
+      "title": "VPN for Remote Farm & Elevator Sites",
+      "desc": "Replace internet-exposed remote management of grain elevators, irrigation and livestock systems with SecuEdge VPN tunnels — authenticated, encrypted and monitored access from a single hardened gateway.",
+      "features": ["Remote site VPN tunnels", "Certificate-based auth", "Encrypted management access"]
+    },
+    {
+      "title": "Firewall OT/IT Segmentation",
+      "desc": "Separate VLANs for grain elevator OT, farm IoT devices, cooperative management systems and office IT — explicit firewall rules controlling all cross-zone communication.",
+      "features": ["Grain elevator OT isolation", "Farm IoT VLAN", "Cooperative management zone"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block BlackMatter, REvil and DarkSide C2 domains at the DNS layer across all cooperative and farm networks — production systems should never resolve uncategorised or newly-registered external domains.",
+      "features": ["Ransomware C2 blocking", "Newly-registered domain filtering", "Malware category blocking"]
+    },
+    {
+      "title": "Load Balancing & WAN Failover",
+      "desc": "Dual-ISP failover keeps cooperative member transactions, grain sales and feed delivery communications live even when a primary link fails or is disrupted during an incident.",
+      "features": ["Dual-ISP failover", "Automatic link switching", "Member transaction continuity"]
+    },
+    {
+      "title": "Captive Portal for Seasonal Staff & Contractors",
+      "desc": "Seasonal harvest workers and equipment contractors connect via authenticated captive portal to an isolated network — no access to cooperative management systems or grain elevator controls.",
+      "features": ["Seasonal worker isolation", "Contractor device authentication", "Harvest-period access control"]
+    }
+  ],
+  "compliance": ["NIST CSF", "CISA Critical Infrastructure Guidelines"],
+  "process": [
+    {
+      "title": "Farm & Cooperative Network Audit",
+      "desc": "Map all remote sites, internet-exposed management interfaces, IoT farm devices and grain elevator OT systems — identify flat network risks and unmonitored remote access paths."
+    },
+    {
+      "title": "Segment and Secure Before Planting/Harvest",
+      "desc": "Deploy VPN for remote sites, implement OT/IT segmentation, configure DNS blocking and enable network monitoring — complete hardening before the next high-risk seasonal period."
+    },
+    {
+      "title": "Seasonal Readiness Reviews",
+      "desc": "Review and tighten firewall rules before planting and harvest seasons, verify WAN failover, and brief cooperative staff on social engineering awareness before peak periods."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How would SecuEdge have changed the JBS Foods attack outcome?",
+      "a": "REvil spent 2 months undetected on JBS's network. SecuEdge's real-time traffic monitoring would have surfaced anomalous east-west connections between plant systems and IT networks during that dwell period. DNS blocking would have prevented REvil's C2 callback. Network segmentation would have confined the blast radius to a single zone rather than all 9 plants."
+    },
+    {
+      "q": "Our co-op has grain elevators at five sites. How does SecuEdge protect all of them?",
+      "a": "Each grain elevator site connects to cooperative HQ via SecuEdge site-to-site VPN. Elevator OT systems are in an isolated VLAN at each site. WAN failover at each site keeps member transactions live. All traffic flows through a central SecuEdge gateway where DNS blocking and monitoring applies to all sites simultaneously."
+    },
+    {
+      "q": "We have seasonal workers during harvest. How does SecuEdge handle temporary access?",
+      "a": "SecuEdge's captive portal lets seasonal workers connect to WiFi via a branded splash page. Their devices land in an isolated VLAN with internet access and any permitted internal systems — access that's removed when the season ends by simply updating the firewall rules, with no per-device configuration needed."
+    },
+    {
+      "q": "We manage irrigation and GPS tractors remotely. Is that secure?",
+      "a": "With SecuEdge VPN, remote management of irrigation and farm equipment happens over an authenticated, encrypted tunnel — not an open internet connection. The OT devices sit in a farm IoT VLAN isolated from cooperative management systems, so a compromised device cannot pivot to grain sales or member data."
+    }
+  ],
+  "cta": {
+    "headline": "Protect the Harvest Before Ransomware Does",
+    "sub": "Secure grain elevator OT, close remote access gaps and monitor for multi-month dwell time — so attackers can't time their strike to your most critical season."
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "testimonialsUnverified": [
+    {
+      "quote": "SecuEdge's customer support is unmatched in the industry. When we had a security incident at 2AM, their team responded in under 10 minutes and had us protected within the hour.",
+      "author": "Michael Anderson",
+      "role": "CIO",
+      "company": "Global Finance Corp",
+      "source": "homepage testimonials carousel"
+    },
+    {
+      "quote": "We migrated from our legacy firewall to SecuEdge, and the difference is night and day. The threat detection capabilities have already prevented several sophisticated attacks that would have bypassed our old system.",
+      "author": "Sarah Johnson",
+      "role": "IT Director",
+      "company": "Healthcare Partners",
+      "source": "homepage testimonials carousel"
+    },
+    {
+      "quote": "The implementation team at SecuEdge made our transition seamless. Their ongoing support and rapid response times give us peace of mind knowing our network is protected 24/7.",
+      "author": "David Chen",
+      "role": "Network Security Manager",
+      "company": "Retail Solutions Inc",
+      "source": "homepage testimonials carousel"
+    },
+    {
+      "quote": "As a financial institution, security is our top priority. SecuEdge's solutions not only meet our compliance requirements but exceed them with advanced threat intelligence and real-time monitoring.",
+      "author": "Elena Rodriguez",
+      "role": "CISO",
+      "company": "First National Bank",
+      "source": "homepage testimonials carousel"
+    },
+    {
+      "quote": "The responsive support team at SecuEdge has been instrumental in keeping our multi-location business secure. Their average response time of 12 minutes is impressive and gives us confidence in our security posture.",
+      "author": "Robert Williams",
+      "role": "VP of Technology",
+      "company": "Manufacturing Excellence",
+      "source": "homepage testimonials carousel"
+    },
+    {
+      "quote": "SecuEdge transformed our compliance program from a reactive, audit-driven scramble into a proactive, continuous process. We now spend 70% less time preparing for audits while maintaining a higher level of compliance.",
+      "author": "Jennifer Martinez",
+      "role": "Compliance Director",
+      "company": "Regional Healthcare System",
+      "source": "compliance page"
+    },
+    {
+      "quote": "As a financial institution, we face complex regulatory requirements from multiple authorities. SecuEdge helped us consolidate our controls across different frameworks, eliminating redundant efforts and significantly reducing compliance costs.",
+      "author": "Robert Chen",
+      "role": "CISO",
+      "company": "Midwest Banking Group",
+      "source": "compliance page"
+    },
+    {
+      "quote": "The automated compliance monitoring capabilities have been a game-changer for our retail business. We can now detect and address compliance issues before they become audit findings, and our compliance team can focus on strategic initiatives.",
+      "author": "Lisa Thompson",
+      "role": "IT Security Manager",
+      "company": "National Retail Chain",
+      "source": "compliance page"
+    }
+  ]
+}

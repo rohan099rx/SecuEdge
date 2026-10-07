@@ -1,0 +1,238 @@
+{
+  "sectionEyebrow": "For All Industries",
+  "sectionHeadline": "Industry-Specific Security Solutions",
+  "sectionSub": "Tailored firewall protection designed for your industry's unique security challenges and compliance requirements",
+  "cards": [
+    {
+      "industry": "Healthcare",
+      "desc": "HIPAA-compliant security for patient data, medical devices and healthcare networks",
+      "features": [
+        "HIPAA-compliant controls",
+        "Medical IoT segmentation",
+        "Ransomware lateral movement blocking",
+        "PHI audit trail logging",
+        "Vendor/contractor isolation"
+      ]
+    },
+    {
+      "industry": "Finance",
+      "desc": "PCI DSS segmentation and advanced protection for financial institutions and transactions",
+      "features": [
+        "PCI DSS cardholder data zones",
+        "Default-deny egress filtering",
+        "SOX and GLBA audit trails",
+        "VPN with certificate auth",
+        "Bandwidth anomaly alerting"
+      ]
+    },
+    {
+      "industry": "Education",
+      "desc": "CIPA-compliant content filtering and FERPA-aware network security for every campus",
+      "features": [
+        "CIPA content filtering for E-Rate",
+        "Student BYOD captive portal",
+        "FERPA data segmentation",
+        "Bandwidth management for instruction",
+        "Staff VPN remote access"
+      ]
+    },
+    {
+      "industry": "Legal",
+      "desc": "Confidential data protection and exfiltration prevention for law firms and legal departments",
+      "features": [
+        "Default-deny egress filtering",
+        "Client vault VLAN isolation",
+        "Bulk exfiltration detection",
+        "Visitor WiFi captive portal",
+        "ABA Rule 1.6 compliance"
+      ]
+    },
+    {
+      "industry": "Retail",
+      "desc": "POS network isolation and social-engineering defence for in-store and online retail",
+      "features": [
+        "POS VLAN isolation",
+        "VPN with MFA against vishing",
+        "Magecart C2 DNS blocking",
+        "Vendor access segmentation",
+        "Bulk exfiltration monitoring"
+      ]
+    },
+    {
+      "industry": "Manufacturing",
+      "desc": "OT/IT segmentation and ransomware defence for production environments",
+      "features": [
+        "OT/IT firewall boundary",
+        "Contractor VPN with MFA",
+        "Ransomware C2 DNS blocking",
+        "Long dwell-time monitoring",
+        "IEC 62443 alignment"
+      ]
+    },
+    {
+      "industry": "Government",
+      "desc": "Data sovereignty and audit-ready network security for public sector organisations",
+      "features": [
+        "Citizen data segmentation",
+        "Strict egress filtering",
+        "Comprehensive audit logging",
+        "VPN for remote staff",
+        "NIST CSF alignment"
+      ]
+    },
+    {
+      "industry": "Media",
+      "desc": "Deadline-proof newsroom security and content protection for media organisations",
+      "features": [
+        "Production system VPN access",
+        "Bandwidth management for live",
+        "DNS blocking for newsroom",
+        "Source protection controls",
+        "WAN failover for uptime"
+      ]
+    },
+    {
+      "industry": "Hospitality",
+      "desc": "Guest WiFi isolation and PMS protection against social engineering and ransomware",
+      "features": [
+        "Captive portal guest isolation",
+        "VPN with MFA stops vishing",
+        "PMS and POS VLAN segmentation",
+        "IoT room control isolation",
+        "6 TB exfiltration alerting"
+      ]
+    },
+    {
+      "industry": "Logistics",
+      "desc": "Fleet visibility, port terminal security and hardened VPN for freight operations",
+      "features": [
+        "Replaces vulnerable VPN appliances",
+        "OT terminal segmentation",
+        "WAN failover for dispatch",
+        "Ransomware C2 DNS blocking",
+        "Fleet management monitoring"
+      ]
+    },
+    {
+      "industry": "Technology",
+      "desc": "Supply chain C2 detection, management console protection and dev/prod isolation",
+      "features": [
+        "VPN-only management access",
+        "C2 beacon DNS blocking",
+        "Dev/prod VLAN isolation",
+        "Default-deny egress policy",
+        "Bulk exfiltration detection"
+      ]
+    },
+    {
+      "industry": "Construction",
+      "desc": "BIM file protection, subcontractor isolation and hardened VPN replacing legacy appliances",
+      "features": [
+        "Replaces SonicWall/Cisco VPN",
+        "Subcontractor captive portal",
+        "BIM server VLAN isolation",
+        "SMB reconnaissance detection",
+        "Ransomware C2 DNS blocking"
+      ]
+    },
+    {
+      "industry": "Agriculture",
+      "desc": "Harvest-season ransomware defence for co-ops, grain elevators and farm OT networks",
+      "features": [
+        "Grain elevator OT isolation",
+        "Farm IoT VLAN segmentation",
+        "Long dwell-time monitoring",
+        "Seasonal worker captive portal",
+        "WAN failover for co-ops"
+      ]
+    },
+    {
+      "industry": "Non-Profit",
+      "desc": "Donor data protection and silent exfiltration detection for charities and NGOs",
+      "features": [
+        "Volunteer device captive portal",
+        "CRM access restrictions",
+        "Bulk exfiltration detection",
+        "BEC phishing DNS blocking",
+        "Budget-efficient single appliance"
+      ]
+    },
+    {
+      "industry": "Consulting",
+      "desc": "Client IP protection and road-warrior VPN for professional services and advisory firms",
+      "features": [
+        "Per-engagement VLAN isolation",
+        "Road-warrior VPN with MFA",
+        "BEC phishing DNS blocking",
+        "Bulk download IP exfil alerts",
+        "Client visitor captive portal"
+      ]
+    },
+    {
+      "industry": "Real Estate",
+      "desc": "Wire fraud prevention, smart building IoT isolation and agent remote access security",
+      "features": [
+        "BEC phishing DNS blocking",
+        "Smart building IoT VLAN",
+        "Agent VPN with MFA",
+        "Property management monitoring",
+        "Open house captive portal"
+      ]
+    },
+    {
+      "industry": "Automotive",
+      "desc": "DMS vendor isolation, FTC Safeguards compliance and multi-location dealer security",
+      "features": [
+        "DMS VLAN isolation",
+        "Guest and service bay WiFi",
+        "Multi-location site-to-site VPN",
+        "WAN failover for DMS",
+        "FTC Safeguards audit trail"
+      ]
+    },
+    {
+      "industry": "Food & Beverage",
+      "desc": "POS malware defence, guest WiFi isolation and consistent security across franchise locations",
+      "features": [
+        "POS VLAN isolation",
+        "Whitelist-only POS outbound",
+        "Guest WiFi captive portal",
+        "POS beacon detection",
+        "PCI DSS compliance controls"
+      ]
+    },
+    {
+      "industry": "Sports & Fitness",
+      "desc": "Member data protection, venue OT isolation and ransomware detection for gyms and stadiums",
+      "features": [
+        "Membership management VLAN",
+        "Stadium OT isolation",
+        "Member WiFi captive portal",
+        "Ransomware dwell detection",
+        "Event-day WAN failover"
+      ]
+    },
+    {
+      "industry": "Entertainment",
+      "desc": "Source code and production asset protection against social engineering and bulk exfiltration",
+      "features": [
+        "Production system VPN access",
+        "Whitelist-only outbound policy",
+        "Bulk exfiltration alerting",
+        "DDoS-resilient WAN load balancing",
+        "Dev/prod VLAN isolation"
+      ]
+    },
+    {
+      "industry": "Fashion & Beauty",
+      "desc": "Per-brand VLAN isolation, POS protection and holiday-peak ransomware defence",
+      "features": [
+        "Per-brand VLAN segmentation",
+        "POS VLAN isolation",
+        "In-store guest WiFi portal",
+        "Magecart C2 DNS blocking",
+        "Dwell-period detection"
+      ]
+    }
+  ]
+}

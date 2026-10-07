@@ -1,0 +1,146 @@
+{
+  "slug": "food-beverage",
+  "metaTitle": "Food & Beverage Cybersecurity Solutions",
+  "metaDescription": "SecuEdge protects restaurants, cafes and food service operators from POS malware, guest WiFi network pivots and ransomware on cloud scheduling and payroll platforms.",
+  "hero": {
+    "headline": "Protect Every Payment, Every Shift, Every Order",
+    "sub": "POS malware hit 1,000+ Sonic Drive-In locations. NCR Aloha ransomware took payroll, scheduling and inventory offline across 100,000+ restaurant locations. Starbucks manually tracked barista hours with spreadsheets. POS security is food service security."
+  },
+  "stats": [
+    { "label": "Sonic Drive-In locations hit by POS malware", "value": "1,000+" },
+    { "label": "Sonic Drive-In class action settlement", "value": "$4.3M" },
+    { "label": "Restaurant locations affected by NCR Aloha breach", "value": "100,000+" },
+    { "label": "Verizon DBIR: food service incidents involving POS", "value": "94%" }
+  ],
+  "challenges": [
+    {
+      "title": "POS Terminal Compromise",
+      "desc": "Restaurants run payment processing on always-on terminals that are frequently unpatched and directly internet-connected. POS malware silently captures card data — names, numbers, expiry, CVV — in real time across every transaction."
+    },
+    {
+      "title": "Guest WiFi Adjacent to POS Network",
+      "desc": "Free restaurant WiFi and POS terminals often share the same physical infrastructure. Without segmentation, a customer device or an attacker on the guest network can probe and reach payment terminals."
+    },
+    {
+      "title": "Cloud Back-Office as Single Point of Failure",
+      "desc": "Inventory management, payroll, staff scheduling and supply chain ordering are increasingly cloud-based. Ransomware on a shared platform — like the NCR Aloha attack — takes all of these offline simultaneously across every franchise location."
+    },
+    {
+      "title": "Delivery Platform Credential Theft",
+      "desc": "Restaurant operators on DoorDash, UberEats and Grubhub manage accounts with payment payout access. Credential stuffing attacks on these accounts redirect payouts or harvest customer payment data."
+    },
+    {
+      "title": "Franchise Operator Phishing",
+      "desc": "Franchise operators receive hundreds of emails from suppliers, corporate IT and delivery platforms. Impersonation of corporate IT or food suppliers is a simple, high-return attack given the financial flows involved."
+    },
+    {
+      "title": "Multi-Location Network Inconsistency",
+      "desc": "Chains with hundreds of locations have inconsistent network configurations. Some locations have segmented POS; others do not. The weakest location is the one that gets breached."
+    }
+  ],
+  "threats": [
+    {
+      "title": "POS RAM-Scraping Malware",
+      "desc": "Sonic's POS malware ran across 1,000+ locations, harvesting card data from every transaction — names, card numbers, expiry dates and CVVs. The attack went undetected long enough to compromise millions of cards and trigger a $4.3M class action settlement."
+    },
+    {
+      "title": "Cloud POS Platform Ransomware",
+      "desc": "NCR Aloha's cloud backend was hit by ALPHV/BlackCat ransomware. Wendy's, Chuck E. Cheese and 100,000+ other locations lost payroll, scheduling, inventory management and gift card processing simultaneously. The attack demonstrated how shared cloud platforms create industry-wide single points of failure."
+    },
+    {
+      "title": "Supply Chain Scheduling Disruption",
+      "desc": "Ransomware on Blue Yonder — Starbucks' scheduling SaaS — forced manual barista hour tracking across hundreds of locations. The same pattern applies to any food service chain dependent on a shared cloud scheduling or payroll platform."
+    },
+    {
+      "title": "Guest WiFi to POS Network Pivot",
+      "desc": "An attacker or infected customer device on restaurant guest WiFi uses the same physical network infrastructure as POS terminals. Without an explicit VLAN boundary, the attack path from guest WiFi to payment terminal is direct."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Captive Portal Isolates Guest WiFi From POS",
+      "desc": "SecuEdge's captive portal places guest devices in a VLAN with internet access only — no network route to POS terminals, back-office systems or kitchen management systems. The most common physical co-location risk in food service is eliminated."
+    },
+    {
+      "title": "Whitelist-Only POS Outbound Rules",
+      "desc": "POS terminals should only be permitted to connect to authorised payment processor IP addresses. SecuEdge firewall rules enforce this — any other outbound connection from a POS terminal is blocked, including the C2 callbacks that card-scraping malware depends on."
+    },
+    {
+      "title": "DNS Blocking Kills Malware C2 From Terminals",
+      "desc": "Card-scraping malware and ransomware both require outbound DNS resolution to phone home. SecuEdge DNS category blocking prevents POS terminals from resolving malware domains — malware installs but cannot activate."
+    },
+    {
+      "title": "POS Traffic QoS During Peak Hours",
+      "desc": "SecuEdge's bandwidth management prioritises POS transaction traffic over guest streaming during lunch and dinner rushes — ensuring payment processing is never delayed by bandwidth competition with customer devices."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Captive Portal for Guest WiFi Isolation",
+      "desc": "Authenticate restaurant guests via branded splash page, place their devices in an isolated VLAN with internet access only — complete separation from POS, kitchen management and back-office systems.",
+      "features": ["Guest VLAN isolation", "Branded splash page", "POS network separation"]
+    },
+    {
+      "title": "Firewall POS Network Segmentation",
+      "desc": "Dedicated POS VLAN with whitelist-only outbound rules — terminals can only connect to authorised payment processor IPs. All other outbound connections, including malware C2, are blocked at the firewall.",
+      "features": ["POS VLAN isolation", "Payment processor whitelist", "Malware C2 outbound blocking"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block malware C2 domains and phishing sites targeting franchise operators and delivery platform accounts — preventing both POS malware phone-home and BEC attacks on restaurant finances.",
+      "features": ["Malware C2 blocking", "Phishing domain filtering", "Delivery platform protection"]
+    },
+    {
+      "title": "Network Monitoring for POS Anomalies",
+      "desc": "Detect card-scraping malware beaconing patterns — unusual outbound connections from POS terminals at non-transaction times, connections to unexpected IP ranges and high-frequency small transfers.",
+      "features": ["POS beacon pattern detection", "Anomalous connection alerts", "Non-transaction-time monitoring"]
+    },
+    {
+      "title": "Bandwidth Management & QoS",
+      "desc": "Prioritise POS transaction traffic over guest streaming and staff devices during peak hours. Prevent guest bandwidth abuse from slowing payment processing at the register during lunch and dinner rush.",
+      "features": ["POS traffic priority", "Guest bandwidth limits", "Peak-hour QoS policy"]
+    },
+    {
+      "title": "VPN for Multi-Location Management",
+      "desc": "Connect franchise locations, central commissary kitchens and head office via site-to-site VPN — consistent security policy across all locations with centralised monitoring from a single pane.",
+      "features": ["Multi-location site-to-site VPN", "Consistent policy deployment", "Centralised management"]
+    }
+  ],
+  "compliance": ["PCI DSS"],
+  "process": [
+    {
+      "title": "POS Network Audit",
+      "desc": "Map every POS terminal's network connections, identify which terminals share segments with guest WiFi or back-office systems, and audit outbound connectivity from each terminal."
+    },
+    {
+      "title": "Segment and Protect",
+      "desc": "Deploy POS VLAN with whitelist-only outbound rules, configure captive portal for guest WiFi isolation, enable DNS blocking and set POS QoS priority for peak trading hours."
+    },
+    {
+      "title": "Multi-Location Rollout",
+      "desc": "Push consistent POS VLAN, guest WiFi and DNS blocking policy to all franchise locations via site-to-site VPN — prioritising highest-transaction-volume locations first."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge stop POS malware like the Sonic Drive-In attack?",
+      "a": "Sonic's POS malware required outbound connectivity to phone home and receive instructions. SecuEdge's whitelist-only outbound rules for POS VLANs block all connections except to authorised payment processor IPs — malware installed on a terminal cannot call home, cannot receive commands and cannot exfiltrate card data."
+    },
+    {
+      "q": "Our guests use the same WiFi as our POS terminals. Is that a problem?",
+      "a": "Yes — and it's the most common network risk in food service. SecuEdge's captive portal places guest devices in an isolated VLAN with internet access only. The guest WiFi and POS network appear to use the same infrastructure but have completely separate routing with no path between them."
+    },
+    {
+      "q": "NCR Aloha went down and our whole back-office stopped. How does SecuEdge help?",
+      "a": "SecuEdge controls the network path between your locations and cloud platforms like NCR Aloha. Firewall rules restrict which internal systems can initiate connections to POS cloud backends. Traffic monitoring flags unusual connections from those systems. WAN failover keeps connectivity live during vendor-side disruptions."
+    },
+    {
+      "q": "We have 200 franchise locations. How do we apply consistent security to all of them?",
+      "a": "SecuEdge site-to-site VPN connects all 200 locations to a central policy configuration. POS VLAN rules, guest WiFi captive portal settings and DNS blocking categories are applied consistently across all locations — a policy change at head office propagates to all sites simultaneously."
+    }
+  ],
+  "cta": {
+    "headline": "Every Order, Every Payment, Every Location — Protected",
+    "sub": "Isolate your POS network, block malware C2 and separate guest WiFi from payment systems — with SecuEdge deployed consistently across every location."
+  }
+}

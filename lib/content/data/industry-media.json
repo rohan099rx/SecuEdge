@@ -1,0 +1,22 @@
+{
+  "slug": "media",
+  "metaTitle": "Media Security Solutions",
+  "metaDescription": "SecuEdge protects media houses and content businesses from ransomware, disruption and data theft — with resilient, segmented networks and real-time visibility.",
+  "hero": {
+    "headline": "Security for media that never misses a deadline.",
+    "sub": "Protect content, infrastructure and deadlines from disruption and ransomware — with resilient, segmented networks and real-time visibility across every device."
+  },
+  "challenges": [
+    { "title": "Ransomware disruption", "desc": "Newsrooms and broadcast operations are high-visibility targets where downtime is measured in missed deadlines." },
+    { "title": "Content & IP theft", "desc": "Unreleased content, footage archives and editorial systems hold valuable intellectual property." },
+    { "title": "Always-on operations", "desc": "24/7 publishing leaves no maintenance window for security incidents." },
+    { "title": "Distributed teams", "desc": "Reporters, stringers and studios connect from everywhere, expanding the attack surface." }
+  ],
+  "capabilities": [
+    { "title": "Advanced threat prevention", "desc": "IDS/IPS and antivirus engines detect and block threats in real time." },
+    { "title": "Network segmentation", "desc": "VLANs isolate editorial, broadcast and guest networks to contain any incident." },
+    { "title": "Real-time visibility", "desc": "Per-device logs — blocked and accessed — exportable for review." },
+    { "title": "Secure remote access", "desc": "Site-to-site and remote-access VPN for bureaus and field teams." }
+  ],
+  "cta": { "headline": "Trusted by media houses like Lokmat.", "sub": "Keep your newsroom online and your content protected." }
+}

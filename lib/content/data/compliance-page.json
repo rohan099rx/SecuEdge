@@ -1,0 +1,279 @@
+{
+  "slug": "compliance",
+  "metaTitle": "Compliance Solutions | SecuEdge",
+  "metaDescription": "Achieve and maintain regulatory compliance with SecuEdge's comprehensive compliance solutions. Meet requirements for HIPAA, PCI DSS, GDPR, and other regulations.",
+  "hero": {
+    "eyebrow": "Security Solution",
+    "headline": "Regulatory Compliance",
+    "sub": "Meet and exceed regulatory requirements with SecuEdge's comprehensive compliance solutions. Protect your data, satisfy auditors, and build trust with customers.",
+    "ctas": [
+      "Get Started",
+      "Schedule Demo"
+    ],
+    "chips": [
+      "Simplify audits",
+      "Reduce compliance costs",
+      "Avoid penalties"
+    ],
+    "heroVisual": "SecuEdge Compliance Dashboard mock (Overall Compliance 94%, Compliance by Framework, Recent Findings: Password Policy Compliant / Data Encryption Verified / Access Control Review / Consent Management)"
+  },
+  "challenges": {
+    "headline": "Why Regulatory Compliance is Challenging",
+    "sub": "Many organizations struggle to maintain compliance due to complex requirements, limited resources, and constantly evolving regulations.",
+    "items": [
+      {
+        "title": "Complex & Evolving Regulations",
+        "desc": "Keeping up with constantly changing regulatory requirements across different jurisdictions is time-consuming and difficult."
+      },
+      {
+        "title": "Resource-Intensive Audits",
+        "desc": "Preparing for and managing compliance audits drains IT resources and diverts attention from core business activities."
+      },
+      {
+        "title": "High Compliance Costs",
+        "desc": "Implementing and maintaining compliance controls often requires significant investment in technology and personnel."
+      },
+      {
+        "title": "Identifying Compliance Gaps",
+        "desc": "Many organizations struggle to detect and address compliance gaps before they become audit findings or security incidents."
+      },
+      {
+        "title": "Conflicting Requirements",
+        "desc": "Different regulations may have overlapping or contradictory requirements, making compliance strategy complex."
+      },
+      {
+        "title": "Staff Training & Awareness",
+        "desc": "Ensuring all employees understand and follow compliance requirements is an ongoing challenge for most organizations."
+      }
+    ]
+  },
+  "frameworksIntro": {
+    "eyebrow": "Comprehensive Coverage",
+    "headline": "Key Compliance Frameworks We Support",
+    "sub": "Our compliance solutions help organizations meet requirements across all major regulatory frameworks and industry standards.",
+    "itemsLabel": "Key Requirements:"
+  },
+  "frameworks": [
+    {
+      "name": "PCI DSS",
+      "desc": "Payment Card Industry Data Security Standard for organizations that handle credit card data",
+      "items": [
+        "Secure network architecture",
+        "Cardholder data protection",
+        "Vulnerability management",
+        "Access control measures",
+        "Regular security testing"
+      ]
+    },
+    {
+      "name": "HIPAA",
+      "desc": "Health Insurance Portability and Accountability Act for healthcare organizations",
+      "items": [
+        "Patient data privacy",
+        "Technical safeguards",
+        "Administrative controls",
+        "Breach notification",
+        "Business associate compliance"
+      ]
+    },
+    {
+      "name": "GDPR",
+      "desc": "General Data Protection Regulation for organizations handling EU citizens' data",
+      "items": [
+        "Data subject rights",
+        "Consent management",
+        "Data processing records",
+        "Privacy by design",
+        "Cross-border data transfers"
+      ]
+    },
+    {
+      "name": "ISO 27001",
+      "desc": "International standard for information security management systems",
+      "items": [
+        "Information security policy",
+        "Risk assessment methodology",
+        "Security control implementation",
+        "Continuous monitoring",
+        "Management review process"
+      ]
+    },
+    {
+      "name": "SOC 2",
+      "desc": "Service Organization Control reports focusing on trust service criteria",
+      "items": [
+        "Security controls",
+        "Availability safeguards",
+        "Processing integrity",
+        "Confidentiality measures",
+        "Privacy practices"
+      ]
+    },
+    {
+      "name": "Industry-Specific",
+      "desc": "Specialized compliance requirements for various industries",
+      "items": [
+        "FINRA & SEC (Financial)",
+        "NERC CIP (Energy)",
+        "CMMC (Defense)",
+        "FERPA (Education)",
+        "CCPA/CPRA (California Privacy)"
+      ]
+    }
+  ],
+  "approachIntro": {
+    "eyebrow": "Our Approach",
+    "headline": "The SecuEdge Compliance Solution",
+    "sub": "Our comprehensive compliance solution transforms regulatory requirements from a burden into a strategic advantage for your organization."
+  },
+  "approach": [
+    {
+      "title": "Unified Compliance Framework",
+      "desc": "Consolidate controls across multiple regulations to eliminate redundant efforts and streamline compliance management"
+    },
+    {
+      "title": "Automated Compliance Monitoring",
+      "desc": "Continuously monitor your security posture against regulatory requirements with real-time dashboards and alerts"
+    },
+    {
+      "title": "Simplified Audit Preparation",
+      "desc": "Generate comprehensive compliance reports that provide auditors with the evidence they need while minimizing your workload"
+    },
+    {
+      "title": "Adaptive Control Implementation",
+      "desc": "Deploy technical controls that address multiple compliance requirements simultaneously while adapting to your environment"
+    }
+  ],
+  "capabilitiesIntro": {
+    "eyebrow": "Key Capabilities",
+    "headline": "Comprehensive Compliance Features",
+    "sub": "Our solution provides all the tools you need to achieve and maintain regulatory compliance while reducing the burden on your team."
+  },
+  "capabilities": [
+    {
+      "title": "Controls Mapping",
+      "desc": "Map controls across multiple frameworks to eliminate redundancy and streamline compliance efforts"
+    },
+    {
+      "title": "Automated Assessment",
+      "desc": "Continuously evaluate your environment against compliance requirements with automated scanning"
+    },
+    {
+      "title": "Policy Management",
+      "desc": "Create, update, and distribute compliance policies and procedures with version control"
+    },
+    {
+      "title": "Evidence Collection",
+      "desc": "Automatically gather and organize compliance evidence for quick retrieval during audits"
+    },
+    {
+      "title": "Security Monitoring",
+      "desc": "Monitor your security controls in real-time to ensure continuous compliance"
+    },
+    {
+      "title": "Compliance Dashboards",
+      "desc": "View compliance status across all frameworks with customizable real-time dashboards"
+    },
+    {
+      "title": "Audit-Ready Reporting",
+      "desc": "Generate comprehensive reports that satisfy auditor requirements with minimal effort"
+    },
+    {
+      "title": "Risk Assessment",
+      "desc": "Identify and prioritize compliance risks with integrated risk assessment tools"
+    },
+    {
+      "title": "Role-Based Access",
+      "desc": "Control access to compliance data with granular, role-based permissions"
+    }
+  ],
+  "processIntro": {
+    "eyebrow": "Implementation Process",
+    "headline": "How We Implement Your Compliance Solution",
+    "sub": "Our proven methodology ensures a smooth transition to comprehensive compliance management with minimal disruption to your operations."
+  },
+  "process": [
+    {
+      "step": 1,
+      "title": "Assessment",
+      "desc": "We begin with a thorough assessment of your current compliance posture, identifying gaps and opportunities for improvement"
+    },
+    {
+      "step": 2,
+      "title": "Planning",
+      "desc": "Based on the assessment, we develop a tailored compliance roadmap with prioritized actions and clear milestones"
+    },
+    {
+      "step": 3,
+      "title": "Implementation",
+      "desc": "Our experts deploy the compliance solution, configuring it to match your specific regulatory requirements"
+    },
+    {
+      "step": 4,
+      "title": "Validation",
+      "desc": "We validate the implementation through testing and verification to ensure all compliance controls are operating effectively"
+    },
+    {
+      "step": 5,
+      "title": "Optimization",
+      "desc": "Continuous improvement of your compliance program through regular reviews and refinements"
+    }
+  ],
+  "ongoingManagement": {
+    "headline": "Ongoing Compliance Management",
+    "items": [
+      {
+        "title": "Regular Assessments",
+        "desc": "Scheduled compliance assessments to identify and address new gaps"
+      },
+      {
+        "title": "Regulatory Updates",
+        "desc": "Continuous monitoring of regulatory changes with timely control updates"
+      },
+      {
+        "title": "Staff Training",
+        "desc": "Ongoing compliance training to ensure all employees understand requirements"
+      }
+    ]
+  },
+  "faqsIntro": {
+    "eyebrow": "Common Questions",
+    "headline": "Frequently Asked Questions",
+    "sub": "Find answers to common questions about our compliance solutions and how they can help your organization."
+  },
+  "faqs": [
+    {
+      "q": "How does SecuEdge simplify compliance across multiple regulations?",
+      "a": "SecuEdge uses a unified control framework that maps controls across different regulations, allowing you to implement a single control that satisfies multiple requirements. This approach eliminates redundant efforts and provides a clear view of your overall compliance posture. Our platform also automates evidence collection and reporting, further reducing the complexity of managing multiple compliance frameworks."
+    },
+    {
+      "q": "How quickly can we achieve compliance using SecuEdge solutions?",
+      "a": "The timeline to achieve compliance varies based on your organization's size, complexity, and current compliance maturity. Typically, our customers see significant improvements within 2-3 months, with full compliance achievable within 4-6 months for most regulations. Our phased implementation approach allows you to prioritize critical compliance gaps first, gradually building toward comprehensive compliance while minimizing business disruption."
+    },
+    {
+      "q": "Can SecuEdge help reduce the cost of compliance audits?",
+      "a": "Yes, significantly. Our customers typically report a 40-60% reduction in audit preparation time and costs. This is achieved through automated evidence collection, pre-built compliance reports, and continuous compliance monitoring that prevents audit findings. By consolidating controls across multiple regulations, we also help reduce the overall cost of maintaining compliance by eliminating redundant security measures and streamlining verification processes."
+    },
+    {
+      "q": "How does SecuEdge handle updates to regulatory requirements?",
+      "a": "Our compliance experts continuously monitor regulatory changes across all major frameworks. When requirements change, we update our control mappings and compliance checks, then notify you of the changes and their impact on your environment. This proactive approach ensures you're always aware of new requirements and can implement necessary changes before they affect your compliance status. For significant regulatory updates, we provide detailed guidance and implementation support."
+    },
+    {
+      "q": "Can we integrate SecuEdge compliance solutions with our existing security tools?",
+      "a": "Absolutely. Our compliance platform integrates with a wide range of security tools and systems, including vulnerability scanners, SIEM solutions, identity management systems, and cloud security platforms. These integrations allow us to automatically collect compliance evidence from your existing tools, reducing manual effort and providing a more accurate compliance assessment. If you have custom or legacy systems, our professional services team can develop custom integrations to include them in your compliance program."
+    }
+  ],
+  "cta": {
+    "eyebrow": "Get Compliant",
+    "headline": "Ready to Simplify Your Regulatory Compliance?",
+    "sub": "Contact our compliance experts today to discuss your specific regulatory requirements and discover how SecuEdge can transform your compliance program.",
+    "buttons": [
+      "Schedule Consultation"
+    ],
+    "chips": [
+      "Achieve Compliance Faster",
+      "Simplify Audit Preparation",
+      "Reduce Compliance Costs"
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "slug": "education",
+  "metaTitle": "Education Security Solutions",
+  "metaDescription": "SecuEdge provides specialized security solutions for educational institutions, protecting student data, securing research networks, and defending against targeted cyber threats.",
+  "hero": {
+    "headline": "Secure Your Educational Institution",
+    "sub": "Protect student data, secure research networks, and defend against advanced threats with SecuEdge's specialized education security solutions."
+  },
+  "challenges": [
+    {
+      "title": "Student Data Protection",
+      "desc": "Educational institutions must safeguard sensitive student information while maintaining FERPA compliance and managing diverse access requirements."
+    },
+    {
+      "title": "Open Network Environments",
+      "desc": "Educational networks must balance openness for learning with security, supporting thousands of BYOD devices and diverse user groups."
+    },
+    {
+      "title": "Large BYOD Environment",
+      "desc": "Students and faculty bring thousands of personal devices to campus networks with varying security levels and configurations."
+    },
+    {
+      "title": "Research Data Protection",
+      "desc": "Higher education institutions must protect valuable research data, intellectual property, and grant-funded work from theft or espionage."
+    },
+    {
+      "title": "Decentralized IT Environments",
+      "desc": "Educational institutions often have decentralized IT management with inconsistent security policies across departments and schools."
+    },
+    {
+      "title": "Targeted Ransomware",
+      "desc": "Educational institutions have become prime targets for ransomware attacks due to valuable data and typically limited security resources."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Student Data Protection",
+      "desc": "Student data breaches can result in regulatory fines, legal liability, identity theft, and damage to institutional reputation."
+    },
+    {
+      "title": "Open Network Environments",
+      "desc": "Open networks create large attack surfaces vulnerable to compromised devices, lateral movement, and unauthorized access."
+    },
+    {
+      "title": "Large BYOD Environment",
+      "desc": "Unmanaged and potentially compromised devices connecting to educational networks introduce significant security vulnerabilities."
+    },
+    {
+      "title": "Research Data Protection",
+      "desc": "Targeted attacks seeking to steal valuable research data, resulting in loss of competitive advantage, funding, and intellectual property."
+    },
+    {
+      "title": "Decentralized IT Environments",
+      "desc": "Security gaps created by inconsistent policies, fragmented visibility, and uncoordinated response capabilities."
+    },
+    {
+      "title": "Targeted Ransomware",
+      "desc": "Encrypted systems disrupting educational continuity, potential data theft, and significant financial impact from ransom demands."
+    }
+  ],
+  "approach": [
+    {
+      "title": "FERPA-Compliant Security",
+      "desc": "Purpose-built controls and reporting designed specifically to protect student data and maintain regulatory compliance."
+    },
+    {
+      "title": "Open Network Security",
+      "desc": "Advanced protection for open academic networks that balances security with accessibility for learning and research."
+    },
+    {
+      "title": "Research Data Protection",
+      "desc": "Specialized security for valuable research data, intellectual property, and critical academic resources."
+    },
+    {
+      "title": "Ransomware Defense",
+      "desc": "Multi-layered protection against education-targeted ransomware attacks, including prevention and rapid recovery capabilities."
+    },
+    {
+      "title": "Specialized Security for Education",
+      "desc": "SecuEdge for Education delivers comprehensive protection tailored to the unique needs of K-12 schools, colleges, and universities, addressing the specific challenges of securing student data, protecting research networks, and maintaining open learning environments. Our solution combines advanced threat prevention with education-specific compliance controls, enabling institutions to protect sensitive information while supporting academic freedom and innovation."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Student Data Protection",
+      "desc": "Safeguard sensitive student data across all systems with controls that prevent unauthorized access, detect anomalous behavior, and maintain compliance with educational regulations.",
+      "features": [
+        "FERPA compliance controls",
+        "Data loss prevention",
+        "Role-based access control"
+      ]
+    },
+    {
+      "title": "Open Network Security",
+      "desc": "Secure open educational networks while preserving accessibility, ensuring appropriate resources are available to students and faculty without exposing sensitive systems.",
+      "features": [
+        "Network segmentation",
+        "Zero Trust architecture",
+        "Granular access policies"
+      ]
+    },
+    {
+      "title": "BYOD Management",
+      "desc": "Allow students and faculty to use personal devices while maintaining security, protecting educational networks from potentially compromised devices.",
+      "features": [
+        "Device security assessment",
+        "Network access control",
+        "Behavioral monitoring"
+      ]
+    },
+    {
+      "title": "Research Data Security",
+      "desc": "Protect valuable research data, intellectual property, and grant-funded work from targeted attacks while enabling secure collaboration and academic exchange.",
+      "features": [
+        "IP protection",
+        "Secure collaboration",
+        "Advanced threat detection"
+      ]
+    },
+    {
+      "title": "Multi-Campus Security",
+      "desc": "Unify security across decentralized educational environments, providing consistent protection while respecting departmental autonomy and unique requirements.",
+      "features": [
+        "Centralized visibility",
+        "Distributed enforcement",
+        "Consistent policy management"
+      ]
+    },
+    {
+      "title": "Ransomware Protection",
+      "desc": "Defend against education-targeted ransomware attacks with specialized protection that detects encryption behaviors, blocks lateral movement, and ensures minimal disruption.",
+      "features": [
+        "Advanced behavioral analysis",
+        "Automated containment",
+        "Rapid recovery capabilities"
+      ]
+    }
+  ],
+  "compliance": [
+    "FERPA"
+  ],
+  "process": [
+    {
+      "title": "Assessment",
+      "desc": "Educational environment analysis, student data mapping, research network evaluation, compliance gap analysis."
+    },
+    {
+      "title": "Academic-Aware Implementation",
+      "desc": "Academic calendar planning, zero-disruption deployment, initial monitoring mode, phased enforcement rollout."
+    },
+    {
+      "title": "Optimization",
+      "desc": "Education-specific tuning, compliance validation, faculty & staff training, continuous improvement."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge help with FERPA compliance?",
+      "a": "SecuEdge provides comprehensive controls designed to meet Family Educational Rights and Privacy Act requirements. Our solution includes granular access controls for student records, data loss prevention specifically calibrated for educational data, detailed audit logging, and automatic detection of potential compliance violations. We provide documentation mapping our security controls directly to FERPA requirements, making compliance audits and assessments significantly easier."
+    },
+    {
+      "q": "How does SecuEdge secure open educational networks?",
+      "a": "We use a layered approach that balances accessibility with security. This includes network segmentation to separate sensitive data from general access areas, Zero Trust architecture to verify every access request regardless of origin, continuous monitoring for anomalous behavior, and granular access policies that allow appropriate resources while protecting sensitive systems. This approach maintains the openness needed for learning while providing robust security for sensitive data."
+    },
+    {
+      "q": "How does SecuEdge manage the BYOD challenge in education?",
+      "a": "Our BYOD management approach includes device security assessment upon network connection, network access control that places devices in appropriate security zones based on their security posture, behavioral monitoring to detect suspicious activities, and automated remediation options for compromised devices. These capabilities allow students and faculty to use their own devices while protecting educational networks from potential security threats."
+    },
+    {
+      "q": "Will implementing SecuEdge disrupt our educational activities?",
+      "a": "No, we design our implementation specifically to avoid disruption to the educational environment. We work around academic calendars and avoid deployment during critical periods like exams or enrollment. Our phased approach starts with monitoring mode to understand your environment, followed by gradual policy implementation during appropriate windows. We coordinate closely with your staff to ensure security measures integrate seamlessly with educational activities."
+    },
+    {
+      "q": "How does SecuEdge protect research data?",
+      "a": "SecuEdge provides specialized protection for research data through a combination of data classification, intellectual property controls, secure collaboration tools, and advanced threat detection focused on sophisticated attacks targeting research information. We help institutions maintain appropriate access for researchers while preventing unauthorized data exfiltration and protecting against targeted espionage attempts seeking valuable research."
+    },
+    {
+      "q": "How quickly can SecuEdge be implemented in our educational environment?",
+      "a": "Implementation timelines vary based on your environment complexity, but we typically complete initial deployment within 3-6 weeks, with full optimization over 1-3 months. We align implementation with your academic calendar to avoid disruption to educational activities. We begin providing immediate protection from day one using our rapid deployment model, prioritizing your most sensitive systems and critical data first, then methodically expanding protection across your entire environment."
+    }
+  ],
+  "cta": {
+    "headline": "Secure Your Educational Institution",
+    "sub": "Protect your students, staff, and research with SecuEdge's specialized education security solutions while maintaining an open learning environment.",
+    "offer": "Schedule a free education security assessment",
+    "offerNote": "Identify vulnerabilities before they impact your students"
+  }
+}

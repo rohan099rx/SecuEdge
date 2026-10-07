@@ -1,0 +1,22 @@
+{
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge's IoT security solution helped us secure our manufacturing floor with over 5,000 connected sensors and controllers. Their approach to device authentication and network segmentation gave us confidence in our IoT deployment.",
+      "author": "Michael Johnson",
+      "role": "CTO",
+      "company": "Global Manufacturing Corp"
+    },
+    {
+      "quote": "After experiencing a significant security breach in our smart building systems, we implemented SecuEdge's IoT security platform. The visibility and control it provides has transformed our approach to IoT security.",
+      "author": "Sarah Chen",
+      "role": "Head of IT Security",
+      "company": "Premier Properties"
+    },
+    {
+      "quote": "As a healthcare provider with thousands of connected medical devices, security is critical. SecuEdge's solution provided the perfect balance of strong security controls while maintaining the accessibility our medical staff requires.",
+      "author": "Dr. James Wilson",
+      "role": "CISO",
+      "company": "Metropolitan Medical Center"
+    }
+  ]
+}

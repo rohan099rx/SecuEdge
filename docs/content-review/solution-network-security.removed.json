@@ -1,0 +1,35 @@
+{
+  ".stats": [
+    {
+      "label": "Reduction in successful network attacks",
+      "value": "95%"
+    },
+    {
+      "label": "Less time spent on security management",
+      "value": "70%"
+    },
+    {
+      "label": "Network availability maintained",
+      "value": "99.9%"
+    },
+    {
+      "label": "Lower total cost of ownership",
+      "value": "40%"
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "After implementing SecuEdge, we saw a 93% reduction in security incidents and blocked over 10,000 attack attempts in the first month alone. The visibility into network traffic has been invaluable for our security team.",
+      "role": "CISO",
+      "company": "Healthcare Organization"
+    },
+    {
+      "quote": "SecuEdge's network security solution gives us confidence that our patient data and critical systems are protected from constantly evolving threats. The visibility and control we've gained has been transformative for our security team.",
+      "company": "Regional Medical Center (Healthcare Provider case study, 15 locations, 3,000+ employees)"
+    },
+    {
+      "quote": "As a financial institution, we're a prime target for attackers. SecuEdge's network security solution has proven invaluable in protecting our critical financial data and systems, while their threat intelligence ensures we're protected against the latest attack methods.",
+      "company": "Global Investment Firm (Financial Services case study, 12 offices worldwide, $15B AUM)"
+    }
+  ]
+}

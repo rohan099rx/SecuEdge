@@ -1,0 +1,193 @@
+{
+  "slug": "manufacturing",
+  "metaTitle": "Manufacturing Cybersecurity Solutions",
+  "metaDescription": "SecuEdge provides specialized security solutions for manufacturing environments, protecting operational technology (OT) networks and IT infrastructure from cyber threats.",
+  "hero": {
+    "headline": "Secure Operational Technology for Manufacturing",
+    "sub": "Specialized security solutions that protect manufacturing production systems and IT infrastructure from evolving cyber threats."
+  },
+  "challenges": [
+    {
+      "title": "Legacy OT Systems",
+      "desc": "Manufacturing environments often run specialized operational technology with outdated systems that were designed without security in mind."
+    },
+    {
+      "title": "OT/IT Convergence",
+      "desc": "Increased connectivity between previously isolated operational technology networks and corporate IT systems creates new attack vectors."
+    },
+    {
+      "title": "Production Continuity",
+      "desc": "Manufacturing operations often require 24/7 uptime, making traditional security measures like regular patching and system updates challenging."
+    },
+    {
+      "title": "Industrial IoT Devices",
+      "desc": "Smart manufacturing relies on increasingly connected IIoT devices that often lack robust security features and expand the attack surface."
+    },
+    {
+      "title": "Physical Safety Risks",
+      "desc": "Cyber attacks on manufacturing systems can have serious physical consequences, potentially compromising worker safety and equipment integrity."
+    },
+    {
+      "title": "Targeted Attacks",
+      "desc": "Manufacturing facilities are increasingly targeted by sophisticated threat actors including state-sponsored groups and industrial competitors."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Legacy OT Systems",
+      "desc": "Unpatched vulnerabilities and limited security controls in legacy OT systems create exploitable security gaps."
+    },
+    {
+      "title": "OT/IT Convergence",
+      "desc": "Compromised IT systems can provide access to critical OT networks that control industrial processes and machinery."
+    },
+    {
+      "title": "Production Continuity",
+      "desc": "Security vulnerabilities remain unaddressed due to the inability to take critical systems offline for maintenance."
+    },
+    {
+      "title": "Industrial IoT Devices",
+      "desc": "Unsecured IIoT devices provide entrypoints for attackers to access critical operational technology systems."
+    },
+    {
+      "title": "Physical Safety Risks",
+      "desc": "Attackers could alter industrial control systems to cause physical damage, dangerous operating conditions, or product quality issues."
+    },
+    {
+      "title": "Targeted Attacks",
+      "desc": "Advanced persistent threats specifically targeting intellectual property, production methods, and industrial control systems."
+    }
+  ],
+  "approach": [
+    {
+      "title": "OT Network Protection",
+      "desc": "Specialized security for operational technology networks with deep packet inspection of industrial protocols and OT-specific threat detection."
+    },
+    {
+      "title": "OT/IT Segmentation",
+      "desc": "Secure separation between operational and information technology networks while enabling necessary controlled communication."
+    },
+    {
+      "title": "Industrial IoT Security",
+      "desc": "Comprehensive protection for connected industrial devices and sensors with continuous monitoring and anomaly detection."
+    },
+    {
+      "title": "Production Continuity",
+      "desc": "Security solutions designed for 24/7 operational environments with zero-downtime protection and non-disruptive updates."
+    },
+    {
+      "title": "Protecting Manufacturing Operations",
+      "desc": "Manufacturing facilities require specialized security that understands the unique challenges of industrial environments. SecuEdge provides comprehensive protection for both operational technology (OT) and information technology (IT) networks. Our solutions are designed to secure critical production systems while ensuring operational continuity and enabling digital transformation initiatives in manufacturing."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "OT Network Protection",
+      "desc": "Protect critical production systems with security designed specifically for industrial control systems and SCADA environments.",
+      "features": [
+        "Industrial protocol inspection",
+        "OT-specific threat detection",
+        "Asset inventory and monitoring"
+      ]
+    },
+    {
+      "title": "OT/IT Segmentation",
+      "desc": "Isolate critical operational technology from potential threats while enabling necessary business connectivity and data exchange.",
+      "features": [
+        "Network segmentation",
+        "Controlled data transfer",
+        "Secure OT/IT integration"
+      ]
+    },
+    {
+      "title": "Industrial IoT Security",
+      "desc": "Secure connected industrial devices and sensors that enable smart manufacturing initiatives and Industry 4.0 transformation.",
+      "features": [
+        "IIoT device protection",
+        "Sensor security",
+        "Communication encryption"
+      ]
+    },
+    {
+      "title": "Legacy System Protection",
+      "desc": "Secure legacy industrial systems that cannot be updated or replaced by implementing additional security controls to compensate for inherent vulnerabilities.",
+      "features": [
+        "Compensating controls",
+        "Virtual patching",
+        "Behavior monitoring"
+      ]
+    },
+    {
+      "title": "Anomaly Detection",
+      "desc": "Identify potential security threats and operational issues by monitoring for abnormal behavior in manufacturing systems and processes.",
+      "features": [
+        "Behavioral analytics",
+        "Process monitoring",
+        "Early warning system"
+      ]
+    },
+    {
+      "title": "Operational Visibility",
+      "desc": "Gain complete visibility into all connected devices and systems across the manufacturing environment to identify and address security gaps.",
+      "features": [
+        "Asset discovery",
+        "Risk visualization",
+        "Threat intelligence"
+      ]
+    }
+  ],
+  "compliance": [
+    "IEC 62443",
+    "NIST Cybersecurity Framework"
+  ],
+  "process": [
+    {
+      "title": "OT/IT Assessment",
+      "desc": "Asset inventory, network mapping, vulnerability assessment, risk prioritization."
+    },
+    {
+      "title": "Solution Design",
+      "desc": "Architecture planning, segmentation strategy, control selection, production impact analysis."
+    },
+    {
+      "title": "Zero-Downtime Deployment",
+      "desc": "Parallel implementation, staged rollout, monitor-only phase, production validation."
+    },
+    {
+      "title": "Continuous Protection",
+      "desc": "24/7 monitoring, threat intelligence updates, non-disruptive updates, regular security reviews."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge secure legacy manufacturing equipment?",
+      "a": "For legacy equipment that cannot be updated or replaced, we implement a series of compensating controls including network segmentation, monitoring for abnormal behavior, virtual patching at the network level, and controlled access pathways. These measures create multiple layers of protection around vulnerable systems without requiring modifications to the equipment itself."
+    },
+    {
+      "q": "Will implementing SecuEdge disrupt our production processes?",
+      "a": "No, our implementation is specifically designed for zero-downtime deployment in manufacturing environments. We utilize a phased approach that begins with monitoring-only deployment, followed by careful implementation of security controls during planned maintenance windows or in parallel with existing systems. Our manufacturing specialists work with your production teams to ensure no disruption to critical operations."
+    },
+    {
+      "q": "How does SecuEdge handle security for IIoT devices in manufacturing?",
+      "a": "Our Industrial IoT security platform provides comprehensive protection through device authentication, secure communication channels, behavior monitoring, and anomaly detection. We implement security at multiple levels: securing the devices themselves when possible, securing communication pathways, implementing gateway security, and creating secure zones for IIoT systems to operate within manufacturing environments."
+    },
+    {
+      "q": "How does SecuEdge balance OT/IT security requirements in manufacturing?",
+      "a": "We understand that OT and IT have different security priorities – with OT focusing on availability and safety while IT prioritizes confidentiality and integrity. Our approach creates appropriate security controls for each environment while enabling necessary data flow between them. We implement secure communication gateways, controlled data transfer mechanisms, and zone-based security that respects the different requirements of each domain."
+    },
+    {
+      "q": "Can SecuEdge help with regulatory compliance for manufacturing?",
+      "a": "Yes, our manufacturing security solutions address major regulatory requirements including IEC 62443 for industrial automation and control systems, NIST Cybersecurity Framework, various sector-specific regulations (such as FDA requirements for medical device manufacturing), and data protection regulations. Our compliance modules include built-in controls, documentation, and reporting to simplify regulatory compliance."
+    },
+    {
+      "q": "How does SecuEdge support our Industry 4.0 transformation?",
+      "a": "SecuEdge is designed to enable digital transformation in manufacturing by providing security that facilitates rather than blocks innovation. Our solutions secure the foundational elements of Industry 4.0: IIoT sensors and devices, data exchange between OT and IT systems, machine learning and analytics platforms, and cloud connectivity. By implementing appropriate security controls, we enable you to pursue smart factory initiatives with confidence that your intellectual property and operations remain protected."
+    }
+  ],
+  "cta": {
+    "headline": "Secure Your Manufacturing Environment",
+    "sub": "Protect critical production systems and enable digital transformation with manufacturing-specific security solutions from SecuEdge.",
+    "offer": "Schedule a free OT security assessment",
+    "offerNote": "Evaluate your current manufacturing security posture"
+  }
+}

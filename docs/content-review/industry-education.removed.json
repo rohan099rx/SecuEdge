@@ -1,0 +1,97 @@
+{
+  ".guarantees": [
+    {
+      "title": "Zero Learning Disruption",
+      "desc": "Our implementation process ensures no disruption to educational activities, scheduling around academic calendars and avoiding peak periods."
+    },
+    {
+      "title": "Immediate Protection",
+      "desc": "Even during phased implementation, we provide immediate protection for student data and critical systems from day one."
+    },
+    {
+      "title": "Compliance Documentation",
+      "desc": "We provide complete documentation of all security controls specifically formatted for educational compliance requirements and audits."
+    },
+    {
+      "title": "Faculty & Staff Training",
+      "desc": "We provide specialized training for faculty and staff to ensure security practices integrate seamlessly with educational activities."
+    }
+  ],
+  ".stats": [
+    {
+      "label": "Educational clients achieve compliance",
+      "value": "100%"
+    },
+    {
+      "label": "Reduction in ransomware incidents",
+      "value": "95%"
+    },
+    {
+      "label": "Learning disruptions from implementation",
+      "value": "0"
+    },
+    {
+      "label": "Average reduction in security costs",
+      "value": "48%"
+    }
+  ],
+  ".caseStudiesUnverified": [
+    {
+      "name": "Major University",
+      "descriptor": "Research-Focused University",
+      "profile": "30,000+ students, 5 campuses",
+      "challenge": "Needed to protect valuable research data and student information across multiple campuses while maintaining an open academic environment and FERPA compliance.",
+      "solution": "Implemented SecuEdge Education Security with research data protection, student information safeguards, and network segmentation across all campuses.",
+      "results": [
+        {
+          "value": "100%",
+          "label": "FERPA compliance"
+        },
+        {
+          "value": "82%",
+          "label": "Reduction in security incidents"
+        },
+        {
+          "value": "0",
+          "label": "Research data breaches"
+        }
+      ]
+    },
+    {
+      "name": "K-12 School District",
+      "descriptor": "Public School System",
+      "profile": "12 schools, 8,500+ students",
+      "challenge": "Struggling with ransomware threats and managing thousands of student devices while protecting sensitive student information with limited IT resources.",
+      "solution": "Deployed SecuEdge K-12 Security with ransomware protection, BYOD management, and centralized visibility across all schools in the district.",
+      "results": [
+        {
+          "value": "100%",
+          "label": "Protection against ransomware"
+        },
+        {
+          "value": "65%",
+          "label": "Reduction in IT workload"
+        },
+        {
+          "value": "40%",
+          "label": "Cost reduction vs previous solution"
+        }
+      ]
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge helped us protect student data and research networks while maintaining the open learning environment our university requires. Their education-specific approach made all the difference in addressing our unique security needs.",
+      "role": "CISO",
+      "company": "Major University"
+    },
+    {
+      "quote": "SecuEdge's education-specific solution addressed our complex environment in ways generic security products couldn't. We've achieved complete regulatory compliance while protecting our research data and maintaining our open academic culture.",
+      "company": "Major University"
+    },
+    {
+      "quote": "With our limited IT resources, SecuEdge has been a game-changer. Their K-12 specific approach has protected our students' data, prevented ransomware attacks, and actually reduced our IT team's security workload despite our growing technology use.",
+      "company": "K-12 School District"
+    }
+  ]
+}

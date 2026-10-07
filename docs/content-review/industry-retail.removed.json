@@ -1,0 +1,97 @@
+{
+  ".guarantees": [
+    {
+      "title": "Zero Shopping Disruption",
+      "desc": "Our implementation process ensures no disruption to critical shopping experiences, especially during peak retail periods and holiday seasons."
+    },
+    {
+      "title": "Immediate Protection",
+      "desc": "Even during phased implementation, we provide immediate protection for payment systems and customer data from day one."
+    },
+    {
+      "title": "PCI DSS Documentation",
+      "desc": "We provide complete documentation of all security controls specifically formatted for PCI DSS reporting and compliance audits."
+    },
+    {
+      "title": "Retail Staff Training",
+      "desc": "We provide specialized training for retail staff to ensure security practices integrate seamlessly with retail operations and customer service."
+    }
+  ],
+  ".stats": [
+    {
+      "label": "Retail clients achieve PCI DSS compliance",
+      "value": "98%"
+    },
+    {
+      "label": "In prevented fraud losses",
+      "value": "$85M+"
+    },
+    {
+      "label": "Protection during peak seasons",
+      "value": "100%"
+    },
+    {
+      "label": "Average reduction in security costs",
+      "value": "45%"
+    }
+  ],
+  ".caseStudiesUnverified": [
+    {
+      "name": "National Retail Chain",
+      "descriptor": "Multi-Channel Retailer",
+      "profile": "500+ stores, e-commerce platform",
+      "challenge": "Needed to secure payment systems across physical stores and e-commerce platform while maintaining PCI DSS compliance and detecting fraud across all channels.",
+      "solution": "Deployed SecuEdge Retail Security with point-of-sale protection, e-commerce security, and unified fraud prevention across all customer touchpoints.",
+      "results": [
+        {
+          "value": "100%",
+          "label": "PCI DSS compliance score"
+        },
+        {
+          "value": "78%",
+          "label": "Reduction in fraud losses"
+        },
+        {
+          "value": "0",
+          "label": "Payment data breaches"
+        }
+      ]
+    },
+    {
+      "name": "E-commerce Platform",
+      "descriptor": "Online Retailer",
+      "profile": "5M+ customers, 15K daily transactions",
+      "challenge": "Experienced increasing digital skimming attacks targeting customer checkout pages and needed to protect payment data while streamlining PCI DSS compliance.",
+      "solution": "Implemented SecuEdge E-commerce Security with digital skimming protection, web application firewall, and client-side code monitoring for their shopping platform.",
+      "results": [
+        {
+          "value": "100%",
+          "label": "Blocked skimming attacks"
+        },
+        {
+          "value": "45%",
+          "label": "Reduction in compliance costs"
+        },
+        {
+          "value": "30%",
+          "label": "Increase in customer trust"
+        }
+      ]
+    }
+  ],
+  ".testimonialsUnverified": [
+    {
+      "quote": "SecuEdge helped us achieve and maintain PCI DSS compliance while protecting our customers' data across all channels. Their retail-specific expertise and comprehensive security platform has been invaluable to our business.",
+      "role": "CIO",
+      "company": "National Retail Chain"
+    },
+    {
+      "quote": "SecuEdge's retail-specific solution addressed our unique challenges across both in-store and online channels. We've achieved complete PCI compliance while significantly reducing fraud losses and protecting our customers' data.",
+      "company": "National Retail Chain"
+    },
+    {
+      "quote": "SecuEdge's e-commerce security capabilities have prevented numerous digital skimming attacks that our previous solution missed. The platform has significantly simplified our PCI compliance process while giving our customers confidence in our security.",
+      "company": "E-commerce Platform"
+    }
+  ]
+}

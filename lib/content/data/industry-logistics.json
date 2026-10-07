@@ -1,0 +1,150 @@
+{
+  "slug": "logistics",
+  "metaTitle": "Logistics & Transportation Security Solutions",
+  "metaDescription": "SecuEdge protects freight carriers, ports and fleet operators from ransomware, Citrix-style VPN exploits and supply chain attacks that strand cargo and halt operations.",
+  "hero": {
+    "headline": "Keep the Freight Moving, Whatever Attackers Try",
+    "sub": "DP World Australia lost 30,137 containers in a 3-day port shutdown. Forward Air lost $7.5M in LTL revenue over a single holiday weekend. SecuEdge closes the remote-access gaps that make these attacks possible."
+  },
+  "stats": [
+    { "label": "Containers stranded in DP World port shutdown", "value": "30,137" },
+    { "label": "Forward Air revenue lost over one holiday weekend", "value": "$7.5M" },
+    { "label": "Share of Australian container freight through DP World", "value": "~40%" },
+    { "label": "Duration of DP World national port shutdown", "value": "3 days" }
+  ],
+  "challenges": [
+    {
+      "title": "Fleet Management SaaS as Single Point of Failure",
+      "desc": "Centralised ELD and fleet management platforms serve entire carrier fleets. The ORBCOMM ransomware attack took real-time visibility away from major trucking companies for weeks, forcing paper log compliance."
+    },
+    {
+      "title": "Ransomware Timed to Peak Season",
+      "desc": "Forward Air was hit on December 15 — peak holiday shipping. Attackers know that time pressure on freight deadlines means payment is more likely and damage is maximal."
+    },
+    {
+      "title": "Exposed Remote Access Appliances",
+      "desc": "DP World Australia was compromised via the Citrix Bleed vulnerability on a public-facing Citrix NetScaler. Thousands of logistics firms run similar exposed appliances."
+    },
+    {
+      "title": "Port and Terminal Operational Technology",
+      "desc": "Crane controls, container tracking, gate access systems and berth management are now IP-connected but rarely segmented from corporate IT — a breach propagates to physical operations."
+    },
+    {
+      "title": "Supply Chain Vendor Interconnection",
+      "desc": "Carriers are deeply integrated with customers' ERP and WMS systems via EDI. A compromised carrier becomes a pivot point into retailers and manufacturers who trusted that connection."
+    },
+    {
+      "title": "Multi-Site WAN Dependency",
+      "desc": "Dispatch, customs documentation and customer EDI all depend on network connectivity across multiple depots, border crossings and hubs — a single WAN failure halts cross-site coordination."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Ransomware Halting Freight Operations",
+      "desc": "Hades ransomware encrypted Forward Air's customs documentation and freight management systems on the busiest shipping week of the year — airlines at cargo hubs could not offload because Forward Air could not receive."
+    },
+    {
+      "title": "Exploited VPN Appliances Shutting Ports",
+      "desc": "DP World disconnected internet access across four Australian ports to contain a Citrix Bleed breach — stranding 30,137 containers and disrupting 40% of Australian container freight for three days."
+    },
+    {
+      "title": "Fleet Visibility Blackout",
+      "desc": "ORBCOMM's ransomware attack blinded carriers to their own fleets. Drivers reverted to paper logs; FMCSA issued an emergency compliance waiver. For carriers with perishable cargo, every hour without visibility is a liability."
+    },
+    {
+      "title": "Cargo Theft via GPS Spoofing",
+      "desc": "Attackers manipulate GPS signals to misdirect vehicles, create phantom locations and disguise theft routes — a growing threat as fleet management depends on real-time location data."
+    },
+    {
+      "title": "EDI Partner Compromise",
+      "desc": "A logistics company that serves as the EDI bridge between a retailer and its suppliers is a prize target — compromising the carrier's network gives attackers visibility into purchase orders, shipment schedules and inventory levels."
+    }
+  ],
+  "approach": [
+    {
+      "title": "Replace Exposed Appliances with Hardened VPN",
+      "desc": "SecuEdge OpenVPN and IPSec replace public-facing Citrix and SonicWall appliances — eliminating the exact attack surface exploited in the DP World breach and the SonicWall CVE-2024-40766 wave targeting logistics."
+    },
+    {
+      "title": "Segment OT from Corporate IT",
+      "desc": "Port terminal equipment, gate access systems and crane controls sit in isolated VLANs with explicit firewall rules. A corporate IT compromise cannot propagate to physical port operations."
+    },
+    {
+      "title": "WAN Failover for Operational Continuity",
+      "desc": "Dual-ISP load balancing keeps dispatch, customs documentation and customer EDI live even when a primary link fails or is cut during an attack — no single point of WAN failure."
+    },
+    {
+      "title": "DNS Blocking Cuts Ransomware C2",
+      "desc": "Hades ransomware requires a DNS callback to receive encryption keys. Blocking malware and botnet DNS categories at the network level prevents ransomware from completing its attack chain even after initial infection."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Hardened VPN (OpenVPN + IPSec)",
+      "desc": "Replace vulnerable public-facing Citrix, SonicWall and similar appliances with SecuEdge's hardened VPN gateway — authenticated with certificates and MFA, never exposed without an authenticated tunnel.",
+      "features": ["Certificate-based auth", "MFA enforcement", "Replaces legacy VPN appliances"]
+    },
+    {
+      "title": "Firewall OT/IT Segmentation",
+      "desc": "Place terminal OT systems, fleet management platforms, dispatch and corporate IT on separate VLANs — explicit allow rules between them, no flat network for attackers to traverse.",
+      "features": ["Terminal OT isolation", "Dispatch VLAN", "EDI zone controls"]
+    },
+    {
+      "title": "Load Balancing & WAN Failover",
+      "desc": "Dual-ISP configuration keeps cross-site operations live. Dispatch, customs filing and customer EDI continue on the secondary link when the primary fails or is under attack.",
+      "features": ["Dual-ISP failover", "Automatic link switching", "Zero-downtime WAN events"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block ransomware C2 domains, newly-registered domains and malware categories from fleet management systems and dispatch workstations — production systems should never resolve unknown external domains.",
+      "features": ["Ransomware C2 blocking", "Malware category filtering", "Newly-registered domain blocking"]
+    },
+    {
+      "title": "Network Monitoring & Threat Detection",
+      "desc": "Continuous traffic logging surfaces anomalous connections from fleet management systems or terminal OT — detecting pre-exfil staging and lateral movement before ransomware deploys.",
+      "features": ["Real-time traffic logs", "Anomaly alerting", "OT traffic baseline monitoring"]
+    },
+    {
+      "title": "Captive Portal for Depot & Driver WiFi",
+      "desc": "Authenticate drivers, visitors and contractors at depots and distribution centres — isolating their devices from internal dispatch and fleet management systems.",
+      "features": ["Driver device isolation", "Contractor authentication", "Per-session access control"]
+    }
+  ],
+  "compliance": ["SOC 2", "ISO 27001"],
+  "process": [
+    {
+      "title": "Network & Asset Discovery",
+      "desc": "Map all remote access appliances, fleet management platforms, terminal OT connections and EDI partner integrations — identify exposed attack surfaces and flat network risks."
+    },
+    {
+      "title": "Segmented Hardened Deployment",
+      "desc": "Deploy hardened VPN replacing legacy appliances, implement OT/IT segmentation, configure WAN failover and enable DNS blocking across all operational zones."
+    },
+    {
+      "title": "Monitoring & Seasonal Readiness",
+      "desc": "Establish traffic baselines for normal operational periods, configure enhanced alerting before peak shipping seasons, and verify WAN failover monthly."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge prevent an attack like the DP World port shutdown?",
+      "a": "DP World was compromised via the Citrix Bleed vulnerability on a public-facing Citrix appliance. SecuEdge replaces that appliance entirely — port staff access operational systems via SecuEdge's hardened VPN with MFA, and terminal OT systems sit in a VLAN the corporate network cannot reach without an explicit firewall rule."
+    },
+    {
+      "q": "Can SecuEdge protect against ransomware timed to peak shipping season?",
+      "a": "SecuEdge's DNS category blocking prevents ransomware from completing its C2 callback — the step where it receives encryption keys. Without a successful callback, ransomware cannot encrypt. Combined with network segmentation, even an infection on a workstation cannot reach freight management servers."
+    },
+    {
+      "q": "We have dozens of depots and border crossings. Does SecuEdge work across distributed sites?",
+      "a": "Yes. SecuEdge's site-to-site VPN and IPSec tunnels connect depots, border crossings and head office securely. WAN load balancing across dual ISP connections keeps every site online — including during the kind of connectivity disruption that accompanies a network security incident."
+    },
+    {
+      "q": "Our fleet management SaaS was recently breached. What can SecuEdge do?",
+      "a": "SecuEdge creates a network boundary between your internal systems and the SaaS platform. Firewall rules restrict which devices can reach fleet management APIs, egress filtering flags unusual bulk data transfers from those connections, and VPN with MFA ensures only authenticated staff and devices can initiate sessions to the platform."
+    }
+  ],
+  "cta": {
+    "headline": "Keep Every Depot, Port and Fleet Secure",
+    "sub": "Replace vulnerable VPN appliances, segment your OT network and protect freight operations from the ransomware groups that time their attacks for peak season."
+  }
+}

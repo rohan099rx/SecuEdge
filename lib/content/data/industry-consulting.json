@@ -1,0 +1,146 @@
+{
+  "slug": "consulting",
+  "metaTitle": "Consulting Firm Cybersecurity Solutions",
+  "metaDescription": "SecuEdge protects consulting firms, advisory practices and professional services from client IP theft, BEC invoice fraud and the credential risks of always-on remote work.",
+  "hero": {
+    "headline": "Your Client Relationships Are Your Most Valuable Asset",
+    "sub": "LockBit stole 6 TB from Accenture. Frost & Sullivan had an unsecured backup folder on a public server — found, downloaded and sold on a dark web forum. Deloitte's GitHub credentials could have cascaded to every client repository. SecuEdge ensures your client data stays yours."
+  },
+  "stats": [
+    { "label": "Accenture data stolen by LockBit 2.0", "value": "6 TB" },
+    { "label": "LockBit ransom demand to Accenture", "value": "$50M" },
+    { "label": "Deloitte breach: GitHub credentials exposing client repos", "value": "2025" },
+    { "label": "Frost & Sullivan data found on dark web forum", "value": "Sold" }
+  ],
+  "challenges": [
+    {
+      "title": "Client IP Theft and Competitive Intelligence Risk",
+      "desc": "Consulting firms hold M&A strategy documents, financial models, organisational restructuring plans and litigation materials for clients. This intelligence is worth as much to a corporate competitor as to a ransomware group."
+    },
+    {
+      "title": "Road Warrior Remote Work Attack Surface",
+      "desc": "Consultants work from client offices, hotels, airports and co-working spaces — connecting to internal file systems and client portals from networks they do not control, using devices that may not be managed."
+    },
+    {
+      "title": "BEC and Invoice Fraud",
+      "desc": "Large consulting invoices and the expectation of rapid payment make BEC attacks targeting accounts payable highly lucrative. Impersonating a partner or finance contact via email compromise redirects wire transfers of millions."
+    },
+    {
+      "title": "Cross-Engagement Data Contamination",
+      "desc": "When Engagement A and Engagement B share the same network segment, a breach affecting one client's work creates risk of exposure for another's. Consultants often share file servers, VPN credentials and project management tools."
+    },
+    {
+      "title": "Credential Sharing and Departure Gaps",
+      "desc": "Project teams share credentials to client delivery platforms. When staff depart, those credentials often remain active. Former consultants retain access to client deliverable repositories weeks or months after leaving."
+    },
+    {
+      "title": "CI/CD and Code Repository Exposure",
+      "desc": "Consulting firms delivering software projects hold client code repositories. GitHub, Azure DevOps and similar platforms — accessed with shared or personal credentials — become a single point of failure for every client engagement that touches code."
+    }
+  ],
+  "threats": [
+    {
+      "title": "Mass IP Exfiltration and Extortion",
+      "desc": "LockBit exfiltrated 6 TB from Accenture — internal tools, client delivery methodologies, staff and client-adjacent records — then demanded $50M and published sample data. For a firm whose core product is trusted advisory, the reputational cost exceeds the ransom."
+    },
+    {
+      "title": "Unsecured Backup Exposure",
+      "desc": "Frost & Sullivan's backup folder was public on an internet-facing server with no authentication. A threat actor found it, downloaded all employee records and client contacts, and listed them for sale — no exploit required."
+    },
+    {
+      "title": "CI/CD Credential Cascade",
+      "desc": "Deloitte's 2025 breach involved GitHub credentials and proprietary source code. CI/CD pipeline credentials provide cascading access to every client repository the firm managed — a single credential compromise becomes a multi-client breach."
+    },
+    {
+      "title": "Hotel and Airport WiFi Credential Harvest",
+      "desc": "A consultant on hotel WiFi with no VPN is a credential harvest target. Adversary-in-the-middle attacks on hotel networks capture authentication tokens for internal systems, cloud platforms and client portals."
+    }
+  ],
+  "approach": [
+    {
+      "title": "VPN for All Remote Work — No Exceptions",
+      "desc": "Every consultant, from partner to analyst, accesses internal systems and client deliverable platforms via SecuEdge VPN with certificate authentication. Hotel, airport and client-office WiFi becomes irrelevant — all traffic routes through an authenticated, encrypted tunnel."
+    },
+    {
+      "title": "Per-Engagement VLAN Isolation",
+      "desc": "Each client engagement runs in its own VLAN. Firewall rules prevent Engagement A from reaching Engagement B's file shares, repositories or collaboration tools. A breach affecting one client's environment cannot propagate across the firm."
+    },
+    {
+      "title": "Block BEC Phishing at the DNS Layer",
+      "desc": "SecuEdge DNS blocking prevents staff from loading lookalike phishing pages impersonating clients, partners or corporate finance — the credential harvest step that precedes every BEC attack."
+    },
+    {
+      "title": "Detect IP Theft via Bulk Download Monitoring",
+      "desc": "6 TB or even 6 GB of unusual outbound data transfer from a file server or code repository is detectable against a normal traffic baseline. SecuEdge alerts on bulk transfers before exfiltration completes."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "VPN for Road Warriors (OpenVPN + IPSec)",
+      "desc": "All consultant remote access — from client sites, hotels, airports and home offices — through a SecuEdge VPN with certificate and MFA authentication. No unprotected access to internal or client systems from any network.",
+      "features": ["Certificate-based auth", "MFA enforcement", "Hotel/airport WiFi protection"]
+    },
+    {
+      "title": "Per-Engagement Firewall Segmentation",
+      "desc": "Each client engagement in its own VLAN with explicit firewall rules. Lateral movement between engagement environments requires a policy change — not just a network route.",
+      "features": ["Per-client VLAN isolation", "Cross-engagement firewall rules", "Blast radius containment"]
+    },
+    {
+      "title": "DNS & Content Category Blocking",
+      "desc": "Block BEC phishing pages, credential harvesting sites and lookalike domains impersonating clients, finance contacts and corporate identity providers — preventing the harvest before credentials are stolen.",
+      "features": ["BEC phishing blocking", "Credential harvest domain filtering", "Lookalike domain blocking"]
+    },
+    {
+      "title": "Bandwidth Monitoring & IP Exfil Detection",
+      "desc": "Baseline normal outbound traffic from file servers, code repositories and collaboration platforms — alert on bulk transfers that indicate exfiltration before the threat actor completes their download.",
+      "features": ["File server traffic baseline", "Bulk transfer alerting", "Repository access monitoring"]
+    },
+    {
+      "title": "Captive Portal for Client & Visitor WiFi",
+      "desc": "When clients visit the consulting office, their devices connect via captive-portal-authenticated guest WiFi — completely isolated from internal project systems and client engagement data.",
+      "features": ["Client visitor isolation", "Guest WiFi authentication", "Internal data protection"]
+    },
+    {
+      "title": "Egress Firewall (Default-Deny Outbound)",
+      "desc": "Internal systems — file servers, CI/CD pipelines, project management tools — can only connect to explicitly whitelisted business destinations. An attacker's exfiltration server hits a default-deny egress rule.",
+      "features": ["Default-deny outbound policy", "Whitelist-only egress", "C2 exfiltration blocking"]
+    }
+  ],
+  "compliance": ["SOC 2", "ISO 27001", "GDPR"],
+  "process": [
+    {
+      "title": "Engagement Boundary Mapping",
+      "desc": "Map every client engagement's data, tools and access requirements — identify where cross-engagement network paths exist and design per-client VLAN boundaries."
+    },
+    {
+      "title": "Remote Access Hardening",
+      "desc": "Deploy VPN with MFA for all consultant remote access, implement per-engagement VLANs, enable DNS blocking and establish outbound traffic baselines for file server and repository monitoring."
+    },
+    {
+      "title": "Access Lifecycle Management",
+      "desc": "Configure VPN credential revocation as part of staff offboarding; review per-engagement VLAN access as projects close; update firewall rules when new client environments are onboarded."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How does SecuEdge protect client confidential data when consultants work from client sites?",
+      "a": "All access to internal systems and client deliverables routes through SecuEdge VPN — regardless of where the consultant is working. From the client's office WiFi, a hotel or an airport, every connection is encrypted and authenticated before reaching internal file servers or project management platforms."
+    },
+    {
+      "q": "We have multiple active client engagements sharing the same infrastructure. How does SecuEdge isolate them?",
+      "a": "SecuEdge creates per-engagement VLANs with explicit firewall rules between them. Engagement A's file shares cannot be reached from Engagement B's VLAN without a policy change. This contains any breach to a single engagement rather than the entire firm's client portfolio."
+    },
+    {
+      "q": "How does SecuEdge detect if someone is stealing client IP?",
+      "a": "SecuEdge establishes baseline outbound traffic patterns for file servers and code repositories. A bulk download of 6 TB — or even an unusual download of 50 GB after hours — triggers an alert. The traffic logs provide forensic detail on which internal systems were accessed and how much data left the network."
+    },
+    {
+      "q": "Can SecuEdge help prevent BEC attacks against our accounts payable team?",
+      "a": "SecuEdge DNS category blocking prevents accounts payable staff from loading phishing pages that impersonate clients, finance contacts or payment platforms. This blocks the credential harvest that enables BEC. Combined with egress filtering that restricts outbound email relay to authorised mail servers, it reduces the attack surface for invoice redirect fraud."
+    }
+  ],
+  "cta": {
+    "headline": "Every Client Engagement Deserves Its Own Security Boundary",
+    "sub": "Protect road-warrior remote access, isolate client engagements from each other and detect IP theft in progress — before a ransomware group finds the file server your partners share."
+  }
+}

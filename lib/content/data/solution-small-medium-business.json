@@ -1,0 +1,115 @@
+{
+  "slug": "small-medium-business",
+  "metaTitle": "Small-Medium Business Solutions",
+  "metaDescription": "SecuEdge provides simple, powerful firewall protection designed specifically for small and medium-sized businesses. Stop cyber threats, not your business.",
+  "hero": {
+    "headline": "Stop Cyber Threats, Not Your Business",
+    "sub": "Get robust protection against ransomware, malware, and data theft with a firewall solution that's easy to deploy, manage, and fits your budget. Keep your business running securely."
+  },
+  "challenges": [
+    {
+      "title": "Increasing Threat Sophistication",
+      "desc": "Today's ransomware and phishing attacks are highly targeted, increasingly complex, and devastating for unprepared businesses. The risk: data theft, financial loss, and operational disruption that many small businesses never recover from."
+    },
+    {
+      "title": "Limited IT Resources",
+      "desc": "Small businesses often lack dedicated security personnel, relying on overworked staff who have other primary responsibilities. The risk: security misconfigurations, delayed responses to threats, and preventable vulnerabilities."
+    },
+    {
+      "title": "\"We're Too Small\" Misconception",
+      "desc": "Many SMBs believe they're not targets for cybercriminals, leaving them especially vulnerable to attacks. The hard truth: 43% of cyber attacks specifically target small businesses, with 60% going out of business within 6 months of a breach."
+    }
+  ],
+  "approach": [
+    {
+      "title": "You Don't Need to Be a Security Expert",
+      "desc": "Small businesses face the same security challenges as large organizations, but without the luxury of extensive IT departments and security specialists. SecuEdge bridges this gap with solutions designed specifically for businesses like yours. Limited budget shouldn't mean limited security; your current IT staff can manage powerful security; focus on growing your business, not managing complex tools."
+    },
+    {
+      "title": "Simple 30-Minute Setup",
+      "desc": "Get protected in minutes, not days, with our guided setup process."
+    },
+    {
+      "title": "Intuitive Interface",
+      "desc": "Designed for non-technical users - no security expertise required."
+    },
+    {
+      "title": "Cloud-Managed Security",
+      "desc": "Monitor and manage your network security from anywhere, on any device."
+    },
+    {
+      "title": "Protection That Grows With Your Business",
+      "desc": "The SecuEdge firewall solution is a next-generation security platform specifically engineered to address the unique challenges of small and medium businesses. Unlike complex enterprise solutions or inadequate consumer-grade products, SecuEdge provides robust protection that's both powerful and easy to manage - even without specialized IT security staff."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "Advanced Threat Prevention",
+      "desc": "The feature: next-generation firewall with intrusion prevention and deep packet inspection. Your benefit: stop ransomware, malware & phishing before they damage your business."
+    },
+    {
+      "title": "Easy-to-Use Management",
+      "desc": "The feature: intuitive cloud dashboard with visual security reports and one-click actions. Your benefit: manage your security easily, no expert needed. Setup in minutes, not days."
+    },
+    {
+      "title": "Secure Remote Access",
+      "desc": "The feature: built-in VPN with easy client setup and site-to-site connectivity options. Your benefit: enable your team to work safely from anywhere while protecting company data."
+    },
+    {
+      "title": "Content & Application Control",
+      "desc": "The feature: website filtering and application control with customizable policies. Your benefit: boost productivity, reduce legal risks, and block dangerous websites/apps."
+    },
+    {
+      "title": "Simple Reporting & Visibility",
+      "desc": "The feature: clear security dashboards and automated compliance reporting. Your benefit: understand your security status at a glance and easily document compliance."
+    },
+    {
+      "title": "Dedicated SMB Support",
+      "desc": "The feature: SMB-focused support team with fast response times and personalized assistance. Your benefit: get help when you need it from experts who understand small business needs."
+    }
+  ],
+  "process": [
+    {
+      "title": "Free Consultation",
+      "desc": "Our security experts assess your specific needs and recommend the right solution for your business."
+    },
+    {
+      "title": "Quick Setup",
+      "desc": "Simple 15-minute installation with guided configuration from our team. No specialized knowledge required."
+    },
+    {
+      "title": "Ongoing Protection",
+      "desc": "Automatic updates, continuous monitoring, and proactive alerts keep your business protected 24/7."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is it difficult to install and manage?",
+      "a": "Not at all. SecuEdge was designed specifically for small businesses without dedicated IT security staff. Our typical setup takes just 15 minutes, with a guided setup process and intuitive management interface that doesn't require specialized knowledge."
+    },
+    {
+      "q": "What kind of support do you offer?",
+      "a": "We provide dedicated support specifically focused on small business needs. This includes phone, email, and chat support with fast response times, plus access to our knowledge base and video tutorials. Our team understands the unique challenges SMBs face."
+    },
+    {
+      "q": "Will it slow down my internet connection?",
+      "a": "SecuEdge is designed for maximum security with minimal performance impact. Our solutions utilize intelligent traffic inspection that focuses processing power where it's needed most, ensuring your critical business applications remain responsive."
+    },
+    {
+      "q": "How does it protect against ransomware?",
+      "a": "Our solution uses multiple layers of protection: advanced threat prevention blocks known malware, behavior-based detection identifies suspicious activities, web filtering prevents access to malicious websites, and application control stops unauthorized software from running on your network."
+    },
+    {
+      "q": "Does it help with compliance requirements?",
+      "a": "Yes. SecuEdge helps businesses meet common compliance requirements including PCI DSS, HIPAA, GDPR, and more. Our solutions provide the necessary security controls, and our reporting tools make it easy to document your compliance during audits."
+    },
+    {
+      "q": "What happens if my business grows?",
+      "a": "SecuEdge solutions are designed to scale with your business. As you add more users, devices, or locations, your SecuEdge protection grows with you. Our solutions can be easily expanded without requiring disruptive platform changes."
+    }
+  ],
+  "cta": {
+    "headline": "Don't Wait for an Attack – Protect Your Business Today",
+    "sub": "Get the simple, powerful protection your business deserves."
+  }
+}
