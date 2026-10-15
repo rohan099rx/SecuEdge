@@ -13,18 +13,15 @@ type MenuEntry = { name: string; detail: string; href: string; external?: boolea
 const menus: Record<MenuName, { kicker: string; title: string; entries: MenuEntry[] }> = {
   Products: {
     kicker: "SecuEdge product portfolio",
-    title: "Six products. One ecosystem.",
+    title: "Seven products. One ecosystem.",
     entries: [
-      { name: "All Products", detail: "Explore the complete SecuEdge portfolio", href: "/products" },
       { name: "Frontier", detail: "Next-Generation Firewall (NGFW)", href: "/products/frontier" },
-      { name: "Watchtower", detail: "Network Monitoring System", href: "/products/watchtower" },
       { name: "SecuWeb", detail: "SD-WAN", href: "/products/secuweb" },
+      { name: "SecuConnect", detail: "VPN", href: "/products/secuconnect" },
+      { name: "Watchtower", detail: "Network Monitoring System", href: "/products/watchtower" },
+      { name: "Muster", detail: "Log Analyzer", href: "/products/muster" },
       { name: "Grid", detail: "SIEM / SOAR", href: "/products/grid" },
       { name: "SecuDefend", detail: "IPS / IDS", href: "/products/secudefend" },
-      { name: "Muster", detail: "Log Analyzer", href: "/products/muster" },
-      { name: "Frontier model portfolio", detail: "SE20 · SE50 · SE50P · SE100P · SE250P · SE500P", href: "/products/frontier" },
-      { name: "Frontier high-scale models", detail: "SE1000P · SE2500P · SE5000P · SE10000P · SE15000P", href: "/products/frontier" },
-      { name: "Custom Frontier configuration", detail: "Discuss requirements beyond the standard lineup", href: "/products/frontier/custom" },
     ],
   },
   Solutions: {
@@ -237,7 +234,7 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
         {menuNames.map((name) => (
           <section key={name}>
             <h2>{name}</h2>
-            {menus[name].entries.map((entry) => (
+            {menus[name].entries.map((entry, index) => (
               <Link 
                 key={entry.name} 
                 href={entry.href} 
@@ -245,9 +242,17 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
                 rel={entry.external ? "noreferrer" : undefined} 
                 onClick={() => setOpen(false)}
               >
-                {entry.name}<span>{entry.detail}</span>
+                <span className="mnav-row"><span className="mnav-index" aria-hidden>{String(index + 1).padStart(2, "0")}</span><strong>{entry.name}</strong></span><span>{entry.detail}</span>
               </Link>
             ))}
+            <Link
+              key={`${name}-all`}
+              href={name === "Products" ? "/products" : name === "Solutions" ? "/solutions" : name === "Platform" ? "/platform" : "/resources"}
+              onClick={() => setOpen(false)}
+              className="mnav-all"
+            >
+              View all {name.toLowerCase()} <ArrowUpRight size={13} aria-hidden />
+            </Link>
           </section>
         ))}
         <Link href="/customers" onClick={() => setOpen(false)}>Customers</Link>

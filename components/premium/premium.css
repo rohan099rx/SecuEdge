@@ -1336,3 +1336,63 @@
     transition: none;
   }
 }
+
+/* ── Mobile-first pass: scroll, 48px targets, 16px fields (no theme change) ── */
+.foundation-site--light.foundation-site--light .foundation-mobile-nav[data-open="true"] {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 900px) {
+  .foundation-nav__menu {
+    min-width: 48px;
+    min-height: 48px;
+  }
+  .foundation-mobile-nav section a {
+    min-height: 48px;
+    align-content: center;
+  }
+  .foundation-mobile-nav > a:not(.foundation-button) {
+    min-height: 48px;
+  }
+  .mnav-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  .mnav-row strong {
+    font-weight: 700;
+  }
+  .mnav-index {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    opacity: 0.65;
+    flex-shrink: 0;
+  }
+  .mnav-all {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 48px;
+    align-content: center;
+    font-weight: 700;
+  }
+  /* 16px fields stop iOS auto-zoom; 48px heights for thumbs */
+  .premium input,
+  .premium select,
+  .premium textarea {
+    font-size: 16px;
+  }
+  .premium input,
+  .premium select {
+    min-height: 48px;
+  }
+  .premium .premium-btn-primary,
+  .premium .premium-btn-ghost,
+  .premium .foundation-button {
+    min-height: 48px;
+  }
+}

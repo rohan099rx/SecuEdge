@@ -24,6 +24,7 @@ export const PRODUCTS = [
   { key: "grid", name: "Grid", fullName: "SecuEdge Grid", category: "SIEM / SOAR", status: "available" as const, href: "/products/grid", desc: "Security event intelligence and response workflows." },
   { key: "secudefend", name: "SecuDefend", fullName: "SecuEdge SecuDefend", category: "IPS / IDS", status: "available" as const, href: "/products/secudefend", desc: "Detection and prevention at the network boundary." },
   { key: "muster", name: "Muster", fullName: "SecuEdge Muster", category: "Log Analyzer", status: "available" as const, href: "/products/muster", desc: "Centralized log analysis for investigation and operations." },
+  { key: "secuconnect", name: "SecuConnect", fullName: "SecuEdge SecuConnect", category: "VPN", status: "available" as const, href: "/products/secuconnect", desc: "Secure remote access for large workforces and branch networks." },
 ] as const;
 
 export type NavItem = { label: string; href: string; desc?: string; children?: NavItem[] };
@@ -180,6 +181,15 @@ export const SECUEDGE_PRODUCTS = [
     href: '/products/muster',
     desc: 'Centralized log collection, analysis and search platform for operational visibility and security event investigation.',
     accent: '#c8a8f0',
+  },
+  {
+    key: 'secuconnect',
+    name: 'SecuConnect',
+    category: 'VPN',
+    categoryShort: 'VPN',
+    href: '/products/secuconnect',
+    desc: 'Secure remote-access VPN for large workforces and branch networks, managed alongside the edge.',
+    accent: '#9db8ff',
   },
 ] as const;
 

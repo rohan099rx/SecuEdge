@@ -69,6 +69,10 @@ const PRODUCT_STORIES: Record<string, { capabilities: string[]; story: string[] 
     capabilities: ["Centralized log collection", "Search and filtering", "Security event investigation"],
     story: ["Logs collect", "Events are filtered", "Records become insight"],
   },
+  secuconnect: {
+    capabilities: ["Remote-access VPN", "Branch connectivity", "Managed access policy"],
+    story: ["Users connect remotely", "Access is verified", "Work continues securely"],
+  },
 };
 
 export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [

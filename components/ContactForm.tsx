@@ -100,8 +100,8 @@ export function ContactForm({ defaultInterest = "deployment" }: { defaultInteres
             <textarea id="message" name="message" rows={4} className="mt-1.5 w-full rounded-lg border border-[rgba(11,34,57,0.2)] bg-white px-3 py-2.5 text-sm text-[#0B2239] outline-none transition focus:border-[#016FED] focus:ring-2 focus:ring-[#016FED]/25" />
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <button type="button" className="premium-btn-ghost !min-h-[2.7rem]" onClick={() => setStep(1)}><ArrowLeft size={15} /> Back</button>
-            <button type="button" className="premium-btn-primary !min-h-[2.7rem]" onClick={() => setStep(3)}>Continue <ArrowRight size={15} /></button>
+            <button type="button" className="premium-btn-ghost !min-h-[3rem]" onClick={() => setStep(1)}><ArrowLeft size={15} /> Back</button>
+            <button type="button" className="premium-btn-primary !min-h-[3rem]" onClick={() => setStep(3)}>Continue <ArrowRight size={15} /></button>
           </div>
         </div>
       )}
@@ -120,8 +120,8 @@ export function ContactForm({ defaultInterest = "deployment" }: { defaultInteres
           </label>
           <p className="mt-3 text-xs text-[#526274]">Submitting prepares an email draft for you to review and send. Your request is not sent from this website.</p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <button type="button" className="premium-btn-ghost !min-h-[2.7rem]" onClick={() => setStep(2)}><ArrowLeft size={15} /> Back</button>
-            <button type="submit" className="premium-btn-primary !min-h-[2.7rem]">Prepare email request</button>
+            <button type="button" className="premium-btn-ghost !min-h-[3rem]" onClick={() => setStep(2)}><ArrowLeft size={15} /> Back</button>
+            <button type="submit" className="premium-btn-primary !min-h-[3rem]">Prepare email request</button>
           </div>
         </div>
       )}

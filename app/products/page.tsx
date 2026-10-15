@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowRight, ShieldCheck, Eye, Globe2, Layers3, ListTree, Waypoints } from "lucide-react";
+import { ArrowRight, ShieldCheck, Eye, Globe2, Layers3, ListTree, Waypoints, Lock } from "lucide-react";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 import { EcosystemDirectory } from "@/components/EcosystemDirectory";
@@ -16,6 +16,7 @@ const PRODUCT_ICONS = {
   secuweb: Globe2,
   grid: Layers3,
   secudefend: Waypoints,
+  secuconnect: Lock,
   muster: ListTree,
 } as const;
 

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
   ArrowRight, ArrowUpRight, Check, ShieldCheck, Eye, Globe2, Layers3, ListTree,
-  Waypoints, Zap, LockKeyhole, Network, Activity, Server, Building2, Cpu,
+  Waypoints, Zap, LockKeyhole, Lock, Network, Activity, Server, Building2, Cpu,
   GitBranch, FileSearch, BellRing, Route as RouteIcon, Boxes,
 } from "lucide-react";
 import { SecurityFlow } from "@/components/foundation/SecurityFlow";
@@ -37,6 +37,7 @@ const PRODUCT_ICONS = {
   secuweb: Globe2,
   grid: Layers3,
   secudefend: Waypoints,
+  secuconnect: Lock,
   muster: ListTree,
 } as const;
 
