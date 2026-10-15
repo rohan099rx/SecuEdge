@@ -47,7 +47,7 @@ export function InfrastructureMap() {
           <text x="280" y="61" textAnchor="middle">SECURITY BOUNDARY</text>
         </g>
         {NODES.map((node) => (
-          <g key={node.id} className={`architecture-node ${active === node.id ? "is-active" : ""}`} onMouseEnter={() => setActive(node.id)} onFocus={() => setActive(node.id)}>
+          <g key={node.id} className={["architecture-node", active === node.id && "is-active"].filter(Boolean).join(" ")} onMouseEnter={() => setActive(node.id)} onFocus={() => setActive(node.id)}>
             <circle cx={node.x} cy={node.y} r={node.kind === "core" ? 28 : 22} />
             <circle cx={node.x} cy={node.y} r={node.kind === "core" ? 11 : 8} className="architecture-node__core" />
             <text x={node.x} y={node.y + 52} textAnchor="middle">{node.label}</text>

@@ -1,238 +1,238 @@
 {
-  "sectionEyebrow": "For All Industries",
-  "sectionHeadline": "Industry-Specific Security Solutions",
-  "sectionSub": "Tailored firewall protection designed for your industry's unique security challenges and compliance requirements",
-  "cards": [
-    {
-      "industry": "Healthcare",
-      "desc": "HIPAA-compliant security for patient data, medical devices and healthcare networks",
-      "features": [
-        "HIPAA-compliant controls",
-        "Medical IoT segmentation",
-        "Ransomware lateral movement blocking",
-        "PHI audit trail logging",
-        "Vendor/contractor isolation"
-      ]
-    },
-    {
-      "industry": "Finance",
-      "desc": "PCI DSS segmentation and advanced protection for financial institutions and transactions",
-      "features": [
-        "PCI DSS cardholder data zones",
-        "Default-deny egress filtering",
-        "SOX and GLBA audit trails",
-        "VPN with certificate auth",
-        "Bandwidth anomaly alerting"
-      ]
-    },
-    {
-      "industry": "Education",
-      "desc": "CIPA-compliant content filtering and FERPA-aware network security for every campus",
-      "features": [
-        "CIPA content filtering for E-Rate",
-        "Student BYOD captive portal",
-        "FERPA data segmentation",
-        "Bandwidth management for instruction",
-        "Staff VPN remote access"
-      ]
-    },
-    {
-      "industry": "Legal",
-      "desc": "Confidential data protection and exfiltration prevention for law firms and legal departments",
-      "features": [
-        "Default-deny egress filtering",
-        "Client vault VLAN isolation",
-        "Bulk exfiltration detection",
-        "Visitor WiFi captive portal",
-        "ABA Rule 1.6 compliance"
-      ]
-    },
-    {
-      "industry": "Retail",
-      "desc": "POS network isolation and social-engineering defence for in-store and online retail",
-      "features": [
-        "POS VLAN isolation",
-        "VPN with MFA against vishing",
-        "Magecart C2 DNS blocking",
-        "Vendor access segmentation",
-        "Bulk exfiltration monitoring"
-      ]
-    },
-    {
-      "industry": "Manufacturing",
-      "desc": "OT/IT segmentation and ransomware defence for production environments",
-      "features": [
-        "OT/IT firewall boundary",
-        "Contractor VPN with MFA",
-        "Ransomware C2 DNS blocking",
-        "Long dwell-time monitoring",
-        "IEC 62443 alignment"
-      ]
-    },
-    {
-      "industry": "Government",
-      "desc": "Data sovereignty and audit-ready network security for public sector organisations",
-      "features": [
-        "Citizen data segmentation",
-        "Strict egress filtering",
-        "Comprehensive audit logging",
-        "VPN for remote staff",
-        "NIST CSF alignment"
-      ]
-    },
-    {
-      "industry": "Media",
-      "desc": "Deadline-proof newsroom security and content protection for media organisations",
-      "features": [
-        "Production system VPN access",
-        "Bandwidth management for live",
-        "DNS blocking for newsroom",
-        "Source protection controls",
-        "WAN failover for uptime"
-      ]
-    },
-    {
-      "industry": "Hospitality",
-      "desc": "Guest WiFi isolation and PMS protection against social engineering and ransomware",
-      "features": [
-        "Captive portal guest isolation",
-        "VPN with MFA stops vishing",
-        "PMS and POS VLAN segmentation",
-        "IoT room control isolation",
-        "6 TB exfiltration alerting"
-      ]
-    },
-    {
-      "industry": "Logistics",
-      "desc": "Fleet visibility, port terminal security and hardened VPN for freight operations",
-      "features": [
-        "Replaces vulnerable VPN appliances",
-        "OT terminal segmentation",
-        "WAN failover for dispatch",
-        "Ransomware C2 DNS blocking",
-        "Fleet management monitoring"
-      ]
-    },
-    {
-      "industry": "Technology",
-      "desc": "Supply chain C2 detection, management console protection and dev/prod isolation",
-      "features": [
-        "VPN-only management access",
-        "C2 beacon DNS blocking",
-        "Dev/prod VLAN isolation",
-        "Default-deny egress policy",
-        "Bulk exfiltration detection"
-      ]
-    },
-    {
-      "industry": "Construction",
-      "desc": "BIM file protection, subcontractor isolation and hardened VPN replacing legacy appliances",
-      "features": [
-        "Replaces SonicWall/Cisco VPN",
-        "Subcontractor captive portal",
-        "BIM server VLAN isolation",
-        "SMB reconnaissance detection",
-        "Ransomware C2 DNS blocking"
-      ]
-    },
-    {
-      "industry": "Agriculture",
-      "desc": "Harvest-season ransomware defence for co-ops, grain elevators and farm OT networks",
-      "features": [
-        "Grain elevator OT isolation",
-        "Farm IoT VLAN segmentation",
-        "Long dwell-time monitoring",
-        "Seasonal worker captive portal",
-        "WAN failover for co-ops"
-      ]
-    },
-    {
-      "industry": "Non-Profit",
-      "desc": "Donor data protection and silent exfiltration detection for charities and NGOs",
-      "features": [
-        "Volunteer device captive portal",
-        "CRM access restrictions",
-        "Bulk exfiltration detection",
-        "BEC phishing DNS blocking",
-        "Budget-efficient single appliance"
-      ]
-    },
-    {
-      "industry": "Consulting",
-      "desc": "Client IP protection and road-warrior VPN for professional services and advisory firms",
-      "features": [
-        "Per-engagement VLAN isolation",
-        "Road-warrior VPN with MFA",
-        "BEC phishing DNS blocking",
-        "Bulk download IP exfil alerts",
-        "Client visitor captive portal"
-      ]
-    },
-    {
-      "industry": "Real Estate",
-      "desc": "Wire fraud prevention, smart building IoT isolation and agent remote access security",
-      "features": [
-        "BEC phishing DNS blocking",
-        "Smart building IoT VLAN",
-        "Agent VPN with MFA",
-        "Property management monitoring",
-        "Open house captive portal"
-      ]
-    },
-    {
-      "industry": "Automotive",
-      "desc": "DMS vendor isolation, FTC Safeguards compliance and multi-location dealer security",
-      "features": [
-        "DMS VLAN isolation",
-        "Guest and service bay WiFi",
-        "Multi-location site-to-site VPN",
-        "WAN failover for DMS",
-        "FTC Safeguards audit trail"
-      ]
-    },
-    {
-      "industry": "Food & Beverage",
-      "desc": "POS malware defence, guest WiFi isolation and consistent security across franchise locations",
-      "features": [
-        "POS VLAN isolation",
-        "Whitelist-only POS outbound",
-        "Guest WiFi captive portal",
-        "POS beacon detection",
-        "PCI DSS compliance controls"
-      ]
-    },
-    {
-      "industry": "Sports & Fitness",
-      "desc": "Member data protection, venue OT isolation and ransomware detection for gyms and stadiums",
-      "features": [
-        "Membership management VLAN",
-        "Stadium OT isolation",
-        "Member WiFi captive portal",
-        "Ransomware dwell detection",
-        "Event-day WAN failover"
-      ]
-    },
-    {
-      "industry": "Entertainment",
-      "desc": "Source code and production asset protection against social engineering and bulk exfiltration",
-      "features": [
-        "Production system VPN access",
-        "Whitelist-only outbound policy",
-        "Bulk exfiltration alerting",
-        "DDoS-resilient WAN load balancing",
-        "Dev/prod VLAN isolation"
-      ]
-    },
-    {
-      "industry": "Fashion & Beauty",
-      "desc": "Per-brand VLAN isolation, POS protection and holiday-peak ransomware defence",
-      "features": [
-        "Per-brand VLAN segmentation",
-        "POS VLAN isolation",
-        "In-store guest WiFi portal",
-        "Magecart C2 DNS blocking",
-        "Dwell-period detection"
-      ]
-    }
-  ]
+ "sectionEyebrow": "For all industries",
+ "sectionHeadline": "Made for the way your sector works.",
+ "sectionSub": "SecuEdge Frontier deployments for every sector — data stays in India by default.",
+ "cards": [
+  {
+   "industry": "Healthcare",
+   "desc": "Separate clinical networks and protect patient data, with audit logs per device",
+   "features": [
+    "Medical device segmentation",
+    "Billing and guest separation",
+    "Ransomware containment zones",
+    "Per-device audit logs",
+    "Remote VPN for doctors"
+   ]
+  },
+  {
+   "industry": "Finance",
+   "desc": "Separate sensitive zones with strict outbound rules and audit evidence",
+   "features": [
+    "Trading and payments zones",
+    "Default-deny outbound rules",
+    "Phishing and malicious-site blocking",
+    "VPN with MFA",
+    "Exportable audit logs"
+   ]
+  },
+  {
+   "industry": "Education",
+   "desc": "Safe Environment Filter on by default, with separate admin, lab and student networks",
+   "features": [
+    "Safe Environment Filter",
+    "Safe search on Google, Bing, YouTube",
+    "Category blocking",
+    "Student Wi-Fi captive portal",
+    "Staff VPN remote access"
+   ]
+  },
+  {
+   "industry": "Legal",
+   "desc": "Separate client-matter networks with secure remote access and audit logs",
+   "features": [
+    "Client-matter separation",
+    "Secure advocate remote access",
+    "Strict outbound rules",
+    "Visitor Wi-Fi separation",
+    "Exportable audit logs"
+   ]
+  },
+  {
+   "industry": "Retail",
+   "desc": "Isolated billing systems and safe customer Wi-Fi for every store",
+   "features": [
+    "POS isolation",
+    "Separate guest Wi-Fi",
+    "VPN to head office",
+    "Quick Mode store setup",
+    "Category blocking"
+   ]
+  },
+  {
+   "industry": "Manufacturing",
+   "desc": "Separate machine and office networks with controlled contractor access",
+   "features": [
+    "OT/IT separation",
+    "Contractor VPN",
+    "Ransomware command-server blocking",
+    "Multi-WAN failover",
+    "24/7 India-based support"
+   ]
+  },
+  {
+   "industry": "Government",
+   "desc": "Made in India, with citizen data kept in India and complete audit logs",
+   "features": [
+    "Citizen data segmentation",
+    "Strict outbound filtering",
+    "Full audit logs",
+    "VPN for remote staff",
+    "Data stays in India"
+   ]
+  },
+  {
+   "industry": "Media",
+   "desc": "Failover and bandwidth priority for newsrooms that never stop",
+   "features": [
+    "Multi-WAN failover",
+    "Bandwidth priority for publishing",
+    "Field reporter VPN",
+    "Phishing blocking",
+    "24/7 support"
+   ]
+  },
+  {
+   "industry": "Hospitality",
+   "desc": "Guest Wi-Fi with a login page, kept away from billing and property systems",
+   "features": [
+    "Captive portal guest Wi-Fi",
+    "Billing and PMS separation",
+    "Per-guest bandwidth limits",
+    "Category blocking",
+    "Same settings on every model"
+   ]
+  },
+  {
+   "industry": "Logistics",
+   "desc": "Failover for depots and VPN for drivers and branch systems",
+   "features": [
+    "Multi-WAN failover",
+    "Branch and driver VPN",
+    "Separate warehouse device networks",
+    "Quick Mode setup",
+    "24/7 India-based support"
+   ]
+  },
+  {
+   "industry": "Technology",
+   "desc": "VPN for hybrid teams with separate dev and production networks",
+   "features": [
+    "Remote-access VPN",
+    "Dev/prod separation",
+    "Phishing blocking",
+    "Quick Mode for founders",
+    "Full features on SE20"
+   ]
+  },
+  {
+   "industry": "Construction",
+   "desc": "Quick Mode setup for temporary sites with VPN back to head office",
+   "features": [
+    "Quick Mode site setup",
+    "VPN to head office",
+    "Guest Wi-Fi separation",
+    "Multi-WAN failover",
+    "Same settings on every model"
+   ]
+  },
+  {
+   "industry": "Agriculture",
+   "desc": "Easy setup and backup internet for remote sites",
+   "features": [
+    "Quick Mode for non-specialists",
+    "Backup internet lines",
+    "VPN to head office",
+    "Data kept in India",
+    "24/7 India-based support"
+   ]
+  },
+  {
+   "industry": "Non-Profit",
+   "desc": "Quick Mode protection for small teams, with data kept in India",
+   "features": [
+    "Quick Mode for small teams",
+    "Full features on every model",
+    "Separate staff and guest networks",
+    "Phishing blocking",
+    "Data kept in India"
+   ]
+  },
+  {
+   "industry": "Consulting",
+   "desc": "VPN for consultants on the move with separate client networks",
+   "features": [
+    "Consultant VPN with MFA",
+    "Separate client networks",
+    "Phishing blocking",
+    "Guest Wi-Fi separation",
+    "Data stays in India"
+   ]
+  },
+  {
+   "industry": "Real Estate",
+   "desc": "Guest Wi-Fi for visitors with separate staff networks",
+   "features": [
+    "Visitor guest Wi-Fi",
+    "Separate staff networks",
+    "VPN between offices",
+    "Category blocking",
+    "Quick Mode setup"
+   ]
+  },
+  {
+   "industry": "Automotive",
+   "desc": "Separate showroom, workshop and dealer-system networks",
+   "features": [
+    "Showroom and workshop separation",
+    "Dealer-system networks",
+    "Guest Wi-Fi",
+    "VPN to head office",
+    "Multi-WAN failover"
+   ]
+  },
+  {
+   "industry": "Food & Beverage",
+   "desc": "Protected billing and safe guest Wi-Fi across outlets",
+   "features": [
+    "POS isolation",
+    "Guest Wi-Fi captive portal",
+    "Same settings on every outlet",
+    "Per-guest bandwidth limits",
+    "VPN to head office"
+   ]
+  },
+  {
+   "industry": "Sports & Fitness",
+   "desc": "Safe member Wi-Fi with protected billing and staff networks",
+   "features": [
+    "Member captive portal",
+    "Billing separation",
+    "Separate staff networks",
+    "Category blocking",
+    "Quick Mode setup"
+   ]
+  },
+  {
+   "industry": "Entertainment",
+   "desc": "Failover and guest separation for venues and productions",
+   "features": [
+    "Multi-WAN failover",
+    "Guest Wi-Fi separation",
+    "Bandwidth priority for production",
+    "Phishing blocking",
+    "VPN for crews"
+   ]
+  },
+  {
+   "industry": "Fashion & Beauty",
+   "desc": "POS isolation and guest Wi-Fi across stores",
+   "features": [
+    "POS isolation",
+    "Guest Wi-Fi portal",
+    "VPN between stores and head office",
+    "Category blocking",
+    "Quick Mode setup"
+   ]
+  }
+ ]
 }

@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/products/secuweb",
     "/products/grid",
     "/products/secudefend",
+    "/products/secuconnect",
     "/products/muster",
     "/platform",
     "/about",

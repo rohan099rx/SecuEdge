@@ -119,7 +119,7 @@ function StaticFallback({ onSelect, activeId }: { onSelect: (id: LayerId) => voi
   return (
     <div className="exploded-firewall__static">
       {LAYERS.map((layer, index) => (
-        <button type="button" key={layer.id} className={`exploded-firewall__static-layer ${activeId === layer.id ? "is-active" : ""}`} onClick={() => onSelect(layer.id)} style={{ transform: `translateY(${(index - 3) * 10}px)` }}>
+        <button type="button" key={layer.id} className={["exploded-firewall__static-layer", activeId === layer.id && "is-active"].filter(Boolean).join(" ")} onClick={() => onSelect(layer.id)} style={{ transform: `translateY(${(index - 3) * 10}px)` }}>
           <span style={{ backgroundColor: layer.color }} />
           {layer.label}
         </button>

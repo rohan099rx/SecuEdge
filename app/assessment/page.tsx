@@ -18,7 +18,7 @@ const FLOW = [
   ["01 · Discover", "Seven questions about your business, data, access and IT setup."],
   ["02 · Assess", "Each answer adjusts a score that starts at 5 out of 10 — nothing hidden."],
   ["03 · Understand", "See your risk level, vulnerability points and industry threats."],
-  ["04 · Recommend", "Get Frontier capabilities matched to what you reported."],
+  ["04 · Recommend", "Get SecuEdge Frontier capabilities matched to what you reported."],
 ] as const;
 
 export default function AssessmentPage() {
@@ -34,10 +34,10 @@ export default function AssessmentPage() {
               <span className="text-[#0B2239]">Assessment</span>
             </nav>
             <p className="premium-eyebrow mx-auto mt-8">Free security assessment</p>
-            <h1 className="mx-auto mt-4 max-w-3xl text-5xl font-extrabold leading-[1.0] tracking-[-0.035em] text-[#0B2239] md:text-6xl">Is your organisation protected? Find out in 2 minutes.</h1>
+            <h1 className="mx-auto mt-4 max-w-3xl text-5xl font-extrabold leading-[1.0] tracking-[-0.035em] text-[#0B2239] md:text-6xl">How secure is your network? Find out in two minutes.</h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#30465C] md:text-lg">
-              Answer seven questions about how your business works. Get a risk picture you can
-              inspect, the threats specific to your industry, and a protection plan — no email required.
+              Seven questions, about two minutes, no email needed. You get a risk score, the threats that
+              matter in your industry, your main gaps and what to do next.
             </p>
           </Reveal>
           <Reveal aria-hidden>

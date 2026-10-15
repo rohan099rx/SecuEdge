@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   // Plain-string default; per-page metadata (lib/seo.ts) sets absolute titles
   // that already include the brand suffix. No `template` here — a template would
   // re-append the brand to those titles and recreate the audit's "| SecuEdge | SecuEdge" bug.
-  title: "SecuEdge — Secure the edge.",
-  description: "Enterprise networking and security infrastructure engineered for modern organizations.",
+  title: "SecuEdge | Cybersecurity, made easy. Built in India.",
+  description: SITE.description,
   applicationName: SITE.name,
   robots: { index: true, follow: true },
   // Re-enables pinch-zoom (fixes the audit's accessibility/viewport finding).
@@ -48,7 +48,8 @@ export const viewport = {
   initialScale: 1,
 };
 
-/** Organization structured data, including certifications. */
+/** Organization structured data — no credentials or certificates,
+ *  per the company playbook (copy deck §1.1). */
 function OrganizationJsonLd() {
   const data = {
     "@context": "https://schema.org",
@@ -56,14 +57,21 @@ function OrganizationJsonLd() {
     name: SITE.name,
     url: SITE.url,
     description: SITE.description,
+    foundingDate: "2025",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Gurugram",
+      addressRegion: "Haryana",
+      addressCountry: "IN",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+9118001230966",
+      contactType: "technical support",
+      areaServed: "IN",
+      availableLanguage: ["English", "Hindi"],
+    },
     sameAs: ["https://in.linkedin.com/company/secuedge"],
-    hasCredential: [
-      "ISO 27001:2022",
-      "ISO 9001:2015",
-      "ISO 14001:2015",
-      "ISO 45001:2018",
-      "Common Criteria / NDPP",
-    ],
   };
   return (
     <script

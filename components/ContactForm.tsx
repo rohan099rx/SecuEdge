@@ -5,10 +5,10 @@ import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { SITE } from "@/lib/site";
 
 const INTERESTS = [
-  { key: "deployment", title: "Discuss a deployment", desc: "Sizing, models and rollout for your network." },
-  { key: "product", title: "Product information", desc: "Capabilities, modes and documentation." },
-  { key: "technical", title: "Technical question", desc: "Policy, architecture or compatibility." },
-  { key: "partnership", title: "Partnership / business", desc: "Reselling, distribution or business inquiry." },
+  { key: "demo", title: "Book a demo", desc: "See SecuEdge Frontier in action with our team." },
+  { key: "sizing", title: "Size my network", desc: "Get help choosing the right model." },
+  { key: "partner", title: "Become a partner", desc: "Reselling, distribution or business inquiry." },
+  { key: "support", title: "Support for an existing customer", desc: "Help with a deployed SecuEdge Frontier." },
 ] as const;
 
 /**
@@ -17,7 +17,7 @@ const INTERESTS = [
  * mailto draft as before (plus an Interest line) — the visitor reviews and
  * sends it in their own email application. No backend, no data retention.
  */
-export function ContactForm({ defaultInterest = "deployment" }: { defaultInterest?: string }) {
+export function ContactForm({ defaultInterest = "demo" }: { defaultInterest?: string }) {
   const [step, setStep] = useState(1);
   const [interest, setInterest] = useState<string>(defaultInterest);
   const [draftHref, setDraftHref] = useState<string | null>(null);
@@ -89,9 +89,9 @@ export function ContactForm({ defaultInterest = "deployment" }: { defaultInteres
             <div>
               <label htmlFor="role" className="text-sm font-semibold text-[#0B2239]">I am a…</label>
               <select id="role" name="role" className="mt-1.5 w-full rounded-lg border border-[rgba(11,34,57,0.2)] bg-white px-3 py-2.5 text-sm text-[#0B2239] outline-none transition focus:border-[#016FED] focus:ring-2 focus:ring-[#016FED]/25">
-                <option>Business owner / decision maker</option>
-                <option>IT / network engineer</option>
-                <option>Reseller / partner</option>
+                <option>Business owner</option>
+                <option>IT or network engineer</option>
+                <option>Reseller or partner</option>
               </select>
             </div>
           </div>
@@ -116,7 +116,7 @@ export function ContactForm({ defaultInterest = "deployment" }: { defaultInteres
           </div>
           <label className="mt-4 flex items-start gap-2.5 text-xs leading-relaxed text-[#526274]">
             <input type="checkbox" name="contactConsent" required className="mt-0.5 accent-[#016FED]" />
-            <span>I agree that SecuEdge may use these details to respond to my request. See the <a href="/legal/privacy" className="font-semibold text-[#016FED]">Privacy Policy</a>.</span>
+            <span>I agree to SecuEdge contacting me about my request. Read our <a href="/legal/privacy" className="font-semibold text-[#016FED]">privacy policy</a>.</span>
           </label>
           <p className="mt-3 text-xs text-[#526274]">Submitting prepares an email draft for you to review and send. Your request is not sent from this website.</p>
           <div className="mt-5 flex flex-wrap gap-3">

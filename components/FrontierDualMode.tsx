@@ -26,20 +26,20 @@ const STATUS_LABEL: Record<string, string> = {
   on: "Active", strict: "Strict", alerts: "Alerts", basic: "Basic", off: "Off",
 };
 
-/** Display Maximum first (most secure is the hero choice). */
-const DISPLAY_ORDER = [2, 1, 0] as const;
+/** Display Strong first (recommended is the hero choice). */
+const DISPLAY_ORDER = [0, 1, 2] as const; // Strong first (recommended)
 
 const PROOF = [
-  "Independently certified",
-  "ISO 27001:2022",
-  "Common Criteria",
-  "Built in India",
-  "24-hour response",
+  "Made in India",
+  "Data stays in India",
+  "Built with DPDP in mind",
+  "24/7 India-based support",
+  "Response within 24 hours",
 ];
 
 export function FrontierDualMode() {
-  const [levelIdx, setLevelIdx] = useState(2); // default: Maximum
-  const [previousIdx, setPreviousIdx] = useState(2);
+  const [levelIdx, setLevelIdx] = useState(0); // default: Strong (recommended)
+  const [previousIdx, setPreviousIdx] = useState(0);
   const reduce = useReducedMotion();
   function selectLevel(idx: number) {
     if (idx === levelIdx) return;
@@ -139,7 +139,7 @@ export function FrontierDualMode() {
                       >
                         {lvl.label}
                       </span>
-                      {idx === 2 && (
+                      {lvl.recommended && (
                         <span className="ml-auto shrink-0 rounded-full bg-brand-blue/[0.08] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-brand-link">
                           Recommended
                         </span>
@@ -270,9 +270,9 @@ export function FrontierDualMode() {
       </div>
 
       <div className="mx-auto mt-5 max-w-5xl rounded-xl border border-hair bg-bg-raised p-5" role="status" aria-live="polite" aria-atomic="true">
-        <p className="text-sm font-semibold text-ink">{level.label}: what this means</p>
+        <p className="text-sm font-semibold text-ink">{level.label}{level.recommended ? " (recommended)" : ""}: what this means</p>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          {level.key === "maximum" ? "Intrusion detection and prevention are active, alongside antivirus, DNS filtering and strict firewall policy." : level.key === "balanced" ? "Intrusion detection raises alerts; intrusion prevention is off. Antivirus and DNS filtering stay active, with basic firewall policy." : "All five engines are off. Traffic passes without these protections. This mode is for testing only, never production."}
+          {level.blurb}
         </p>
         <p className="mt-2 text-xs text-muted">Highlighted rows show changes from your previous selection.</p>
       </div>

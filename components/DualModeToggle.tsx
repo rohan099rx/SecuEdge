@@ -109,7 +109,7 @@ function MenuBody({ mode }: { mode: "quick" | "pro" }) {
       {QUICK.map((it) => (
         <div
           key={it.label}
-          className={`flex items-center gap-3.5 rounded-xl px-4 py-2.5 ${it.active ? "ring-2 ring-white/80" : ""}`}
+          className={["flex items-center gap-3.5 rounded-xl px-4 py-2.5", it.active && "ring-2 ring-white/80"].filter(Boolean).join(" ")}
           style={{ backgroundColor: it.color }}
         >
           <Icon name={it.icon} className="h-[18px] w-[18px] shrink-0 text-white" />

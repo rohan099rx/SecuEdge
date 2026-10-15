@@ -18,27 +18,27 @@ export function FrontierHero() {
           </FadeUp>
           <FadeUp delay={0.06}>
             <h1 className="display-1 mt-5">
-              Enterprise-grade firewalling,{" "}
-              <span className="serif-accent text-brand-blue">made simple.</span>
+              SecuEdge Frontier.{" "}
+              <span className="serif-accent text-brand-blue">Firewalling, made easy.</span>
             </h1>
           </FadeUp>
           <FadeUp delay={0.12}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-              India&rsquo;s homegrown next-generation firewall — powerful enough for the enterprise,
-              simple enough to configure correctly the first time.
+              A next-generation firewall built in India. Gartner found that 99% of firewall breaches
+              come from misconfiguration, so we made the secure setup the easy setup.
             </p>
           </FadeUp>
           <FadeUp delay={0.18}>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link href="/contact" className="btn-primary">Get a Demo</Link>
-              <Link href="/frontier/dual-mode" className="btn-secondary">
-                See Dual Mode
+              <Link href="/contact" className="btn-primary">Book a free demo</Link>
+              <Link href="/products/recommend" className="btn-secondary">
+                Find your model
               </Link>
             </div>
           </FadeUp>
           <FadeUp delay={0.24}>
             <div className="mt-8 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-[13px] text-dim">
-              {["Made in India", "ISO 27001:2022", "Common Criteria / NDPP", "DPDP-ready"].map(
+              {["Made in India", "Data stays in India", "24/7 India-based support", "Every feature on every model"].map(
                 (t, i) => (
                   <span key={t} className="flex items-center gap-2.5">
                     {i > 0 ? <span className="h-1 w-1 rounded-full bg-[#CBD5E4]" aria-hidden /> : null}

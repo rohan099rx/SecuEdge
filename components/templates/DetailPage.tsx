@@ -2,51 +2,20 @@ import Link from "next/link";
 import { ArrowRight, Check, ChevronRight } from "lucide-react";
 import { Reveal, Stagger, Item } from "@/components/motion";
 import { PremiumFaq, PremiumCta, PremiumSteps } from "@/components/premium/PremiumSections";
-import { SECUEDGE_PRODUCTS } from "@/lib/site";
+import { SECUEDGE_PRODUCTS, STATUS_LABEL } from "@/lib/site";
 import type { DetailContent } from "@/lib/content/types";
 import "@/components/premium/premium.css";
 
 /**
  * Shared template for solution & industry pages.
  * Renders only the sections present in the content object, in a fixed
- * order: PROBLEM → REQUIREMENT → APPROACH → PRODUCTS → CAPABILITIES → NEXT.
+ * order: hero → problem → how SecuEdge Frontier helps → India context →
+ * customer reference → four steps → FAQ → CTA.
  *
- * Content filtering (JSON files untouched — filters documented here):
- * - "Enterprise Support & Services" is excluded from the enterprise approach
- *   list (it promised 24/7 assistance with guaranteed response times).
- * - The IoT "scale to thousands of devices" FAQ is excluded (absolute scale
- *   guarantee). AI positioning language elsewhere is retained as qualitative
- *   vendor positioning, not a measured claim.
+ * Content lives in the JSON sources (copy deck §14/§15) — no render filters.
+ * Named incidents, counterfactuals, timelines and invented case studies were
+ * deleted from the data, not hidden here.
  */
-const EXCLUDED_APPROACH: Record<string, string[]> = {
-  "enterprise": ["Enterprise Support & Services"],
-};
-
-const EXCLUDED_FAQS: Record<string, string[]> = {
-  "iot-security": ["Can your IoT security solution scale to accommodate thousands of devices?"],
-};
-
-/* Timeline answers ("typically 2–4 weeks…", "just 15 minutes") and
-   counterfactual incident claims ("how would SecuEdge have changed…") are
-   unverified across solution/industry pages — excluded by pattern. */
-const TIMELINE_Q_RE = /how (quickly|long)/i;
-const TIMELINE_A_RE = /\d+\s*(-|–)?\s*\d*\s*(week|month)s?|just 15 minutes/i;
-const COUNTERFACTUAL_Q_RE = /how would SecuEdge (have changed|h)/i;
-
-function visibleApproach(content: DetailContent) {
-  const excluded = EXCLUDED_APPROACH[content.slug] ?? [];
-  return (content.approach ?? []).filter((a) => !excluded.includes(a.title));
-}
-
-function visibleFaqs(content: DetailContent) {
-  const excluded = EXCLUDED_FAQS[content.slug] ?? [];
-  return (content.faqs ?? []).filter(
-    (f) =>
-      !excluded.includes(f.q) &&
-      !COUNTERFACTUAL_Q_RE.test(f.q) &&
-      !(TIMELINE_Q_RE.test(f.q) && TIMELINE_A_RE.test(f.a))
-  );
-}
 
 export function DetailPage({
   content,
@@ -60,8 +29,8 @@ export function DetailPage({
   frontierContext: string;
 }) {
   const c = content;
-  const approach = visibleApproach(c);
-  const faqs = visibleFaqs(c);
+  const approach = c.approach ?? [];
+  const faqs = c.faqs ?? [];
 
   return (
     <div className="premium">
@@ -90,33 +59,11 @@ export function DetailPage({
         </div>
       </section>
 
-      {c.stats?.length ? (
-        <section className="prem-navy border-t border-[rgba(11,34,57,0.08)] py-16 md:py-20">
-          <div className="mx-auto w-full max-w-[1200px] px-6">
-            <Reveal>
-              <p className="premium-eyebrow">Reported industry incidents</p>
-              <h2 className="premium-section-title mt-4 !text-3xl md:!text-4xl">Why this sector prepares.</h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#526274]">Publicly reported incidents from this industry — context for the requirements below, not SecuEdge outcomes.</p>
-            </Reveal>
-            <Stagger className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
-              {c.stats.map((s) => (
-                <Item key={s.label}>
-                  <div className="premium-card h-full p-6">
-                    <p className="text-3xl font-extrabold tracking-tight text-[#0B2239] tabular-nums">{s.value}</p>
-                    <p className="mt-2 text-[13px] leading-relaxed text-[#526274]">{s.label}</p>
-                  </div>
-                </Item>
-              ))}
-            </Stagger>
-          </div>
-        </section>
-      ) : null}
-
       {c.challenges?.length ? (
         <section className="border-t border-[rgba(11,34,57,0.08)] py-20 md:py-28">
           <div className="mx-auto w-full max-w-[1200px] px-6">
             <Reveal>
-              <p className="premium-eyebrow">The challenges</p>
+              <p className="premium-eyebrow">The problem</p>
               <h2 className="premium-section-title mt-4">What you&apos;re up against.</h2>
             </Reveal>
             <Stagger className={`mt-10 grid gap-4 ${c.challenges.length % 2 === 0 ? "md:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3"}`} gap={0.05}>
@@ -230,6 +177,35 @@ export function DetailPage({
         </section>
       ) : null}
 
+      {c.indiaContext ? (
+        <section className="border-t border-[rgba(11,34,57,0.08)] py-16 md:py-20">
+          <div className="mx-auto w-full max-w-[1200px] px-6">
+            <Reveal>
+              <div className="premium-card p-7 md:p-8">
+                <p className="premium-eyebrow">India context</p>
+                <p className="mt-3 max-w-3xl text-base leading-relaxed text-[#30465C]">{c.indiaContext}</p>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
+
+      {c.customerRef ? (
+        <section className="border-t border-[rgba(11,34,57,0.08)] py-16 md:py-20">
+          <div className="mx-auto w-full max-w-[1200px] px-6">
+            <Reveal>
+              <div className="premium-card flex flex-col items-start justify-between gap-4 p-7 sm:flex-row sm:items-center md:p-8">
+                <div>
+                  <p className="premium-eyebrow">Trusted in your industry</p>
+                  <p className="mt-3 max-w-2xl text-lg font-bold leading-relaxed text-[#0B2239]">{c.customerRef}</p>
+                </div>
+                <Link href="/customers" className="premium-btn-ghost shrink-0">See our customers <ArrowRight size={15} /></Link>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
+
       {c.process?.length ? (
         <PremiumSteps eyebrow="Engagement" title="From first call to fully protected." steps={c.process} />
       ) : null}
@@ -242,7 +218,7 @@ export function DetailPage({
                 <p className="premium-eyebrow">Powered by SecuEdge Frontier</p>
                 <p className="mt-3 max-w-2xl text-lg leading-relaxed text-[#0B2239]">{frontierContext} — delivered by one appliance family with Dual Mode.</p>
               </div>
-              <Link href="/frontier" className="premium-btn-ghost shrink-0">Explore Frontier <ArrowRight size={15} /></Link>
+              <Link href="/frontier" className="premium-btn-ghost shrink-0">Explore SecuEdge Frontier <ArrowRight size={15} /></Link>
             </div>
           </Reveal>
         </div>
@@ -252,13 +228,13 @@ export function DetailPage({
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <Reveal>
             <p className="premium-eyebrow">Related products</p>
-            <h2 className="mt-4 text-2xl font-bold tracking-tight text-[#0B2239] md:text-3xl">Explore the SecuEdge portfolio.</h2>
+            <h2 className="mt-4 text-2xl font-bold tracking-tight text-[#0B2239] md:text-3xl">SecuEdge Frontier, and what comes next.</h2>
           </Reveal>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {SECUEDGE_PRODUCTS.map((p) => (
               <Reveal key={p.key}>
                 <Link href={p.href} className="premium-card group flex h-full flex-col p-5">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#016FED]">{p.category}</span>
+                  <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#016FED]">{p.category} · {STATUS_LABEL[p.status]}</span>
                   <strong className="mt-1.5 block text-base font-bold text-[#0B2239]">{p.name}</strong>
                   <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-[#016FED]">Explore <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" /></span>
                 </Link>

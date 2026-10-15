@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!product) return {};
 
   return buildMetadata({
-    title: `${product.displayName} — enterprise firewall`,
-    description: `${product.displayName} is a ${product.formFactor.toLowerCase()} SecuEdge Frontier appliance for ${product.tier.toLowerCase()} deployments.`,
+    title: `${product.displayName} — SecuEdge Frontier appliance`,
+    description: `${product.displayName} is a ${product.formFactor.toLowerCase()} SecuEdge Frontier appliance sized for ${product.userRange} peak users.`,
     path: `/products/frontier/${product.slug}`,
   });
 }
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ProductRoute({ params }: { params: Promise<{ slug: string[] }> }) {
   const [family, model] = (await params).slug;
   if (model === "custom" && family === "frontier") {
-    return <div className="ecosystem-page"><section className="ecosystem-hero"><div className="foundation-container ecosystem-hero__inner"><div><p className="foundation-eyebrow">FRONTIER / CUSTOMER REQUIREMENTS</p><p className="ecosystem-category">CUSTOM CONFIGURATION</p><h1>Custom Frontier</h1><h2>Discuss the configuration your environment requires.</h2><p>Some deployments need requirements that do not map neatly to a standard Frontier model. Share your requirements with SecuEdge so the appropriate configuration can be discussed.</p><div className="ecosystem-actions"><Link className="foundation-button" href="/contact">Discuss your requirements <ArrowRight size={16}/></Link><Link className="ecosystem-text-link" href="/products/frontier">View available models</Link></div></div><div className="ecosystem-hero__mark" aria-hidden="true"><div><span>CUSTOM / FRONTIER</span><strong>C</strong><i/></div></div></div></section><section className="ecosystem-content"><div className="foundation-container"><div className="ecosystem-content__heading"><p className="foundation-eyebrow">CUSTOM FRONTIER / REQUIREMENTS → CONFIGURATION</p><h2>A separate path from the standard model lineup.</h2><p>Custom configuration is a customer-requirement discussion, not a numbered appliance or an availability status.</p></div></div></section></div>;
+    return <div className="ecosystem-page"><section className="ecosystem-hero"><div className="foundation-container ecosystem-hero__inner"><div><p className="foundation-eyebrow">FRONTIER / CUSTOMER REQUIREMENTS</p><p className="ecosystem-category">CUSTOM CONFIGURATION</p><h1>Custom Frontier</h1><h2>Discuss the configuration your environment requires.</h2><p>Some deployments need requirements that do not map neatly to a standard Frontier model. Share your requirements with SecuEdge so the appropriate configuration can be discussed.</p><div className="ecosystem-actions"><Link className="foundation-button" href="/contact">Discuss your requirements <ArrowRight size={16}/></Link><Link className="ecosystem-text-link" href="/products/frontier">View all models</Link></div></div><div className="ecosystem-hero__mark" aria-hidden="true"><div><span>CUSTOM / FRONTIER</span><strong>C</strong><i/></div></div></div></section><section className="ecosystem-content"><div className="foundation-container"><div className="ecosystem-content__heading"><p className="foundation-eyebrow">CUSTOM FRONTIER / REQUIREMENTS → CONFIGURATION</p><h2>A separate path from the standard model lineup.</h2><p>Custom configuration is a customer-requirement discussion, not a numbered appliance or an availability status.</p></div></div></section></div>;
   }
   const product = model && family === "frontier" ? getProductPage(model) : undefined;
   const ecosystemProduct = model ? undefined : ECOSYSTEM_BY_SLUG[family];

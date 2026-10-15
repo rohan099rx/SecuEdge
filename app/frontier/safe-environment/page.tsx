@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ArrowRight, ChevronRight, Check } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { Reveal, Stagger, Item } from "@/components/motion";
+import { PremiumFaq } from "@/components/premium/PremiumSections";
 import "@/components/premium/premium.css";
 
 export const metadata: Metadata = buildMetadata({
@@ -13,9 +14,10 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const STEPS = [
-  { n: "1", t: "Concerning search", d: "A search that may signal self-harm or violence is detected in real time." },
-  { n: "2", t: "Blocked instantly", d: "The content is blocked across every device on the network — wired or Wi-Fi." },
-  { n: "3", t: "Person alerted", d: "A counsellor or admin is notified in under a second, on any device." },
+  { n: "1", t: "Detect", d: "Searches that may signal risk are recognised in real time." },
+  { n: "2", t: "Block", d: "They are blocked on every wired and Wi-Fi device, with nothing to install." },
+  { n: "3", t: "Alert", d: "A counsellor, administrator or safeguarding lead is alerted in under a second, on any device." },
+  { n: "4", t: "Safe search", d: "Google, Bing and YouTube safe search is enforced automatically." },
 ];
 
 export default function SafeEnvironmentPage() {
@@ -25,7 +27,7 @@ export default function SafeEnvironmentPage() {
         <nav className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500" aria-label="Breadcrumb">
           <Link href="/products" className="transition-colors hover:text-white">Products</Link>
           <ChevronRight size={12} />
-          <Link href="/products/frontier" className="transition-colors hover:text-white">Frontier</Link>
+          <Link href="/products/frontier" className="transition-colors hover:text-white">SecuEdge Frontier</Link>
           <ChevronRight size={12} />
           <span className="text-slate-300">Safe Environment</span>
         </nav>
@@ -36,11 +38,11 @@ export default function SafeEnvironmentPage() {
         <div className="relative mx-auto w-full max-w-[1200px] px-6 py-16 md:py-24">
           <Reveal>
             <p className="premium-eyebrow">Protecting people, not just networks</p>
-            <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-[1.0] tracking-tight text-white md:text-6xl">The Safe Environment Filter.</h1>
+            <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-[1.0] tracking-tight text-white md:text-6xl">Spot the warning signs. Protect every student.</h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-400 md:text-lg">
-              A search that signals someone may be at risk doesn&rsquo;t just get blocked — the right
-              person is alerted, in real time. Not just a content filter: an early-warning system for
-              the people in your care.
+              The Safe Environment Filter spots searches linked to self-harm, suicide, violence, weapons,
+              drugs or extremist content, blocks them on every device on the network and alerts a counsellor
+              or administrator in under a second. Nothing to install on any device. On by default for schools and colleges.
             </p>
           </Reveal>
           <Reveal className="mt-10">
@@ -61,7 +63,7 @@ export default function SafeEnvironmentPage() {
 
       <section className="border-t border-white/[0.07] py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1200px] px-6">
-          <Stagger className="grid gap-4 md:grid-cols-3" gap={0.06}>
+          <Stagger className="grid gap-4 md:grid-cols-2 lg:grid-cols-4" gap={0.06}>
             {STEPS.map((s) => (
               <Item key={s.n}>
                 <div className="premium-card h-full p-7">
@@ -105,6 +107,16 @@ export default function SafeEnvironmentPage() {
           </Stagger>
         </div>
       </section>
+
+      <PremiumFaq
+        eyebrow="Safe Environment Filter · FAQ"
+        faqs={[
+          { q: "Do we need to install anything on student devices?", a: "No. Protection is applied on the network, for every wired and Wi-Fi device." },
+          { q: "Who receives safeguarding alerts?", a: "The counsellor, administrator or safeguarding lead you choose, on any device — in under a second." },
+          { q: "Is it on by default for schools?", a: "Yes. The Safe Environment Filter is on by default for schools and colleges." },
+          { q: "Which searches are blocked?", a: "Searches linked to self-harm, suicide, violence, weapons, drugs or extremist content, with safe search enforced on Google, Bing and YouTube." },
+        ]}
+      />
     </div>
   );
 }

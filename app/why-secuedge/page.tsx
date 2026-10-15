@@ -1,45 +1,46 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, Compass, Headphones, LockKeyhole, MapPin, ShieldCheck } from "lucide-react";
+import { ArrowRight, Compass, LockKeyhole, MapPin, Headphones } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { CERTIFICATIONS } from "@/lib/site";
-import { Reveal, Stagger, Item } from "@/components/motion";
+import { MISCONFIG_STAT, SUPPORT } from "@/lib/site";
+import { Reveal } from "@/components/motion";
 import "@/components/premium/premium.css";
 
 export const metadata: Metadata = buildMetadata({
   title: "Why SecuEdge",
-  description: "Learn how SecuEdge Frontier brings approachable network security, flexible controls and local product support together.",
+  description: "Gartner found that 99% of firewall breaches come from misconfiguration. Everything SecuEdge builds starts from that fact — SecuEdge Frontier, made in India, supported 24/7.",
   path: "/why-secuedge",
 });
 
+/* Copy deck §4 — keep the problem → approach → benefit structure. */
 const REASONS = [
   {
-    number: "01", icon: Compass, title: "Make secure setup easier",
-    problem: "Firewall misconfiguration is one of the most common ways networks stay exposed.",
-    approach: "Frontier offers guided Quick Mode alongside Professional Mode on the same appliance.",
-    get: "Choose a simpler starting point — or take direct control of the configuration.",
+    number: "01", icon: Compass, title: "Simplicity is security.",
+    problem: "Gartner found that 99% of firewall breaches come from misconfiguration.",
+    approach: "Quick Mode sets all five security engines with one choice, so nothing is left half-configured.",
+    get: "Engineers still get full control in Professional Mode.",
     href: "/frontier/dual-mode", cta: "See Dual Mode",
   },
   {
-    number: "02", icon: LockKeyhole, title: "Put the security boundary in view",
-    problem: "Policy, segmentation, connectivity and inspection are often scattered across tools.",
-    approach: "Firewall policy, network segmentation, VPN connectivity and IDPS come together at the edge.",
-    get: "One boundary to understand, inspect and manage.",
-    href: "/platform", cta: "See the architecture",
+    number: "02", icon: MapPin, title: "Made and maintained in India.",
+    problem: "Distant vendors mean slow answers and data that leaves the country.",
+    approach: "Built and supported here. Your data stays in India by default, and the product is built with the DPDP Act 2023 in mind.",
+    get: "Hardware, firmware, data and support stay here.",
+    href: "/trust", cta: "See Built in India",
   },
   {
-    number: "03", icon: MapPin, title: "Built with India in mind",
-    problem: "Distant vendors mean slow answers and generic guidance.",
-    approach: "SecuEdge is an India-based security company — talk directly with the team.",
-    get: "Deployment discussion and product detail for your environment.",
-    href: "/contact", cta: "Talk to our team",
+    number: "03", icon: LockKeyhole, title: "Enterprise depth, approachable controls.",
+    problem: "Deep inspection usually means a management layer only specialists can use.",
+    approach: "Deep packet inspection, application control, intrusion prevention, VPN and SD-WAN, with a management layer people can actually use.",
+    get: "Every feature on every model.",
+    href: "/frontier/capabilities", cta: "See capabilities",
   },
   {
-    number: "04", icon: Headphones, title: "Help from people who know the product",
+    number: "04", icon: Headphones, title: "Support that actually responds.",
     problem: "Support scripts can't answer appliance and policy questions.",
-    approach: "Connect with the SecuEdge team for practical guidance on appliances and modes.",
-    get: "Answers grounded in the products you actually deploy.",
-    href: "/contact", cta: "Ask a question",
+    approach: `24/7 India-based engineers on ${SUPPORT.phone}, with a response within 24 hours.`,
+    get: "Answers from people who know SecuEdge Frontier inside out.",
+    href: "/contact", cta: "Talk to our team",
   },
 ];
 
@@ -56,11 +57,11 @@ export default function WhySecuEdgePage() {
               <span className="text-[#0B2239]">Why SecuEdge</span>
             </nav>
             <p className="premium-eyebrow mt-8">Why SecuEdge</p>
-            <h1 className="mt-4 max-w-3xl text-5xl font-extrabold leading-[1.0] tracking-[-0.035em] text-[#0B2239] md:text-6xl">Security designed around the way networks actually operate.</h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#30465C] md:text-lg">Four reasons organizations evaluate SecuEdge — each tied to something you can verify in the products, the architecture, or a conversation with our team.</p>
+            <h1 className="mt-4 max-w-3xl text-5xl font-extrabold leading-[1.0] tracking-[-0.035em] text-[#0B2239] md:text-6xl">Four reasons organisations choose SecuEdge.</h1>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#30465C] md:text-lg">{MISCONFIG_STAT.line} Everything we build starts from that fact.</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/frontier" className="premium-btn-primary">Explore Frontier <ArrowRight size={15} /></Link>
-              <Link href="/trust" className="premium-btn-ghost">Verify trust claims</Link>
+              <Link href="/contact" className="premium-btn-primary">Book a free demo <ArrowRight size={15} /></Link>
+              <Link href="/assessment" className="premium-btn-ghost">Take the free security assessment</Link>
             </div>
           </Reveal>
         </div>
@@ -76,7 +77,7 @@ export default function WhySecuEdgePage() {
             {REASONS.map((r) => (
               <Reveal key={r.number}>
                 <article className="premium-card grid gap-5 p-7 md:grid-cols-[auto_1fr_1fr_1fr_auto] md:items-start md:gap-8 md:p-8">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[rgba(11,34,57,0.12)] bg-[#FAF9F5] text-[#016FED]"><r.icon size={20} /></span>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[rgba(11,34,57,0.12)] bg-[#F1F6FD] text-[#016FED]"><r.icon size={20} /></span>
                   <div>
                     <p className="font-mono text-[10px] tracking-[0.2em] text-[#016FED]">{r.number} · PROBLEM</p>
                     <h3 className="mt-1.5 text-lg font-bold text-[#0B2239]">{r.title}</h3>
@@ -103,7 +104,7 @@ export default function WhySecuEdgePage() {
           <Reveal>
             <p className="premium-eyebrow">Dual Mode, concretely</p>
             <h2 className="premium-section-title mt-4">Useful controls. Clear choices.</h2>
-            <p className="premium-section-lead">Start guided, go granular when needed — Quick and Professional Mode on every Frontier appliance.</p>
+            <p className="premium-section-lead">Start guided, go granular when needed — Quick and Professional Mode on every SecuEdge Frontier appliance. Choosing a level sets all five security engines together: firewall, intrusion detection, intrusion prevention, antivirus and DNS filtering.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/frontier/dual-mode" className="premium-btn-primary">See Dual Mode <ArrowRight size={15} /></Link>
               <Link href="/platform" className="premium-btn-ghost">Platform architecture</Link>
@@ -111,7 +112,7 @@ export default function WhySecuEdgePage() {
           </Reveal>
           <Reveal>
             <div className="premium-panel grid gap-px overflow-hidden sm:grid-cols-2">
-              {[["Quick Mode", "Guided setup", "Transparent · Balanced · Maximum protection levels."], ["Professional Mode", "Granular control", "Firewall, VLAN, routing, VPN, IDPS, CLI."]].map(([t, s, d]) => (
+              {[["Quick Mode", "Guided setup", "Strong, Mild and No Protection levels. One choice sets all five engines."], ["Professional Mode", "Granular control", "Firewall, VLAN, routing, VPN, IDPS, CLI."]].map(([t, s, d]) => (
                 <div key={t} className="bg-white p-6">
                   <p className="font-mono text-[10px] tracking-[0.2em] text-[#016FED]">{s}</p>
                   <h3 className="mt-1.5 text-lg font-bold text-[#0B2239]">{t}</h3>
@@ -126,29 +127,14 @@ export default function WhySecuEdgePage() {
       <section className="prem-navy border-t border-[rgba(11,34,57,0.08)] py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <Reveal>
-            <p className="premium-eyebrow">Credentials that support trust</p>
-            <h2 className="premium-section-title mt-4">Associated certifications and standards.</h2>
-            <p className="premium-section-lead">Ask our team for current scope, product applicability and supporting documentation.</p>
-          </Reveal>
-          <Stagger className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
-            {CERTIFICATIONS.map((item) => (
-              <Item key={item.name}>
-                <div className="premium-card flex items-start gap-3 p-5">
-                  <ShieldCheck size={18} className="mt-0.5 shrink-0 text-[#016FED]" />
-                  <div><strong className="block text-sm font-bold text-[#0B2239]">{item.name}</strong><small className="mt-0.5 block text-xs text-[#526274]">{item.note}</small></div>
-                </div>
-              </Item>
-            ))}
-          </Stagger>
-          <Reveal className="mt-10">
             <div className="premium-card flex flex-col items-start gap-4 p-7 md:flex-row md:items-center md:justify-between">
               <div>
-                <h3 className="text-xl font-bold text-[#0B2239]">Let&apos;s talk about your network.</h3>
-                <p className="mt-1 text-sm text-[#526274]">Tell us what you need to protect — we&apos;ll help you explore Frontier and its appliance family.</p>
+                <h3 className="text-xl font-bold text-[#0B2239]">See how easy the secure setup can be.</h3>
+                <p className="mt-1 text-sm text-[#526274]">Book a free demo with our team, or take the two-minute security assessment. No obligation.</p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="premium-btn-primary">Contact SecuEdge <ArrowRight size={15} /></Link>
-                <Link href="/trust" className="premium-btn-ghost">Trust & certifications</Link>
+                <Link href="/contact" className="premium-btn-primary">Book a free demo <ArrowRight size={15} /></Link>
+                <Link href="/assessment" className="premium-btn-ghost">Take the assessment</Link>
               </div>
             </div>
           </Reveal>

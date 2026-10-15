@@ -1,14 +1,14 @@
 /* ==========================================================================
-   SecuEdge premium system — cream / navy / blue.
-   ONE coherent theme. Cream is the dominant canvas (60-70%), deep navy
-   the technical contrast (20-30%), SecuEdge blue the brand signal,
-   cyan sparingly for active/data states.
+   SecuEdge premium system — light sky-blue.
+   ONE coherent theme. Light sky-blue is the canvas throughout, deep navy
+   the ink, SecuEdge blue the brand signal, cyan sparingly for active/data
+   states. Rhythm bands are a touch deeper sky — same family, same vibe.
    ========================================================================== */
 
 .premium {
-  --prem-bg: #f5f2ea;
-  --prem-bg-alt: #efece4;
-  --prem-bg-soft: #faf9f5;
+  --prem-bg: #e8f1fa;
+  --prem-bg-alt: #d9e8f7;
+  --prem-bg-soft: #f1f6fd;
   --prem-surface: #ffffff;
   --prem-navy: #071525;
   --prem-navy-2: #0a1b2e;
@@ -30,10 +30,10 @@
   color: var(--prem-text);
 }
 
-/* Light steel-blue rhythm band — the "navy" section without black.
-   Keeps visual cadence (cream → band → cream) in cream + blue only. */
+/* Sky rhythm band — a touch deeper than the canvas for gentle cadence.
+   Same sky-blue family throughout; no cream, no black anywhere. */
 .prem-navy {
-  background: linear-gradient(180deg, #e9eff6 0%, #dfe8f2 100%);
+  background: linear-gradient(180deg, #d5e7f8 0%, #c3daf1 100%);
   color: var(--prem-text);
 }
 
@@ -329,6 +329,7 @@
 
 /* ── Product cards ───────────────────────────────────── */
 .premium-product-card {
+  position: relative;
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -337,6 +338,7 @@
   border-radius: 14px;
   background: var(--prem-surface);
   box-shadow: 0 1px 2px rgba(11, 34, 57, 0.05), 0 12px 32px -20px rgba(11, 34, 57, 0.18);
+  overflow: hidden;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s, box-shadow 0.35s;
 }
 
@@ -344,6 +346,26 @@
   transform: translateY(-4px);
   border-color: var(--prem-accent, rgba(1, 111, 237, 0.45));
   box-shadow: 0 20px 44px -20px rgba(1, 111, 237, 0.3);
+}
+
+/* Accent bar sweep — the product's accent color draws in from the left on hover. */
+.premium-product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  height: 3px;
+  background: linear-gradient(90deg, var(--prem-accent, var(--prem-blue)), transparent 140%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-product-card:hover::before,
+.premium-product-card:focus-visible::before {
+  transform: scaleX(1);
 }
 
 .premium-product-icon {
@@ -356,6 +378,90 @@
   border: 1px solid var(--prem-border);
   background: var(--prem-bg-soft);
   color: var(--prem-accent, var(--prem-blue));
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s, background 0.35s;
+}
+
+/* Icon pop — lifts, tilts and brightens while the card is hovered. */
+.premium-product-card:hover .premium-product-icon {
+  transform: translateY(-3px) rotate(-6deg) scale(1.07);
+  border-color: var(--prem-accent, var(--prem-blue));
+  background: rgba(1, 111, 237, 0.07);
+}
+
+/* Sliding arrow — every "Explore" affordance nudges right on hover. */
+.premium-link-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-product-card:hover .premium-link-arrow,
+.premium-card:hover .premium-link-arrow {
+  transform: translateX(5px);
+}
+
+/* ── Customer logos — quiet monochrome, full colour + zoom on hover ── */
+.customer-logo {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+  filter: grayscale(0.3) opacity(0.85);
+}
+
+a:hover .customer-logo,
+.customer-card:hover .customer-logo {
+  transform: scale(1.12);
+  filter: grayscale(0) opacity(1);
+}
+
+/* ── Top-level nav links — animated underline + active state ── */
+.foundation-nav__link {
+  position: relative;
+}
+
+.foundation-nav__link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #016fed;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.foundation-nav__link:hover::after,
+.foundation-nav__link.is-current::after {
+  transform: scaleX(1);
+}
+
+.foundation-nav__link.is-current {
+  color: #016fed;
+}
+
+/* Scrollspy dot — persistent blue dot on the menu that owns this route. */
+.foundation-nav__trigger.is-current i {
+  opacity: 1;
+  transform: translateY(0);
+  background: #016fed;
+}
+
+/* Chevron flips while its mega panel is open. */
+.foundation-nav__trigger.is-active .foundation-nav__chevron {
+  transform: rotate(180deg);
+}
+
+.foundation-nav__chevron {
+  transition: transform 0.25s ease;
+}
+
+/* ── Primary buttons — gentle press on hover ── */
+.premium-btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.premium-btn-ghost:hover {
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* ── Metric blocks ───────────────────────────────────── */
@@ -503,10 +609,10 @@
   border-bottom: 0;
 }
 
-/* ── Cream-theme remaps: dark-ink Tailwind utilities used inside
+/* ── Sky-theme remaps: dark-ink Tailwind utilities used inside
    premium sections are remapped to the editorial palette.
    Unlayered author CSS wins over Tailwind's layered utilities.
-   There are no dark sections left — every band is cream or pale blue. ── */
+   There are no dark sections left — every band is light sky-blue. ── */
 .premium section .text-white {
   color: var(--prem-text);
 }
@@ -667,7 +773,7 @@
   border-radius: 14px;
   background:
     radial-gradient(ellipse 70% 55% at 50% 45%, rgba(1, 111, 237, 0.1), transparent 70%),
-    linear-gradient(180deg, #faf9f5, #eef2f6);
+    linear-gradient(180deg, #f1f6fd, #dce9f7);
   perspective: 1100px;
 }
 
@@ -697,7 +803,7 @@
   bottom: 0;
   left: 0;
   border-top: 1px solid rgba(11, 34, 57, 0.08);
-  background: rgba(250, 249, 245, 0.85);
+  background: rgba(241, 246, 253, 0.85);
 }
 
 .gateway-scene__hud .status-mark {
@@ -823,7 +929,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #30465c;
-  background: rgba(250, 249, 245, 0.85);
+  background: rgba(241, 246, 253, 0.85);
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
 }
@@ -981,7 +1087,7 @@
   gap: 1rem;
   padding: 0.7rem 1.1rem;
   border-bottom: 1px solid rgba(11, 34, 57, 0.08);
-  background: #faf9f5;
+  background: #f1f6fd;
   font-family: var(--font-mono), monospace;
   font-size: 0.62rem;
   font-weight: 700;
@@ -1263,13 +1369,13 @@
 
 /* ── Site navbar: cream glass, deep navy text, blue active ── */
 .foundation-nav {
-  background: rgba(245, 242, 234, 0.9);
+  background: rgba(232, 241, 250, 0.9);
   border-bottom: 1px solid rgba(11, 34, 57, 0.1);
   backdrop-filter: blur(18px);
 }
 
 .foundation-nav--scrolled {
-  background: rgba(245, 242, 234, 0.96);
+  background: rgba(232, 241, 250, 0.96);
   border-bottom-color: rgba(11, 34, 57, 0.14);
   box-shadow: 0 8px 30px rgba(11, 34, 57, 0.08);
 }
@@ -1293,7 +1399,7 @@
 
 /* ── Mobile navigation polish: 44px targets, navy type, blue CTA ── */
 .foundation-site--light .foundation-mobile-nav {
-  background: #f5f2ea;
+  background: #e8f1fa;
 }
 @media (max-width: 900px) {
   .foundation-nav__menu {
@@ -1332,7 +1438,19 @@
   .premium-card,
   .premium-product-card,
   .premium-btn-primary,
-  .premium-btn-ghost {
+  .premium-btn-ghost,
+  .premium-product-icon,
+  .premium-link-arrow,
+  .customer-logo,
+  .premium-product-card::before,
+  .foundation-nav__link::after,
+  .foundation-nav__chevron {
     transition: none;
+  }
+  .premium-product-card:hover,
+  .premium-product-card:hover .premium-product-icon,
+  a:hover .customer-logo,
+  .customer-card:hover .customer-logo {
+    transform: none;
   }
 }

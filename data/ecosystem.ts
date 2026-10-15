@@ -15,6 +15,7 @@ export type EcosystemProduct = {
   summary: string;
   description: string;
   accent: string;
+  status: "available" | "in-development" | "on-roadmap";
   capabilities: string[] | FrontierCapability[];
   story: string[];
 };
@@ -33,46 +34,51 @@ export const FRONTIER_CAPABILITIES: FrontierCapability[] = [
 
 export const FRONTIER_PRODUCT = {
   slug: "frontier",
-  name: "Frontier",
+  name: "SecuEdge Frontier",
   category: "Next-Generation Firewall",
   role: "PROTECT",
   accent: "#2186c4",
-  summary: "Next-generation firewall protection with a clearer way to work.",
-  description: "SecuEdge Frontier is the currently available SecuEdge product: an NGFW for securing network edges with firewall policy, inspection, secure connectivity and network visibility.",
+  status: "available" as const,
+  summary: "Firewalling, made easy. The secure setup, made easy.",
+  description: "SecuEdge Frontier is the available SecuEdge product: a next-generation firewall for network edges with firewall policy, inspection, secure connectivity and web filtering, in one appliance with Quick Mode and Professional Mode.",
   availability: "Available now",
   capabilities: FRONTIER_CAPABILITIES,
-  story: ["Internet and WAN links", "Frontier NGFW", "Policy inspection", "Segmented networks", "Users and applications"],
+  story: ["Internet and WAN links", "SecuEdge Frontier", "Policy inspection", "Segmented networks", "Users and applications"],
 };
 
 const PRODUCT_STORIES: Record<string, { capabilities: string[]; story: string[] }> = {
   frontier: {
     capabilities: FRONTIER_CAPABILITIES.map((capability) => capability.name),
-    story: ["Internet and WAN links", "Frontier NGFW", "Policy inspection", "Segmented networks", "Users and applications"],
-  },
-  watchtower: {
-    capabilities: ["Infrastructure visibility", "Device health", "Network event management"],
-    story: ["Devices connect", "Topology becomes visible", "Health and events are monitored"],
+    story: ["Internet and WAN links", "SecuEdge Frontier", "Policy inspection", "Segmented networks", "Users and applications"],
   },
   secuweb: {
-    capabilities: ["Secure branch connectivity", "Policy-driven WAN paths", "Cloud and data-center connections"],
-    story: ["Branch", "Secure path", "Cloud and data center"],
-  },
-  grid: {
-    capabilities: ["Security information and event management", "Event correlation", "Orchestrated response workflows"],
-    story: ["Events enter", "Signals correlate", "Incidents become actionable"],
+    capabilities: ["Multi-line WAN joining", "Policy-driven paths", "Branch, plant and campus connectivity"],
+    story: ["Many sites need joining", "Paths are managed from one console", "Branches, plants and campuses connect"],
   },
   secudefend: {
-    capabilities: ["Intrusion detection", "Intrusion prevention", "Threat interception"],
-    story: ["Traffic arrives", "Suspicious activity is detected", "Threats are intercepted"],
+    capabilities: ["Deep inspection", "High-capacity prevention", "Dedicated inspection layer"],
+    story: ["Traffic needs depth", "Inspection scales separately", "Threats are stopped at the layer"],
+  },
+  grid: {
+    capabilities: ["Alert consolidation", "Event correlation", "Automated response"],
+    story: ["Alerts arrive from every device", "Related events connect", "Teams respond automatically"],
+  },
+  secuconnect: {
+    capabilities: ["Large remote workforces", "Many-branch VPN", "Dedicated access layer"],
+    story: ["Remote users multiply", "Dedicated VPN carries the load", "Every worker connects securely"],
+  },
+  watchtower: {
+    capabilities: ["Device health", "Topology visibility", "Uptime monitoring"],
+    story: ["Devices connect", "Topology becomes visible", "Health and uptime are monitored"],
   },
   muster: {
-    capabilities: ["Centralized log collection", "Search and filtering", "Security event investigation"],
-    story: ["Logs collect", "Events are filtered", "Records become insight"],
+    capabilities: ["Long-term log records", "Search and filtering", "Audit-ready records in India"],
+    story: ["Logs collect", "Records are searchable", "Audits find their evidence"],
   },
 };
 
 export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [
-  FRONTIER_PRODUCT,
+  { ...FRONTIER_PRODUCT, status: "available" },
   ...SECUEDGE_PRODUCTS.filter((product) => product.key !== "frontier").map((product) => ({
     slug: product.key,
     name: product.name,
@@ -80,6 +86,7 @@ export const ECOSYSTEM_PRODUCTS: EcosystemProduct[] = [
     summary: product.desc,
     description: product.desc,
     accent: product.accent,
+    status: product.status,
     ...PRODUCT_STORIES[product.key],
   })),
 ];

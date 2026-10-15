@@ -12,6 +12,16 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Retired and unapproved models (copy deck §1.3) → current lineup.
+      { source: "/products/frontier/se50p", destination: "/frontier/appliances", permanent: true },
+      { source: "/products/frontier/se2500p", destination: "/frontier/appliances", permanent: true },
+      { source: "/products/frontier/se5000p", destination: "/frontier/appliances", permanent: true },
+      { source: "/products/frontier/se10000p", destination: "/frontier/appliances", permanent: true },
+      { source: "/products/frontier/se15000p", destination: "/frontier/appliances", permanent: true },
+    ];
+  },
   async headers() {
     const securityHeaders = [
       { key: "X-Content-Type-Options", value: "nosniff" },

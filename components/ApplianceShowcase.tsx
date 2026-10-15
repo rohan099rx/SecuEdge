@@ -7,7 +7,7 @@ import { HARDWARE_PRODUCTS } from "@/lib/products";
 
 const HOTSPOTS = [
   { id: "form", label: "Form factor", detail: "The selected model's verified desktop or rack-mount form factor.", className: "appliance-hotspot appliance-hotspot--form" },
-  { id: "frontier", label: "Frontier platform", detail: "Every model runs both Quick Mode and Professional Mode.", className: "appliance-hotspot appliance-hotspot--platform" },
+  { id: "frontier", label: "SecuEdge Frontier platform", detail: "Every model runs both Quick Mode and Professional Mode.", className: "appliance-hotspot appliance-hotspot--platform" },
 ] as const;
 
 export function ApplianceShowcase({ compact = false }: { compact?: boolean }) {
@@ -32,7 +32,7 @@ export function ApplianceShowcase({ compact = false }: { compact?: boolean }) {
   }
 
   return (
-    <div className={`appliance-showcase ${compact ? "appliance-showcase--compact" : ""}`}>
+    <div className={["appliance-showcase", compact && "appliance-showcase--compact"].filter(Boolean).join(" ")}>
       <div className="appliance-showcase__stage">
         <div className="appliance-showcase__stage-head"><span>SE-series / hardware view</span><span>Illustrative render · specs pending</span></div>
         <div className="appliance-showcase__device-wrap">
@@ -40,7 +40,7 @@ export function ApplianceShowcase({ compact = false }: { compact?: boolean }) {
             <span className="appliance-showcase__device-shadow" aria-hidden="true" />
             <span key={product.model} className="appliance-showcase__device-art"><ApplianceArt label={product.model} /></span>
           </button>
-          {HOTSPOTS.map((item) => <button key={item.id} type="button" className={`${item.className} ${hotspot === item.id ? "is-active" : ""}`} onMouseEnter={() => setHotspot(item.id)} onMouseLeave={() => setHotspot(null)} onFocus={() => setHotspot(item.id)} onBlur={() => setHotspot(null)} aria-label={`${item.label}: ${item.detail}`}><i aria-hidden="true" /><span>{item.label}</span></button>)}
+          {HOTSPOTS.map((item) => <button key={item.id} type="button" className={[item.className, hotspot === item.id && "is-active"].filter(Boolean).join(" ")} onMouseEnter={() => setHotspot(item.id)} onMouseLeave={() => setHotspot(null)} onFocus={() => setHotspot(item.id)} onBlur={() => setHotspot(null)} aria-label={`${item.label}: ${item.detail}`}><i aria-hidden="true" /><span>{item.label}</span></button>)}
           {hotspot ? <div className="appliance-hotspot__tooltip" role="status">{HOTSPOTS.find((item) => item.id === hotspot)?.detail}</div> : null}
         </div>
         <div className="appliance-showcase__stage-foot"><span>Click the appliance to open quick specs</span><span>Hover the marked points to inspect</span></div>
@@ -48,9 +48,9 @@ export function ApplianceShowcase({ compact = false }: { compact?: boolean }) {
       <div className="appliance-showcase__info">
         <p className="eyebrow">Selected appliance</p>
         <div className="appliance-showcase__title-row"><h3>{product.model}</h3><span>{selected + 1} / {HARDWARE_PRODUCTS.length}</span></div>
-        <p className="appliance-showcase__positioning">SecuEdge Frontier appliance for {product.tier.toLowerCase()} deployments.</p>
+        <p className="appliance-showcase__positioning">SecuEdge Frontier appliance sized for {product.userRange} peak users · {product.typicalSite}.</p>
         <div className="appliance-showcase__facts">{product.details.map((detail) => <div key={detail}><span>•</span>{detail}</div>)}</div>
-        <div className={`appliance-showcase__quick ${detailsOpen ? "is-open" : ""}`}>
+        <div className={["appliance-showcase__quick", detailsOpen && "is-open"].filter(Boolean).join(" ")}>
           <button type="button" className="appliance-showcase__quick-toggle" aria-expanded={detailsOpen} onClick={() => setDetailsOpen((open) => !open)}>Quick specifications <span aria-hidden>{detailsOpen ? "−" : "+"}</span></button>
           {detailsOpen ? <div className="appliance-showcase__quick-body"><p>{product.modeSummary}</p><p>{product.specStatus}. Throughput, port counts, and recommended user ranges are not published here until the official sheet is available.</p></div> : null}
         </div>

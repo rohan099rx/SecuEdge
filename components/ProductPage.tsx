@@ -3,6 +3,8 @@ import { ArrowRight, Check, ChevronRight, FileText } from "lucide-react";
 import type { ProductPageData } from "@/lib/products";
 import { APPLIANCES } from "@/lib/site";
 import { ApplianceArt } from "@/components/ApplianceArt";
+import { PremiumFaq } from "@/components/premium/PremiumSections";
+import "@/components/premium/premium.css";
 
 function FeatureList({ items }: { items: string[] }) {
   return <ul className="space-y-2">{items.map((item) => <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-300"><Check size={16} className="mt-0.5 shrink-0 text-emerald-300" aria-hidden="true" />{item}</li>)}</ul>;
@@ -16,7 +18,7 @@ export function ProductPage({ product }: { product: ProductPageData }) {
         <nav className="flex flex-wrap items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500" aria-label="Breadcrumb">
           <Link href="/products" className="transition-colors hover:text-white">Products</Link>
           <ChevronRight size={12} />
-          <Link href="/products/frontier" className="transition-colors hover:text-white">Frontier</Link>
+          <Link href="/products/frontier" className="transition-colors hover:text-white">SecuEdge Frontier</Link>
           <ChevronRight size={12} />
           <Link href="/frontier/appliances" className="transition-colors hover:text-white">Appliances</Link>
           <ChevronRight size={12} />
@@ -38,7 +40,7 @@ export function ProductPage({ product }: { product: ProductPageData }) {
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
               <span className="premium-chip">{product.formFactor}</span>
-              <span className="premium-chip">{product.tier} · indicative band</span>
+              <span className="premium-chip">{product.userRange} peak users</span>
               <span className="premium-chip !border-emerald-400/25 !text-emerald-300">Specs available on request</span>
             </div>
           </div>
@@ -52,9 +54,9 @@ export function ProductPage({ product }: { product: ProductPageData }) {
       <section id="overview" className="border-t border-white/[0.07] py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <p className="premium-eyebrow">Product overview</p>
-          <h2 className="premium-section-title mt-4">Frontier NGFW for your network edge.</h2>
+          <h2 className="premium-section-title mt-4">SecuEdge Frontier for your network edge.</h2>
           <p className="premium-section-lead">{product.overview}</p>
-          <p className="mt-4 max-w-2xl rounded-xl border border-amber-400/20 bg-amber-400/[0.05] px-4 py-3 text-[13px] leading-relaxed text-slate-400">{product.tier} is an indicative lineup band only. Confirm hardware suitability against the current Frontier datasheet and your traffic requirements.</p>
+          <p className="mt-4 max-w-2xl rounded-xl border border-amber-400/20 bg-amber-400/[0.05] px-4 py-3 text-[13px] leading-relaxed text-slate-400">{product.userRange} is a sizing range for peak users at the busiest hour, not a performance figure. Confirm hardware suitability with the SecuEdge team.</p>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             <article className="premium-card p-6">
               <span className="font-mono text-[10px] tracking-[0.2em] text-cyan-300/70">01 / FRONTIER NGFW</span>
@@ -64,7 +66,7 @@ export function ProductPage({ product }: { product: ProductPageData }) {
             </article>
             <article className="premium-card p-6">
               <span className="font-mono text-[10px] tracking-[0.2em] text-cyan-300/70">02 / SECURITY</span>
-              <h3 className="mt-2 text-lg font-bold text-white">Core Frontier capabilities</h3>
+              <h3 className="mt-2 text-lg font-bold text-white">Core SecuEdge Frontier capabilities</h3>
               <div className="mt-3"><FeatureList items={product.securityCapabilities} /></div>
             </article>
             <article className="premium-card p-6">
@@ -130,14 +132,15 @@ export function ProductPage({ product }: { product: ProductPageData }) {
         </div>
       </section>
 
+      <PremiumFaq faqs={product.faqs} title={`${product.model} questions`} eyebrow="Model FAQ" />
+
       <section className="border-t border-white/[0.07] py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1200px] px-6">
-          <p className="premium-eyebrow">Related models</p>
-          <h2 className="mt-4 text-2xl font-bold tracking-tight text-white md:text-3xl">Explore related SecuEdge products.</h2>
+          <p className="premium-eyebrow">Related models</p>          <h2 className="mt-4 text-2xl font-bold tracking-tight text-white md:text-3xl">Explore related SecuEdge products.</h2>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {related.map((a) => (
               <Link key={a.model} href={`/products/frontier/${a.model.toLowerCase()}`} className="premium-card group block p-5">
-                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500">{a.formFactor} · {a.tier}</span>
+                <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500">{a.formFactor} · {a.userRange} users</span>
                 <strong className="mt-1.5 block font-mono text-lg font-bold text-white">{a.model}</strong>
                 <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-cyan-300">View model <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" /></span>
               </Link>

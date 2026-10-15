@@ -1,35 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { ArrowDown, ArrowRight, Building2, HeartPulse, Landmark, Newspaper, School, Wrench } from "lucide-react";
+import { ArrowDown, ArrowRight, Building2 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { CUSTOMERS } from "@/lib/site";
+import { CUSTOMERS, CUSTOMER_GROUPS } from "@/lib/site";
 import { Reveal, Stagger, Item } from "@/components/motion";
+import { CustomerMarquee } from "@/components/CustomerMarquee";
 import "@/components/premium/premium.css";
 
 export const metadata: Metadata = buildMetadata({
   title: "Customers",
-  description: "Explore organizations featured in SecuEdge customer materials across manufacturing, healthcare, education, media and technology.",
+  description: "SecuEdge Frontier protects 200+ installations across government, education, healthcare, manufacturing, media, hospitality and technology.",
   path: "/customers",
 });
 
-const sectors = [
-  { label: "Manufacturing", icon: Wrench },
-  { label: "Healthcare", icon: HeartPulse },
-  { label: "Education", icon: School },
-  { label: "Media", icon: Newspaper },
-  { label: "Technology", icon: Building2 },
-  { label: "Public sector", icon: Landmark },
-];
-
-const ENVIRONMENTS = [
-  { sector: "Manufacturing", industryHref: "/industries/manufacturing", solutionHref: "/solutions/network-segmentation", title: "Plant and office networks", desc: "Segment operational and business traffic at the edge with clear policy zones." },
-  { sector: "Healthcare", industryHref: "/industries/healthcare", solutionHref: "/solutions/iot-security", title: "Connected care environments", desc: "Protect clinical networks and connected devices with inspected, segmented paths." },
-  { sector: "Education", industryHref: "/industries/education", solutionHref: "/solutions/network-security", title: "Campus connectivity", desc: "Keep students and staff connected with clear policy control and safe browsing." },
-  { sector: "Media", industryHref: "/industries/media", solutionHref: "/solutions/branch-office", title: "Distributed newsroom networks", desc: "Secure branch and remote contributors with consistent edge controls." },
-  { sector: "Technology", industryHref: "/industries/technology", solutionHref: "/solutions/secure-remote-access", title: "Engineering organizations", desc: "Secure remote access and segmented development environments." },
-  { sector: "Public sector", industryHref: "/industries/government", solutionHref: "/solutions/enterprise", title: "Public infrastructure", desc: "Policy depth and visibility for compliance-sensitive environments." },
-];
+const GROUP_LINES: Record<string, string> = {
+  "Government and agriculture": "Made in India, with data kept in India.",
+  "Healthcare": "Separate clinical networks, protected patient data.",
+  "Colleges": "Safe student Wi-Fi with separate admin and lab networks.",
+  "Schools": "Safer networks for every student.",
+  "Media": "Failover and bandwidth priority for deadline-driven newsrooms.",
+  "Hospitality and F&B": "Protected billing with safe guest Wi-Fi.",
+  "Manufacturing": "Separate machine and office networks.",
+  "Technology": "VPN for hybrid teams with separate dev and production networks.",
+};
 
 export default function CustomersPage() {
   return (
@@ -43,82 +37,67 @@ export default function CustomersPage() {
               <span aria-hidden>/</span>
               <span className="text-[#0B2239]">Customers</span>
             </nav>
-            <p className="premium-eyebrow mt-8">Customer organizations</p>
-            <h1 className="mt-4 max-w-3xl text-5xl font-extrabold leading-[1.0] tracking-[-0.035em] text-[#0B2239] md:text-6xl">Security for the networks people rely on.</h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#30465C] md:text-lg">Organizations featured in SecuEdge materials work across manufacturing, healthcare, education, media and technology.</p>
+            <p className="premium-eyebrow mt-8">Customers</p>
+            <h1 className="mt-4 max-w-3xl text-5xl font-extrabold leading-[1.0] tracking-[-0.035em] text-[#0B2239] md:text-6xl">200+ installations across India.</h1>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#30465C] md:text-lg">From government and colleges, which vet vendors hardest, to hospitals, factories, newsrooms and cafés, organisations across India trust SecuEdge Frontier at their network edge.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="#organizations" className="premium-btn-primary">Meet the organizations <ArrowDown size={15} /></a>
-              <Link href="/contact" className="premium-btn-ghost">Discuss your network <ArrowRight size={15} /></Link>
+              <Link href="/contact" className="premium-btn-ghost">Book a free demo <ArrowRight size={15} /></Link>
             </div>
           </Reveal>
-          <Reveal className="mt-8">
-            <div className="flex flex-wrap gap-2">
-              {sectors.map(({ label, icon: Icon }) => (
-                <span key={label} className="premium-chip"><Icon size={13} />{label}</span>
-              ))}
-            </div>
-          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-b border-[rgba(11,34,57,0.08)] py-8" aria-label="Customer logo strip">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <CustomerMarquee />
         </div>
       </section>
 
       <section id="organizations" className="prem-navy border-t border-[rgba(11,34,57,0.08)] py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <Reveal>
-            <p className="premium-eyebrow">SecuEdge customer materials</p>
+            <p className="premium-eyebrow">SecuEdge customers</p>
             <h2 className="premium-section-title mt-4">Organizations across connected industries.</h2>
-            <p className="premium-section-lead">These names and logos appear in SecuEdge customer materials. Contact us to discuss relevant deployments and references for your sector.</p>
+            <p className="premium-section-lead">Approved customer names, grouped by industry. Contact us to discuss relevant deployments and references for your sector.</p>
           </Reveal>
-          <Stagger className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3" gap={0.05}>
-            {CUSTOMERS.map((customer) => (
-              <Item key={customer.name}>
-                <article className="premium-card flex h-full flex-col items-center p-6 text-center">
-                  <div className="flex h-14 w-full items-center justify-center rounded-xl bg-[#FAF9F5] px-3">
-                    {customer.logo ? (
-                      <Image src={customer.logo} alt={`${customer.name} logo`} width={150} height={56} className="max-h-10 w-auto object-contain" loading="lazy" />
-                    ) : (
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(11,34,57,0.14)] text-[#016FED]" aria-hidden><Landmark size={18} /></span>
-                    )}
-                  </div>
-                  <strong className="mt-4 block text-sm font-bold text-[#0B2239]">{customer.name}</strong>
-                  <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.14em] text-[#526274]">{customer.sector}</span>
-                </article>
-              </Item>
+          <div className="mt-10 space-y-8">
+            {CUSTOMER_GROUPS.map((group) => (
+              <div key={group}>
+                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#526274]">{group}</p>
+                <p className="mt-1 text-[13px] text-[#526274]">{GROUP_LINES[group]}</p>
+                <Stagger className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3" gap={0.05}>
+                  {CUSTOMERS.filter((c) => c.group === group).map((customer) => (
+                    <Item key={customer.name}>
+                      <article className="premium-card customer-card flex h-full flex-col items-center p-6 text-center">
+                        {customer.logo ? (
+                          <div className="flex h-14 w-full items-center justify-center rounded-xl bg-[#F1F6FD] px-3">
+                            <Image src={customer.logo} alt={`${customer.name} logo`} width={150} height={56} className="customer-logo max-h-10 w-auto object-contain" loading="lazy" />
+                          </div>
+                        ) : null}
+                        <strong className="mt-4 block text-sm font-bold text-[#0B2239]">{customer.name}</strong>
+                        <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.14em] text-[#526274]">{customer.sector}</span>
+                      </article>
+                    </Item>
+                  ))}
+                </Stagger>
+              </div>
             ))}
-          </Stagger>
+          </div>
           <Reveal>
-            <p className="mt-6 max-w-3xl text-xs leading-relaxed text-[#526274]">Organization names are shown for identification. Logo use and references are subject to each organization&apos;s permissions. Named case studies and measured outcomes are not published here — ask about references relevant to your organization.</p>
+            <p className="mt-6 max-w-3xl text-xs leading-relaxed text-[#526274]">Organization names are shown for identification. Logo use and references are subject to each organization&apos;s permissions. Case studies with measured outcomes are being written — until they are ready, ask about references relevant to your organization.</p>
           </Reveal>
         </div>
       </section>
 
       <section className="border-t border-[rgba(11,34,57,0.08)] py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1200px] px-6">
-          <Reveal>
-            <p className="premium-eyebrow">Built for demanding environments</p>
-            <h2 className="premium-section-title mt-4">Where SecuEdge deploys.</h2>
-            <p className="premium-section-lead">Six environment types drawn from the industries and solutions already in this site — explore the relevant pages for each.</p>
-          </Reveal>
-          <Stagger className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3" gap={0.05}>
-            {ENVIRONMENTS.map((env) => (
-              <Item key={env.sector}>
-                <article className="premium-card flex h-full flex-col p-6">
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-[#016FED]">{env.sector.toUpperCase()}</span>
-                  <h3 className="mt-2 text-lg font-bold text-[#0B2239]">{env.title}</h3>
-                  <p className="mt-1.5 flex-1 text-sm leading-relaxed text-[#526274]">{env.desc}</p>
-                  <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
-                    <Link href={env.industryHref} className="inline-flex items-center gap-1 text-[13px] font-bold text-[#016FED]">{env.sector} security <ArrowRight size={13} /></Link>
-                    <Link href={env.solutionHref} className="inline-flex items-center gap-1 text-[13px] font-bold text-[#016FED]">Solution <ArrowRight size={13} /></Link>
-                  </div>
-                </article>
-              </Item>
-            ))}
-          </Stagger>
-          <Reveal className="mt-10">
+          <Reveal className="mt-2">
             <div className="premium-card flex flex-col items-start gap-4 p-7 md:flex-row md:items-center md:justify-between">
               <div className="flex items-start gap-3">
                 <Building2 size={20} className="mt-0.5 shrink-0 text-[#016FED]" />
                 <div>
-                  <h3 className="text-lg font-bold text-[#0B2239]">Looking for a deployment story?</h3>
+                  <h3 className="text-lg font-bold text-[#0B2239]">Want to speak to a customer in your industry?</h3>
                   <p className="mt-1 max-w-xl text-sm leading-relaxed text-[#526274]">Contact SecuEdge to ask about references and information relevant to your organization.</p>
                 </div>
               </div>

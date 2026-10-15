@@ -4,9 +4,10 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { CompareSelector } from "@/components/CompareSelector";
 import { Reveal } from "@/components/motion";
+import { PremiumFaq } from "@/components/premium/PremiumSections";
 import "@/components/premium/premium.css";
 
-export const metadata: Metadata = buildMetadata({ title: "Compare Frontier models", description: "Compare all eleven SecuEdge Frontier NGFW models, known form factors and technical specification availability.", path: "/products/compare", brand: "SecuEdge" });
+export const metadata: Metadata = buildMetadata({ title: "Compare SecuEdge Frontier models", description: "Compare SecuEdge Frontier models side by side — form factor, peak users and typical site. Full specifications are available on request.", path: "/products/compare", brand: "SecuEdge" });
 
 export default function CompareProductsPage() {
   return <div className="premium">
@@ -14,7 +15,7 @@ export default function CompareProductsPage() {
       <nav className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500" aria-label="Breadcrumb">
         <Link href="/products" className="transition-colors hover:text-white">Products</Link>
         <ChevronRight size={12} />
-        <Link href="/products/frontier" className="transition-colors hover:text-white">Frontier</Link>
+        <Link href="/products/frontier" className="transition-colors hover:text-white">SecuEdge Frontier</Link>
         <ChevronRight size={12} />
         <span className="text-slate-300">Compare</span>
       </nav>
@@ -24,7 +25,7 @@ export default function CompareProductsPage() {
       <div className="premium-grid-bg absolute inset-0" aria-hidden />
       <div className="relative mx-auto w-full max-w-[1200px] px-6 py-16 md:py-24">
         <Reveal>
-          <p className="premium-eyebrow">Frontier · Model selector + comparison</p>
+          <p className="premium-eyebrow">SecuEdge Frontier · Model selector + comparison</p>
           <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-[1.0] tracking-tight text-white md:text-6xl">Compare the SE series — honestly.</h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-400 md:text-lg">
             Published hardware details are shown where confirmed; technical measurements remain
@@ -38,5 +39,15 @@ export default function CompareProductsPage() {
     <section className="border-t border-white/[0.07] py-14 md:py-20">
       <CompareSelector />
     </section>
+
+    <PremiumFaq
+      eyebrow="Compare · FAQ"
+      faqs={[
+        { q: "Can we get performance figures?", a: "Full specifications are available on request." },
+        { q: "How do I choose between models?", a: "Choose by how many people use your network at the busiest time, counting each VPN user three times. The selector above recommends from your count." },
+        { q: "Do all models run both modes?", a: "Yes. Every SecuEdge Frontier model runs Quick Mode and Professional Mode. Neither is a cut-down product." },
+        { q: "What if our count is above the largest model?", a: "We will design a configuration with you. Talk to our team." },
+      ]}
+    />
   </div>;
 }

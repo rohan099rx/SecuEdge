@@ -53,8 +53,8 @@ export default function SolutionsPage() {
                 <IconChip name="document" />
                 <p className="mt-5 text-lg font-bold text-[#0B2239]">Compliance</p>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-[#526274]">
-                  PCI DSS, HIPAA, GDPR, ISO 27001, SOC 2 and industry-specific frameworks — with the
-                  network controls and audit evidence to match.
+                  Network controls that support your DPDP, RBI, SEBI and CERT-In obligations — with
+                  the logs to prove them.
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-bold text-[#016FED]">Explore <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" /></span>
               </Link>
@@ -71,7 +71,7 @@ export default function SolutionsPage() {
                 <p className="premium-eyebrow">Powered by SecuEdge Frontier</p>
                 <p className="mt-3 max-w-2xl text-lg leading-relaxed text-[#0B2239]">Every solution on this page — delivered by one appliance family with Dual Mode.</p>
               </div>
-              <Link href="/frontier" className="premium-btn-ghost shrink-0">Explore Frontier <ArrowRight size={15} /></Link>
+              <Link href="/frontier" className="premium-btn-ghost shrink-0">Explore SecuEdge Frontier <ArrowRight size={15} /></Link>
             </div>
           </Reveal>
         </div>

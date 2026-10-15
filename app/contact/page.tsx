@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Phone, MapPin } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
+import { SITE, SUPPORT, COVERAGE, HEADQUARTERS } from "@/lib/site";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/motion";
+import { PremiumFaq } from "@/components/premium/PremiumSections";
 import "@/components/premium/premium.css";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Get a demo",
+  title: "Talk to SecuEdge",
   description:
-    "Talk to the SecuEdge team about your network and explore the right Frontier configuration.",
+    "Book a free demo, get help choosing a model, or ask about becoming a partner. 24/7 India-based support on 1800 123 0966.",
   path: "/contact",
 });
 
 const PATHS = [
-  { key: "deployment", title: "Discuss a deployment", desc: "Appliance sizing and rollout for your network.", href: "/frontier/appliances" },
-  { key: "product", title: "Product information", desc: "Capabilities, modes and documentation.", href: "/products" },
-  { key: "technical", title: "Technical question", desc: "Policy, architecture or compatibility.", href: "/platform" },
-  { key: "partnership", title: "Partnership / business", desc: "Reselling, distribution or business inquiry.", href: "/about" },
+  { key: "demo", title: "Book a demo", desc: "See SecuEdge Frontier in action.", href: "/contact" },
+  { key: "sizing", title: "Size my network", desc: "Desktop and rack-mount models, sized by users.", href: "/frontier/appliances" },
+  { key: "assessment", title: "Free security assessment", desc: "Seven questions, about two minutes.", href: "/assessment" },
+  { key: "partner", title: "Become a partner", desc: "Distribution across India.", href: "/about" },
 ] as const;
 
 export default function ContactPage() {
@@ -33,16 +35,15 @@ export default function ContactPage() {
               <span className="text-[#0B2239]">Contact</span>
             </nav>
             <p className="premium-eyebrow mt-8">Let&apos;s talk</p>
-            <h1 className="mt-4 text-5xl font-extrabold leading-[1.0] tracking-[-0.035em] text-[#0B2239] md:text-6xl">Talk to the SecuEdge team.</h1>
+            <h1 className="mt-4 text-5xl font-extrabold leading-[1.0] tracking-[-0.035em] text-[#0B2239] md:text-6xl">Talk to SecuEdge.</h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-[#30465C] md:text-lg">
-              Tell us about your network and what you are looking to protect. We&rsquo;ll help you
-              explore the Frontier appliance family and its operating modes.
+              Book a free demo, get help choosing a model, or ask about becoming a partner.
             </p>
             <ul className="mt-7 space-y-2.5">
               {[
-                "Discuss appliance sizing and deployment",
-                "Explore Quick and Professional operating modes",
-                "Get product and configuration guidance",
+                "See SecuEdge Frontier set up correctly, live",
+                "Choose by how many people use your network",
+                "Every feature on every model — no cut-down boxes",
               ].map((point) => (
                 <li key={point} className="flex items-start gap-2.5 text-sm font-medium text-[#30465C]">
                   <Check size={16} className="mt-0.5 shrink-0 text-[#15803d]" aria-hidden />
@@ -50,17 +51,19 @@ export default function ContactPage() {
                 </li>
               ))}
             </ul>
-            <div className="premium-panel mt-8 p-5" aria-label="A typical Frontier network security path">
-              <p className="premium-panel-label">A clear path through your network</p>
-              <ol className="mt-4 space-y-0">
-                {[["01", "Internet"], ["02", "Frontier inspection"], ["03", "Protected network"]].map(([n, t], i, arr) => (
-                  <li key={t} className={["flex items-center gap-3 py-2.5", i < arr.length - 1 && "border-b border-[rgba(11,34,57,0.08)]"].filter(Boolean).join(" ")}>
-                    <span className="font-mono text-xs text-[#016FED]">{n}</span>
-                    <strong className="text-sm font-bold text-[#0B2239]">{t}</strong>
-                    {i === 1 && <span className="premium-badge premium-badge--live ml-auto">Secured</span>}
-                  </li>
-                ))}
-              </ol>
+            <div className="premium-panel mt-8 p-5" aria-label="Support">
+              <p className="premium-panel-label">Already a customer?</p>
+              <p className="mt-2 text-sm font-bold text-[#0B2239]">
+                Call 24/7 support on <a href={SUPPORT.phoneHref} className="text-[#016FED]">{SUPPORT.phone}</a>.
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-[#526274]">{SUPPORT.response}.</p>
+            </div>
+            <div className="premium-panel mt-3 p-5" aria-label="Coverage and office">
+              <p className="premium-panel-label">Coverage</p>
+              <p className="mt-2 flex items-start gap-2 text-[13px] leading-relaxed text-[#526274]">
+                <MapPin size={14} className="mt-0.5 shrink-0 text-[#016FED]" />{COVERAGE.line}
+              </p>
+              <p className="mt-2 text-[13px] text-[#526274]">SecuEdge, {HEADQUARTERS} · {SITE.email}</p>
             </div>
           </Reveal>
           <Reveal>
@@ -77,6 +80,16 @@ export default function ContactPage() {
           </Reveal>
         </div>
       </section>
+
+      <PremiumFaq
+        eyebrow="Contact · FAQ"
+        faqs={[
+          { q: "What happens in a demo?", a: "Our team shows SecuEdge Frontier set up correctly in Quick Mode, answers your questions, and recommends the right model for your user count." },
+          { q: "How are licences sold?", a: "Licences and subscriptions are available on 1-year or 3-year terms." },
+          { q: "How do I choose a model?", a: "Choose by how many people use your network at the busiest time, counting each VPN user three times. Use the model finder or ask our team." },
+          { q: "What support do we get?", a: "24/7 technical support from India-based engineers on 1800 123 0966. We respond within 24 hours." },
+        ]}
+      />
     </div>
   );
 }
