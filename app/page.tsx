@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
-  ArrowRight, ShieldCheck, Check, Phone, MapPin,
+  ArrowRight, Check, Phone, MapPin,
   GraduationCap, HeartPulse, Landmark, Banknote, Factory, Store, Coffee, Rocket,
 } from "lucide-react";
 import {
@@ -14,7 +14,7 @@ import {
   SIZING_STEPS, SIZING_EXAMPLE,
 } from "@/lib/site";
 import { CustomerMarquee } from "@/components/CustomerMarquee";
-import { Reveal, Stagger, Item, Parallax } from "@/components/motion";
+import { Reveal, Stagger, Item, Parallax, StickySteps } from "@/components/motion";
 import { ScrollProgress } from "@/components/premium/ScrollProgress";
 import "@/components/premium/premium.css";
 
@@ -37,14 +37,14 @@ function SectionHead({ eyebrow, title, lead }: { eyebrow: string; title: string;
 
 /* Industry cards — hero subheads from the copy deck §15. */
 const INDUSTRIES = [
-  { name: "Education", href: "/industries/education", icon: GraduationCap, sub: "Protect students online, keep Wi-Fi under control and separate admin, lab and student networks, without a full-time security team." },
-  { name: "Healthcare", href: "/industries/healthcare", icon: HeartPulse, sub: "Separate medical devices, billing and guest Wi-Fi, block threats before they reach clinical systems and stay online when a line fails." },
-  { name: "Government", href: "/industries/government", icon: Landmark, sub: "Made in India, with citizen data kept in India, strict outbound controls and complete audit logs." },
-  { name: "Banking and finance", href: "/industries/finance", icon: Banknote, sub: "Default-deny outbound rules, phishing blocking, separate sensitive zones and audit evidence your regulator expects to see." },
-  { name: "Manufacturing", href: "/industries/manufacturing", icon: Factory, sub: "Separate machine networks from office networks, control contractor access and block ransomware before it reaches the shop floor." },
-  { name: "Retail", href: "/industries/retail", icon: Store, sub: "Keep billing systems separate, give customers safe Wi-Fi and set up each store correctly with Quick Mode." },
-  { name: "Hospitality", href: "/industries/hospitality", icon: Coffee, sub: "Give guests fast, fair Wi-Fi with a login page while keeping them away from billing and property systems." },
-  { name: "SMB and startups", href: "/industries/technology", icon: Rocket, sub: "No security team? No problem. Quick Mode lets you set up SecuEdge Frontier correctly, and every feature comes on every model." },
+  { name: "Education", ref: "The Shri Ram School · NDIM · St. Bede's", href: "/industries/education", icon: GraduationCap, sub: "Protect students online, keep Wi-Fi under control and separate admin, lab and student networks, without a full-time security team." },
+  { name: "Healthcare", ref: "Bombay Hospital · Shanti Devi GI Institute", href: "/industries/healthcare", icon: HeartPulse, sub: "Separate medical devices, billing and guest Wi-Fi, block threats before they reach clinical systems and stay online when a line fails." },
+  { name: "Government", ref: "Kisan Call Centre", href: "/industries/government", icon: Landmark, sub: "Made in India, with citizen data kept in India, strict outbound controls and complete audit logs." },
+  { name: "Banking and finance", ref: "References on request", href: "/industries/finance", icon: Banknote, sub: "Default-deny outbound rules, phishing blocking, separate sensitive zones and audit evidence your regulator expects to see." },
+  { name: "Manufacturing", ref: "KNL Driveline · Sain Packaging", href: "/industries/manufacturing", icon: Factory, sub: "Separate machine networks from office networks, control contractor access and block ransomware before it reaches the shop floor." },
+  { name: "Retail", ref: "Closest ref: Chaayos (multi-outlet)", href: "/industries/retail", icon: Store, sub: "Keep billing systems separate, give customers safe Wi-Fi and set up each store correctly with Quick Mode." },
+  { name: "Hospitality", ref: "Chaayos", href: "/industries/hospitality", icon: Coffee, sub: "Give guests fast, fair Wi-Fi with a login page while keeping them away from billing and property systems." },
+  { name: "SMB and startups", ref: "Solis Technology · Eleet Mindz · Natsav", href: "/industries/technology", icon: Rocket, sub: "No security team? No problem. Quick Mode lets you set up SecuEdge Frontier correctly, and every feature comes on every model." },
 ] as const;
 
 const QUICK_STEPS = [
@@ -107,10 +107,20 @@ export default function HomePage() {
                 <span key={t} className="premium-chip !text-[11px]">{t}</span>
               ))}
             </div>
-            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-white/10 pt-6">
-              <div><div className="text-2xl font-bold text-white">200+</div><div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Installations across India</div></div>
-              <div><div className="text-2xl font-bold text-white">24/7</div><div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">India-based support</div></div>
-              <div><div className="text-2xl font-bold text-white">2 modes</div><div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">One appliance</div></div>
+            <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/[0.06] sm:grid-cols-3 lg:grid-cols-6" aria-label="SecuEdge at a glance">
+              {[
+                ["● Available now", "SecuEdge Frontier", "live"],
+                ["First of seven", "SecuEdge products", ""],
+                ["200+", "Installations across India", ""],
+                ["24/7", SUPPORT.phone, ""],
+                ["India", "Data stays in India", ""],
+                ["2 modes", "Quick + Professional", ""],
+              ].map(([value, label, kind]) => (
+                <div key={label} className="bg-[#070d18] px-4 py-3.5">
+                  <div className={`text-lg font-extrabold tracking-tight ${kind === "live" ? "text-emerald-300" : "text-white"}`}>{value}</div>
+                  <div className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.14em] text-slate-500">{label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -139,23 +149,14 @@ export default function HomePage() {
 
       <div className="premium-divider mx-auto max-w-[1200px]" />
 
-      {/* ══ 3 · QUICK MODE STEPS ══ */}
-      <section className="relative py-24 md:py-32">
-        <div className="mx-auto w-full max-w-[1200px] px-6">
-          <SectionHead eyebrow="How it works" title="Security a business owner can set up correctly." lead="Quick Mode follows the same order engineers use on site, so the guided path is also the secure path." />
-          <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.06}>
-            {QUICK_STEPS.map((step) => (
-              <Item key={step.n}>
-                <div className="premium-card h-full p-6">
-                  <div className="font-mono text-xs text-slate-600">{step.n}</div>
-                  <h3 className="mt-2 text-lg font-bold text-white">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-400">{step.desc}</p>
-                </div>
-              </Item>
-            ))}
-          </Stagger>
-        </div>
-      </section>
+      {/* ══ 3 · QUICK MODE STEPS (sticky scroll story) ══ */}
+      <StickySteps
+        id="how"
+        eyebrow="How it works"
+        title="Security a business owner can set up correctly."
+        lead="Quick Mode follows the same order engineers use on site, so the guided path is also the secure path."
+        steps={QUICK_STEPS.map((s) => ({ n: s.n, title: s.title, desc: s.desc }))}
+      />
 
       {/* ══ 4 · SAFE ENVIRONMENT BAND ══ */}
       <section className="prem-navy relative border-t border-white/[0.07] py-20 md:py-24">
@@ -181,20 +182,42 @@ export default function HomePage() {
       <section className="relative border-t border-white/[0.07] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Right-sized models" title="Every feature, on every model." lead="SecuEdge Frontier comes in multiple desktop and rack-mount models. Every one runs the same software with the identical feature set, so a small office never buys a cut-down box. You choose by how many people use the network, not by features." />
-          <Stagger className="mt-10 flex flex-wrap gap-2.5" gap={0.03}>
-            {APPLIANCES.map((m) => (
-              <Item key={m.model}>
-                <Link href={`/products/frontier/${m.model.toLowerCase()}`} className="premium-chip !py-2.5 !text-[13px] transition-colors hover:border-cyan-400/40">
-                  <ShieldCheck size={14} className="text-cyan-300" /><strong className="font-mono">{m.model}</strong><span className="text-slate-500">{m.userRange} users</span>
-                </Link>
-              </Item>
-            ))}
-            <Item>
-              <Link href="/contact" className="premium-chip !py-2.5 !text-[13px] transition-colors hover:border-cyan-400/40">
-                <strong className="font-mono">Custom</strong><span className="text-slate-500">1,300+ users</span>
-              </Link>
-            </Item>
-          </Stagger>
+          <Reveal className="mt-10">
+            <div className="overflow-x-auto rounded-2xl border border-white/10">
+              <table className="w-full min-w-[44rem] text-left text-sm">
+                <thead className="bg-white/[0.03] font-mono text-[10px] uppercase tracking-[0.16em] text-slate-500">
+                  <tr>
+                    <th className="px-4 py-3 font-medium">Model</th>
+                    <th className="px-4 py-3 font-medium">Chassis</th>
+                    <th className="px-4 py-3 font-medium">Peak users</th>
+                    <th className="px-4 py-3 font-medium">Typical site</th>
+                    <th className="px-4 py-3 font-medium">Modes</th>
+                    <th className="px-4 py-3 font-medium">Specs</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-[#070d18]">
+                  {APPLIANCES.map((m) => (
+                    <tr key={m.model} className="border-t border-white/[0.07] transition-colors hover:bg-white/[0.02]">
+                      <td className="px-4 py-3 font-semibold text-white"><Link href={`/products/frontier/${m.model.toLowerCase()}`} className="font-mono transition-colors hover:text-cyan-300">{m.model}</Link></td>
+                      <td className="px-4 py-3 text-slate-400">{m.formFactor}</td>
+                      <td className="px-4 py-3 font-mono text-slate-200">{m.userRange}</td>
+                      <td className="px-4 py-3 text-slate-400">{m.typicalSite}</td>
+                      <td className="px-4 py-3 text-slate-400">Quick + Pro</td>
+                      <td className="px-4 py-3 text-emerald-300/90">On request</td>
+                    </tr>
+                  ))}
+                  <tr className="border-t border-white/[0.07]">
+                    <td className="px-4 py-3 font-semibold text-white"><Link href="/contact" className="font-mono transition-colors hover:text-cyan-300">Custom</Link></td>
+                    <td className="px-4 py-3 text-slate-400">—</td>
+                    <td className="px-4 py-3 font-mono text-slate-200">1,300+</td>
+                    <td className="px-4 py-3 text-slate-400">Designed with our team</td>
+                    <td className="px-4 py-3 text-slate-400">Quick + Pro</td>
+                    <td className="px-4 py-3 text-emerald-300/90">On request</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </Reveal>
           <Reveal className="mt-10">
             <div className="premium-card p-7 md:p-8">
               <p className="premium-eyebrow">How sizing works</p>
@@ -265,6 +288,13 @@ export default function HomePage() {
       <section className="prem-cream-soft relative border-t border-white/[0.07] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Proof" title="Trusted across India." lead="SecuEdge Frontier protects 200+ installations across government, education, healthcare, manufacturing, media, hospitality and technology." />
+          <Reveal className="mt-6 flex flex-wrap gap-2">
+            <span className="premium-chip !text-[11px]">200+ installations</span>
+            {COVERAGE.regions.map((r) => (
+              <span key={r} className="premium-chip !text-[11px]">Sales coverage · {r} India</span>
+            ))}
+            <span className="premium-chip !text-[11px]">Channel partners pan-India</span>
+          </Reveal>
           <Reveal className="mt-8">
             <CustomerMarquee />
           </Reveal>
@@ -303,8 +333,9 @@ export default function HomePage() {
                 <Link href={industry.href} className="premium-product-card group" style={{ "--prem-accent": "#016fed" } as React.CSSProperties}>
                   <span className="premium-product-icon"><industry.icon size={20} /></span>
                   <h3 className="mt-4 text-lg font-bold tracking-tight text-white">{industry.name}</h3>
-                  <p className="mt-2 flex-1 text-[13px] leading-relaxed text-slate-400">{industry.sub}</p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300">Explore <ArrowRight size={14} className="premium-link-arrow" /></span>
+                  <p className="mt-2 text-[13px] leading-relaxed text-slate-400">{industry.sub}</p>
+                  <p className="mt-3 border-t border-white/[0.07] pt-3 font-mono text-[10px] leading-relaxed tracking-wide text-slate-500"><span className="text-cyan-300/70">REF · </span>{industry.ref}</p>
+                  <span className="mt-4 inline-flex flex-1 items-end gap-1.5 text-sm font-semibold text-cyan-300">Explore <ArrowRight size={14} className="premium-link-arrow" /></span>
                 </Link>
               </Item>
             ))}
@@ -323,8 +354,9 @@ export default function HomePage() {
                   <span className={["premium-badge", p.status === "available" && "premium-badge--live"].filter(Boolean).join(" ")}>{STATUS_LABEL[p.status]}</span>
                   <h3 className="mt-4 text-xl font-bold tracking-tight text-white">{p.name}</h3>
                   <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{p.category}</p>
-                  <p className="mt-2.5 flex-1 text-[13px] leading-relaxed text-slate-400">{p.desc}</p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300">Explore <ArrowRight size={14} className="premium-link-arrow" /></span>
+                  <p className="mt-2.5 text-[13px] leading-relaxed text-slate-400">{p.desc}</p>
+                  <p className="mt-3 border-t border-white/[0.07] pt-3 font-mono text-[10px] leading-relaxed tracking-wide text-slate-500">SAME APPLIANCES + CONSOLE · NO DATES</p>
+                  <span className="mt-4 inline-flex flex-1 items-end gap-1.5 text-sm font-semibold text-cyan-300">Explore <ArrowRight size={14} className="premium-link-arrow" /></span>
                 </Link>
               </Item>
             ))}

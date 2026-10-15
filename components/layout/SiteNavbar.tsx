@@ -87,7 +87,7 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
     return null;
   }, [pathname]);
   const isCustomers = pathname.startsWith("/customers");
-  const isCompany =
+  const isAbout =
     pathname.startsWith("/about") ||
     pathname.startsWith("/why-secuedge") ||
     pathname.startsWith("/trust");
@@ -198,9 +198,9 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
             href="/about" 
             onMouseEnter={() => setActiveMenu(null)} 
             onFocus={() => setActiveMenu(null)}
-            className={["foundation-nav__link", isCompany && "is-current"].filter(Boolean).join(" ")}
+            className={["foundation-nav__link", isAbout && "is-current"].filter(Boolean).join(" ")}
           >
-            Company
+            About
           </Link>
         </nav>
         
@@ -275,7 +275,7 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
           </section>
         ))}
         <Link href="/customers" onClick={() => setOpen(false)}>Customers</Link>
-        <Link href="/about" onClick={() => setOpen(false)}>Company</Link>
+        <Link href="/about" onClick={() => setOpen(false)}>About</Link>
         <GlobalSearch />
         <Link href="/contact" className="foundation-button" onClick={() => setOpen(false)}>Book a free demo</Link>
       </nav>

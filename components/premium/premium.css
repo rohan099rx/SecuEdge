@@ -1454,3 +1454,113 @@ a:hover .customer-logo,
     transform: none;
   }
 }
+
+/* ── Scroll-driven headline reveals (CSS view timeline; every section) ── */
+@keyframes zd-rise {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@supports (animation-timeline: view()) {
+  .premium-section-title,
+  #premium-hero h1,
+  .display-1,
+  .display-2 {
+    animation: zd-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry -10% entry 55%;
+  }
+}
+
+/* ── Line-mask reveal wrapper ── */
+.line-reveal-mask {
+  display: block;
+  overflow: hidden;
+}
+
+/* ── Sticky steps (pinned visual, scrolling chapters) ── */
+.sticky-steps-visual {
+  position: sticky;
+  top: 7rem;
+  align-self: start;
+}
+
+.sticky-steps-active-num {
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(4rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--prem-blue);
+  font-variant-numeric: tabular-nums;
+}
+
+.sticky-steps-segs {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.sticky-steps-segs i {
+  height: 3px;
+  flex: 1;
+  border-radius: 3px;
+  background: rgba(11, 34, 57, 0.12);
+  transition: background 0.3s;
+}
+
+.sticky-steps-segs i.is-on {
+  background: var(--prem-blue);
+}
+
+@media (max-width: 1023px) {
+  .sticky-steps-visual {
+    position: static;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-section-title,
+  #premium-hero h1,
+  .display-1,
+  .display-2 {
+    animation: none;
+  }
+}
+
+/* ── Footer micro-metadata (status lines + link metas) ── */
+.foundation-footer__status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #526274;
+}
+
+.foundation-footer__status span {
+  white-space: nowrap;
+}
+
+.foundation-footer__status a {
+  color: #016fed;
+}
+
+.foundation-footer__meta {
+  margin-left: 0.45rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a94a0;
+  white-space: nowrap;
+}
+
+.foundation-footer__column a svg {
+  vertical-align: -2px;
+  margin-left: 0.25rem;
+}
