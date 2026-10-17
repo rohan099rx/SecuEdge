@@ -3144,11 +3144,346 @@ body {
   .foundation-drawer__scrim { transition: none; }
 }
 /* ══════════════════════════════════════════════════════════════════
+   Platform responsibilities — five hairline columns with a signal that
+   travels the rail job by job. Motion is decorative: the numbers, the
+   titles and the copy never depend on it.
+   ══════════════════════════════════════════════════════════════════ */
+.premium-platform__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem 1.35rem;
+  padding-top: 0.35rem;
+}
+
+@media (min-width: 640px) {
+  .premium-platform__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .premium-platform__grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.35rem 1.5rem; }
+}
+
+.premium-platform__item {
+  position: relative;
+  height: 100%;
+  padding: 0.9rem 0.85rem 1rem;
+  border-top: 1px solid var(--prem-border);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-platform__dot {
+  position: absolute;
+  top: -4.5px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(1, 111, 237, 0.3);
+}
+
+.premium-platform__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.premium-platform__icons { display: flex; gap: 0.4rem; }
+
+.premium-platform__icon {
+  display: grid;
+  place-items: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--prem-border);
+  background: var(--prem-surface);
+  color: var(--prem-blue);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.premium-platform__num {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--prem-faint);
+  transition: color 0.3s ease;
+}
+
+.premium-platform__title {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--prem-text);
+  transition: color 0.3s ease;
+}
+
+.premium-platform__desc {
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--prem-muted);
+}
+
+@media (hover: hover) {
+  .premium-platform__item:hover {
+    background: linear-gradient(180deg, rgba(1, 111, 237, 0.055), rgba(1, 111, 237, 0) 70%);
+    border-color: rgba(1, 111, 237, 0.38);
+    transform: translateY(-3px);
+  }
+  .premium-platform__item:hover .premium-platform__icon {
+    transform: translateY(-2px);
+    border-color: rgba(1, 111, 237, 0.42);
+    box-shadow: 0 10px 20px -14px rgba(1, 111, 237, 0.8);
+  }
+  .premium-platform__item:hover .premium-platform__title { color: var(--prem-blue-deep); }
+  .premium-platform__item:hover .premium-platform__num { color: var(--prem-blue); }
+}
+
+.premium-platform__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--prem-border);
+}
+
+.premium-platform__foot p {
+  margin: 0;
+  max-width: 44rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--prem-muted);
+}
+
+.premium-platform__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--prem-blue-deep);
+}
+
+.premium-platform__link svg { transition: transform 0.3s ease; }
+.premium-platform__link:hover svg { transform: translateX(3px); }
+
+/* Signal travelling the five columns, one job per second. */
+@keyframes platformSignal {
+  0%, 100% { background: rgba(1, 111, 237, 0.3); transform: scale(1); box-shadow: 0 0 0 0 rgba(1, 111, 237, 0); }
+  7% { background: var(--prem-blue); transform: scale(1.6); box-shadow: 0 0 0 7px rgba(1, 111, 237, 0.13); }
+  26% { background: var(--prem-blue); transform: scale(1); box-shadow: 0 0 0 0 rgba(1, 111, 237, 0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .premium-platform__dot { animation: platformSignal 5s ease-in-out infinite; }
+  .premium-platform__grid > *:nth-child(2) .premium-platform__dot { animation-delay: 1s; }
+  .premium-platform__grid > *:nth-child(3) .premium-platform__dot { animation-delay: 2s; }
+  .premium-platform__grid > *:nth-child(4) .premium-platform__dot { animation-delay: 3s; }
+  .premium-platform__grid > *:nth-child(5) .premium-platform__dot { animation-delay: 4s; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Traffic path rail — a packet crosses the six stages on a loop and
+   each stage lights up as it arrives. Six-second cycle, one stage a
+   second, so the timing needs no JavaScript at all.
+   ══════════════════════════════════════════════════════════════════ */
+.flow-rail { position: relative; }
+
+.flow-rail__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flow-rail__step { position: relative; padding-top: 1.7rem; }
+
+.flow-rail__line {
+  position: absolute;
+  top: calc(0.33rem - 1px);
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(1, 111, 237, 0.14), rgba(1, 111, 237, 0.5));
+}
+
+.flow-rail__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.66rem;
+  height: 0.66rem;
+  border-radius: 50%;
+  background: rgba(1, 111, 237, 0.32);
+}
+
+.flow-rail__packet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.66rem;
+  height: 0.66rem;
+  border-radius: 50%;
+  background: var(--prem-blue);
+  box-shadow: 0 0 0 0.24rem rgba(1, 111, 237, 0.16), 0 0 14px rgba(1, 111, 237, 0.6);
+  display: none;
+}
+
+.flow-rail__num {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(11, 34, 57, 0.45);
+}
+
+.flow-rail__label {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--prem-text);
+}
+
+@keyframes flowPacket {
+  from { left: 0; }
+  to { left: calc(100% - 0.66rem); }
+}
+
+@keyframes flowNode {
+  0%, 100% { background: rgba(1, 111, 237, 0.32); transform: scale(1); box-shadow: 0 0 0 0 rgba(1, 111, 237, 0); }
+  4% { background: var(--prem-blue); transform: scale(1.7); box-shadow: 0 0 0 8px rgba(1, 111, 237, 0.12); }
+  16% { background: var(--prem-blue); transform: scale(1); box-shadow: 0 0 0 0 rgba(1, 111, 237, 0); }
+}
+
+@keyframes flowLabel {
+  0%, 2% { color: var(--prem-text); }
+  6%, 15% { color: var(--prem-blue-deep); }
+  30%, 100% { color: var(--prem-text); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .flow-rail__packet { display: block; animation: flowPacket 6s linear infinite; }
+  .flow-rail__dot { animation: flowNode 6s linear infinite; }
+  .flow-rail__label { animation: flowLabel 6s linear infinite; }
+
+  .flow-rail__steps > :nth-child(2) .flow-rail__dot,
+  .flow-rail__steps > :nth-child(2) .flow-rail__label { animation-delay: 1s; }
+  .flow-rail__steps > :nth-child(3) .flow-rail__dot,
+  .flow-rail__steps > :nth-child(3) .flow-rail__label { animation-delay: 2s; }
+  .flow-rail__steps > :nth-child(4) .flow-rail__dot,
+  .flow-rail__steps > :nth-child(4) .flow-rail__label { animation-delay: 3s; }
+  .flow-rail__steps > :nth-child(5) .flow-rail__dot,
+  .flow-rail__steps > :nth-child(5) .flow-rail__label { animation-delay: 4s; }
+  .flow-rail__steps > :nth-child(6) .flow-rail__dot,
+  .flow-rail__steps > :nth-child(6) .flow-rail__label { animation-delay: 5s; }
+}
+
+/* Phones: the path runs down the page instead of across it. */
+@media (max-width: 700px) {
+  .flow-rail__steps { grid-template-columns: 1fr; gap: 0.5rem; padding-left: 1.5rem; }
+  .flow-rail__step { display: flex; align-items: baseline; gap: 0.5rem; padding-top: 0; }
+  .flow-rail__num { letter-spacing: 0.08em; }
+  .flow-rail__label { margin-top: 0; font-size: 0.86rem; }
+  .flow-rail__dot { top: 0.18rem; left: -1.5rem; }
+  .flow-rail__line {
+    left: 0.33rem;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, rgba(1, 111, 237, 0.14), rgba(1, 111, 237, 0.5));
+  }
+}
+
+@media (max-width: 700px) and (prefers-reduced-motion: no-preference) {
+  .flow-rail__packet { animation-name: flowPacketY; }
+}
+
+@keyframes flowPacketY {
+  from { top: 0; }
+  to { top: calc(100% - 0.66rem); }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Band rhythm — one knob for every section's vertical padding, so the
+   whole site breathes at the same (tighter) cadence.
+
+   The first section of a page keeps a taller top edge because the
+   header is fixed: below 6rem the breadcrumb starts to slide under it.
+   ══════════════════════════════════════════════════════════════════ */
+.premium {
+  --band-y: 2.4rem;
+  --band-top-inner: 3.2rem;
+  --band-top-section: 3.2rem;
+}
+
+@media (min-width: 768px) {
+  .premium { --band-y: 3.75rem; --band-top-inner: 6rem; --band-top-section: 0rem; }
+}
+
+@media (min-width: 1280px) {
+  .premium { --band-y: 4.25rem; }
+}
+
+.premium
+  :is(
+    [class*="py-14"],
+    [class*="py-16"],
+    [class*="py-20"],
+    [class*="py-24"],
+    [class*="py-28"],
+    [class*="py-32"]
+  ) {
+  padding-top: var(--band-y);
+  padding-bottom: var(--band-y);
+}
+
+/* Phones double up the first section and its band, as the old rhythm did,
+   so the breadcrumb still clears the fixed header. */
+@media (max-width: 767px) {
+  .premium > section:first-of-type { padding-top: var(--band-top-section); }
+}
+
+/* On wider screens only the band inside the first section carries the
+   clearance — but never when that section is itself a band. */
+.premium
+  > section:first-of-type:not(
+    :is(
+      [class*="py-14"],
+      [class*="py-16"],
+      [class*="py-20"],
+      [class*="py-24"],
+      [class*="py-28"],
+      [class*="py-32"]
+    )
+  )
+  > :is(
+    [class*="py-14"],
+    [class*="py-16"],
+    [class*="py-20"],
+    [class*="py-24"],
+    [class*="py-28"],
+    [class*="py-32"]
+  ) {
+  padding-top: var(--band-top-inner);
+}
+
+/* ══════════════════════════════════════════════════════════════════
    Mobile rhythm — same cadence, tighter scale, thumb-sized controls.
    ══════════════════════════════════════════════════════════════════ */
 @media (max-width: 640px) {
-  .premium > section,
-  .premium [class*="py-24"] { padding-top: 3.9rem; padding-bottom: 3.9rem; }
   .premium .premium-divider { margin-block: .25rem; opacity: .7; }
 
   .premium-section-title { font-size: clamp(1.7rem, 7.6vw, 2.3rem); line-height: 1.12; }

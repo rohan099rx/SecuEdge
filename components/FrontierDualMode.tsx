@@ -71,7 +71,7 @@ export function FrontierDualMode() {
       </ol>
 
       {/* ── Interactive diptych ─────────────────────────────────────────── */}
-      <div className="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-[1.75rem] border border-hair shadow-[0_44px_90px_-48px_rgba(11,27,51,0.35)]">
+      <div className="relative mx-auto mt-8 max-w-5xl overflow-hidden rounded-[1.75rem] border border-hair shadow-[0_44px_90px_-48px_rgba(11,27,51,0.35)]">
         <div className="grid md:grid-cols-2">
 
           {/* ── LEFT: Quick Mode — security level selector ── */}

@@ -58,7 +58,7 @@ export default function FrontierPage() {
             <h2 className="premium-section-title mt-4">One appliance family. Two ways to run it.</h2>
             <p className="premium-section-lead">SecuEdge Frontier combines next-generation firewall, IPS/IDS, VPN, SD-WAN and content filtering with a configuration experience anyone can get right the first time.</p>
           </Reveal>
-          <Stagger className="mt-10 grid gap-4 sm:grid-cols-2" gap={0.06}>
+          <Stagger className="mt-8 grid gap-4 sm:grid-cols-2" gap={0.06}>
             {PILLARS.map((p) => (
               <Item key={p.href}>
                 <Link href={p.href} className="premium-card group flex h-full flex-col p-7">
@@ -69,7 +69,7 @@ export default function FrontierPage() {
               </Item>
             ))}
           </Stagger>
-          <Reveal className="mt-10">
+          <Reveal className="mt-8">
             <div className="premium-card flex flex-col items-start gap-4 p-7 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="premium-eyebrow">Supported across India</p>
@@ -95,7 +95,7 @@ export default function FrontierPage() {
               implementation, training and ongoing support.
             </p>
           </Reveal>
-          <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+          <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
             {[
               { t: "Consultation", d: "We understand your network and recommend the right model." },
               { t: "Implementation", d: "Our team handles setup, configuration and integration." },

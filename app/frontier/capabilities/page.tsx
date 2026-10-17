@@ -68,7 +68,7 @@ export default function CapabilitiesPage() {
             <p className="premium-eyebrow">Capability map</p>
             <h2 className="premium-section-title mt-4">What each feature does for you.</h2>
           </Reveal>
-          <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
             {CAPABILITIES.map((c) => (
               <Item key={c.title}>
                 <div className="premium-card h-full p-6">

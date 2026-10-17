@@ -45,7 +45,7 @@ export default function SafeEnvironmentPage() {
               or administrator in under a second. Nothing to install on any device. On by default for schools and colleges.
             </p>
           </Reveal>
-          <Reveal className="mt-10">
+          <Reveal className="mt-8">
             <div className="premium-panel flex flex-wrap items-center gap-x-3 gap-y-2 px-5 py-4">
               <span className="premium-panel-label">How it flows</span>
               <span className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-300">
@@ -78,7 +78,7 @@ export default function SafeEnvironmentPage() {
       </section>
 
       <section className="border-t border-white/[0.07] bg-white/[0.015] py-20 md:py-28">
-        <div className="mx-auto grid w-full max-w-[1200px] items-center gap-12 px-6 md:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-[1200px] items-center gap-9 px-6 md:grid-cols-2">
           <Reveal>
             <p className="premium-eyebrow">Built for the ones who vet hardest</p>
             <h2 className="premium-section-title mt-4">For schools, colleges and healthcare.</h2>

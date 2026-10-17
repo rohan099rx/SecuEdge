@@ -54,7 +54,7 @@ export default function TrustPage() {
     <div className="premium">
       <section className="relative overflow-hidden">
         <div className="premium-grid-bg absolute inset-0" aria-hidden />
-        <div className="relative mx-auto grid w-full max-w-[1200px] items-center gap-12 px-6 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="relative mx-auto grid w-full max-w-[1200px] items-center gap-9 px-6 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
             <nav className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-[#526274]" aria-label="Breadcrumb">
               <Link href="/" className="transition-colors hover:text-[#016FED]">Home</Link>
@@ -84,7 +84,7 @@ export default function TrustPage() {
             <h2 className="premium-section-title mt-4">Six facts, no fine print.</h2>
             <p className="premium-section-lead">Every claim below describes something you can ask us to show you.</p>
           </Reveal>
-          <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
             {ROWS.map((row, i) => (
               <Item key={row.label}>
                 <div className="premium-card h-full p-6">

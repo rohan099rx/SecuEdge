@@ -112,7 +112,7 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
         <p className="premium-eyebrow">{product.name} · Capabilities</p>
         <h2 className="premium-section-title mt-4 max-w-3xl">{isFrontier ? "One firewall, a complete edge toolkit." : `${product.name} — what it will do.`}</h2>
         <p className="premium-section-lead">Only verified product information is shown; request approved documentation for technical sizing.</p>
-        <div className="mt-10">{isFrontier ? <Capabilities items={FRONTIER_PRODUCT.capabilities} /> : <div className="grid gap-3 md:grid-cols-2">{product.capabilities.map((capability, index) => { const label = typeof capability === "string" ? capability : capability.name; return <article key={label} className="premium-card p-6"><span className="font-mono text-[10px] tracking-[0.2em] text-cyan-300/70">0{index + 1} / {product.category.toUpperCase()}</span><h3 className="mt-2 text-lg font-bold text-white">{label}</h3><p className="mt-1.5 text-sm leading-relaxed text-slate-400">{product.description}</p></article>; })}</div>}</div>
+        <div className="mt-8">{isFrontier ? <Capabilities items={FRONTIER_PRODUCT.capabilities} /> : <div className="grid gap-3 md:grid-cols-2">{product.capabilities.map((capability, index) => { const label = typeof capability === "string" ? capability : capability.name; return <article key={label} className="premium-card p-6"><span className="font-mono text-[10px] tracking-[0.2em] text-cyan-300/70">0{index + 1} / {product.category.toUpperCase()}</span><h3 className="mt-2 text-lg font-bold text-white">{label}</h3><p className="mt-1.5 text-sm leading-relaxed text-slate-400">{product.description}</p></article>; })}</div>}</div>
       </div>
     </section>
 
@@ -121,7 +121,7 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
         <p className="premium-eyebrow">SecuEdge Frontier · Features</p>
         <h2 className="premium-section-title mt-4 max-w-3xl">Everything around the appliance.</h2>
         <p className="premium-section-lead">Dual Mode, safeguarding, sizing and capabilities — each with its own page.</p>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FRONTIER_FEATURES.map((f) => (
             <Link key={f.href} href={f.href} className="premium-product-card group" style={{ "--prem-accent": product.accent } as React.CSSProperties}>
               <span className="premium-product-icon"><f.icon size={20} /></span>
@@ -169,7 +169,7 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
             </Link>
           ))}
         </div>
-        <div className="mt-10 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/contact" className="premium-btn-primary">Talk to our team <ArrowRight size={16} /></Link>
           <Link href="/products/compare" className="premium-btn-ghost">Compare Frontier models</Link>
         </div>

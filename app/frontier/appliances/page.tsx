@@ -63,7 +63,7 @@ export default function AppliancesPage() {
             <h2 className="premium-section-title mt-4">Sized by users, not features.</h2>
             <p className="premium-section-lead">Peak users at the busiest hour. Full specifications are available on request.</p>
           </Reveal>
-          <Reveal className="mt-10">
+          <Reveal className="mt-8">
             <div className="overflow-x-auto rounded-2xl border border-white/10">
               <table className="w-full min-w-[44rem] text-left text-sm">
                 <thead className="bg-white/[0.03] font-mono text-[10px] uppercase tracking-[0.16em] text-slate-500">
@@ -97,7 +97,7 @@ export default function AppliancesPage() {
             </div>
           </Reveal>
 
-          <Reveal className="mt-10">
+          <Reveal className="mt-8">
             <div className="premium-card p-6 md:p-8">
               <p className="premium-eyebrow">How to size your network</p>
               <ol className="mt-4 grid gap-3 md:grid-cols-2">

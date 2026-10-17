@@ -24,7 +24,7 @@ export function PremiumFaq({ faqs, title = "Common questions", eyebrow = "FAQ" }
           <p className="premium-eyebrow">{eyebrow}</p>
           <h2 className="premium-section-title mt-4">{title}</h2>
         </Reveal>
-        <div className="mt-10 grid gap-3">
+        <div className="mt-8 grid gap-3">
           {faqs.map((f) => (
             <Reveal key={f.q}>
               <details className="premium-card group px-6 py-5">
@@ -68,7 +68,7 @@ export function PremiumSteps({ eyebrow = "Implementation", title, steps }: { eye
           <p className="premium-eyebrow">{eyebrow}</p>
           <h2 className="premium-section-title mt-4">{title}</h2>
         </Reveal>
-        <div className="mt-12 grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-9 grid gap-x-8 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <Reveal key={s.title}>
               <div className="relative border-t-2 border-[rgba(1,111,237,0.35)] pt-8">

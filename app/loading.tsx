@@ -4,7 +4,7 @@ export default function Loading() {
       <div className="h-4 w-48 animate-pulse rounded bg-white/10" />
       <div className="mt-6 h-10 w-3/4 animate-pulse rounded-lg bg-white/10" />
       <div className="mt-4 h-4 w-1/2 animate-pulse rounded bg-white/10" />
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
+      <div className="mt-8 grid gap-4 md:grid-cols-3">
         <div className="h-48 animate-pulse rounded-2xl bg-white/[0.04]" />
         <div className="h-48 animate-pulse rounded-2xl bg-white/[0.04]" />
         <div className="h-48 animate-pulse rounded-2xl bg-white/[0.04]" />

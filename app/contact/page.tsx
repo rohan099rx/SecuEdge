@@ -27,7 +27,7 @@ export default function ContactPage() {
     <div className="premium">
       <section className="relative overflow-hidden">
         <div className="premium-grid-bg absolute inset-0" aria-hidden />
-        <div className="relative mx-auto grid w-full max-w-[1200px] items-start gap-12 px-6 py-16 md:py-24 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="relative mx-auto grid w-full max-w-[1200px] items-start gap-9 px-6 py-16 md:py-24 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <nav className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-[#526274]" aria-label="Breadcrumb">
               <Link href="/" className="transition-colors hover:text-[#016FED]">Home</Link>

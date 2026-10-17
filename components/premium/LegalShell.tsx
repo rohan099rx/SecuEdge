@@ -21,7 +21,7 @@ export function LegalShell({ title, children }: { title: string; children: React
             Draft dated 12 October 2026 — to be replaced with lawyer-reviewed copy before launch.
           </p>
           <div className="mt-8 space-y-4 text-[15px] leading-[1.8] text-[#30465C]">{children}</div>
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[rgba(11,34,57,0.1)] pt-6">
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-[rgba(11,34,57,0.1)] pt-6">
             <Link href="/legal/privacy" className="text-sm font-bold text-[#016FED]">Privacy Policy</Link>
             <Link href="/legal/terms" className="text-sm font-bold text-[#016FED]">Terms of Use</Link>
             <Link href="/legal/dpdp" className="text-sm font-bold text-[#016FED]">DPDP & data residency</Link>

@@ -43,7 +43,7 @@ export function FrontierProductBands() {
       <section id="appliances" className="prem-cream-soft relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Appliance showroom" title="One hardware family. Seven models." lead="The whole portfolio runs on the same SecuEdge appliances. Pick a model to spin it in 3D — every model ships both Quick Mode and Professional Mode, and above 1,300 users we design the box with you." />
-          <div className="mt-10 grid gap-5 lg:grid-cols-[370px_1fr]">
+          <div className="mt-8 grid gap-5 lg:grid-cols-[370px_1fr]">
             <div className="premium-card p-2.5 lg:max-h-[672px] lg:overflow-y-auto">
               {SHOWROOM_GROUPS.filter(([, models]) => models.length > 0).map(([group, models]) => (
                 <div key={group} className="mb-1">
@@ -110,7 +110,7 @@ export function FrontierProductBands() {
       <section id="modes" className="prem-navy relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Frontier dual mode" title="One appliance. Two ways to work." lead="Protection levels from the actual Quick Mode engine set, and control areas from the real Professional capability list." />
-          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          <div className="mt-9 grid gap-5 lg:grid-cols-2">
             <Reveal>
               <div className="premium-card h-full p-7 md:p-8">
                 <span className="premium-badge">Quick Mode · guided setup</span>
@@ -152,7 +152,7 @@ export function FrontierProductBands() {
               <div className="premium-card overflow-hidden p-2"><FrontierConsolePreview /></div>
             </TiltCard>
           </Reveal>
-          <Stagger className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-[var(--prem-border)] bg-[rgba(11,34,57,0.10)] md:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-[var(--prem-border)] bg-[rgba(11,34,57,0.10)] md:grid-cols-3" gap={0.05}>
             {PRO_CAPABILITIES.map((c, i) => (
               <Item key={c.title}>
                 <div className="h-full bg-[var(--prem-bg-soft)] p-6">

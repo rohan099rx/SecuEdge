@@ -57,7 +57,7 @@ export function ProductPage({ product }: { product: ProductPageData }) {
           <h2 className="premium-section-title mt-4">SecuEdge Frontier for your network edge.</h2>
           <p className="premium-section-lead">{product.overview}</p>
           <p className="mt-4 max-w-2xl rounded-xl border border-amber-400/20 bg-amber-400/[0.05] px-4 py-3 text-[13px] leading-relaxed text-slate-400">{product.userRange} is a sizing range for peak users at the busiest hour, not a performance figure. Confirm hardware suitability with the SecuEdge team.</p>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
             <article className="premium-card p-6">
               <span className="font-mono text-[10px] tracking-[0.2em] text-cyan-300/70">01 / FRONTIER NGFW</span>
               <h3 className="mt-2 text-lg font-bold text-white">One product, two operating modes</h3>

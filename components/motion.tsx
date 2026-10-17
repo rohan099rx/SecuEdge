@@ -262,7 +262,7 @@ export function StickySteps({
             <p className="premium-section-lead">{lead}</p>
           </div>
         </Reveal>
-        <div className="mt-12 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mt-9 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="sticky-steps-visual">
             <div className="premium-card p-8 md:p-10">
               <p className="premium-panel-label">Step {active + 1} / {steps.length}</p>

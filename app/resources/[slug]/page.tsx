@@ -61,7 +61,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="mx-auto w-full max-w-3xl px-6">
           <article
             className="max-w-3xl
-              [&_h2]:mt-12 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-[#0B2239]
+              [&_h2]:mt-9 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-[#0B2239]
               [&_h3]:mt-8 [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-[#0B2239]
               [&_p]:mt-4 [&_p]:leading-[1.75] [&_p]:text-[#30465C]
               [&_li]:mt-2 [&_li]:leading-relaxed [&_li]:text-[#30465C] [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:pl-6

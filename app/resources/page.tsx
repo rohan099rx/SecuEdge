@@ -33,7 +33,7 @@ export default function ResourcesPage() {
             <div className="premium-card p-6 md:p-8"><ResourceBrowser posts={BLOG_POSTS} /></div>
           </Reveal>
           <Reveal>
-            <p className="premium-eyebrow mt-12">In production</p>
+            <p className="premium-eyebrow mt-9">In production</p>
             <h2 className="premium-section-title mt-4 !text-3xl md:!text-4xl">Coming soon to resources.</h2>
           </Reveal>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

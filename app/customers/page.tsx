@@ -61,7 +61,7 @@ export default function CustomersPage() {
             <h2 className="premium-section-title mt-4">Organizations across connected industries.</h2>
             <p className="premium-section-lead">Approved customer names, grouped by industry. Contact us to discuss relevant deployments and references for your sector.</p>
           </Reveal>
-          <div className="mt-10 space-y-8">
+          <div className="mt-8 space-y-8">
             {CUSTOMER_GROUPS.map((group) => (
               <div key={group}>
                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#526274]">{group}</p>

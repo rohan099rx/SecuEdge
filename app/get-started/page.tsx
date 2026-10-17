@@ -69,7 +69,7 @@ export default function GetStartedPage() {
             <h2 className="premium-section-title mt-4">Understand → evaluate → compare → deploy.</h2>
             <p className="premium-section-lead">Each step links to the existing route that does the work. No timelines invented, no pricing promised.</p>
           </Reveal>
-          <Stagger className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4" gap={0.06}>
+          <Stagger className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4" gap={0.06}>
             {JOURNEY.map((j) => (
               <Item key={j.step}>
                 <article className="premium-card flex h-full flex-col p-6">
@@ -95,7 +95,7 @@ export default function GetStartedPage() {
             <h2 className="premium-section-title mt-4">{data.benefitsIntro.headline}</h2>
             {data.benefitsIntro.sub ? <p className="premium-section-lead">{data.benefitsIntro.sub}</p> : null}
           </Reveal>
-          <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
             {data.benefits.map((b) => (
               <Item key={b.title}>
                 <article className="premium-card h-full p-6">
@@ -111,7 +111,7 @@ export default function GetStartedPage() {
       <PremiumSteps title={data.processIntro.headline} steps={data.process} />
 
       <section className="prem-navy border-t border-[rgba(11,34,57,0.08)] py-20 md:py-28" id="start-form">
-        <div className="mx-auto grid w-full max-w-[1200px] gap-12 px-6 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid w-full max-w-[1200px] gap-9 px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal>
             <p className="premium-eyebrow">{data.formSection.eyebrow ?? "Ready to begin?"}</p>
             <h2 className="premium-section-title mt-4 !text-3xl md:!text-4xl">{data.formSection.headline}</h2>

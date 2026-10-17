@@ -74,7 +74,7 @@ export default function WhySecuEdgePage() {
             <p className="premium-eyebrow">Decision framework</p>
             <h2 className="premium-section-title mt-4">Problem → approach → what you get.</h2>
           </Reveal>
-          <div className="mt-10 space-y-4">
+          <div className="mt-8 space-y-4">
             {REASONS.map((r) => (
               <Reveal key={r.number}>
                 <article className="premium-card grid gap-5 p-7 md:grid-cols-[auto_1fr_1fr_1fr_auto] md:items-start md:gap-8 md:p-8">

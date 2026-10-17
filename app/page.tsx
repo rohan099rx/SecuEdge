@@ -321,56 +321,66 @@ export default function HomePage() {
 
       <div className="premium-divider mx-auto max-w-[1200px]" />
 
-      {/* ══ 2 · PLATFORM (five responsibilities — editorial band, no boxes) ══ */}
-      <section id="platform-story" className="relative py-24 md:py-32">
+      {/* ══ 2 · PLATFORM (five responsibilities — animated signal rail) ══ */}
+      <section id="platform-story" className="premium-platform relative py-16 md:py-24">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Breaking down the system" title="One portfolio across network, security, and intelligence." lead="Five responsibilities, six products. This is how the portfolio maps to the work — a grouping of the product family, not a claim about internal integrations." />
-          <Stagger className="mt-14 grid gap-x-8 gap-y-10 md:grid-cols-5" gap={0.05}>
+          <Stagger className="premium-platform__grid mt-9" gap={0.07}>
             {PLATFORM_LAYERS.map(([title, desc, icons], i) => (
               <Item key={title}>
-                <div className={i > 0 ? "md:border-l md:border-[var(--prem-border)] md:pl-6" : ""}>
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="flex gap-1.5">
+                <article className="premium-platform__item">
+                  <span className="premium-platform__dot" aria-hidden />
+                  <div className="premium-platform__top">
+                    <span className="premium-platform__icons">
                       {icons.map((Icon, k) => (
-                        <span key={k} className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--prem-border)] bg-white text-[var(--prem-blue)]"><Icon size={16} /></span>
+                        <span key={k} className="premium-platform__icon"><Icon size={16} /></span>
                       ))}
                     </span>
-                    <span className="font-mono text-xs text-slate-600">0{i + 1}</span>
+                    <span className="premium-platform__num">0{i + 1}</span>
                   </div>
-                  <h3 className="mt-4 text-base font-bold text-[var(--prem-text)]">{title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[var(--prem-muted)]">{desc}</p>
-                </div>
+                  <h3 className="premium-platform__title">{title}</h3>
+                  <p className="premium-platform__desc">{desc}</p>
+                </article>
               </Item>
             ))}
           </Stagger>
+          <Reveal className="premium-platform__foot">
+            <p>Five responsibilities, six products — the same map every product page points back to.</p>
+            <Link href="/platform" className="premium-platform__link">How the portfolio maps to the work <ArrowRight size={14} /></Link>
+          </Reveal>
         </div>
       </section>
 
-      {/* ══ 3 · SECURITY FLOW (3D visual moment) ══ */}
-      <section id="security-flow" className="prem-navy relative overflow-hidden py-24 md:py-32">
+      {/* ══ 3 · SECURITY FLOW (animated traffic path) ══ */}
+      <section id="security-flow" className="prem-navy relative overflow-hidden py-16 md:py-24">
         <div className="premium-glow-orb left-[10%] top-[20%] h-[360px] w-[360px] bg-[#016FED]/20" aria-hidden />
         <div className="relative mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Traffic → decision" title="Every packet earns its passage." lead="Traffic enters, gets inspected against policy, meets detection, and receives a decision — forward to a secure destination or block. Watch the path below." />
-          <Reveal className="mt-10">
+          <Reveal className="mt-8">
             <div id="flow-3d" className="w-full">
               <PremiumFlow3D active={flowActive} />
             </div>
           </Reveal>
-          <Reveal className="mt-8">
+          <Reveal className="mt-6">
             <TiltCard max={3}>
               <div className="premium-card overflow-hidden p-4 md:p-6"><SecurityFlow /></div>
             </TiltCard>
           </Reveal>
-          <Stagger className="mt-10 grid grid-cols-3 gap-x-5 gap-y-6 lg:grid-cols-6" gap={0.04}>
-            {FLOW_STEPS.map((s, i) => (
-              <Item key={s}>
-                <div className="border-t-2 border-[rgba(1,111,237,0.35)] pt-3">
-                  <div className="font-mono text-[10px] text-slate-500">0{i + 1}</div>
-                  <div className="mt-1 text-sm font-bold text-[var(--prem-text)]">{s}</div>
-                </div>
-              </Item>
-            ))}
-          </Stagger>
+          <Reveal className="mt-7">
+            <div className="flow-rail">
+              <span className="flow-rail__line" aria-hidden />
+              <span className="flow-rail__packet" aria-hidden />
+              <ol className="flow-rail__steps" aria-label="One packet's path through the appliance">
+                {FLOW_STEPS.map((step, i) => (
+                  <li className="flow-rail__step" key={step}>
+                    <span className="flow-rail__dot" aria-hidden />
+                    <span className="flow-rail__num">0{i + 1}</span>
+                    <span className="flow-rail__label">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -378,7 +388,7 @@ export default function HomePage() {
       <section id="deep-dives" className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Inside the portfolio" title="What each product actually does." lead="Same data as the product pages — compressed into one scroll. Each family gets its own visual language." />
-          <div className="mt-12 space-y-5">
+          <div className="mt-9 space-y-5">
             {HOME_PRODUCTS.map((p, i) => {
               const Icon = PRODUCT_ICONS[p.key as keyof typeof PRODUCT_ICONS];
               const reversed = i % 2 === 1;
@@ -407,7 +417,7 @@ export default function HomePage() {
       <section id="solutions" className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Deployment patterns" title="Built around how your network actually works." lead="Nine patterns, each pointing at its full solution page. Relevant products are tagged from the existing portfolio." />
-          <Stagger className="mt-12 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-9 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
             {solutions.map(([number, title, description, slug, products]) => (
               <Item key={title}>
                 <Link href={`/solutions/${slug}`} className="group flex h-full flex-col border-t border-[var(--prem-border)] py-7">
@@ -439,7 +449,7 @@ export default function HomePage() {
           <Reveal className="mt-8">
             <CustomerMarquee />
           </Reveal>
-          <Stagger className="mt-10 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+          <Stagger className="mt-8 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
             {CUSTOMER_GROUPS.map((group) => (
               <Item key={group}>
                 <div className="h-full border-t border-[var(--prem-border)] py-6">
@@ -467,7 +477,7 @@ export default function HomePage() {
       {/* ══ 7 · BUILT IN INDIA (split, no boxes) ══ */}
       <section className="prem-navy relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div className="grid gap-9 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <Reveal>
               <div className="premium-section-head">
                 <p className="premium-eyebrow">Made in India</p>
@@ -499,7 +509,7 @@ export default function HomePage() {
       <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Support that answers" title="We compete on what happens the morning after something goes wrong." lead="Our India-based engineers are available 24/7 and know SecuEdge Frontier inside out, so you never have to explain your setup to an overseas queue." />
-          <Reveal className="mt-10">
+          <Reveal className="mt-8">
             <div className="premium-card p-7 md:p-8">
               <div className="flex flex-wrap gap-2">
                 {SUPPORT.facts.map((fact) => (
@@ -524,7 +534,7 @@ export default function HomePage() {
       <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Industries" title="Made for the way your sector works." lead="Eight priority sectors, each with its own page. Every deployment starts from the same SecuEdge Frontier appliance." />
-          <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+          <Stagger className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
             {INDUSTRIES.map((industry) => (
               <Item key={industry.name}>
                 <Link href={industry.href} className="premium-product-card group" style={{ "--prem-accent": "#016fed" } as React.CSSProperties}>
@@ -550,7 +560,7 @@ export default function HomePage() {
             ))}
           </Stagger>
           <Reveal>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link href="/industries" className="premium-btn-ghost">All {ALL_INDUSTRIES.length} industries <ArrowRight size={15} /></Link>
               <p className="text-sm text-[var(--prem-muted)]">Not listed? The same appliance covers every sector.</p>
             </div>
@@ -566,7 +576,7 @@ export default function HomePage() {
             title="Indian regulation, supported by design."
             lead="Frontier's controls map to what Indian regulators expect: data that stays in India, sensitive systems kept apart, threats blocked and logs you can export. Compliance remains your responsibility — we make the network part easier."
           />
-          <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+          <Stagger className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
             {INDIA_FRAMEWORKS.map((framework) => (
               <Item key={framework.name}>
                 <div className="premium-card flex h-full flex-col p-6">
@@ -599,7 +609,7 @@ export default function HomePage() {
             </Reveal>
           ) : null}
           <Reveal>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link href="/compliance" className="premium-btn-primary">See how the controls map <ArrowRight size={15} /></Link>
               <Link href="/trust" className="premium-btn-ghost">Trust and data residency</Link>
             </div>
@@ -622,7 +632,7 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal>
-            <div className="premium-card mx-auto mt-10 flex max-w-3xl flex-col items-center gap-2 p-7 text-center md:p-8">
+            <div className="premium-card mx-auto mt-8 flex max-w-3xl flex-col items-center gap-2 p-7 text-center md:p-8">
               <p className="text-4xl font-extrabold tracking-tight text-[var(--prem-blue)] md:text-5xl">{MISCONFIG_STAT.figure}</p>
               <p className="max-w-2xl text-sm leading-relaxed text-[var(--prem-muted)] md:text-base">{MISCONFIG_STAT.line}</p>
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{MISCONFIG_STAT.source}</p>

@@ -251,7 +251,7 @@ export function AssessmentQuiz() {
                 ))}
               </div>
 
-              <div className="mt-10 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <p className="w-full text-sm text-muted">Want an engineer to look at your network? Book a free evaluation with our team. No obligation.</p>
                 <Link href="/contact" className="btn-primary">Book a free evaluation</Link>
                 <button

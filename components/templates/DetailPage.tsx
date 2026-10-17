@@ -72,7 +72,7 @@ export function DetailPage({
               <p className="premium-eyebrow">The problem</p>
               <h2 className="premium-section-title mt-4">What you&apos;re up against.</h2>
             </Reveal>
-            <Stagger className={`mt-10 grid gap-4 ${c.challenges.length % 2 === 0 ? "md:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3"}`} gap={0.05}>
+            <Stagger className={`mt-8 grid gap-4 ${c.challenges.length % 2 === 0 ? "md:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3"}`} gap={0.05}>
               {c.challenges.map((it) => (
                 <Item key={it.title}>
                   <article className="premium-card h-full p-6">
@@ -93,7 +93,7 @@ export function DetailPage({
               <p className="premium-eyebrow">Real-world threats</p>
               <h2 className="premium-section-title mt-4">This is not theoretical.</h2>
             </Reveal>
-            <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+            <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
               {c.threats.map((it) => (
                 <Item key={it.title}>
                   <article className="premium-card h-full p-6">
@@ -114,7 +114,7 @@ export function DetailPage({
               <p className="premium-eyebrow">Our approach</p>
               <h2 className="premium-section-title mt-4">How SecuEdge answers it.</h2>
             </Reveal>
-            <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+            <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
               {approach.map((it) => (
                 <Item key={it.title}>
                   <article className="premium-card h-full p-6">
@@ -135,7 +135,7 @@ export function DetailPage({
               <p className="premium-eyebrow">Capabilities</p>
               <h2 className="premium-section-title mt-4">Everything you need, nothing half-configured.</h2>
             </Reveal>
-            <Stagger className="mt-10 grid gap-x-12 gap-y-7 sm:grid-cols-2" gap={0.04}>
+            <Stagger className="mt-8 grid gap-x-12 gap-y-7 sm:grid-cols-2" gap={0.04}>
               {c.capabilities.map((it) => (
                 <Item key={it.title}>
                   <div className="flex gap-4">
@@ -159,7 +159,7 @@ export function DetailPage({
               <p className="premium-eyebrow">Where it applies</p>
               <h2 className="premium-section-title mt-4">Where this matters most.</h2>
             </Reveal>
-            <Stagger className="mt-10 grid gap-4 md:grid-cols-2" gap={0.05}>
+            <Stagger className="mt-8 grid gap-4 md:grid-cols-2" gap={0.05}>
               {c.applications.map((a) => (
                 <Item key={a.title}>
                   <article className="premium-card h-full p-7">
