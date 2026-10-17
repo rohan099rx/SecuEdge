@@ -2,7 +2,6 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -12,15 +11,19 @@ import {
   GraduationCap, HeartPulse, Landmark, Banknote, Factory, Store, Coffee, Rocket,
 } from "lucide-react";
 import {
-  CUSTOMERS, CUSTOMER_GROUPS, HOME_PRODUCTS,
+  HOME_PRODUCTS,
   SUPPORT, COVERAGE, SITE, HEADQUARTERS, MISCONFIG_STAT,
   INDUSTRIES as ALL_INDUSTRIES,
 } from "@/lib/site";
 import { INDUSTRY_CARDS } from "@/lib/content/industries";
 import compliancePage from "@/lib/content/data/compliance-page.json";
 import { CustomerMarquee } from "@/components/CustomerMarquee";
+import { NetworkDiagram } from "@/components/NetworkDiagram";
 import { SecurityFlow } from "@/components/foundation/SecurityFlow";
-import { Reveal, Stagger, Item, Parallax } from "@/components/motion";
+import {
+  ApplianceStage, LogoWall, ResidencyPanel, DiagramStage, FactTicker, SectorStrip,
+} from "@/components/premium/Visuals";
+import { Reveal, Stagger, Item, Parallax, CountUp } from "@/components/motion";
 import { TiltCard } from "@/components/TiltCard";
 import "@/components/premium/premium.css";
 
@@ -85,7 +88,7 @@ function SectionHead({ eyebrow, title, lead }: { eyebrow: string; title: string;
 function ProductVisual({ productKey }: { productKey: string }) {
   if (productKey === "frontier") {
     return (
-      <div className="premium-panel h-full p-6" aria-label="Frontier traffic inspection illustration">
+      <div className="premium-panel premium-viz h-full p-6" aria-label="Frontier traffic inspection illustration">
         <p className="premium-panel-label">Traffic inspection · illustrative</p>
         <div className="mt-5 flex flex-wrap items-center gap-2">
           {["Internet", "Inspect", "Policy", "Allow / Block"].map((s, i) => (
@@ -105,7 +108,7 @@ function ProductVisual({ productKey }: { productKey: string }) {
   }
   if (productKey === "watchtower") {
     return (
-      <div className="premium-panel h-full p-6" aria-label="Watchtower topology illustration">
+      <div className="premium-panel premium-viz h-full p-6" aria-label="Watchtower topology illustration">
         <p className="premium-panel-label">Network topology · illustrative</p>
         <svg viewBox="0 0 400 170" className="mt-4 w-full" role="img" aria-label="Hub with connected nodes">
           {[[200, 85], [60, 40], [110, 130], [290, 130], [340, 40], [250, 30]].map(([x, y], i) => (
@@ -125,7 +128,7 @@ function ProductVisual({ productKey }: { productKey: string }) {
   }
   if (productKey === "secuweb") {
     return (
-      <div className="premium-panel h-full p-6" aria-label="SecuWeb routing illustration">
+      <div className="premium-panel premium-viz h-full p-6" aria-label="SecuWeb routing illustration">
         <p className="premium-panel-label">Secure routing · illustrative</p>
         <div className="mt-5 flex items-center justify-between gap-2 text-center">
           {[["Branch", "SE100P"], ["Hub", "SE1000P"], ["Cloud", "Policy path"]].map(([k, v], i) => (
@@ -144,7 +147,7 @@ function ProductVisual({ productKey }: { productKey: string }) {
   }
   if (productKey === "grid") {
     return (
-      <div className="premium-panel h-full p-6" aria-label="GRID event correlation illustration">
+      <div className="premium-panel premium-viz h-full p-6" aria-label="GRID event correlation illustration">
         <p className="premium-panel-label">Event correlation · illustrative shapes</p>
         <div className="mt-4 space-y-2">
           {[["Firewall deny burst", "High", "w-[85%]"], ["VPN anomaly", "Medium", "w-[55%]"], ["IDS signature match", "High", "w-[70%]"], ["Log baseline drift", "Low", "w-[35%]"]].map(([k, sev, w]) => (
@@ -160,7 +163,7 @@ function ProductVisual({ productKey }: { productKey: string }) {
   }
   if (productKey === "secudefend") {
     return (
-      <div className="premium-panel h-full p-6" aria-label="SecuDefend interception illustration">
+      <div className="premium-panel premium-viz h-full p-6" aria-label="SecuDefend interception illustration">
         <p className="premium-panel-label">Threat interception · illustrative</p>
         <div className="mt-4 space-y-2">
           {[["Perimeter scan", "Blocked"], ["Payload signature", "Blocked"], ["Internal lateral move", "Contained"]].map(([k, v]) => (
@@ -175,7 +178,7 @@ function ProductVisual({ productKey }: { productKey: string }) {
     );
   }
   return (
-    <div className="premium-panel h-full p-6" aria-label="Muster log analysis illustration">
+    <div className="premium-panel premium-viz h-full p-6" aria-label="Muster log analysis illustration">
       <p className="premium-panel-label">Log intelligence · illustrative</p>
       <div className="mt-4 rounded-lg border border-[var(--prem-border)] bg-[var(--prem-bg-soft)] p-4 font-mono text-[11px] leading-[1.9] text-slate-400">
         <div><span className="text-cyan-300/70">collect</span> · firewall · vpn · idps · system</div>
@@ -264,7 +267,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_28%_45%,rgba(245,242,234,0.88),transparent_70%)]" aria-hidden />
 
         <div className="relative z-10 mx-auto grid w-full max-w-[1200px] items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
+          <div className="order-2 lg:order-none lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:self-center">
             <p className="premium-eyebrow">SecuEdge · Network security portfolio</p>
             <h1 className="mt-5 text-[2.75rem] font-extrabold leading-[1.0] tracking-[-0.035em] text-white sm:text-6xl md:text-7xl">
               Cybersecurity, made easy.
@@ -284,8 +287,8 @@ export default function HomePage() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-white/10 pt-6">
-              <div><div className="text-2xl font-bold text-white">{HOME_PRODUCTS.length}</div><div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Product families</div></div>
-              <div><div className="text-2xl font-bold text-white">{solutions.length}</div><div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Deployment patterns</div></div>
+              <div><div className="text-2xl font-bold text-white"><CountUp to={HOME_PRODUCTS.length} /></div><div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Product families</div></div>
+              <div><div className="text-2xl font-bold text-white"><CountUp to={solutions.length} /></div><div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Deployment patterns</div></div>
               <div>
                 <a href={SUPPORT.phoneHref} className="text-2xl font-bold text-white transition-colors hover:text-cyan-300">{SUPPORT.phone}</a>
                 <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Toll-free · 24/7 · Talk to us</div>
@@ -293,25 +296,34 @@ export default function HomePage() {
             </div>
           </div>
 
-          <TiltCard max={6} className="relative">
+          <TiltCard max={6} className="order-1 lg:order-none lg:col-start-2 lg:row-start-1">
+            <ApplianceStage />
+          </TiltCard>
+
+          <TiltCard max={4} className="order-3 lg:order-none lg:col-start-2 lg:row-start-2">
             <div className="premium-card overflow-hidden p-6">
-              <div className="flex items-center justify-between">
-                <span className="premium-badge premium-badge--live">● Available now</span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">First of seven</span>
+                <div className="flex items-center justify-between">
+                  <span className="premium-badge premium-badge--live">● Available now</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">First of seven</span>
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-[var(--prem-muted)]">
+                  SecuEdge Frontier — the next-generation firewall — is available today.
+                  The other six families in the portfolio are in development and on the roadmap.
+                </p>
+                <Link href="/products" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--prem-blue)]">
+                  See the portfolio <ArrowRight size={14} className="premium-link-arrow" />
+                </Link>
+                <div className="mt-5 grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
+                  {[["200+", "Installations"], ["24/7", "India support"], ["India", "Data stays here"]].map(([k, v]) => (
+                    <div key={k}>
+                      <div className="text-xs font-bold text-white">
+                        {k === "200+" ? <CountUp to={200} suffix="+" /> : k}
+                      </div>
+                      <div className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500">{v}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-[var(--prem-muted)]">
-                SecuEdge Frontier — the next-generation firewall — is available today.
-                The other six families in the portfolio are in development and on the roadmap.
-              </p>
-              <Link href="/products" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--prem-blue)]">
-                See the portfolio <ArrowRight size={14} className="premium-link-arrow" />
-              </Link>
-              <div className="mt-5 grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
-                {[["200+", "Installations"], ["24/7", "India support"], ["India", "Data stays here"]].map(([k, v]) => (
-                  <div key={k}><div className="text-xs font-bold text-white">{k}</div><div className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500">{v}</div></div>
-                ))}
-              </div>
-            </div>
           </TiltCard>
         </div>
         <div className="absolute bottom-5 left-1/2 z-10 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.25em] text-slate-500">Scroll</div>
@@ -348,6 +360,8 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      <FactTicker />
 
       {/* ══ 3 · SECURITY FLOW (animated traffic path) ══ */}
       <section id="security-flow" className="prem-navy relative overflow-hidden py-16 md:py-24">
@@ -411,10 +425,15 @@ export default function HomePage() {
         </div>
       </section>
 
+      <FactTicker reverse />
+
       {/* ══ 5 · DEPLOYMENT PATTERNS (editorial list, no boxes) ══ */}
       <section id="solutions" className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Deployment patterns" title="Built around how your network actually works." lead="Nine patterns, each pointing at its full solution page. Relevant products are tagged from the existing portfolio." />
+          <Reveal className="mt-9">
+            <DiagramStage><NetworkDiagram /></DiagramStage>
+          </Reveal>
           <Stagger className="mt-9 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3" gap={0.07}>
             {solutions.map(([number, title, description, slug, products]) => (
               <Item key={title}>
@@ -447,25 +466,9 @@ export default function HomePage() {
           <Reveal className="mt-8">
             <CustomerMarquee />
           </Reveal>
-          <Stagger className="mt-8 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
-            {CUSTOMER_GROUPS.map((group) => (
-              <Item key={group}>
-                <div className="h-full border-t border-[var(--prem-border)] py-6">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{group}</p>
-                  <ul className="mt-3 space-y-2.5">
-                    {CUSTOMERS.filter((c) => c.group === group).map((c) => (
-                      <li key={c.name} className="flex items-center gap-2.5">
-                        {c.logo ? (
-                          <Image src={c.logo} alt={`${c.name} logo`} width={72} height={24} className="customer-logo h-4 w-auto max-w-[4.5rem] object-contain" loading="lazy" />
-                        ) : null}
-                        <span className="text-[13px] font-semibold text-[var(--prem-text)]">{c.name}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Item>
-            ))}
-          </Stagger>
+          <Reveal className="mt-9">
+            <LogoWall />
+          </Reveal>
           <Reveal className="mt-8">
             <Link href="/customers" className="premium-btn-ghost">See our customers <ArrowRight size={15} /></Link>
           </Reveal>
@@ -486,6 +489,9 @@ export default function HomePage() {
                 <span className="premium-chip !text-[11px]">Engineered in India</span>
                 <span className="premium-chip !text-[11px]">DPDP Act 2023</span>
                 <span className="premium-chip !text-[11px]">No overseas routing</span>
+              </div>
+              <div className="mt-7">
+                <ResidencyPanel />
               </div>
             </Reveal>
             <Stagger className="grid gap-x-10 sm:grid-cols-2" gap={0.08}>
@@ -532,6 +538,7 @@ export default function HomePage() {
       <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Industries" title="Made for the way your sector works." lead="Eight priority sectors, each with its own page. Every deployment starts from the same SecuEdge Frontier appliance." />
+          <SectorStrip />
           <Stagger className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
             {INDUSTRIES.map((industry) => (
               <Item key={industry.name}>
@@ -631,7 +638,9 @@ export default function HomePage() {
           </Reveal>
           <Reveal>
             <div className="premium-card mx-auto mt-8 flex max-w-3xl flex-col items-center gap-2 p-7 text-center md:p-8">
-              <p className="text-4xl font-extrabold tracking-tight text-[var(--prem-blue)] md:text-5xl">{MISCONFIG_STAT.figure}</p>
+              <p className="text-4xl font-extrabold tracking-tight text-[var(--prem-blue)] md:text-5xl">
+                <CountUp to={parseInt(MISCONFIG_STAT.figure, 10)} suffix="%" />
+              </p>
               <p className="max-w-2xl text-sm leading-relaxed text-[var(--prem-muted)] md:text-base">{MISCONFIG_STAT.line}</p>
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{MISCONFIG_STAT.source}</p>
             </div>
