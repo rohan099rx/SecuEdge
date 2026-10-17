@@ -13,12 +13,13 @@ import {
 } from "lucide-react";
 import {
   APPLIANCES, CUSTOM_APPLIANCE,
-  CUSTOMERS, CUSTOMER_GROUPS, HOME_PRODUCTS, STATUS_LABEL,
+  CUSTOMERS, CUSTOMER_GROUPS, HOME_PRODUCTS,
   SECURITY_LEVELS, PRO_CAPABILITIES,
-  SUPPORT, COVERAGE, SITE, HEADQUARTERS,
+  SUPPORT, COVERAGE, SITE, HEADQUARTERS, MISCONFIG_STAT,
   INDUSTRIES as ALL_INDUSTRIES,
 } from "@/lib/site";
 import { INDUSTRY_CARDS } from "@/lib/content/industries";
+import compliancePage from "@/lib/content/data/compliance-page.json";
 import { CustomerMarquee } from "@/components/CustomerMarquee";
 import { FrontierConsolePreview } from "@/components/FrontierConsolePreview";
 import { FrontierModelViewer } from "@/components/FrontierModelViewer";
@@ -207,15 +208,22 @@ function ProductVisual({ productKey }: { productKey: string }) {
    `card` joins each sector to the verified control list used on /industries
    (lib/content/data/industry-cards.json) instead of restating it twice. */
 const INDUSTRIES = [
-  { name: "Education", card: "Education", ref: "The Shri Ram School · NDIM · St. Bede's", href: "/industries/education", icon: GraduationCap, sub: "Protect students online, keep Wi-Fi under control and separate admin, lab and student networks, without a full-time security team." },
-  { name: "Healthcare", card: "Healthcare", ref: "Bombay Hospital · Shanti Devi GI Institute", href: "/industries/healthcare", icon: HeartPulse, sub: "Separate medical devices, billing and guest Wi-Fi, block threats before they reach clinical systems and stay online when a line fails." },
-  { name: "Government", card: "Government", ref: "Kisan Call Centre", href: "/industries/government", icon: Landmark, sub: "Made in India, with citizen data kept in India, strict outbound controls and complete audit logs." },
-  { name: "Banking and finance", card: "Finance", ref: "References on request", href: "/industries/finance", icon: Banknote, sub: "Default-deny outbound rules, phishing blocking, separate sensitive zones and audit evidence your regulator expects to see." },
-  { name: "Manufacturing", card: "Manufacturing", ref: "KNL Driveline · Sain Packaging", href: "/industries/manufacturing", icon: Factory, sub: "Separate machine networks from office networks, control contractor access and block ransomware before it reaches the shop floor." },
-  { name: "Retail", card: "Retail", ref: "Closest ref: Chaayos (multi-outlet)", href: "/industries/retail", icon: Store, sub: "Keep billing systems separate, give customers safe Wi-Fi and set up each store correctly with Quick Mode." },
-  { name: "Hospitality", card: "Hospitality", ref: "Chaayos", href: "/industries/hospitality", icon: Coffee, sub: "Give guests fast, fair Wi-Fi with a login page while keeping them away from billing and property systems." },
-  { name: "SMB and startups", card: "Technology", ref: "Solis Technology · Eleet Mindz · Natsav", href: "/industries/technology", icon: Rocket, sub: "No security team? No problem. Quick Mode lets you set up SecuEdge Frontier correctly, and every feature comes on every model." },
+  { name: "Education", card: "Education", regulation: "Built with the DPDP Act 2023 in mind", ref: "The Shri Ram School · NDIM · St. Bede's", href: "/industries/education", icon: GraduationCap, sub: "Protect students online, keep Wi-Fi under control and separate admin, lab and student networks, without a full-time security team." },
+  { name: "Healthcare", card: "Healthcare", regulation: "Patient data stays in India by default", ref: "Bombay Hospital · Shanti Devi GI Institute", href: "/industries/healthcare", icon: HeartPulse, sub: "Separate medical devices, billing and guest Wi-Fi, block threats before they reach clinical systems and stay online when a line fails." },
+  { name: "Government", card: "Government", regulation: "Built with DPDP and CERT-In directions in mind", ref: "Kisan Call Centre", href: "/industries/government", icon: Landmark, sub: "Made in India, with citizen data kept in India, strict outbound controls and complete audit logs." },
+  { name: "Banking and finance", card: "Finance", regulation: "Supports RBI and SEBI cybersecurity guidelines", ref: "References on request", href: "/industries/finance", icon: Banknote, sub: "Default-deny outbound rules, phishing blocking, separate sensitive zones and audit evidence your regulator expects to see." },
+  { name: "Manufacturing", card: "Manufacturing", regulation: "Built in India, with 24/7 India-based support", ref: "KNL Driveline · Sain Packaging", href: "/industries/manufacturing", icon: Factory, sub: "Separate machine networks from office networks, control contractor access and block ransomware before it reaches the shop floor." },
+  { name: "Retail", card: "Retail", regulation: "Customer data stays in India by default", ref: "Closest ref: Chaayos (multi-outlet)", href: "/industries/retail", icon: Store, sub: "Keep billing systems separate, give customers safe Wi-Fi and set up each store correctly with Quick Mode." },
+  { name: "Hospitality", card: "Hospitality", regulation: "Guest data stays in India by default", ref: "Chaayos", href: "/industries/hospitality", icon: Coffee, sub: "Give guests fast, fair Wi-Fi with a login page while keeping them away from billing and property systems." },
+  { name: "SMB and startups", card: "Technology", regulation: "Client data stays in India by default", ref: "Solis Technology · Eleet Mindz · Natsav", href: "/industries/technology", icon: Rocket, sub: "No security team? No problem. Quick Mode lets you set up SecuEdge Frontier correctly, and every feature comes on every model." },
 ] as const;
+
+/* Indian regulation frameworks (lib/content/data/compliance-page.json — the
+   same approved copy the /compliance page renders). */
+type Framework = { name: string; desc: string; items: string[] };
+const COMPLIANCE_FRAMEWORKS = (compliancePage as { frameworks: Framework[] }).frameworks;
+const INDIA_FRAMEWORKS = COMPLIANCE_FRAMEWORKS.filter((f) => f.name !== "International clients").slice(0, 4);
+const INTERNATIONAL_FRAMEWORK = COMPLIANCE_FRAMEWORKS.find((f) => f.name === "International clients");
 
 /** Verified, sector-specific controls for a card (three at most, per the card). */
 const controlsFor = (industry: string) =>
@@ -306,22 +314,14 @@ export default function HomePage() {
                 <span className="premium-badge premium-badge--live">● Available now</span>
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">First of seven</span>
               </div>
-              <div className="mt-4 grid grid-cols-2 gap-2.5">
-                {HOME_PRODUCTS.map((p, i) => {
-                  const Icon = PRODUCT_ICONS[p.key as keyof typeof PRODUCT_ICONS];
-                  return (
-                    <Link key={p.key} href={p.href} className="group rounded-xl border border-white/10 bg-white/[0.03] p-3.5 transition-colors hover:border-cyan-400/40 hover:bg-cyan-400/[0.06]">
-                      <div className="flex items-center justify-between">
-                        <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 text-cyan-300"><Icon size={15} /></span>
-                        <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-slate-500">{STATUS_LABEL[p.status]}</span>
-                      </div>
-                      <div className="mt-2.5 text-sm font-bold text-white">{p.name}</div>
-                      <div className="truncate text-[11px] text-slate-500">{p.category}</div>
-                    </Link>
-                  );
-                })}
-              </div>
-              <div className="mt-4 grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
+              <p className="mt-4 text-sm leading-relaxed text-[var(--prem-muted)]">
+                SecuEdge Frontier — the next-generation firewall — is available today.
+                The other six families in the portfolio are in development and on the roadmap.
+              </p>
+              <Link href="/products" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--prem-blue)]">
+                See the portfolio <ArrowRight size={14} className="premium-link-arrow" />
+              </Link>
+              <div className="mt-5 grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
                 {[["200+", "Installations"], ["24/7", "India support"], ["India", "Data stays here"]].map(([k, v]) => (
                   <div key={k}><div className="text-xs font-bold text-white">{k}</div><div className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500">{v}</div></div>
                 ))}
@@ -723,7 +723,11 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-4 border-t border-white/[0.07] pt-3 font-mono text-[10px] leading-relaxed tracking-wide text-slate-500"><span className="text-cyan-300/70">REF · </span>{industry.ref}</p>
+                  <p className="mt-3.5 flex items-start gap-1.5 text-[11.5px] leading-snug text-slate-500">
+                    <ShieldCheck size={12} className="mt-[2px] shrink-0 text-cyan-300/70" aria-hidden />
+                    {industry.regulation}
+                  </p>
+                  <p className="mt-3 border-t border-white/[0.07] pt-3 font-mono text-[10px] leading-relaxed tracking-wide text-slate-500"><span className="text-cyan-300/70">REF · </span>{industry.ref}</p>
                   <span className="mt-4 inline-flex flex-1 items-end gap-1.5 text-sm font-semibold text-cyan-300">Explore <ArrowRight size={14} className="premium-link-arrow" /></span>
                 </Link>
               </Item>
@@ -738,7 +742,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 14 · COMPANY TEASER ══ */}
+      {/* ══ 14 · INDIA FIRST · COMPLIANCE ══ */}
+      <section className="prem-cream-soft relative border-t border-[var(--prem-border)] py-24 md:py-32">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <SectionHead
+            eyebrow="India first"
+            title="Indian regulation, supported by design."
+            lead="Frontier's controls map to what Indian regulators expect: data that stays in India, sensitive systems kept apart, threats blocked and logs you can export. Compliance remains your responsibility — we make the network part easier."
+          />
+          <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+            {INDIA_FRAMEWORKS.map((framework) => (
+              <Item key={framework.name}>
+                <div className="premium-card flex h-full flex-col p-6">
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--prem-blue)]">{framework.name}</p>
+                  <p className="mt-2 text-sm font-bold leading-snug text-[var(--prem-text)]">{framework.desc}</p>
+                  <ul className="mt-4 space-y-2">
+                    {framework.items.map((control) => (
+                      <li key={control} className="flex items-start gap-2 text-[13px] leading-snug text-[var(--prem-muted)]">
+                        <Check size={13} className="mt-[3px] shrink-0 text-[var(--prem-blue)]" aria-hidden />
+                        {control}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Item>
+            ))}
+          </Stagger>
+          {INTERNATIONAL_FRAMEWORK ? (
+            <Reveal>
+              <div className="premium-card mt-4 flex flex-col items-start gap-2 p-6 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-3">
+                <p className="text-sm font-bold text-[var(--prem-text)]">{INTERNATIONAL_FRAMEWORK.name}</p>
+                <p className="w-full text-[13px] leading-relaxed text-[var(--prem-muted)] sm:w-auto sm:flex-1">
+                  {INTERNATIONAL_FRAMEWORK.desc}. Also helps with{" "}
+                  {INTERNATIONAL_FRAMEWORK.items
+                    .map((item) => item.replace(/^The same controls help with /, "").replace(/ requirements$/, ""))
+                    .join(", ")}{" "}
+                  requirements.
+                </p>
+              </div>
+            </Reveal>
+          ) : null}
+          <Reveal>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+              <Link href="/compliance" className="premium-btn-primary">See how the controls map <ArrowRight size={15} /></Link>
+              <Link href="/trust" className="premium-btn-ghost">Trust and data residency</Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ══ 15 · COMPANY TEASER ══ */}
       <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <Reveal>
@@ -752,7 +805,14 @@ export default function HomePage() {
               </p>
             </div>
           </Reveal>
-          <Stagger className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2" gap={0.06}>
+          <Reveal>
+            <div className="premium-card mx-auto mt-10 flex max-w-3xl flex-col items-center gap-2 p-7 text-center md:p-8">
+              <p className="text-4xl font-extrabold tracking-tight text-[var(--prem-blue)] md:text-5xl">{MISCONFIG_STAT.figure}</p>
+              <p className="max-w-2xl text-sm leading-relaxed text-[var(--prem-muted)] md:text-base">{MISCONFIG_STAT.line}</p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{MISCONFIG_STAT.source}</p>
+            </div>
+          </Reveal>
+          <Stagger className="mx-auto mt-4 grid max-w-3xl gap-4 sm:grid-cols-2" gap={0.06}>
             {FOUNDERS.map((founder) => (
               <Item key={founder.name}>
                 <div className="premium-card h-full p-6 text-left">
@@ -780,7 +840,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 15 · FINAL CTA ══ */}
+      {/* ══ 16 · FINAL CTA ══ */}
       <section id="cta" className="prem-navy relative overflow-hidden border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="premium-grid-bg absolute inset-0" aria-hidden />
         <div className="premium-glow-orb left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 bg-[#016FED]/20" aria-hidden />
