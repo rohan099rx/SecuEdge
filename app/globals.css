@@ -3014,3 +3014,190 @@ body {
   .product-experience__hud { top: .8rem; right: .9rem; left: .9rem; }
   .product-experience__hint { right: .9rem; bottom: .8rem; left: .9rem; gap: .25rem .7rem; }
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   Mobile navigation — sliding drawer
+   Portalled to <body>, so it carries its own tokens and can never be
+   sized by the sticky header. Closed state uses visibility (keeps it
+   out of the tab order) instead of display, so the slide can animate.
+   ══════════════════════════════════════════════════════════════════ */
+.foundation-drawer {
+  position: fixed; inset: 0; z-index: 90; display: none;
+  --drawer-ink: #0b2239;
+  --drawer-muted: #526274;
+  --drawer-blue: #016fed;
+  --drawer-line: rgba(11, 34, 57, .12);
+  --drawer-surface: #fbfaf6;
+  --drawer-surface-2: #f5f2ea;
+}
+.foundation-drawer__scrim {
+  position: absolute; inset: 0; border: 0; padding: 0;
+  background: rgba(7, 21, 37, .44);
+  opacity: 0; cursor: pointer;
+  transition: opacity .32s ease;
+}
+.foundation-drawer.is-open .foundation-drawer__scrim { opacity: 1; }
+
+@media (min-width: 901px) {
+  .foundation-drawer { display: none !important; }
+}
+
+@media (max-width: 900px) {
+  .foundation-drawer { display: block; pointer-events: none; }
+  .foundation-drawer.is-open { pointer-events: auto; }
+
+  /* Beats `.foundation-mobile-nav[aria-hidden="true"] { display:none }`. */
+  .foundation-mobile-nav--drawer,
+  .foundation-mobile-nav--drawer[aria-hidden="true"] {
+    position: absolute; top: 0; right: 0; bottom: 0; left: auto;
+    display: grid; grid-template-rows: auto minmax(0, 1fr) auto;
+    width: min(23rem, 88vw); max-height: 100svh; padding: 0;
+    border: 0; border-left: 1px solid var(--drawer-line);
+    background: var(--drawer-surface);
+    box-shadow: -34px 0 80px -46px rgba(11, 34, 57, .55);
+    overflow: hidden;
+    transform: translateX(104%);
+    visibility: hidden;
+    transition: transform .36s cubic-bezier(.32, .72, 0, 1), visibility .36s;
+  }
+  .foundation-mobile-nav--drawer.is-open { transform: translateX(0); visibility: visible; }
+
+  .foundation-mobile-nav--drawer .foundation-drawer__head {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: .85rem 1.1rem; border-bottom: 1px solid var(--drawer-line);
+    background: var(--drawer-surface-2);
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__head .foundation-logo { min-width: 0; }
+  .foundation-mobile-nav--drawer .foundation-drawer__close {
+    display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem;
+    border: 1px solid rgba(11, 34, 57, .18); border-radius: .6rem;
+    background: #fff; color: var(--drawer-ink); cursor: pointer;
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__close:hover { border-color: var(--drawer-blue); color: var(--drawer-blue); }
+
+  .foundation-mobile-nav--drawer .foundation-drawer__body {
+    min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch; padding: .3rem .55rem .9rem;
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__group { border-bottom: 1px solid var(--drawer-line); }
+  .foundation-mobile-nav--drawer .foundation-drawer__trigger {
+    display: flex; width: 100%; min-height: 3.25rem; align-items: center;
+    justify-content: space-between; gap: 1rem; padding: 0 .65rem;
+    border: 0; background: transparent; color: var(--drawer-ink);
+    font-size: .98rem; font-weight: 700; letter-spacing: -.01em; text-align: left; cursor: pointer;
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__trigger svg {
+    color: var(--drawer-muted); transition: transform .28s ease;
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__group.is-open .foundation-drawer__trigger { color: var(--drawer-blue); }
+  .foundation-mobile-nav--drawer .foundation-drawer__group.is-open .foundation-drawer__trigger svg { transform: rotate(180deg); }
+  .foundation-mobile-nav--drawer .foundation-drawer__panel {
+    max-height: 0; visibility: hidden; overflow: hidden;
+    transition: max-height .34s cubic-bezier(.32, .72, 0, 1), visibility .34s;
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__group.is-open .foundation-drawer__panel {
+    max-height: 62svh; overflow-y: auto; visibility: visible; padding-bottom: .5rem;
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__panel a {
+    display: grid; gap: .1rem; min-height: 2.9rem; padding: .55rem .7rem .6rem;
+    border-radius: .5rem; color: var(--drawer-ink); font-size: .9rem;
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__panel a strong {
+    color: var(--drawer-ink); font-size: .87rem; font-weight: 700;
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__panel a span {
+    color: var(--drawer-muted); font-size: .72rem; line-height: 1.45;
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__panel a:hover,
+  .foundation-mobile-nav--drawer .foundation-drawer__panel a:active { background: rgba(1, 111, 237, .07); }
+  .foundation-mobile-nav--drawer a.foundation-drawer__all {
+    display: flex; align-items: center; gap: .35rem; min-height: 2.4rem;
+    color: var(--drawer-blue); font: 700 .68rem var(--font-mono), monospace;
+    letter-spacing: .09em; text-transform: uppercase;
+  }
+  .foundation-mobile-nav--drawer a.foundation-drawer__solo {
+    display: flex; align-items: center; min-height: 3.25rem; padding: 0 .65rem;
+    border-bottom: 1px solid var(--drawer-line);
+    color: var(--drawer-ink); font-size: .98rem; font-weight: 700;
+  }
+
+  .foundation-mobile-nav--drawer .foundation-drawer__foot {
+    display: grid; gap: .55rem;
+    padding: .85rem 1rem calc(1rem + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--drawer-line); background: var(--drawer-surface-2);
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__foot .foundation-button { width: 100%; color: #fff; }
+  .foundation-mobile-nav--drawer .foundation-drawer__phone {
+    display: flex; align-items: center; gap: .5rem; min-height: 2.6rem;
+    color: var(--drawer-ink); font-size: .82rem;
+  }
+  .foundation-mobile-nav--drawer .foundation-drawer__phone strong { color: var(--drawer-ink); font-weight: 800; }
+  .foundation-mobile-nav--drawer .foundation-drawer__phone span {
+    margin-left: auto; color: var(--drawer-muted);
+    font: .6rem var(--font-mono), monospace; letter-spacing: .1em; text-transform: uppercase;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .foundation-mobile-nav--drawer,
+  .foundation-mobile-nav--drawer .foundation-drawer__panel,
+  .foundation-drawer__scrim { transition: none; }
+}
+/* ══════════════════════════════════════════════════════════════════
+   Mobile rhythm — same cadence, tighter scale, thumb-sized controls.
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .premium > section,
+  .premium [class*="py-24"] { padding-top: 3.9rem; padding-bottom: 3.9rem; }
+  .premium .premium-divider { margin-block: .25rem; opacity: .7; }
+
+  .premium-section-title { font-size: clamp(1.7rem, 7.6vw, 2.3rem); line-height: 1.12; }
+  .premium-section-lead { font-size: .94rem; line-height: 1.62; }
+  .premium-eyebrow { font-size: .6rem; letter-spacing: .16em; }
+  .premium-eyebrow::before { width: 1.25rem; }
+
+  .premium h1 { font-size: clamp(2.15rem, 9.6vw, 3rem) !important; line-height: 1.05; }
+  .premium h2 { text-wrap: balance; }
+  .premium-card { border-radius: .85rem; }
+  .premium-chip { font-size: .7rem; padding: .4rem .75rem; }
+
+  /* Thumb targets: any small picker/button group fills the row. */
+  #spec-request button,
+  .premium-model-btn { min-height: 2.9rem; }
+
+  /* Long technical lines keep their own scroll instead of the page. */
+  .premium pre,
+  .premium table { max-width: 100%; overflow-x: auto; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Mobile touch targets — inline links keep their type size but get a
+   thumb-sized hit area (WCAG 2.5.8 wants ≥24px; these land at 32–44px).
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .foundation-nav .foundation-logo,
+  .foundation-footer .foundation-logo { min-height: 2.75rem; align-items: center; }
+
+  .foundation-footer__column { gap: .35rem; }
+  .foundation-footer__column a {
+    display: inline-flex; align-items: center; gap: .35rem;
+    min-height: 2.1rem; padding-block: .1rem;
+  }
+  .foundation-footer__status a { display: inline-flex; align-items: center; min-height: 2rem; }
+  .foundation-footer__cta { display: inline-flex; align-items: center; gap: .35rem; min-height: 2.75rem; }
+  .foundation-footer__bottom a { display: inline-flex; align-items: center; min-height: 2rem; }
+}
+
+@media (max-width: 640px) {
+  nav[aria-label="Breadcrumb"] { gap: .35rem .5rem; }
+  nav[aria-label="Breadcrumb"] a { display: inline-flex; align-items: center; min-height: 2.5rem; }
+}
+
+/* Phone links keep a tappable height wherever they appear in body copy. */
+@media (max-width: 900px) {
+  a[href^="tel:"] { display: inline-flex; align-items: center; min-height: 1.6rem; }
+}
+/* Comparison tables: the model links in the header row are thumb-sized too. */
+@media (max-width: 640px) {
+  .premium table thead a { display: inline-flex; align-items: center; min-height: 2.25rem; }
+}

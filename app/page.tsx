@@ -15,8 +15,10 @@ import {
   APPLIANCES, CUSTOM_APPLIANCE,
   CUSTOMERS, CUSTOMER_GROUPS, HOME_PRODUCTS, STATUS_LABEL,
   SECURITY_LEVELS, PRO_CAPABILITIES,
-  SUPPORT, COVERAGE, SITE,
+  SUPPORT, COVERAGE, SITE, HEADQUARTERS,
+  INDUSTRIES as ALL_INDUSTRIES,
 } from "@/lib/site";
+import { INDUSTRY_CARDS } from "@/lib/content/industries";
 import { CustomerMarquee } from "@/components/CustomerMarquee";
 import { FrontierConsolePreview } from "@/components/FrontierConsolePreview";
 import { FrontierModelViewer } from "@/components/FrontierModelViewer";
@@ -201,16 +203,28 @@ function ProductVisual({ productKey }: { productKey: string }) {
   );
 }
 
-/* Industry cards — hero subheads and approved references (copy deck §15). */
+/* Industry cards — hero subheads and approved references (copy deck §15).
+   `card` joins each sector to the verified control list used on /industries
+   (lib/content/data/industry-cards.json) instead of restating it twice. */
 const INDUSTRIES = [
-  { name: "Education", ref: "The Shri Ram School · NDIM · St. Bede's", href: "/industries/education", icon: GraduationCap, sub: "Protect students online, keep Wi-Fi under control and separate admin, lab and student networks, without a full-time security team." },
-  { name: "Healthcare", ref: "Bombay Hospital · Shanti Devi GI Institute", href: "/industries/healthcare", icon: HeartPulse, sub: "Separate medical devices, billing and guest Wi-Fi, block threats before they reach clinical systems and stay online when a line fails." },
-  { name: "Government", ref: "Kisan Call Centre", href: "/industries/government", icon: Landmark, sub: "Made in India, with citizen data kept in India, strict outbound controls and complete audit logs." },
-  { name: "Banking and finance", ref: "References on request", href: "/industries/finance", icon: Banknote, sub: "Default-deny outbound rules, phishing blocking, separate sensitive zones and audit evidence your regulator expects to see." },
-  { name: "Manufacturing", ref: "KNL Driveline · Sain Packaging", href: "/industries/manufacturing", icon: Factory, sub: "Separate machine networks from office networks, control contractor access and block ransomware before it reaches the shop floor." },
-  { name: "Retail", ref: "Closest ref: Chaayos (multi-outlet)", href: "/industries/retail", icon: Store, sub: "Keep billing systems separate, give customers safe Wi-Fi and set up each store correctly with Quick Mode." },
-  { name: "Hospitality", ref: "Chaayos", href: "/industries/hospitality", icon: Coffee, sub: "Give guests fast, fair Wi-Fi with a login page while keeping them away from billing and property systems." },
-  { name: "SMB and startups", ref: "Solis Technology · Eleet Mindz · Natsav", href: "/industries/technology", icon: Rocket, sub: "No security team? No problem. Quick Mode lets you set up SecuEdge Frontier correctly, and every feature comes on every model." },
+  { name: "Education", card: "Education", ref: "The Shri Ram School · NDIM · St. Bede's", href: "/industries/education", icon: GraduationCap, sub: "Protect students online, keep Wi-Fi under control and separate admin, lab and student networks, without a full-time security team." },
+  { name: "Healthcare", card: "Healthcare", ref: "Bombay Hospital · Shanti Devi GI Institute", href: "/industries/healthcare", icon: HeartPulse, sub: "Separate medical devices, billing and guest Wi-Fi, block threats before they reach clinical systems and stay online when a line fails." },
+  { name: "Government", card: "Government", ref: "Kisan Call Centre", href: "/industries/government", icon: Landmark, sub: "Made in India, with citizen data kept in India, strict outbound controls and complete audit logs." },
+  { name: "Banking and finance", card: "Finance", ref: "References on request", href: "/industries/finance", icon: Banknote, sub: "Default-deny outbound rules, phishing blocking, separate sensitive zones and audit evidence your regulator expects to see." },
+  { name: "Manufacturing", card: "Manufacturing", ref: "KNL Driveline · Sain Packaging", href: "/industries/manufacturing", icon: Factory, sub: "Separate machine networks from office networks, control contractor access and block ransomware before it reaches the shop floor." },
+  { name: "Retail", card: "Retail", ref: "Closest ref: Chaayos (multi-outlet)", href: "/industries/retail", icon: Store, sub: "Keep billing systems separate, give customers safe Wi-Fi and set up each store correctly with Quick Mode." },
+  { name: "Hospitality", card: "Hospitality", ref: "Chaayos", href: "/industries/hospitality", icon: Coffee, sub: "Give guests fast, fair Wi-Fi with a login page while keeping them away from billing and property systems." },
+  { name: "SMB and startups", card: "Technology", ref: "Solis Technology · Eleet Mindz · Natsav", href: "/industries/technology", icon: Rocket, sub: "No security team? No problem. Quick Mode lets you set up SecuEdge Frontier correctly, and every feature comes on every model." },
+] as const;
+
+/** Verified, sector-specific controls for a card (three at most, per the card). */
+const controlsFor = (industry: string) =>
+  (INDUSTRY_CARDS.find((c) => c.industry.toLowerCase() === industry.toLowerCase())?.features ?? []).slice(0, 3);
+
+/* Founding team — names, background and the origin line, per the About copy. */
+const FOUNDERS = [
+  { name: "Sagar Dalal", role: "Co-founder", note: "Cybersecurity researcher and ethical hacker. Saw good firewalls set up wrongly, project after project." },
+  { name: "Manoj Kuniyal", role: "Co-founder", note: "Over 20 years in technology sales. Saw why the same mistakes kept repeating." },
 ] as const;
 
 const INDIA_POINTS = [
@@ -701,12 +715,26 @@ export default function HomePage() {
                   <span className="premium-product-icon"><industry.icon size={20} /></span>
                   <h3 className="mt-4 text-lg font-bold tracking-tight text-white">{industry.name}</h3>
                   <p className="mt-2 text-[13px] leading-relaxed text-slate-400">{industry.sub}</p>
-                  <p className="mt-3 border-t border-white/[0.07] pt-3 font-mono text-[10px] leading-relaxed tracking-wide text-slate-500"><span className="text-cyan-300/70">REF · </span>{industry.ref}</p>
+                  <ul className="mt-3.5 space-y-1.5">
+                    {controlsFor(industry.card).map((control) => (
+                      <li key={control} className="flex items-start gap-2 text-[12px] leading-snug text-slate-400">
+                        <span className="mt-[6px] h-1 w-1 shrink-0 rounded-full bg-[#016fed]" aria-hidden />
+                        {control}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 border-t border-white/[0.07] pt-3 font-mono text-[10px] leading-relaxed tracking-wide text-slate-500"><span className="text-cyan-300/70">REF · </span>{industry.ref}</p>
                   <span className="mt-4 inline-flex flex-1 items-end gap-1.5 text-sm font-semibold text-cyan-300">Explore <ArrowRight size={14} className="premium-link-arrow" /></span>
                 </Link>
               </Item>
             ))}
           </Stagger>
+          <Reveal>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+              <Link href="/industries" className="premium-btn-ghost">All {ALL_INDUSTRIES.length} industries <ArrowRight size={15} /></Link>
+              <p className="text-sm text-[var(--prem-muted)]">Not listed? The same appliance covers every sector.</p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -722,9 +750,31 @@ export default function HomePage() {
                 ethical hacker, and Manoj Kuniyal, who spent over 20 years in technology sales. One saw good
                 firewalls set up wrongly. The other saw why. Together they built SecuEdge Frontier.
               </p>
-              <div className="mt-8">
-                <Link href="/about" className="premium-btn-ghost">Read our story <ArrowRight size={15} /></Link>
-              </div>
+            </div>
+          </Reveal>
+          <Stagger className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2" gap={0.06}>
+            {FOUNDERS.map((founder) => (
+              <Item key={founder.name}>
+                <div className="premium-card h-full p-6 text-left">
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--prem-blue)]">{founder.role}</p>
+                  <p className="mt-2 text-lg font-bold tracking-tight text-[var(--prem-text)]">{founder.name}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--prem-muted)]">{founder.note}</p>
+                </div>
+              </Item>
+            ))}
+          </Stagger>
+          <Reveal>
+            <div className="mt-8 flex flex-wrap justify-center gap-2">
+              <span className="premium-chip"><MapPin size={13} />{HEADQUARTERS}</span>
+              <span className="premium-chip"><Rocket size={13} />Founded 2025</span>
+              <span className="premium-chip"><ShieldCheck size={13} />Made in India</span>
+              <span className="premium-chip"><Globe2 size={13} />200+ installations across India</span>
+              <span className="premium-chip"><Phone size={13} />24/7 toll-free <a href={SUPPORT.phoneHref} className="font-semibold text-[var(--prem-blue)]">{SUPPORT.phone}</a></span>
+            </div>
+          </Reveal>
+          <Reveal>
+            <div className="mt-8 text-center">
+              <Link href="/about" className="premium-btn-ghost">Read our story <ArrowRight size={15} /></Link>
             </div>
           </Reveal>
         </div>

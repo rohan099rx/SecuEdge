@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Menu, X, Search, ChevronDown } from "lucide-react";
+import { ArrowUpRight, Menu, X, Search, ChevronDown, Phone } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Logo } from "@/components/Logo";
-import { SOLUTIONS_NAV, SECUEDGE_PRODUCTS, STATUS_LABEL } from "@/lib/site";
+import { SOLUTIONS_NAV, SECUEDGE_PRODUCTS, STATUS_LABEL, SUPPORT } from "@/lib/site";
 import { GlobalSearch } from "@/components/GlobalSearch";
 
 type MenuName = "Products" | "Solutions" | "Resources";
@@ -73,9 +74,20 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<MenuName | null>(null);
+  /* Mobile drawer: one accordion group open at a time. */
+  const [openSection, setOpenSection] = useState<MenuName | null>("Products");
+  const [mounted, setMounted] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const headerRef = useRef<HTMLElement>(null);
   const lastScrollY = useRef(0);
+
+  useEffect(() => { setMounted(true); }, []);
+
+  /* Any navigation closes the drawer. */
+  useEffect(() => {
+    setOpen(false);
+    setActiveMenu(null);
+  }, [pathname]);
 
   /* Scrollspy — the menu that owns the current route carries a
      persistent blue dot so visitors always know where they are. */
@@ -110,17 +122,24 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
     window.addEventListener("keydown", escape);
     
     const outsideClick = (event: PointerEvent) => {
-      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+      if (headerRef.current && !headerRef.current.contains(target) && !(target as HTMLElement).closest?.(".foundation-drawer")) {
         setActiveMenu(null);
         setOpen(false);
       }
     };
     
     document.addEventListener("pointerdown", outsideClick);
-    
+
+    /* Rotating to desktop while the drawer is open would otherwise leave the
+       page scroll-locked behind a hidden panel. */
+    const onResize = () => { if (window.innerWidth > 900) setOpen(false); };
+    window.addEventListener("resize", onResize);
+
     return () => {
       window.removeEventListener("scroll", update);
       window.removeEventListener("keydown", escape);
+      window.removeEventListener("resize", onResize);
       document.removeEventListener("pointerdown", outsideClick);
       if (closeTimer.current) clearTimeout(closeTimer.current);
     };
@@ -149,6 +168,7 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
   ].filter(Boolean).join(" ");
 
   return (
+    <>
     <header 
       ref={headerRef} 
       className={navClasses}
@@ -257,28 +277,95 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
         </div>
       </div>
       
-      <nav id="foundation-mobile-nav" data-open={open} aria-hidden={!open} className="foundation-mobile-nav" aria-label="Mobile navigation">
-        {menuNames.map((name) => (
-          <section key={name}>
-            <h2>{name}</h2>
-            {menus[name].entries.map((entry) => (
-              <Link 
-                key={entry.name} 
-                href={entry.href} 
-                target={entry.external ? "_blank" : undefined} 
-                rel={entry.external ? "noreferrer" : undefined} 
-                onClick={() => setOpen(false)}
-              >
-                {entry.name}<span>{entry.detail}</span>
-              </Link>
-            ))}
-          </section>
-        ))}
-        <Link href="/customers" onClick={() => setOpen(false)}>Customers</Link>
-        <Link href="/about" onClick={() => setOpen(false)}>About</Link>
-        <GlobalSearch />
-        <Link href="/contact" className="foundation-button" onClick={() => setOpen(false)}>Book a free demo</Link>
-      </nav>
     </header>
+
+    {/* Mobile navigation: portalled to <body> so the fixed header can never
+        become the containing block for this fixed panel. */}
+    {mounted && createPortal(
+      <div className={`foundation-drawer${open ? " is-open" : ""}`} data-open={open}>
+        <button
+          type="button"
+          className="foundation-drawer__scrim"
+          aria-label="Close navigation"
+          tabIndex={-1}
+          onClick={() => setOpen(false)}
+        />
+        <nav
+          id="foundation-mobile-nav"
+          className={`foundation-mobile-nav foundation-mobile-nav--drawer${open ? " is-open" : ""}`}
+          data-open={open}
+          aria-hidden={!open}
+          aria-label="Mobile navigation"
+        >
+          <div className="foundation-drawer__head">
+            <Link href="/" aria-label="SecuEdge home" onClick={() => setOpen(false)}>
+              <Logo className="foundation-logo" />
+            </Link>
+            <button
+              type="button"
+              className="foundation-drawer__close"
+              onClick={() => setOpen(false)}
+              aria-label="Close navigation"
+            >
+              <X size={20} />
+            </button>
+          </div>
+
+          <div className="foundation-drawer__body">
+            {menuNames.map((name) => {
+              const isExpanded = openSection === name;
+              const groupHref = name === "Products" ? "/products" : name === "Solutions" ? "/solutions" : "/resources";
+              return (
+                <div key={name} className={`foundation-drawer__group${isExpanded ? " is-open" : ""}`}>
+                  <button
+                    type="button"
+                    className="foundation-drawer__trigger"
+                    aria-expanded={isExpanded}
+                    aria-controls={`foundation-drawer-${name.toLowerCase()}`}
+                    onClick={() => setOpenSection(isExpanded ? null : name)}
+                  >
+                    <span>{name}</span>
+                    <ChevronDown size={17} aria-hidden="true" />
+                  </button>
+                  <div id={`foundation-drawer-${name.toLowerCase()}`} className="foundation-drawer__panel">
+                    <Link href={groupHref} className="foundation-drawer__all" onClick={() => setOpen(false)}>
+                      All {name.toLowerCase()} <ArrowUpRight size={13} />
+                    </Link>
+                    {menus[name].entries.map((entry) => (
+                      <Link
+                        key={entry.name}
+                        href={entry.href}
+                        target={entry.external ? "_blank" : undefined}
+                        rel={entry.external ? "noreferrer" : undefined}
+                        onClick={() => setOpen(false)}
+                      >
+                        <strong>{entry.name}</strong>
+                        <span>{entry.detail}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+            <Link href="/customers" className="foundation-drawer__solo" onClick={() => setOpen(false)}>Customers</Link>
+            <Link href="/about" className="foundation-drawer__solo" onClick={() => setOpen(false)}>About</Link>
+          </div>
+
+          <div className="foundation-drawer__foot">
+            <GlobalSearch />
+            <Link href="/contact" className="foundation-button" onClick={() => setOpen(false)}>
+              Book a free demo <ArrowUpRight size={14} />
+            </Link>
+            <a href={SUPPORT.phoneHref} className="foundation-drawer__phone">
+              <Phone size={14} />
+              <strong>{SUPPORT.phone}</strong>
+              <span>24/7 toll-free</span>
+            </a>
+          </div>
+        </nav>
+      </div>,
+      document.body
+    )}
+    </>
   );
 }
