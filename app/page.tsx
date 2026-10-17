@@ -373,41 +373,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="premium-divider mx-auto max-w-[1200px]" />
-
-      {/* ══ 4 · PRODUCT ECOSYSTEM (6 products + roadmap status) ══ */}
-      <section id="ecosystem" className="relative py-24 md:py-32">
-        <div className="mx-auto w-full max-w-[1200px] px-6">
-          <SectionHead eyebrow="Product ecosystem" title="Six products. One portfolio." lead="Each family owns a distinct operational role. Together they cover the edge-to-insight chain — SecuEdge Frontier ships today, the first of seven, with SecuConnect and the rest following on the same appliances and console." />
-          <Stagger className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3" gap={0.06}>
-            {HOME_PRODUCTS.map((p, i) => {
-              const Icon = PRODUCT_ICONS[p.key as keyof typeof PRODUCT_ICONS];
-              return (
-                <Item key={p.key}>
-                  <TiltCard max={5} className="h-full">
-                    <Link href={p.href} className="premium-product-card" style={{ "--prem-accent": p.accent } as React.CSSProperties}>
-                      <div className="flex items-center justify-between">
-                        <span className="premium-product-icon"><Icon size={20} /></span>
-                        <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-slate-500">{STATUS_LABEL[p.status]}</span>
-                      </div>
-                      <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.2em]" data-accent-text style={{ color: p.accent }}>{p.category}</p>
-                      <h3 className="mt-1.5 text-2xl font-bold tracking-tight text-white">{p.name}</h3>
-                      <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-400">{p.desc}</p>
-                      <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300">Explore product <ArrowRight size={14} /></span>
-                    </Link>
-                  </TiltCard>
-                </Item>
-              );
-            })}
-          </Stagger>
-          <Reveal className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/products" className="premium-btn-primary">See the full roadmap <ArrowRight size={15} /></Link>
-            <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Same appliances + console · no dates</span>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ══ 5 · INSIDE THE PORTFOLIO (one visual language per family) ══ */}
+      {/* ══ 4 · INSIDE THE PORTFOLIO (one visual language per family) ══ */}
       <section id="deep-dives" className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Inside the portfolio" title="What each product actually does." lead="Same data as the product pages — compressed into one scroll. Each family gets its own visual language." />
@@ -436,7 +402,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 6 · APPLIANCE SHOWROOM (3D hardware view) ══ */}
+      {/* ══ 5 · APPLIANCE SHOWROOM (3D hardware view) ══ */}
       <section id="appliances" className="prem-cream-soft relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Appliance showroom" title="One hardware family. Seven models." lead="The whole portfolio runs on the same SecuEdge appliances. Pick a model to spin it in 3D — every model ships both Quick Mode and Professional Mode, and above 1,300 users we design the box with you." />
@@ -503,7 +469,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 7 · DUAL MODE (real data) ══ */}
+      {/* ══ 6 · DUAL MODE (real data) ══ */}
       <section id="modes" className="prem-navy relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Frontier dual mode" title="One appliance. Two ways to work." lead="Protection levels from the actual Quick Mode engine set, and control areas from the real Professional capability list." />
@@ -552,7 +518,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 8 · TECHNICAL CAPABILITIES (dense technical) ══ */}
+      {/* ══ 7 · TECHNICAL CAPABILITIES (dense technical) ══ */}
       <section id="capabilities" className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Technical capabilities" title="Engineered controls, not marketing bullets." lead="The real Professional capability areas plus the platform facts teams ask about first." />
@@ -572,7 +538,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 9 · SPEC REQUEST (intentional pending state) ══ */}
+      {/* ══ 8 · SPEC REQUEST (intentional pending state) ══ */}
       <section id="spec-request" className="prem-cream-soft relative overflow-hidden border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="premium-glow-orb left-1/2 top-1/2 h-[320px] w-[640px] -translate-x-1/2 -translate-y-1/2 bg-[#016FED]/15" aria-hidden />
         <div className="relative mx-auto w-full max-w-[1200px] px-6">
@@ -607,7 +573,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 10 · DEPLOYMENT PATTERNS (editorial list, no boxes) ══ */}
+      {/* ══ 9 · DEPLOYMENT PATTERNS (editorial list, no boxes) ══ */}
       <section id="solutions" className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Deployment patterns" title="Built around how your network actually works." lead="Nine patterns, each pointing at its full solution page. Relevant products are tagged from the existing portfolio." />
@@ -629,7 +595,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 11 · PROOF ══ */}
+      {/* ══ 10 · PROOF ══ */}
       <section id="customers" className="prem-cream-soft relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Proof" title="Trusted across India." lead="SecuEdge Frontier protects 200+ installations across government, education, healthcare, manufacturing, media, hospitality and technology." />
@@ -668,7 +634,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 12 · BUILT IN INDIA (split, no boxes) ══ */}
+      {/* ══ 11 · BUILT IN INDIA (split, no boxes) ══ */}
       <section className="prem-navy relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
@@ -699,7 +665,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 13 · SUPPORT + COVERAGE ══ */}
+      {/* ══ 12 · SUPPORT + COVERAGE ══ */}
       <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Support that answers" title="We compete on what happens the morning after something goes wrong." lead="Our India-based engineers are available 24/7 and know SecuEdge Frontier inside out, so you never have to explain your setup to an overseas queue." />
@@ -724,7 +690,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 14 · INDUSTRIES ══ */}
+      {/* ══ 13 · INDUSTRIES ══ */}
       <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Industries" title="Made for the way your sector works." lead="Eight priority sectors, each with its own page. Every deployment starts from the same SecuEdge Frontier appliance." />
@@ -744,7 +710,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 15 · COMPANY TEASER ══ */}
+      {/* ══ 14 · COMPANY TEASER ══ */}
       <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <Reveal>
@@ -764,7 +730,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 16 · FINAL CTA ══ */}
+      {/* ══ 15 · FINAL CTA ══ */}
       <section id="cta" className="prem-navy relative overflow-hidden border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="premium-grid-bg absolute inset-0" aria-hidden />
         <div className="premium-glow-orb left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 bg-[#016FED]/20" aria-hidden />
