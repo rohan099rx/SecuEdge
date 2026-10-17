@@ -3201,3 +3201,53 @@ body {
 @media (max-width: 640px) {
   .premium table thead a { display: inline-flex; align-items: center; min-height: 2.25rem; }
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   Compact footer — hub links plus the product names as plain text
+   links, small type, one screen at most on a phone.
+   ══════════════════════════════════════════════════════════════════ */
+.foundation-footer { padding: 2rem 0 1.1rem; }
+.foundation-footer__bar { display: grid; gap: .85rem; }
+.foundation-footer__id { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; }
+.foundation-footer__id p { max-width: 32rem; margin: 0; font-size: .7rem; line-height: 1.55; }
+.foundation-footer__nav { display: grid; gap: .5rem; }
+
+.foundation-footer__mini { display: flex; flex-wrap: wrap; gap: .1rem .95rem; }
+.foundation-footer__mini a {
+  display: inline-flex; align-items: center; min-height: 1.75rem;
+  font-size: .72rem; font-weight: 600;
+}
+
+.foundation-footer__products { display: flex; flex-wrap: wrap; gap: .1rem .8rem; margin: 0; }
+.foundation-footer__products a {
+  display: inline-flex; align-items: center; min-height: 1.6rem;
+  font: .64rem var(--font-mono), monospace; letter-spacing: .02em;
+}
+
+.foundation-footer__contact { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1rem; font-size: .72rem; }
+.foundation-footer__contact a { display: inline-flex; align-items: center; gap: .35rem; }
+.foundation-footer__contact a span {
+  color: #7a8794; font: .56rem var(--font-mono), monospace;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.foundation-footer--light .foundation-footer__contact a span { color: #6c7885; }
+
+.foundation-footer--light .foundation-footer__id p,
+.foundation-footer--light .foundation-footer__products a,
+.foundation-footer--light .foundation-footer__contact a { color: #56636f; }
+.foundation-footer--light .foundation-footer__mini a { color: #0b2239; }
+.foundation-footer--light .foundation-footer__mini a:hover,
+.foundation-footer--light .foundation-footer__products a:hover,
+.foundation-footer--light .foundation-footer__contact a:hover { color: #0159bd; }
+
+.foundation-footer__bottom { margin-top: .25rem; padding-top: .9rem; font-size: .58rem; }
+
+@media (min-width: 900px) {
+  .foundation-footer { padding: 2.75rem 0 1.5rem; }
+  .foundation-footer__bar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 1.25rem 2.75rem; align-items: start;
+  }
+  .foundation-footer__id { flex-direction: column; align-items: flex-start; gap: .8rem; }
+  .foundation-footer__id p { font-size: .72rem; }
+}
