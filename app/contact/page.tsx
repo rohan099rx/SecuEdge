@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Phone } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/motion";
+import { CONTACT } from "@/lib/site";
 import "@/components/premium/premium.css";
 
 export const metadata: Metadata = buildMetadata({
@@ -38,6 +39,9 @@ export default function ContactPage() {
               Tell us about your network and what you are looking to protect. We&rsquo;ll help you
               explore the Frontier appliance family and its operating modes.
             </p>
+            <a href={CONTACT.phoneHref} className="mt-6 inline-flex items-center gap-2 text-base font-bold text-[#016FED]">
+              <Phone size={18} aria-hidden /> Toll-free {CONTACT.phone}
+            </a>
             <ul className="mt-7 space-y-2.5">
               {[
                 "Discuss appliance sizing and deployment",

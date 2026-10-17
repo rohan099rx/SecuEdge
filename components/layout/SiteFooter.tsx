@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { CONTACT } from "@/lib/site";
 
 const columns = [
   { title: "Products", links: [["Frontier NGFW", "/products/frontier"], ["Watchtower", "/products/watchtower"], ["SecuWeb", "/products/secuweb"], ["Grid", "/products/grid"], ["SecuDefend", "/products/secudefend"], ["Muster", "/products/muster"], ["All Products", "/products"]] },
@@ -18,6 +19,7 @@ export function SiteFooter({ tone = "light" }: { tone?: "dark" | "light" }) {
           <div className="foundation-footer__brand">
             <Logo onDark={tone === "dark"} />
             <p>Secure the network. Enable the business.</p>
+            <p className="foundation-footer__contact">Toll-free <a href={CONTACT.phoneHref}>{CONTACT.phone}</a></p>
             <Link href="/contact" className="foundation-footer__cta">Talk to our team <ArrowUpRight size={15} /></Link>
           </div>
           {columns.map((column) => (

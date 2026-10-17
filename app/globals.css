@@ -505,6 +505,9 @@ h1, h2, h3 { text-wrap: balance; }
 .foundation-footer { padding: 5rem 0 1.5rem; border-top: 1px solid var(--foundation-line); background: #030507; }
 .foundation-footer__top { display: grid; grid-template-columns: 1.5fr repeat(5, 1fr); gap: 2rem; padding-bottom: 4rem; }
 .foundation-footer__brand p { max-width: 14rem; margin: 1.4rem 0; color: var(--foundation-muted); font-size: .82rem; }
+.foundation-footer__brand p.foundation-footer__contact { margin: -.35rem 0 1.2rem; }
+.foundation-footer__contact a { color: var(--foundation-text); font-weight: 700; }
+.foundation-footer__contact a:hover { color: var(--foundation-blue); }
 .foundation-footer__cta { display: inline-flex; align-items: center; gap: .4rem; color: var(--foundation-blue); font-size: .78rem; font-weight: 700; }
 .foundation-footer__column { display: grid; align-content: start; gap: .65rem; }
 .foundation-footer__column h2 { margin: 0 0 .55rem; color: var(--foundation-text); font: 700 .68rem var(--font-mono), monospace; letter-spacing: .1em; text-transform: uppercase; }

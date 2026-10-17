@@ -16,6 +16,12 @@ export const SITE = {
   email: "hello@secuedge.com",
 } as const;
 
+/** Site-wide contact details. */
+export const CONTACT = {
+  phone: "1800 123 0966",
+  phoneHref: "tel:+9118001230966",
+} as const;
+
 /** The six SecuEdge product families shown in public product navigation. */
 export const PRODUCTS = [
   { key: "frontier", name: "Frontier", fullName: "SecuEdge Frontier", category: "Next-generation firewall", status: "available" as const, href: "/products/frontier", desc: "Next-generation firewall protection at the network edge." },
@@ -192,6 +198,12 @@ export const SECUEDGE_PRODUCTS = [
     accent: '#9db8ff',
   },
 ] as const;
+
+/**
+ * Six families showcased on the landing page. SecuConnect stays reachable from
+ * the product navigation and its own page, but is not surfaced on the home page.
+ */
+export const HOME_PRODUCTS = SECUEDGE_PRODUCTS.filter((product) => product.key !== 'secuconnect');
 
 export const CERTIFICATIONS = [
   { name: "ISO 27001:2022", note: "Information security" },
