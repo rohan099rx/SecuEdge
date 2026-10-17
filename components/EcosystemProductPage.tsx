@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check, ChevronRight, Zap, ShieldCheck, Layers, Server, Search } from "lucide-react";
 import { FRONTIER_PRODUCT, type EcosystemProduct, type FrontierCapability } from "@/data/ecosystem";
-import { APPLIANCES, SECUEDGE_PRODUCTS, STATUS_LABEL } from "@/lib/site";
+import { SECUEDGE_PRODUCTS, STATUS_LABEL } from "@/lib/site";
+import { FrontierProductBands } from "@/components/frontier/FrontierProductBands";
 import "@/components/premium/premium.css";
 
 function Capabilities({ items }: { items: FrontierCapability[] }) {
@@ -152,21 +153,7 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
       </div>
     </section>
 
-    {isFrontier ? <section className="border-t border-white/[0.07] py-20 md:py-28">
-      <div className="mx-auto w-full max-w-[1200px] px-6">
-        <p className="premium-eyebrow">SE series · Hardware range</p>
-        <h2 className="premium-section-title mt-4">Every feature, on every model.</h2>
-        <p className="premium-section-lead">All SecuEdge Frontier models run the same software with the identical feature set. “P” identifies the Professional rack-mount chassis; it is distinct from the Professional Mode software experience. Sizing is by peak users — full specifications are available on request.</p>
-        <div className="mt-8 flex flex-wrap gap-2.5">
-          {APPLIANCES.map((appliance) => <Link href={`/products/frontier/${appliance.model.toLowerCase()}`} key={appliance.model} className="premium-card !rounded-xl px-4 py-3 transition-transform hover:!-translate-y-1">
-            <span className="block font-mono text-[9px] uppercase tracking-widest text-slate-500">{appliance.formFactor}</span>
-            <strong className="mt-0.5 block font-mono text-base font-bold text-white">{appliance.model}</strong>
-            <small className="mt-0.5 block text-[11px] text-slate-500">{appliance.userRange} peak users</small>
-          </Link>)}
-        </div>
-        <Link href="/products/compare" className="premium-btn-primary mt-8">Compare all Frontier models <ArrowRight size={15} /></Link>
-      </div>
-    </section> : null}
+    {isFrontier ? <FrontierProductBands /> : null}
 
     <section className="border-t border-white/[0.07] py-20 md:py-28">
       <div className="mx-auto w-full max-w-[1200px] px-6">
