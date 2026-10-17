@@ -105,7 +105,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--prem-blue);
+  color: var(--prem-blue-deep);
 }
 
 .premium-eyebrow::before {
@@ -116,7 +116,7 @@
 }
 
 .prem-navy .premium-eyebrow {
-  color: var(--prem-blue);
+  color: var(--prem-blue-deep);
 }
 
 .prem-navy .premium-eyebrow::before {
@@ -630,80 +630,91 @@ a:hover .customer-logo,
    premium sections are remapped to the editorial palette.
    Unlayered author CSS wins over Tailwind's layered utilities.
    There are no dark sections left — every band is light sky-blue. ── */
-.premium section .text-white {
+.premium .text-white {
   color: var(--prem-text);
 }
 
-.premium section .text-slate-200 {
+.premium .text-slate-200 {
   color: #30465c;
 }
 
-.premium section .text-slate-300 {
+.premium .text-slate-300 {
   color: var(--prem-muted);
 }
 
-.premium section .text-slate-400 {
+.premium .text-slate-400 {
   color: var(--prem-muted);
 }
 
-.premium section .text-slate-500 {
+.premium .text-slate-500 {
   color: var(--prem-muted);
 }
 
-.premium section .text-cyan-300,
-.premium section .text-cyan-200 {
-  color: var(--prem-cyan-deep);
+.premium .text-cyan-300,
+.premium .text-cyan-200 {
+  color: var(--prem-blue-deep);
 }
 
-.premium section .text-emerald-300 {
+/* Opacity variants of the on-dark accents need the same treatment. */
+.premium .text-cyan-300\/70,
+.premium .text-cyan-300\/80,
+.premium .text-cyan-200\/70 {
+  color: var(--prem-blue-deep);
+}
+
+.premium .text-emerald-300\/90 {
   color: var(--prem-success);
 }
 
-.premium section .text-indigo-300 {
+.premium .text-emerald-300 {
+  color: var(--prem-success);
+}
+
+.premium .text-indigo-300 {
   color: #1d4ed8;
 }
 
-.premium section .text-amber-300 {
+.premium .text-amber-300 {
   color: var(--prem-warning);
 }
 
-.premium section .text-rose-300 {
+.premium .text-rose-300 {
   color: var(--prem-danger);
 }
 
-.premium section .border-white\/10,
-.premium section .border-white\/\[0\.07\],
-.premium section .border-white\/\[0\.06\],
-.premium section .border-white\/15 {
+.premium .border-white\/10,
+.premium .border-white\/\[0\.07\],
+.premium .border-white\/\[0\.06\],
+.premium .border-white\/15 {
   border-color: var(--prem-border);
 }
 
-.premium section .bg-white\/\[0\.02\],
-.premium section .bg-white\/\[0\.03\],
-.premium section .bg-white\/\[0\.04\],
-.premium section .bg-white\/\[0\.05\],
-.premium section .bg-white\/\[0\.06\] {
+.premium .bg-white\/\[0\.02\],
+.premium .bg-white\/\[0\.03\],
+.premium .bg-white\/\[0\.04\],
+.premium .bg-white\/\[0\.05\],
+.premium .bg-white\/\[0\.06\] {
   background-color: rgba(11, 34, 57, 0.03);
 }
 
-.premium section .bg-white\/\[0\.015\] {
+.premium .bg-white\/\[0\.015\] {
   background-color: transparent;
 }
 
 /* Explicitly dark containers become light technical surfaces. */
-.premium section .bg-\[\#070d18\],
-.premium section .bg-\[\#0b1424\],
-.premium section .bg-black\/40 {
+.premium .bg-\[\#070d18\],
+.premium .bg-\[\#0b1424\],
+.premium .bg-black\/40 {
   background-color: #ffffff;
 }
 
-.premium section .bg-\[\#070d18\].bg-white\/\[0\.02\],
-.premium section .bg-\[\#070d18\].bg-white\/\[0\.03\] {
+.premium .bg-\[\#070d18\].bg-white\/\[0\.02\],
+.premium .bg-\[\#070d18\].bg-white\/\[0\.03\] {
   background-color: rgba(11, 34, 57, 0.03);
 }
 
 /* Product accents stay unified + readable on cream. */
-.premium section [data-accent-text] {
+.premium [data-accent-text] {
   color: #0b3b66;
   color: color-mix(in srgb, var(--prem-accent) 62%, #0b2239) !important;
 }
@@ -790,7 +801,7 @@ a:hover .customer-logo,
   border-radius: 14px;
   background:
     radial-gradient(ellipse 70% 55% at 50% 45%, rgba(1, 111, 237, 0.1), transparent 70%),
-    linear-gradient(180deg, #faf9f5, #eef2f6);
+    linear-gradient(180deg, #faf9f5, #f2eee3);
   perspective: 1100px;
 }
 
@@ -820,7 +831,7 @@ a:hover .customer-logo,
   bottom: 0;
   left: 0;
   border-top: 1px solid rgba(11, 34, 57, 0.08);
-  background: rgba(241, 246, 253, 0.85);
+  background: rgba(250, 249, 245, 0.85);
 }
 
 .gateway-scene__hud .status-mark {
@@ -946,7 +957,7 @@ a:hover .customer-logo,
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #30465c;
-  background: rgba(241, 246, 253, 0.85);
+  background: rgba(250, 249, 245, 0.85);
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
 }
@@ -1365,9 +1376,29 @@ a:hover .customer-logo,
   }
 }
 .premium-nav {
-  border-bottom: 1px solid rgba(148, 184, 220, 0.1);
-  background: rgba(4, 7, 15, 0.82);
+  border-bottom: 1px solid rgba(11, 34, 57, 0.1);
+  background: rgba(245, 242, 234, 0.92);
   backdrop-filter: blur(18px);
+}
+
+/* The product sub-nav markup carries dark-theme Tailwind utilities; remap
+   them here so the bar reads as part of the cream theme. */
+.premium-nav .text-slate-400,
+.premium-nav .text-slate-500,
+.premium-nav .text-slate-600 {
+  color: var(--prem-muted);
+}
+
+.premium-nav .text-white {
+  color: var(--prem-text);
+}
+
+.premium-nav .bg-cyan-400\/10 {
+  background-color: rgba(1, 111, 237, 0.1);
+}
+
+.premium-nav .hover\:text-white:hover {
+  color: var(--prem-blue-deep);
 }
 
 .premium-nav-link {
@@ -1375,24 +1406,24 @@ a:hover .customer-logo,
   padding: 0.55rem 0.8rem;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #9db4c9;
+  color: var(--prem-muted);
   transition: color 0.2s, background 0.2s;
 }
 
 .premium-nav-link:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--prem-blue-deep);
+  background: rgba(1, 111, 237, 0.07);
 }
 
 /* ── Site navbar: cream glass, deep navy text, blue active ── */
 .foundation-nav {
-  background: rgba(232, 241, 250, 0.9);
+  background: rgba(245, 242, 234, 0.9);
   border-bottom: 1px solid rgba(11, 34, 57, 0.1);
   backdrop-filter: blur(18px);
 }
 
 .foundation-nav--scrolled {
-  background: rgba(232, 241, 250, 0.96);
+  background: rgba(245, 242, 234, 0.96);
   border-bottom-color: rgba(11, 34, 57, 0.14);
   box-shadow: 0 8px 30px rgba(11, 34, 57, 0.08);
 }
@@ -1564,7 +1595,7 @@ a:hover .customer-logo,
 }
 
 .foundation-footer__status a {
-  color: #016fed;
+  color: #0159bd;
 }
 
 .foundation-footer__meta {
@@ -1574,11 +1605,70 @@ a:hover .customer-logo,
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8a94a0;
+  color: #5f6d79;
   white-space: nowrap;
 }
 
 .foundation-footer__column a svg {
   vertical-align: -2px;
   margin-left: 0.25rem;
+}
+
+/* ── Product sub-nav: park it below the fixed site navbar ──
+   Otherwise the sticky bar hides behind the 5.25rem site nav and the
+   breadcrumb underneath gets clipped. */
+.premium:has(> .premium-nav) {
+  padding-top: 5.25rem;
+}
+
+.premium > .premium-nav {
+  top: 5.25rem;
+}
+
+@media (max-width: 900px) {
+  .premium:has(> .premium-nav) {
+    padding-top: 4.5rem;
+  }
+
+  .premium > .premium-nav {
+    top: 4.5rem;
+  }
+}
+
+/* ── Product hero mark ────────────────────────────────────────
+   The large monogram panel in the product hero. Blueprint grid plus
+   an accent glow so it reads as a deliberate graphic panel rather
+   than an empty card. */
+.premium-hero-mark {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse 66% 58% at 60% 36%, color-mix(in srgb, var(--prem-accent, #016fed) 20%, transparent), transparent 72%),
+    linear-gradient(180deg, #ffffff, #faf9f5);
+}
+
+.premium-hero-mark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(11, 34, 57, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 34, 57, 0.05) 1px, transparent 1px);
+  background-size: 2.3rem 2.3rem;
+  -webkit-mask-image: radial-gradient(ellipse 76% 76% at 50% 50%, #000, transparent 80%);
+  mask-image: radial-gradient(ellipse 76% 76% at 50% 50%, #000, transparent 80%);
+}
+
+.premium-hero-mark::after {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(11, 34, 57, 0.07);
+  border-radius: 10px;
+}
+
+.premium-hero-mark > span {
+  position: relative;
+  z-index: 1;
 }

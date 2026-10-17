@@ -54,6 +54,7 @@ export function FrontierHero() {
         <FadeUp delay={0.15} y={32}>
           <div className="relative frontier-hero-cinematic__visual">
             <ProductExperience
+              transparent
               scale={1}
               camera={{ position: [0, 0.42, 5.4], target: [0, 0, 0], fov: 34 }}
               lighting={{ key: 2, rim: 1.3, ambient: 0.38 }}

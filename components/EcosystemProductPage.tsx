@@ -64,7 +64,7 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
             {isFrontier ? <Link className="premium-btn-ghost" href="/frontier/appliances">Find your model <ArrowUpRight size={15} /></Link> : null}
           </div>
         </div>
-        <div className="premium-card flex aspect-square max-w-md items-center justify-center justify-self-center w-full" aria-hidden>
+        <div className="premium-card premium-hero-mark flex aspect-square max-w-md items-center justify-center justify-self-center w-full" aria-hidden>
           <span className="text-[9rem] font-bold leading-none" style={{ color: `${product.accent}2e` }}>{product.name[0]}</span>
         </div>
       </div>

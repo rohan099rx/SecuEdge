@@ -171,7 +171,7 @@ export const SECUEDGE_PRODUCTS = [
     href: "/products/frontier",
     status: "available" as ProductStatus,
     desc: "The secure setup, made easy. Firewall, intrusion prevention, antivirus, VPN, SD-WAN and web filtering in one appliance, with Quick Mode and Professional Mode.",
-    accent: "#4ca3ff",
+    accent: "#2f74cf",
   },
   {
     key: "secuweb",
@@ -181,7 +181,7 @@ export const SECUEDGE_PRODUCTS = [
     href: "/products/secuweb",
     status: "in-development" as ProductStatus,
     desc: "Dedicated SD-WAN for organisations joining many branches, plants and campuses.",
-    accent: "#7bd9e8",
+    accent: "#17849a",
   },
   {
     key: "secudefend",
@@ -191,7 +191,7 @@ export const SECUEDGE_PRODUCTS = [
     href: "/products/secudefend",
     status: "in-development" as ProductStatus,
     desc: "Dedicated intrusion prevention for networks that need more inspection depth and scale.",
-    accent: "#f27f8b",
+    accent: "#c8495a",
   },
   {
     key: "grid",
@@ -201,7 +201,7 @@ export const SECUEDGE_PRODUCTS = [
     href: "/products/grid",
     status: "in-development" as ProductStatus,
     desc: "Brings alerts from every SecuEdge device together and helps teams respond automatically.",
-    accent: "#f0c060",
+    accent: "#a9741a",
   },
   {
     key: "secuconnect",
@@ -211,7 +211,7 @@ export const SECUEDGE_PRODUCTS = [
     href: "/products/secuconnect",
     status: "on-roadmap" as ProductStatus,
     desc: "Dedicated VPN for large remote workforces and many branches.",
-    accent: "#9db8ff",
+    accent: "#586ed0",
   },
   {
     key: "watchtower",
@@ -221,7 +221,7 @@ export const SECUEDGE_PRODUCTS = [
     href: "/products/watchtower",
     status: "on-roadmap" as ProductStatus,
     desc: "Health, topology and uptime for every device on the network.",
-    accent: "#76d6ac",
+    accent: "#1d8a5e",
   },
   {
     key: "muster",
@@ -231,7 +231,7 @@ export const SECUEDGE_PRODUCTS = [
     href: "/products/muster",
     status: "on-roadmap" as ProductStatus,
     desc: "A searchable audit record of network activity, kept in India.",
-    accent: "#c8a8f0",
+    accent: "#8257c9",
   },
 ] as const;
 

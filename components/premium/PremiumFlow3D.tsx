@@ -107,7 +107,7 @@ export function PremiumFlow3D({ active = true }: { active?: boolean }) {
           <Packets />
         </FitToWidth>
       </Canvas>
-      <div className="pointer-events-none absolute inset-x-0 bottom-1 flex justify-between px-2 font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748b]">
+      <div className="pointer-events-none absolute inset-x-0 bottom-1 flex justify-between px-2 font-mono text-[9px] uppercase tracking-[0.2em] text-[#5f6f7c]">
         <span>Internet / WAN</span>
         <span>SecuEdge NGFW</span>
         <span>Network zones</span>

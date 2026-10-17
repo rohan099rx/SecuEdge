@@ -376,7 +376,7 @@ export default function HomePage() {
                   </div>
                   <span className="mt-3 text-lg font-bold text-[var(--prem-text)] transition-colors group-hover:text-[var(--prem-blue)]">{title}</span>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--prem-muted)]"><span className="text-slate-500">Problem · </span>{description}</p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--prem-blue)]">Explore solution <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" /></span>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--prem-blue-deep)]">Explore solution <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" /></span>
                 </Link>
               </Item>
             ))}

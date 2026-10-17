@@ -15,7 +15,7 @@ export function Logo({ className = "", onDark = false }: { className?: string; o
         priority
       />
       <span className={`text-base font-semibold tracking-tight ${onDark ? "text-white" : "text-ink"}`}>
-        Secu<span className={onDark ? "text-brand-bright" : "text-brand-blue"}>Edge</span>
+        Secu<span className={onDark ? "text-brand-bright" : "text-brand-link"}>Edge</span>
       </span>
     </span>
   );

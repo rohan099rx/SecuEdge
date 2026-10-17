@@ -31,7 +31,7 @@ const config: Config = {
         dim: "#5D6C85", // AA on white and #F5F7FA at caption sizes
         bg: {
           DEFAULT: "#FFFFFF",
-          raised: "#F5F7FA",
+          raised: "#F2EFE6",
           deep: "#081226",
         },
       },
@@ -48,8 +48,8 @@ const config: Config = {
         dropdown: "0 2px 6px rgba(11,27,51,.06), 0 24px 56px -20px rgba(11,27,51,.22)",
       },
       borderColor: {
-        hair: "#E3E8F0",
-        hair2: "#CBD5E4",
+        hair: "#E4DFD3",
+        hair2: "#CFC7B6",
         // on-dark hairlines (product panels, deep band)
         hairDark: "rgba(140,170,215,.22)",
       },
