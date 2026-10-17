@@ -258,6 +258,23 @@
   border-color: rgba(1, 111, 237, 0.4);
 }
 
+/* ── Appliance showroom — the shared 3D hardware stage, on the cream theme ── */
+.premium .frontier-model-viewer {
+  background: var(--prem-bg-soft);
+  min-height: 0;
+}
+.premium .frontier-model-viewer__topline {
+  padding-top: 0.95rem;
+  color: var(--prem-faint);
+}
+.premium .frontier-model-viewer__canvas {
+  min-height: 0;
+  background: radial-gradient(ellipse at 50% 52%, rgba(1, 111, 237, 0.14), transparent 58%), linear-gradient(145deg, #ffffff, #eef2f7);
+}
+.premium .frontier-model-viewer__controls {
+  background: var(--prem-bg-soft);
+}
+
 .premium details summary {
   list-style: none;
   cursor: pointer;

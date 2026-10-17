@@ -11,7 +11,7 @@ const FrontierModelCanvas = dynamic(
     ),
   { ssr: false },
 );
-export function FrontierModelViewer({ model, formFactor, tier }: { model: string; formFactor: string; tier: string }) {
+export function FrontierModelViewer({ model, formFactor, userRange }: { model: string; formFactor: string; userRange: string }) {
   const [root, setRoot] = useState<HTMLElement | null>(null);
   const [ready, setReady] = useState(false);
   const [inView, setInView] = useState(false);
@@ -36,11 +36,11 @@ export function FrontierModelViewer({ model, formFactor, tier }: { model: string
   }, [root]);
 
   return (
-    <div ref={setRoot} className="frontier-model-viewer" aria-label={`${model} illustrative Frontier appliance model viewer`}>
-      <div className="frontier-model-viewer__topline"><span><i /> FRONTIER / FAMILY HARDWARE VIEW</span><span>{model} · {formFactor.toUpperCase()}</span></div>
+    <div ref={setRoot} className="frontier-model-viewer" aria-label={`${model} illustrative SecuEdge appliance model viewer`}>
+      <div className="frontier-model-viewer__topline"><span><i /> SECUEDGE / APPLIANCE HARDWARE VIEW</span><span>{model} · {formFactor.toUpperCase()}</span></div>
       <div className="frontier-model-viewer__canvas">
         {ready ? <FrontierModelCanvas active={inView} reducedMotion={reducedMotion} rotating={rotating} viewCommand={viewCommand} zoomCommand={zoomCommand} /> : <div className="frontier-model-viewer__loading" aria-hidden="true" />}
-        <span className="frontier-model-viewer__label">{model} <i /> {tier} · indicative band</span>
+        <span className="frontier-model-viewer__label">{model} <i /> {userRange} users</span>
         <span className="frontier-model-viewer__annotation">Concept rendering · port layout and dimensions illustrative</span>
       </div>
       <div className="frontier-model-viewer__controls" aria-label="Hardware view controls">

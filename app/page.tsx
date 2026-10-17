@@ -4,17 +4,21 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight, ArrowUpRight, ShieldCheck, Eye, Globe2, Layers3, ListTree,
-  Waypoints, Phone, LockKeyhole, Activity, Server, BellRing, FileSearch,
+  Waypoints, Phone, LockKeyhole, Activity, BellRing, FileSearch,
   Boxes, Route as RouteIcon, Check, MapPin,
   GraduationCap, HeartPulse, Landmark, Banknote, Factory, Store, Coffee, Rocket,
 } from "lucide-react";
 import {
+  APPLIANCES, CUSTOM_APPLIANCE,
   CUSTOMERS, CUSTOMER_GROUPS, HOME_PRODUCTS, STATUS_LABEL,
-  SUPPORT, COVERAGE, MISCONFIG_STAT, SITE,
+  SUPPORT, COVERAGE, SITE,
 } from "@/lib/site";
 import { CustomerMarquee } from "@/components/CustomerMarquee";
+import { FrontierModelViewer } from "@/components/FrontierModelViewer";
+import { SecurityFlow } from "@/components/foundation/SecurityFlow";
 import { Reveal, Stagger, Item, Parallax } from "@/components/motion";
 import { TiltCard } from "@/components/TiltCard";
 import { ScrollProgress } from "@/components/premium/ScrollProgress";
@@ -23,6 +27,11 @@ import "@/components/premium/premium.css";
 const PremiumHero3D = dynamic(
   () => import("@/components/premium/PremiumHero3D").then((m) => m.PremiumHero3D),
   { ssr: false, loading: () => <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_35%,rgba(1,111,237,0.12),transparent_55%)]" /> }
+);
+
+const PremiumFlow3D = dynamic(
+  () => import("@/components/premium/PremiumFlow3D").then((m) => m.PremiumFlow3D),
+  { ssr: false, loading: () => <div className="h-[300px] w-full md:h-[340px]" /> }
 );
 
 /* Icons for the six families shown on the landing page. */
@@ -34,6 +43,15 @@ const PRODUCT_ICONS = {
   secudefend: Waypoints,
   muster: ListTree,
 } as const;
+
+/* The five responsibilities the portfolio maps to (portfolio-level, not a product). */
+const PLATFORM_LAYERS: Array<[string, string, LucideIcon[]]> = [
+  ["Network", "Connectivity paths between sites, cloud and data centers.", [Globe2, RouteIcon]],
+  ["Security", "Policy enforcement and inspection at the edge.", [ShieldCheck, LockKeyhole]],
+  ["Visibility", "Health and state of infrastructure and devices.", [Eye, Activity]],
+  ["Intelligence", "Events correlated into response workflows.", [Layers3, BellRing]],
+  ["Control", "Logs retained, searchable, and auditable.", [FileSearch, ListTree]],
+];
 
 /* Existing solution slugs — hrefs unchanged. */
 const solutions = [
@@ -47,6 +65,17 @@ const solutions = [
   ["08", "Education", "Keep campuses connected with clear policy control.", "network-security", "Frontier"],
   ["09", "Data center", "A composed security boundary for critical infrastructure.", "network-segmentation", "Frontier"],
 ] as const;
+
+/* Traffic → decision pipeline shown under the live 3D flow. */
+const FLOW_STEPS = ["Traffic", "Inspection", "Policy", "Detection", "Decision", "Destination"];
+
+/* Appliance showroom — the shared hardware family, grouped by form factor. */
+const RACK_MODELS = APPLIANCES.filter((a) => a.formFactor === "Rack-mount");
+const SHOWROOM_GROUPS: Array<[string, typeof APPLIANCES]> = [
+  ["Desktop edge", APPLIANCES.filter((a) => a.formFactor === "Desktop")],
+  ["Professional rack", RACK_MODELS.slice(0, 3)],
+  ["High-scale", RACK_MODELS.slice(3)],
+];
 
 function SectionHead({ eyebrow, title, lead }: { eyebrow: string; title: string; lead: string }) {
   return (
@@ -81,11 +110,21 @@ const INDIA_POINTS = [
 
 export default function HomePage() {
   const [heroActive, setHeroActive] = useState(true);
+  const [flowActive, setFlowActive] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(APPLIANCES[0]);
 
   useEffect(() => {
     const el = document.getElementById("premium-hero");
     if (!el) return;
     const obs = new IntersectionObserver(([e]) => setHeroActive(e.isIntersecting), { threshold: 0 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const el = document.getElementById("security-flow");
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => setFlowActive(e.isIntersecting), { rootMargin: "200px 0px" });
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
@@ -169,47 +208,52 @@ export default function HomePage() {
 
       <div className="premium-divider mx-auto max-w-[1200px]" />
 
-      {/* ══ 2 · THE PROBLEM ══ */}
-      <section id="why-secured" className="relative py-24 md:py-32">
-        <div className="mx-auto w-full max-w-[1200px] px-6">
-          <Reveal>
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="premium-eyebrow mx-auto">Why breaches happen</p>
-              <p className="mt-6 font-mono text-sm font-bold uppercase tracking-[0.2em] text-slate-500">{MISCONFIG_STAT.figure} of firewall breaches</p>
-              <h2 className="mt-3 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">
-                start with a setting, not a hacker.
-              </h2>
-              <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-400 md:text-lg">{MISCONFIG_STAT.line} Traditional firewalls are built for specialists, and most organisations do not have one on call. The result is a good firewall, set up wrongly.</p>
-              <p className="mt-8 font-serif text-2xl italic text-white md:text-3xl">Complexity is the vulnerability.</p>
-              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.18em] text-slate-500">{MISCONFIG_STAT.source}</p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <div className="premium-divider mx-auto max-w-[1200px]" />
-
-      {/* ══ 3 · PLATFORM ══ */}
+      {/* ══ 2 · PLATFORM (five responsibilities — editorial band, no boxes) ══ */}
       <section id="platform-story" className="relative py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Breaking down the system" title="One portfolio across network, security, and intelligence." lead="Five responsibilities, six products. This is how the portfolio maps to the work — a grouping of the product family, not a claim about internal integrations." />
-          <Stagger className="mt-12 grid gap-3 md:grid-cols-5" gap={0.05}>
-            {[
-              ["Network", "Connectivity paths between sites, cloud and data centers.", [Globe2, RouteIcon]],
-              ["Security", "Policy enforcement and inspection at the edge.", [ShieldCheck, LockKeyhole]],
-              ["Visibility", "Health and state of infrastructure and devices.", [Eye, Activity]],
-              ["Intelligence", "Events correlated into response workflows.", [Layers3, BellRing]],
-              ["Control", "Logs retained, searchable, and auditable.", [FileSearch, ListTree]],
-            ].map(([title, desc, icons]) => (
-              <Item key={title as string}>
-                <div className="premium-card h-full p-5">
-                  <div className="flex gap-1.5">
-                    {(icons as typeof Globe2[]).map((Icon, i) => (
-                      <span key={i} className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-cyan-300"><Icon size={15} /></span>
-                    ))}
+          <Stagger className="mt-14 grid gap-x-8 gap-y-10 md:grid-cols-5" gap={0.05}>
+            {PLATFORM_LAYERS.map(([title, desc, icons], i) => (
+              <Item key={title}>
+                <div className={i > 0 ? "md:border-l md:border-[var(--prem-border)] md:pl-6" : ""}>
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="flex gap-1.5">
+                      {icons.map((Icon, k) => (
+                        <span key={k} className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--prem-border)] bg-white text-[var(--prem-blue)]"><Icon size={16} /></span>
+                      ))}
+                    </span>
+                    <span className="font-mono text-xs text-slate-600">0{i + 1}</span>
                   </div>
-                  <h3 className="mt-3 text-base font-bold text-white">{title as string}</h3>
-                  <p className="mt-1.5 text-xs leading-relaxed text-slate-400">{desc as string}</p>
+                  <h3 className="mt-4 text-base font-bold text-[var(--prem-text)]">{title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[var(--prem-muted)]">{desc}</p>
+                </div>
+              </Item>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* ══ 3 · SECURITY FLOW (3D visual moment) ══ */}
+      <section id="security-flow" className="prem-navy relative overflow-hidden py-24 md:py-32">
+        <div className="premium-glow-orb left-[10%] top-[20%] h-[360px] w-[360px] bg-[#016FED]/20" aria-hidden />
+        <div className="relative mx-auto w-full max-w-[1200px] px-6">
+          <SectionHead eyebrow="Traffic → decision" title="Every packet earns its passage." lead="Traffic enters, gets inspected against policy, meets detection, and receives a decision — forward to a secure destination or block. Watch the path below." />
+          <Reveal className="mt-10">
+            <div id="flow-3d" className="w-full">
+              <PremiumFlow3D active={flowActive} />
+            </div>
+          </Reveal>
+          <Reveal className="mt-8">
+            <TiltCard max={3}>
+              <div className="premium-card overflow-hidden p-4 md:p-6"><SecurityFlow /></div>
+            </TiltCard>
+          </Reveal>
+          <Stagger className="mt-10 grid grid-cols-3 gap-x-5 gap-y-6 lg:grid-cols-6" gap={0.04}>
+            {FLOW_STEPS.map((s, i) => (
+              <Item key={s}>
+                <div className="border-t-2 border-[rgba(1,111,237,0.35)] pt-3">
+                  <div className="font-mono text-[10px] text-slate-500">0{i + 1}</div>
+                  <div className="mt-1 text-sm font-bold text-[var(--prem-text)]">{s}</div>
                 </div>
               </Item>
             ))}
@@ -251,21 +295,88 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 5 · SOLUTIONS ══ */}
-      <section id="solutions" className="relative border-t border-white/[0.07] py-24 md:py-32">
+      {/* ══ 5 · APPLIANCE SHOWROOM (3D hardware view) ══ */}
+      <section id="appliances" className="prem-cream-soft relative border-t border-[var(--prem-border)] py-24 md:py-32">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <SectionHead eyebrow="Appliance showroom" title="One hardware family. Seven models." lead="The whole portfolio runs on the same SecuEdge appliances. Pick a model to spin it in 3D — every model ships both Quick Mode and Professional Mode, and above 1,300 users we design the box with you." />
+          <div className="mt-10 grid gap-5 lg:grid-cols-[370px_1fr]">
+            <div className="premium-card p-2.5 lg:max-h-[672px] lg:overflow-y-auto">
+              {SHOWROOM_GROUPS.filter(([, models]) => models.length > 0).map(([group, models]) => (
+                <div key={group} className="mb-1">
+                  <p className="px-3 pb-1.5 pt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">{group}</p>
+                  {models.map((product) => (
+                    <button
+                      key={product.model}
+                      type="button"
+                      onClick={() => setSelectedProduct(product)}
+                      aria-pressed={selectedProduct.model === product.model}
+                      className={["premium-model-btn", selectedProduct.model === product.model && "is-active"].filter(Boolean).join(" ")}
+                    >
+                      <span className="flex items-center justify-between gap-2">
+                        <span className="font-mono text-base font-bold text-[var(--prem-text)]">{product.model}</span>
+                        <span className="rounded-md border border-[var(--prem-border)] px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest text-[var(--prem-muted)]">{product.formFactor}</span>
+                      </span>
+                      <span className="mt-1 block text-xs text-[var(--prem-muted)]">{product.userRange} users · {product.typicalSite}</span>
+                    </button>
+                  ))}
+                </div>
+              ))}
+              <div className="mb-1">
+                <p className="px-3 pb-1.5 pt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">Above the range</p>
+                <div className="mx-1 rounded-xl border border-[rgba(1,111,237,0.35)] bg-[rgba(1,111,237,0.06)] px-3.5 py-3">
+                  <span className="font-mono text-base font-bold text-[var(--prem-text)]">{CUSTOM_APPLIANCE.model}</span>
+                  <span className="mt-1 block text-xs text-[var(--prem-muted)]">{CUSTOM_APPLIANCE.userRange} users · {CUSTOM_APPLIANCE.typicalSite}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="premium-card overflow-hidden">
+              <div className="h-[360px] sm:h-[420px] lg:h-[480px]">
+                <FrontierModelViewer model={selectedProduct.model} formFactor={selectedProduct.formFactor} userRange={selectedProduct.userRange} />
+              </div>
+              <div className="border-t border-[var(--prem-border)] px-5 py-4">
+                <div className="grid gap-px overflow-hidden rounded-xl border border-[var(--prem-border)] bg-[rgba(11,34,57,0.10)] sm:grid-cols-2">
+                  {[
+                    ["Form factor", selectedProduct.formFactor, "Verified"],
+                    ["Operating modes", "Quick + Professional", "Included"],
+                    ["Recommended users", `${selectedProduct.userRange} (indicative)`, "Guide"],
+                    ["Technical specifications", "Available on request", "On request"],
+                  ].map(([k, v, s]) => (
+                    <div key={k} className="bg-[var(--prem-bg-soft)] px-4 py-3">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-slate-500">{k}</div>
+                      <div className="mt-1 flex items-center justify-between gap-2 text-sm font-semibold text-[var(--prem-text)]">{v}<span className="font-mono text-[9px] uppercase tracking-widest text-[#15803d]">{s}</span></div>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-4 text-xs leading-relaxed text-[var(--prem-muted)]">
+                  <span className="font-semibold text-[var(--prem-text)]">Typical site · </span>{selectedProduct.typicalSite}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <Link href={`/products/frontier/${selectedProduct.model.toLowerCase()}`} className="premium-btn-primary !min-h-[2.6rem] !text-[13px]">View {selectedProduct.model} <ArrowRight size={14} /></Link>
+                  <Link href="/frontier/appliances" className="premium-btn-ghost !min-h-[2.6rem] !text-[13px]">Compare family</Link>
+                  <Link href="/contact" className="premium-btn-ghost !min-h-[2.6rem] !text-[13px]">Request specifications</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ 6 · DEPLOYMENT PATTERNS (editorial list, no boxes) ══ */}
+      <section id="solutions" className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Deployment patterns" title="Built around how your network actually works." lead="Nine patterns, each pointing at its full solution page. Relevant products are tagged from the existing portfolio." />
-          <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-12 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
             {solutions.map(([number, title, description, slug, products]) => (
               <Item key={title}>
-                <Link href={`/solutions/${slug}`} className="premium-card group flex h-full flex-col p-7">
-                  <div className="flex items-center justify-between">
+                <Link href={`/solutions/${slug}`} className="group flex h-full flex-col border-t border-[var(--prem-border)] py-7">
+                  <div className="flex items-center justify-between gap-3">
                     <span className="font-mono text-xs text-slate-600">{number}</span>
-                    <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-cyan-300/70">{products}</span>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-[var(--prem-blue)]/70">{products}</span>
                   </div>
-                  <span className="mt-3 flex items-center gap-2 text-lg font-bold text-white"><Server size={17} className="text-cyan-300/70" />{title}</span>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400"><span className="text-slate-500">Problem · </span>{description}</p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300">Explore solution <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" /></span>
+                  <span className="mt-3 text-lg font-bold text-[var(--prem-text)] transition-colors group-hover:text-[var(--prem-blue)]">{title}</span>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--prem-muted)]"><span className="text-slate-500">Problem · </span>{description}</p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--prem-blue)]">Explore solution <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" /></span>
                 </Link>
               </Item>
             ))}
@@ -273,8 +384,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 6 · PROOF ══ */}
-      <section id="customers" className="prem-cream-soft relative border-t border-white/[0.07] py-24 md:py-32">
+      {/* ══ 7 · PROOF ══ */}
+      <section id="customers" className="prem-cream-soft relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Proof" title="Trusted across India." lead="SecuEdge Frontier protects 200+ installations across government, education, healthcare, manufacturing, media, hospitality and technology." />
           <Reveal className="mt-6 flex flex-wrap gap-2">
@@ -287,10 +398,10 @@ export default function HomePage() {
           <Reveal className="mt-8">
             <CustomerMarquee />
           </Reveal>
-          <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+          <Stagger className="mt-10 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
             {CUSTOMER_GROUPS.map((group) => (
               <Item key={group}>
-                <div className="premium-card h-full p-5">
+                <div className="h-full border-t border-[var(--prem-border)] py-6">
                   <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{group}</p>
                   <ul className="mt-3 space-y-2.5">
                     {CUSTOMERS.filter((c) => c.group === group).map((c) => (
@@ -298,7 +409,7 @@ export default function HomePage() {
                         {c.logo ? (
                           <Image src={c.logo} alt={`${c.name} logo`} width={72} height={24} className="customer-logo h-4 w-auto max-w-[4.5rem] object-contain" loading="lazy" />
                         ) : null}
-                        <span className="text-[13px] font-semibold text-slate-300">{c.name}</span>
+                        <span className="text-[13px] font-semibold text-[var(--prem-text)]">{c.name}</span>
                       </li>
                     ))}
                   </ul>
@@ -312,29 +423,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 7 · BUILT IN INDIA ══ */}
-      <section className="prem-navy relative border-t border-white/[0.07] py-24 md:py-32">
+      {/* ══ 8 · BUILT IN INDIA (split, no boxes) ══ */}
+      <section className="prem-navy relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
-          <SectionHead eyebrow="Made in India" title="Built in India. Your data stays here." lead={SITE.companyLine} />
-          <Stagger className="mt-12 grid gap-4 sm:grid-cols-2" gap={0.06}>
-            {INDIA_POINTS.map((point, i) => (
-              <Item key={point.title}>
-                <div className="premium-card flex h-full items-start gap-4 p-6">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-cyan-300"><Check size={17} /></span>
-                  <div>
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <Reveal>
+              <div className="premium-section-head">
+                <p className="premium-eyebrow">Made in India</p>
+                <h2 className="premium-section-title">Built in India. Your data stays here.</h2>
+                <p className="premium-section-lead">{SITE.companyLine}</p>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-2">
+                <span className="premium-chip !text-[11px]">Engineered in India</span>
+                <span className="premium-chip !text-[11px]">DPDP Act 2023</span>
+                <span className="premium-chip !text-[11px]">No overseas routing</span>
+              </div>
+            </Reveal>
+            <Stagger className="grid gap-x-10 sm:grid-cols-2" gap={0.06}>
+              {INDIA_POINTS.map((point, i) => (
+                <Item key={point.title}>
+                  <div className="h-full border-t border-[var(--prem-border)] py-6">
                     <div className="font-mono text-[10px] tracking-[0.2em] text-slate-600">0{i + 1}</div>
-                    <h3 className="mt-1 text-base font-bold text-white">{point.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{point.desc}</p>
+                    <h3 className="mt-2 flex items-start gap-2 text-base font-bold text-[var(--prem-text)]"><Check size={16} className="mt-0.5 shrink-0 text-[var(--prem-blue)]" />{point.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--prem-muted)]">{point.desc}</p>
                   </div>
-                </div>
-              </Item>
-            ))}
-          </Stagger>
+                </Item>
+              ))}
+            </Stagger>
+          </div>
         </div>
       </section>
 
-      {/* ══ 8 · SUPPORT + COVERAGE ══ */}
-      <section className="relative border-t border-white/[0.07] py-24 md:py-32">
+      {/* ══ 9 · SUPPORT + COVERAGE ══ */}
+      <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Support that answers" title="We compete on what happens the morning after something goes wrong." lead="Our India-based engineers are available 24/7 and know SecuEdge Frontier inside out, so you never have to explain your setup to an overseas queue." />
           <Reveal className="mt-10">
@@ -358,8 +479,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 9 · INDUSTRIES ══ */}
-      <section className="relative border-t border-white/[0.07] py-24 md:py-32">
+      {/* ══ 10 · INDUSTRIES ══ */}
+      <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Industries" title="Made for the way your sector works." lead="Eight priority sectors, each with its own page. Every deployment starts from the same SecuEdge Frontier appliance." />
           <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
@@ -378,14 +499,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 10 · COMPANY TEASER ══ */}
-      <section className="relative border-t border-white/[0.07] py-24 md:py-32">
+      {/* ══ 11 · COMPANY TEASER ══ */}
+      <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
               <p className="premium-eyebrow mx-auto">Our story</p>
-              <h2 className="mt-4 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-5xl">Started by two people who kept seeing the same problem.</h2>
-              <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-400">
+              <h2 className="mt-4 text-4xl font-bold leading-[1.05] tracking-tight text-[var(--prem-text)] md:text-5xl">Started by two people who kept seeing the same problem.</h2>
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[var(--prem-muted)]">
                 SecuEdge was founded in 2025 in Gurugram by Sagar Dalal, a cybersecurity researcher and
                 ethical hacker, and Manoj Kuniyal, who spent over 20 years in technology sales. One saw good
                 firewalls set up wrongly. The other saw why. Together they built SecuEdge Frontier.
@@ -398,16 +519,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 11 · FINAL CTA ══ */}
-      <section id="cta" className="prem-navy relative overflow-hidden border-t border-white/[0.07] py-24 md:py-32">
+      {/* ══ 12 · FINAL CTA ══ */}
+      <section id="cta" className="prem-navy relative overflow-hidden border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="premium-grid-bg absolute inset-0" aria-hidden />
         <div className="premium-glow-orb left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 bg-[#016FED]/20" aria-hidden />
         <div className="relative mx-auto max-w-[1200px] px-6">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
               <p className="premium-eyebrow mx-auto">Talk to SecuEdge</p>
-              <h2 className="mt-4 text-4xl font-bold leading-[1.03] tracking-tight text-white md:text-6xl">See how easy the secure setup can be.</h2>
-              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-400">
+              <h2 className="mt-4 text-4xl font-bold leading-[1.03] tracking-tight text-[var(--prem-text)] md:text-6xl">See how easy the secure setup can be.</h2>
+              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-[var(--prem-muted)]">
                 Tell us about your sites, users and traffic. We will help you choose the right product
                 for your network and plan the rollout.
               </p>
@@ -418,7 +539,7 @@ export default function HomePage() {
               <div className="mt-8 flex flex-wrap justify-center gap-2">
                 <span className="premium-chip"><Boxes size={13} />{HOME_PRODUCTS.length} product families</span>
                 <span className="premium-chip"><ShieldCheck size={13} />Edge-to-insight coverage</span>
-                <span className="premium-chip"><Phone size={13} />Toll-free <a href={SUPPORT.phoneHref} className="font-semibold text-cyan-300">{SUPPORT.phone}</a></span>
+                <span className="premium-chip"><Phone size={13} />Toll-free <a href={SUPPORT.phoneHref} className="font-semibold text-[var(--prem-blue)]">{SUPPORT.phone}</a></span>
               </div>
             </div>
           </Reveal>

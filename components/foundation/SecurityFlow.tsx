@@ -20,7 +20,7 @@ export function SecurityFlow() {
   return (
     <div className="security-flow" aria-label="Demonstration of SecuEdge traffic inspection">
       <div className="security-flow__route">
-        <span>Internet / WAN</span><i /><b>FRONTIER NGFW</b><i /><b>POLICY + INSPECTION</b><i /><span>Network zones</span>
+        <span>Internet / WAN</span><i /><b>SECUEDGE NGFW</b><i /><b>POLICY + INSPECTION</b><i /><span>Network zones</span>
       </div>
       <div className="security-flow__items">
         {flows.map((flow, index) => (

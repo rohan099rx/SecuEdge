@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import type { ReactNode } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
 const GATE_X = [-2.2, 0, 2.2];
@@ -78,6 +79,13 @@ function Packets({ count = 9 }: { count?: number }) {
   );
 }
 
+/** Keep the whole gate path inside the frame on narrow (mobile) canvases. */
+function FitToWidth({ children }: { children: ReactNode }) {
+  const width = useThree((state) => state.viewport.width);
+  const scale = Math.min(1, width / 6.9);
+  return <group scale={scale}>{children}</group>;
+}
+
 /**
  * PremiumFlow3D — traffic → inspection → policy → decision on cream.
  * Transparent background; the section band shows through.
@@ -94,12 +102,14 @@ export function PremiumFlow3D({ active = true }: { active?: boolean }) {
       >
         <ambientLight intensity={1.2} />
         <directionalLight position={[4, 5, 4]} intensity={1} color="#ffffff" />
-        <Gates />
-        <Packets />
+        <FitToWidth>
+          <Gates />
+          <Packets />
+        </FitToWidth>
       </Canvas>
       <div className="pointer-events-none absolute inset-x-0 bottom-1 flex justify-between px-2 font-mono text-[9px] uppercase tracking-[0.2em] text-[#64748b]">
         <span>Internet / WAN</span>
-        <span>Frontier NGFW</span>
+        <span>SecuEdge NGFW</span>
         <span>Network zones</span>
       </div>
     </div>
