@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight, Check, ChevronRight, Zap, ShieldCheck, Layers
 import { FRONTIER_PRODUCT, type EcosystemProduct, type FrontierCapability } from "@/data/ecosystem";
 import { SECUEDGE_PRODUCTS, STATUS_LABEL } from "@/lib/site";
 import { FrontierProductBands } from "@/components/frontier/FrontierProductBands";
+import { ApplianceStage } from "@/components/premium/Visuals";
 import "@/components/premium/premium.css";
 
 function Capabilities({ items }: { items: FrontierCapability[] }) {
@@ -65,9 +66,15 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
             {isFrontier ? <Link className="premium-btn-ghost" href="/frontier/appliances">Find your model <ArrowUpRight size={15} /></Link> : null}
           </div>
         </div>
-        <div className="premium-card premium-hero-mark flex aspect-square max-w-md items-center justify-center justify-self-center w-full" aria-hidden>
-          <span className="text-[9rem] font-bold leading-none" style={{ color: `${product.accent}2e` }}>{product.name[0]}</span>
-        </div>
+        {isFrontier ? (
+          /* The flagship page gets actual hardware rather than a monogram:
+             the appliance illustration is the one "photo" the site has. */
+          <ApplianceStage />
+        ) : (
+          <div className="premium-card premium-hero-mark flex aspect-square max-w-md items-center justify-center justify-self-center w-full" aria-hidden>
+            <span className="text-[9rem] font-bold leading-none" style={{ color: `${product.accent}2e` }}>{product.name[0]}</span>
+          </div>
+        )}
       </div>
     </section>
 

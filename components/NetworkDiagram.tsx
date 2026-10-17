@@ -60,7 +60,7 @@ export function NetworkDiagram() {
             <path d="M8 12l4 4 8-8" stroke="#22D3C5" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" transform="scale(0.85)" />
           </g>
           <text x="56" y="28" fill="#FFFFFF" fontSize="15" fontWeight="600" fontFamily="Inter, sans-serif">SecuEdge Frontier</text>
-          <text x="56" y="46" fill="#7d90ad" fontSize="11" fontFamily="Inter, sans-serif">Inspecting all traffic at the edge</text>
+          <text x="56" y="46" fill="#7d90ad" fontSize="10.5" fontFamily="Inter, sans-serif">Inspecting traffic at the edge</text>
           {/* status LEDs */}
           <circle cx="196" cy="20" r="3" fill="#35d399" />
           <circle cx="196" cy="34" r="3" fill="#3AA5FF" />

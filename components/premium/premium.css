@@ -1741,3 +1741,665 @@ a:hover .customer-logo,
   position: relative;
   z-index: 1;
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   CHUNKY PASS
+   The site was reading as a document: hairline borders, small radii, thin
+   controls. This section thickens the same system rather than replacing
+   it — deeper radii, 1.5px borders, tactile button lips, roomier controls.
+   Everything here is additive and inherits the existing colour tokens.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* Cards: deeper corner, thicker edge, a visible lip under the surface. */
+.premium-card,
+.premium-product-card {
+  border-width: 1.5px;
+  border-radius: 20px;
+  box-shadow:
+    0 2px 0 0 rgba(11, 34, 57, 0.05),
+    0 1px 2px rgba(11, 34, 57, 0.05),
+    0 18px 40px -22px rgba(11, 34, 57, 0.28);
+}
+
+.prem-navy .premium-card {
+  box-shadow:
+    0 2px 0 0 rgba(11, 34, 57, 0.05),
+    0 1px 2px rgba(11, 34, 57, 0.06),
+    0 20px 42px -22px rgba(11, 34, 57, 0.3);
+}
+
+.premium-card:hover,
+.premium-product-card:hover {
+  transform: translateY(-5px);
+}
+
+.premium-product-card {
+  padding: 1.9rem;
+}
+
+.premium-product-card::before {
+  height: 4px;
+}
+
+/* Panels: the technical surfaces rise to match. */
+.premium-panel {
+  border-width: 1.5px;
+  border-radius: 18px;
+  box-shadow:
+    0 2px 0 0 rgba(11, 34, 57, 0.04),
+    0 1px 2px rgba(11, 34, 57, 0.05),
+    0 20px 44px -30px rgba(11, 34, 57, 0.4);
+}
+
+.premium-panel-head {
+  border-radius: 18px 18px 0 0;
+}
+
+/* Icon plates grow so cards read as objects, not columns of text. */
+.premium-product-icon {
+  height: 3.15rem;
+  width: 3.15rem;
+  border-width: 1.5px;
+  border-radius: 14px;
+}
+
+.premium-metric {
+  border-width: 1.5px;
+  border-radius: 18px;
+}
+
+.premium-badge {
+  border-width: 1.5px;
+}
+
+/* Controls: heavier, taller, with a pressed-in bottom edge. */
+.premium-btn-primary,
+.premium-btn-ghost {
+  min-height: 3.4rem;
+  padding: 0 1.8rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+}
+
+.premium-btn-primary {
+  box-shadow:
+    inset 0 -2px 0 rgba(0, 0, 0, 0.16),
+    0 12px 26px -12px rgba(1, 111, 237, 0.62);
+}
+
+.premium-btn-primary:hover {
+  box-shadow:
+    inset 0 -2px 0 rgba(0, 0, 0, 0.16),
+    0 18px 34px -12px rgba(1, 111, 237, 0.68);
+}
+
+.premium-btn-ghost {
+  border-width: 1.5px;
+}
+
+.premium-chip {
+  padding: 0.55rem 1.05rem;
+  border-width: 1.5px;
+  font-weight: 700;
+}
+
+/* Section furniture: a thicker eyebrow rule, a heavier rule between bands. */
+.premium-eyebrow::before {
+  width: 2rem;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.premium-divider {
+  height: 2px;
+  border-radius: 2px;
+}
+
+.premium > section[class*="border-t"] {
+  border-top-width: 1.5px;
+}
+
+.premium-tab {
+  border-width: 1.5px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   VISUAL STAGES — drawn "images" (components/premium/Visuals.tsx)
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── 1 · Appliance stage ── */
+.viz-stage {
+  position: relative;
+  overflow: clip;
+  border: 1.5px solid rgba(11, 34, 57, 0.2);
+  border-radius: 22px;
+  background: linear-gradient(158deg, #12253f 0%, #08182c 58%, #0b2239 100%);
+  box-shadow:
+    0 2px 0 0 rgba(11, 34, 57, 0.16),
+    0 26px 54px -24px rgba(11, 34, 57, 0.55);
+}
+
+.viz-stage__bar,
+.viz-frame__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.72rem 1.05rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.viz-stage__bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #9fb2c9;
+}
+
+.viz-stage__kicker {
+  color: #e6eefa;
+}
+
+.viz-stage__canvas {
+  position: relative;
+  padding: 1.15rem 1rem 1.15rem;
+}
+
+.viz-stage__canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 62% 58% at 52% 42%, rgba(1, 111, 237, 0.3), transparent 72%);
+  pointer-events: none;
+}
+
+.viz-appliance {
+  position: relative;
+  animation: vizFloat 7s ease-in-out infinite;
+}
+
+.viz-appliance svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.viz-stage__foot {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: 1rem;
+}
+
+.viz-stage__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.34rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #c3d3e6;
+}
+
+.viz-stage__chip svg {
+  color: #22d3ee;
+}
+
+@keyframes vizFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes vizLed {
+  0%, 68% { opacity: 1; }
+  69%, 100% { opacity: 0.22; }
+}
+
+@keyframes vizPort {
+  0%, 74% { opacity: 1; }
+  75%, 100% { opacity: 0.2; }
+}
+
+@keyframes vizScan {
+  from { transform: translateX(-140px); }
+  to { transform: translateX(700px); }
+}
+
+.viz-led {
+  animation: vizLed 3.2s steps(1, end) infinite;
+}
+
+.viz-led--pwr { animation-duration: 2.6s; }
+.viz-led--sec { animation-delay: 0.7s; animation-duration: 2.1s; }
+.viz-led--act { animation-delay: 1.3s; animation-duration: 1.7s; }
+.viz-port { animation: vizPort 4.4s steps(1, end) infinite; }
+.viz-scan { animation: vizScan 5.2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+/* ── 2 · Frames (residency, diagram) ── */
+.viz-frame {
+  position: relative;
+  overflow: clip;
+  border: 1.5px solid var(--prem-border);
+  border-radius: 22px;
+  background: var(--prem-surface);
+  box-shadow:
+    0 2px 0 0 rgba(11, 34, 57, 0.05),
+    0 1px 2px rgba(11, 34, 57, 0.05),
+    0 20px 44px -24px rgba(11, 34, 57, 0.28);
+}
+
+.viz-frame__bar {
+  border-bottom: 1px solid var(--prem-border-soft);
+  background: var(--prem-bg-soft);
+  color: var(--prem-muted);
+}
+
+.viz-frame__kicker {
+  color: var(--prem-text);
+}
+
+.viz-residency svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 1.1rem 1rem 0.4rem;
+}
+
+.viz-flow {
+  stroke-dasharray: 6 7;
+  animation: vizDash 1.6s linear infinite;
+}
+
+@keyframes vizDash {
+  to { stroke-dashoffset: -26; }
+}
+
+.viz-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: vizPulse 3.2s ease-out infinite;
+}
+
+@keyframes vizPulse {
+  0% { opacity: 0.5; transform: scale(0.72); }
+  75%, 100% { opacity: 0; transform: scale(1.45); }
+}
+
+.viz-blocked {
+  animation: vizBlocked 3.6s ease-in-out infinite;
+}
+
+@keyframes vizBlocked {
+  0%, 100% { opacity: 0.3; }
+  45%, 62% { opacity: 1; }
+}
+
+.viz-diagram__canvas {
+  padding: 0.9rem;
+}
+
+/* The diagram component ships with its own `.card` wrapper; inside this mat
+   that would read as a card inside a card, so flatten it. */
+.premium .viz-diagram__canvas .card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.viz-diagram__canvas svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Animated dashes for the phone-sized cut of the topology. */
+.flow-dash {
+  stroke-dasharray: 6 8;
+  animation: vizDash 1.8s linear infinite;
+}
+
+.viz-diagram__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  padding: 0 1.1rem 1.1rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--prem-muted);
+}
+
+.viz-diagram__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ── 3 · Logo wall ── */
+.viz-wall {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .viz-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .viz-wall { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.viz-tile {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 1.1rem 0.9rem;
+  border: 1.5px solid var(--prem-border);
+  border-radius: 18px;
+  background: var(--prem-surface);
+  text-align: center;
+  box-shadow: 0 2px 0 0 rgba(11, 34, 57, 0.04);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s,
+    box-shadow 0.35s;
+}
+
+.viz-tile:hover {
+  transform: translateY(-6px);
+  border-color: rgba(1, 111, 237, 0.45);
+  box-shadow: 0 22px 40px -22px rgba(1, 111, 237, 0.42);
+}
+
+.viz-tile__frame {
+  display: flex;
+  height: 4.75rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: 1px solid var(--prem-border-soft);
+  border-radius: 14px;
+  background: radial-gradient(circle at 50% 38%, #ffffff, var(--prem-bg-soft));
+}
+
+.viz-tile__mono {
+  font-family: var(--font-mono), monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--prem-text);
+  opacity: 0.42;
+}
+
+.viz-tile__name {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--prem-text);
+}
+
+.viz-tile__sector {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--prem-faint);
+}
+
+/* ── 4 · Fact ticker ── */
+.viz-ticker {
+  position: relative;
+  overflow: clip;
+  border-top: 3px solid var(--prem-text);
+  border-bottom: 3px solid var(--prem-text);
+  background: linear-gradient(90deg, #071525 0%, #0e2a45 42%, #0e2a45 58%, #071525 100%);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.viz-ticker__track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: vizMarquee 48s linear infinite;
+}
+
+.viz-ticker__track.is-reverse {
+  animation-name: vizMarqueeReverse;
+}
+
+.viz-ticker:hover .viz-ticker__track {
+  animation-play-state: paused;
+}
+
+.viz-ticker__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.05rem 1.6rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #e9eef5;
+}
+
+.viz-ticker__dot {
+  width: 0.42rem;
+  height: 0.42rem;
+  flex: none;
+  border-radius: 2px;
+  background: #3aa5ff;
+  transform: rotate(45deg);
+}
+
+@keyframes vizMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes vizMarqueeReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* ── 5 · Sector strip (industries band) ── */
+.viz-sectors {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.15rem;
+}
+
+.viz-sectors__item {
+  display: flex;
+  height: 2.6rem;
+  width: 2.6rem;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--prem-border);
+  border-radius: 14px;
+  background: var(--prem-surface);
+  color: var(--prem-blue);
+  animation: vizBob 4.6s ease-in-out infinite;
+}
+
+@keyframes vizBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.viz-sectors__line {
+  position: relative;
+  height: 2px;
+  flex: 1;
+  border-radius: 2px;
+  background: repeating-linear-gradient(90deg, rgba(1, 111, 237, 0.5) 0 10px, transparent 10px 20px);
+  background-size: 200% 100%;
+  animation: vizDashLine 3.6s linear infinite;
+}
+
+@keyframes vizDashLine {
+  to { background-position: -20px 0; }
+}
+
+.viz-sectors__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  border: 1.5px solid var(--prem-border);
+  border-radius: 999px;
+  background: var(--prem-surface);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--prem-text);
+  white-space: nowrap;
+}
+
+.viz-sectors__label svg {
+  color: var(--prem-blue);
+}
+
+/* ── 6 · Deep-dive panels: a slow inspection sheen ── */
+.premium-viz {
+  position: relative;
+  overflow: clip;
+}
+
+.premium-viz::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 38%, rgba(1, 111, 237, 0.09) 50%, transparent 62%);
+  background-size: 220% 100%;
+  animation: vizSheen 6s linear infinite;
+}
+
+@keyframes vizSheen {
+  from { background-position: 140% 0; }
+  to { background-position: -40% 0; }
+}
+
+/* ── Mobile: keep the stages inside the viewport ── */
+@media (max-width: 767px) {
+  /* The hero is now taller than the viewport, so its own top padding has to
+     clear the fixed navbar — centred content no longer does it for us. */
+  .premium > #premium-hero {
+    padding-top: 6.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .premium-card,
+  .premium-product-card,
+  .premium-panel,
+  .viz-stage,
+  .viz-frame {
+    border-radius: 1rem;
+  }
+
+  .premium-product-card {
+    padding: 1.4rem;
+  }
+
+  .premium-chip {
+    font-size: 0.72rem;
+    padding: 0.45rem 0.85rem;
+  }
+
+  .premium-btn-primary,
+  .premium-btn-ghost {
+    min-height: 3.2rem;
+    padding: 0 1.35rem;
+  }
+
+  .viz-stage__canvas {
+    padding: 0.9rem 0.75rem 1rem;
+  }
+
+  .viz-wall {
+    gap: 0.6rem;
+  }
+
+  .viz-tile {
+    padding: 0.75rem 0.5rem;
+    gap: 0.35rem;
+  }
+
+  .viz-tile__frame {
+    height: 3.5rem;
+    padding: 0.35rem;
+  }
+
+  .viz-tile__name {
+    font-size: 0.76rem;
+  }
+
+  .viz-tile__sector {
+    font-size: 0.53rem;
+    letter-spacing: 0.1em;
+  }
+
+  .viz-ticker__item {
+    padding: 0.85rem 1.1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .viz-sectors {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .viz-sectors__line {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viz-appliance,
+  .viz-led,
+  .viz-port,
+  .viz-scan,
+  .viz-flow,
+  .flow-dash,
+  .viz-pulse,
+  .viz-blocked,
+  .viz-ticker__track,
+  .viz-sectors__item,
+  .viz-sectors__line,
+  .premium-viz::after {
+    animation: none;
+  }
+
+  .viz-tile {
+    transition: none;
+  }
+
+  .viz-tile:hover,
+  .premium-card:hover,
+  .premium-product-card:hover {
+    transform: none;
+  }
+}
