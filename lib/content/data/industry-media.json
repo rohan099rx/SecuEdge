@@ -1,22 +1,87 @@
 {
-  "slug": "media",
-  "metaTitle": "Media Security Solutions",
-  "metaDescription": "SecuEdge protects media houses and content businesses from ransomware, disruption and data theft — with resilient, segmented networks and real-time visibility.",
-  "hero": {
-    "headline": "Security for media that never misses a deadline.",
-    "sub": "Protect content, infrastructure and deadlines from disruption and ransomware — with resilient, segmented networks and real-time visibility across every device."
+ "slug": "media",
+ "metaTitle": "Stay On Air. Meet Every Deadline. | SecuEdge",
+ "metaDescription": "Failover, bandwidth priority and secure field access for newsrooms that never stop.",
+ "hero": {
+  "headline": "Stay on air. Meet every deadline.",
+  "sub": "Failover, bandwidth priority and secure field access for newsrooms that never stop."
+ },
+ "challenges": [
+  {
+   "title": "24/7 uptime",
+   "desc": "A newsroom that stops publishing stops earning."
   },
-  "challenges": [
-    { "title": "Ransomware disruption", "desc": "Newsrooms and broadcast operations are high-visibility targets where downtime is measured in missed deadlines." },
-    { "title": "Content & IP theft", "desc": "Unreleased content, footage archives and editorial systems hold valuable intellectual property." },
-    { "title": "Always-on operations", "desc": "24/7 publishing leaves no maintenance window for security incidents." },
-    { "title": "Distributed teams", "desc": "Reporters, stringers and studios connect from everywhere, expanding the attack surface." }
-  ],
-  "capabilities": [
-    { "title": "Advanced threat prevention", "desc": "IDS/IPS and antivirus engines detect and block threats in real time." },
-    { "title": "Network segmentation", "desc": "VLANs isolate editorial, broadcast and guest networks to contain any incident." },
-    { "title": "Real-time visibility", "desc": "Per-device logs — blocked and accessed — exportable for review." },
-    { "title": "Secure remote access", "desc": "Site-to-site and remote-access VPN for bureaus and field teams." }
-  ],
-  "cta": { "headline": "Trusted by media houses like Lokmat.", "sub": "Keep your newsroom online and your content protected." }
+  {
+   "title": "Deadline pressure",
+   "desc": "Security must never block a deadline."
+  },
+  {
+   "title": "Field contributors",
+   "desc": "Reporters file from anywhere, on any network."
+  }
+ ],
+ "approach": [
+  {
+   "title": "Multi-WAN failover",
+   "desc": "Multi-WAN failover to a backup line."
+  },
+  {
+   "title": "Bandwidth priority",
+   "desc": "Bandwidth priority for publishing systems."
+  },
+  {
+   "title": "Field VPN",
+   "desc": "VPN for reporters in the field."
+  },
+  {
+   "title": "Phishing blocking",
+   "desc": "Phishing blocking for newsroom inboxes and browsers."
+  }
+ ],
+ "indiaContext": "Built and supported in India, 24/7.",
+ "customerRef": "Trusted by Lokmat.",
+ "faqs": [
+  {
+   "q": "What if our main line fails during a deadline?",
+   "a": "Multi-WAN failover switches to a backup line automatically."
+  },
+  {
+   "q": "Can reporters connect safely from the field?",
+   "a": "Yes, with remote-access VPN."
+  },
+  {
+   "q": "Can we prioritise publishing traffic?",
+   "a": "Yes, with bandwidth management."
+  },
+  {
+   "q": "Where is our data kept?",
+   "a": "In India, by default. Traffic, logs and policy data stay on Indian soil, with no overseas routing."
+  },
+  {
+   "q": "What support do we get?",
+   "a": "24/7 technical support from India-based engineers on 1800 123 0966. We respond within 24 hours."
+  }
+ ],
+ "cta": {
+  "headline": "Book a free demo for your newsroom.",
+  "sub": "Book a free demo with our team, or take the two-minute security assessment. No obligation."
+ },
+ "process": [
+  {
+   "title": "Identify",
+   "desc": "We learn how your network is used: how many people, which sites, which systems matter most."
+  },
+  {
+   "title": "Analyze",
+   "desc": "We recommend the right model and settings for your risks and your industry."
+  },
+  {
+   "title": "Protect",
+   "desc": "Our team or partner sets up SecuEdge Frontier and trains your team."
+  },
+  {
+   "title": "Adapt",
+   "desc": "Regular updates, quarterly security reviews and 24/7 India-based support keep you protected as things change."
+  }
+ ]
 }

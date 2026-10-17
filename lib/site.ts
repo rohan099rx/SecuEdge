@@ -8,18 +8,14 @@
 export const SITE = {
   name: "SecuEdge",
   product: "SecuEdge Frontier",
-  tagline: "Enterprise-grade firewalling, made simple.",
+  tagline: "Cybersecurity, made easy. Built in India.",
+  productTagline: "SecuEdge Frontier. Firewalling, made easy.",
+  companyLine: "India’s homegrown cybersecurity company, committed to making cybersecurity simple and accessible to all.",
   description:
-    "SecuEdge Frontier is India's homegrown next-generation firewall — powerful enough for the enterprise, simple enough to configure correctly the first time.",
+    "SecuEdge Frontier is a next-generation firewall built in India, with a guided Quick Mode for business owners and a full Professional Mode for engineers. Data stays in India. 24/7 India-based support.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.secuedge.com",
   twitter: "@SecuEdge",
-  email: "hello@secuedge.com",
-} as const;
-
-/** Site-wide contact details. */
-export const CONTACT = {
-  phone: "1800 123 0966",
-  phoneHref: "tel:+9118001230966",
+  email: "info@secuedge.com",
 } as const;
 
 /** The six SecuEdge product families shown in public product navigation. */
@@ -30,7 +26,6 @@ export const PRODUCTS = [
   { key: "grid", name: "Grid", fullName: "SecuEdge Grid", category: "SIEM / SOAR", status: "available" as const, href: "/products/grid", desc: "Security event intelligence and response workflows." },
   { key: "secudefend", name: "SecuDefend", fullName: "SecuEdge SecuDefend", category: "IPS / IDS", status: "available" as const, href: "/products/secudefend", desc: "Detection and prevention at the network boundary." },
   { key: "muster", name: "Muster", fullName: "SecuEdge Muster", category: "Log Analyzer", status: "available" as const, href: "/products/muster", desc: "Centralized log analysis for investigation and operations." },
-  { key: "secuconnect", name: "SecuConnect", fullName: "SecuEdge SecuConnect", category: "VPN", status: "available" as const, href: "/products/secuconnect", desc: "Secure remote access for large workforces and branch networks." },
 ] as const;
 
 export type NavItem = { label: string; href: string; desc?: string; children?: NavItem[] };
@@ -61,15 +56,15 @@ export const NAV: NavItem[] = [
       { label: "Branch Office", href: "/solutions/branch-office", desc: "Secure distributed locations" },
       { label: "Small & Medium Business", href: "/solutions/small-medium-business", desc: "Enterprise protection, SMB simplicity" },
       { label: "Enterprise", href: "/solutions/enterprise", desc: "High-performance security at scale" },
-      { label: "Compliance", href: "/compliance", desc: "PCI DSS, HIPAA, GDPR, ISO 27001" },
+      { label: "Compliance", href: "/compliance", desc: "DPDP, RBI, SEBI, CERT-In" },
     ],
   },
   {
     label: "Industries",
     href: "/industries",
     children: [
-      { label: "Education", href: "/industries/education", desc: "Safe campuses, FERPA-aware controls" },
-      { label: "Healthcare", href: "/industries/healthcare", desc: "HIPAA-ready, medical IoT protection" },
+      { label: "Education", href: "/industries/education", desc: "Safe campuses, Safe Environment Filter" },
+      { label: "Healthcare", href: "/industries/healthcare", desc: "Clinical networks, medical IoT protection" },
       { label: "Finance", href: "/industries/finance", desc: "Fraud prevention and audit trails" },
       { label: "Government", href: "/industries/government", desc: "Data sovereignty for the public sector" },
       { label: "Manufacturing", href: "/industries/manufacturing", desc: "OT/IT security for production" },
@@ -108,11 +103,19 @@ export const SOLUTIONS_NAV = [
   { slug: "enterprise", name: "Enterprise" },
 ] as const;
 
-/** SE-series appliances. number = capacity tier; "P" = Professional, rack-mountable. */
+/**
+ * SE-series appliances — the approved lineup (copy deck §1.3).
+ * Sizing is by users only: office users + (VPN users × 3).
+ * Full specifications are available on request. No throughput,
+ * ports, dimensions or power figures are published.
+ */
 export type Appliance = {
   model: string;
   formFactor: "Desktop" | "Rack-mount";
-  tier: "Branch / small office" | "Mid-market" | "Enterprise" | "High-scale";
+  /** Peak users the model is sized for (published range). */
+  userRange: string;
+  /** Typical site for this range. */
+  typicalSite: string;
   // Specs intentionally left as null until the official spec sheet is provided.
   throughput: string | null;
   ports: string | null;
@@ -120,134 +123,216 @@ export type Appliance = {
 };
 
 export const APPLIANCES: Appliance[] = [
-  { model: "SE20",     formFactor: "Desktop",    tier: "Branch / small office", throughput: null, ports: null, recommendedUsers: null },
-  { model: "SE50",     formFactor: "Desktop",    tier: "Branch / small office", throughput: null, ports: null, recommendedUsers: null },
-  { model: "SE50P",    formFactor: "Rack-mount", tier: "Branch / small office", throughput: null, ports: null, recommendedUsers: null },
-  { model: "SE100P",   formFactor: "Rack-mount", tier: "Mid-market",            throughput: null, ports: null, recommendedUsers: null },
-  { model: "SE250P",   formFactor: "Rack-mount", tier: "Mid-market",            throughput: null, ports: null, recommendedUsers: null },
-  { model: "SE500P",   formFactor: "Rack-mount", tier: "Enterprise",            throughput: null, ports: null, recommendedUsers: null },
-  { model: "SE1000P",  formFactor: "Rack-mount", tier: "Enterprise",            throughput: null, ports: null, recommendedUsers: null },
-  { model: "SE2500P",  formFactor: "Rack-mount", tier: "High-scale",            throughput: null, ports: null, recommendedUsers: null },
-  { model: "SE5000P",  formFactor: "Rack-mount", tier: "High-scale",            throughput: null, ports: null, recommendedUsers: null },
-  { model: "SE10000P", formFactor: "Rack-mount", tier: "High-scale",            throughput: null, ports: null, recommendedUsers: null },
-  { model: "SE15000P", formFactor: "Rack-mount", tier: "High-scale",            throughput: null, ports: null, recommendedUsers: null },
+  { model: "SE20", formFactor: "Desktop", userRange: "1–30", typicalSite: "Small office, clinic, single café or shop", throughput: null, ports: null, recommendedUsers: null },
+  { model: "SE50", formFactor: "Desktop", userRange: "31–70", typicalSite: "Growing office, school wing, small branch", throughput: null, ports: null, recommendedUsers: null },
+  { model: "SE100P", formFactor: "Rack-mount", userRange: "71–130", typicalSite: "Mid-size office, school, hospital department", throughput: null, ports: null, recommendedUsers: null },
+  { model: "SE250P", formFactor: "Rack-mount", userRange: "131–325", typicalSite: "Large school, college, mid-size hospital or factory", throughput: null, ports: null, recommendedUsers: null },
+  { model: "SE500P", formFactor: "Rack-mount", userRange: "326–650", typicalSite: "Enterprise site, large campus", throughput: null, ports: null, recommendedUsers: null },
+  { model: "SE750P", formFactor: "Rack-mount", userRange: "651–975", typicalSite: "Large enterprise or campus", throughput: null, ports: null, recommendedUsers: null },
+  { model: "SE1000P", formFactor: "Rack-mount", userRange: "976–1,300", typicalSite: "Very large site or head office", throughput: null, ports: null, recommendedUsers: null },
 ];
+
+/** Above the SE1000P range we design together — never a published model. */
+export const CUSTOM_APPLIANCE = {
+  model: "Custom",
+  userRange: "1,300+",
+  typicalSite: "Designed with our team",
+};
+
+/** How to size a network (copy deck §9.4). */
+export const SIZING_STEPS = [
+  "Count the most people or devices on your network at the same time, at the busiest hour.",
+  "Count how many people connect by VPN from outside.",
+  "Add them, counting each VPN user three times (encrypted traffic is heavier): office users + (VPN users × 3).",
+  "Pick the model whose range contains that number.",
+];
+
+export const SIZING_EXAMPLE = "Example: 60 office users and 20 VPN users = 60 + 60 = 120, so the SE100P. Over 1,300? We will design it with you.";
+
+/**
+ * The seven SecuEdge products. SecuEdge Frontier ships today; the other
+ * six are on the roadmap with no dates. Status labels are shown wherever
+ * a product appears. Copy per the Company Handbook and copy deck (12 Oct 2026).
+ */
+export type ProductStatus = "available" | "in-development" | "on-roadmap";
+
+export const STATUS_LABEL: Record<ProductStatus, string> = {
+  available: "Available now",
+  "in-development": "In development",
+  "on-roadmap": "On the roadmap",
+};
 
 export const SECUEDGE_PRODUCTS = [
   {
-    key: 'frontier',
-    name: 'Frontier',
-    category: 'Next-Generation Firewall',
-    categoryShort: 'NGFW',
-    href: '/products/frontier',
-    desc: 'Next-generation firewall platform with Dual Mode — Quick Mode for everyday operations, Professional Mode for network engineers.',
-    accent: '#4ca3ff',
+    key: "frontier",
+    name: "SecuEdge Frontier",
+    category: "Next-Generation Firewall",
+    categoryShort: "NGFW",
+    href: "/products/frontier",
+    status: "available" as ProductStatus,
+    desc: "The secure setup, made easy. Firewall, intrusion prevention, antivirus, VPN, SD-WAN and web filtering in one appliance, with Quick Mode and Professional Mode.",
+    accent: "#4ca3ff",
   },
   {
-    key: 'watchtower',
-    name: 'Watchtower',
-    category: 'Network Monitoring System',
-    categoryShort: 'NMS',
-    href: '/products/watchtower',
-    desc: 'Unified network monitoring system for real-time infrastructure visibility, device health and network event management.',
-    accent: '#76d6ac',
+    key: "secuweb",
+    name: "SecuWeb",
+    category: "SD-WAN",
+    categoryShort: "SD-WAN",
+    href: "/products/secuweb",
+    status: "in-development" as ProductStatus,
+    desc: "Dedicated SD-WAN for organisations joining many branches, plants and campuses.",
+    accent: "#7bd9e8",
   },
   {
-    key: 'secuweb',
-    name: 'SecuWeb',
-    category: 'SD-WAN',
-    categoryShort: 'SD-WAN',
-    href: '/products/secuweb',
-    desc: 'Software-defined WAN for connecting branches, cloud environments and data centers over secure, policy-driven network paths.',
-    accent: '#7bd9e8',
+    key: "secudefend",
+    name: "SecuDefend",
+    category: "Intrusion Prevention",
+    categoryShort: "IPS/IDS",
+    href: "/products/secudefend",
+    status: "in-development" as ProductStatus,
+    desc: "Dedicated intrusion prevention for networks that need more inspection depth and scale.",
+    accent: "#f27f8b",
   },
   {
-    key: 'grid',
-    name: 'Grid',
-    category: 'SIEM / SOAR',
-    categoryShort: 'SIEM/SOAR',
-    href: '/products/grid',
-    desc: 'Security information and event management platform with orchestrated response capabilities for security operations.',
-    accent: '#f0c060',
+    key: "grid",
+    name: "GRID",
+    category: "SIEM / SOAR",
+    categoryShort: "SIEM/SOAR",
+    href: "/products/grid",
+    status: "in-development" as ProductStatus,
+    desc: "Brings alerts from every SecuEdge device together and helps teams respond automatically.",
+    accent: "#f0c060",
   },
   {
-    key: 'secudefend',
-    name: 'SecuDefend',
-    category: 'IPS / IDS',
-    categoryShort: 'IPS/IDS',
-    href: '/products/secudefend',
-    desc: 'Intrusion prevention and detection system for real-time threat interception across network perimeters and internal segments.',
-    accent: '#f27f8b',
+    key: "secuconnect",
+    name: "SecuConnect",
+    category: "VPN",
+    categoryShort: "VPN",
+    href: "/products/secuconnect",
+    status: "on-roadmap" as ProductStatus,
+    desc: "Dedicated VPN for large remote workforces and many branches.",
+    accent: "#9db8ff",
   },
   {
-    key: 'muster',
-    name: 'Muster',
-    category: 'Log Analyzer',
-    categoryShort: 'Log Analyzer',
-    href: '/products/muster',
-    desc: 'Centralized log collection, analysis and search platform for operational visibility and security event investigation.',
-    accent: '#c8a8f0',
+    key: "watchtower",
+    name: "Watchtower",
+    category: "Network Monitoring",
+    categoryShort: "NMS",
+    href: "/products/watchtower",
+    status: "on-roadmap" as ProductStatus,
+    desc: "Health, topology and uptime for every device on the network.",
+    accent: "#76d6ac",
   },
   {
-    key: 'secuconnect',
-    name: 'SecuConnect',
-    category: 'VPN',
-    categoryShort: 'VPN',
-    href: '/products/secuconnect',
-    desc: 'Secure remote-access VPN for large workforces and branch networks, managed alongside the edge.',
-    accent: '#9db8ff',
+    key: "muster",
+    name: "Muster",
+    category: "Log Analytics",
+    categoryShort: "Log Analytics",
+    href: "/products/muster",
+    status: "on-roadmap" as ProductStatus,
+    desc: "A searchable audit record of network activity, kept in India.",
+    accent: "#c8a8f0",
   },
 ] as const;
 
-/**
- * Six families showcased on the landing page. SecuConnect stays reachable from
- * the product navigation and its own page, but is not surfaced on the home page.
- */
-export const HOME_PRODUCTS = SECUEDGE_PRODUCTS.filter((product) => product.key !== 'secuconnect');
+/** The public front-page portfolio. SecuConnect is the newest roadmap entry,
+ *  so the home page presents a portfolio of six product families. */
+export const HOME_PRODUCTS = SECUEDGE_PRODUCTS.filter((p) => p.key !== "secuconnect");
 
-export const CERTIFICATIONS = [
-  { name: "ISO 27001:2022", note: "Information security" },
-  { name: "Common Criteria / NDPP", note: "IaSALab evaluated" },
-  { name: "ISO 9001:2015", note: "Quality management" },
-  { name: "ISO 14001:2015", note: "Environmental management" },
-  { name: "ISO 45001:2018", note: "Occupational H&S" },
-  { name: "FCC Part 15B · CE", note: "Emissions & safety" },
+/** Logos sourced from the current secuedge.com customer marquee.
+ *  Only approved names are shown, grouped by industry (copy deck §1.5).
+ *  "Government bodies" is not a customer and is removed. */
+export type CustomerGroup =
+  | "Government and agriculture"
+  | "Healthcare"
+  | "Colleges"
+  | "Schools"
+  | "Media"
+  | "Hospitality and F&B"
+  | "Manufacturing"
+  | "Technology";
+
+export const CUSTOMER_GROUPS: CustomerGroup[] = [
+  "Government and agriculture",
+  "Healthcare",
+  "Colleges",
+  "Schools",
+  "Media",
+  "Hospitality and F&B",
+  "Manufacturing",
+  "Technology",
 ];
 
-/** Logos sourced from the current secuedge.com customer marquee. */
-export const CUSTOMERS = [
-  { name: "KNL Driveline", sector: "Manufacturing", logo: "/customers/knl-driveline.png" },
-  { name: "Sain Packaging", sector: "Manufacturing", logo: "/customers/sain-packaging.png" },
-  { name: "NDIM", sector: "Recognised college", logo: "/customers/ndim.png" },
-  { name: "Lokmat", sector: "Media house", logo: "/customers/lokmat.png" },
-  { name: "Bombay Hospital", sector: "Healthcare", logo: "/customers/bombay-hospital.png" },
-  { name: "Shanti Devi GI Institute", sector: "Healthcare", logo: "/customers/shanti-devi.png" },
-  { name: "Natsav", sector: "Technology", logo: "/customers/natsav.png" },
-  { name: "Solis Technology", sector: "Technology", logo: "/customers/solis-technology.png" },
-  { name: "Government bodies", sector: "Public sector", logo: null },
-] as const;
+export const CUSTOMERS: {
+  name: string;
+  sector: string;
+  group: CustomerGroup;
+  logo: string | null;
+}[] = [
+  { name: "Kisan Call Centre", sector: "Government and agriculture", group: "Government and agriculture", logo: null },
+  { name: "Bombay Hospital", sector: "Healthcare", group: "Healthcare", logo: "/customers/bombay-hospital.png" },
+  { name: "Shanti Devi GI Institute", sector: "Healthcare", group: "Healthcare", logo: "/customers/shanti-devi.png" },
+  { name: "NDIM", sector: "College", group: "Colleges", logo: "/customers/ndim.png" },
+  { name: "St. Bede’s College, Shimla", sector: "College", group: "Colleges", logo: null },
+  { name: "The Shri Ram School", sector: "School", group: "Schools", logo: null },
+  { name: "Lokmat", sector: "Media house", group: "Media", logo: "/customers/lokmat.png" },
+  { name: "Chaayos", sector: "Hospitality and F&B", group: "Hospitality and F&B", logo: null },
+  { name: "KNL Driveline", sector: "Manufacturing", group: "Manufacturing", logo: "/customers/knl-driveline.png" },
+  { name: "Sain Packaging", sector: "Manufacturing", group: "Manufacturing", logo: "/customers/sain-packaging.png" },
+  { name: "Solis Technology", sector: "Technology", group: "Technology", logo: "/customers/solis-technology.png" },
+  { name: "Eleet Mindz", sector: "Technology", group: "Technology", logo: null },
+  { name: "Natsav", sector: "Technology", group: "Technology", logo: "/customers/natsav.png" },
+];
 
-/** Quick Mode one-click protection levels (deck slide 08). */
+/** Quick Mode protection levels — the console labels (copy deck §1.4).
+ *  Choosing a level sets all five security engines together. */
 export const SECURITY_LEVELS = [
   {
-    key: "transparent",
-    label: "Transparent",
-    blurb: "Zero policies applied. All traffic passes freely — for testing only, never in production.",
-    engines: { ids: "off", ips: "off", antivirus: "off", dns: "off", firewall: "off" },
+    key: "strong",
+    label: "Strong",
+    recommended: true,
+    blurb: "Full real-time protection. Inspects traffic in depth, blocks attacks automatically, quarantines infected files and blocks malware and phishing sites. The right choice for almost every office, school and clinic.",
+    engines: { ids: "on", ips: "on", antivirus: "on", dns: "on", firewall: "strict" },
   },
   {
-    key: "balanced",
-    label: "Balanced",
-    blurb: "Detects threats and logs them. Antivirus active. IPS stays off to keep false positives minimal.",
+    key: "mild",
+    label: "Mild",
+    recommended: false,
+    blurb: "Lighter protection for sites that need the fewest interruptions. Raises alerts on suspicious traffic, scans and blocks infected files and blocks known malware sites.",
     engines: { ids: "alerts", ips: "off", antivirus: "on", dns: "on", firewall: "basic" },
   },
   {
-    key: "maximum",
-    label: "Maximum",
-    blurb: "Full enforcement. Every threat is detected and blocked in real time. Recommended for offices.",
-    engines: { ids: "on", ips: "on", antivirus: "on", dns: "on", firewall: "strict" },
+    key: "none",
+    label: "No Protection",
+    recommended: false,
+    blurb: "Security engines off. For testing only; never use it on a live network.",
+    engines: { ids: "off", ips: "off", antivirus: "off", dns: "off", firewall: "off" },
   },
 ] as const;
+
+/** The one statistic the company approves for public use. */
+export const MISCONFIG_STAT = {
+  figure: "99%",
+  line: "Gartner found that 99% of firewall breaches are caused by misconfiguration, not by flaws in the firewall itself.",
+  short: "Gartner: 99% of firewall breaches are caused by misconfiguration.",
+  source: "Source: Gartner.",
+};
+
+/** Support and coverage (copy deck §1.6) — approved lines, shown site-wide. */
+export const SUPPORT = {
+  line: "24/7 technical support from India-based engineers. Call 1800 123 0966. We respond within 24 hours.",
+  phone: "1800 123 0966",
+  phoneHref: "tel:+9118001230966",
+  response: "Response within 24 hours",
+  facts: ["24/7 support", "1800 123 0966", "Response within 24 hours", "Regular updates", "Quarterly security reviews"],
+} as const;
+
+export const COVERAGE = {
+  line: "Available across India through national distributors, regional distributors and channel partners, with sales coverage in North, West, South and East India.",
+  regions: ["North", "West", "South", "East"],
+} as const;
+
+export const HEADQUARTERS = "Gurugram, Haryana, India";
 
 /** Professional Mode capability grid (deck slide 12). */
 export const PRO_CAPABILITIES = [
@@ -284,46 +369,7 @@ export const INDUSTRIES = [
 ];
 
 export const STAT = {
-  misconfig: "up to 99%",
+  misconfig: "99%",
   misconfigSource: "Gartner",
-  categories: "12",
-  urls: "12.1M",
 };
 
-/** Real-world incidents (deck slide 03) — the "even giants fall" proof. */
-export const INCIDENTS = [
-  {
-    source: "Cybersecurity Wire",
-    date: "Jan 2025",
-    tag: "Exposed",
-    headline: "15,000 firewalls exposed in a mass configuration leak",
-    detail: "Configurations and VPN credentials for thousands of devices were dumped online.",
-    impact: "15,000+ devices exposed",
-  },
-  {
-    source: "National Health Desk",
-    date: "Nov 2022",
-    tag: "Disrupted",
-    headline: "Ransomware halts a top hospital for days",
-    detail: "A flat, unsegmented network brought critical-care systems to a standstill.",
-    impact: "Critical care halted for days",
-  },
-  {
-    source: "Finance Daily",
-    date: "2025",
-    tag: "Breached",
-    headline: "Broker breach exposes millions of investors",
-    detail: "Weak access controls left sensitive customer records wide open.",
-    impact: "Millions of records exposed",
-  },
-] as const;
-
-/** Category-blocking database (deck slide 09). */
-export const CATEGORIES = [
-  { name: "Adware & Malware", tier: "Critical", urls: "2.4M", desc: "Malicious domains, C2 servers & malware sites." },
-  { name: "Safe Environment Filter", tier: "Critical", urls: "1.1M", desc: "Safe search + restricted mode on video." },
-  { name: "Proxy & VPN", tier: "Critical", urls: "850K", desc: "Anonymous proxies, Tor nodes, commercial VPNs." },
-  { name: "Adult Content", tier: "Policy", urls: "5.2M", desc: "Explicit & mature content across web + streaming." },
-  { name: "Gambling", tier: "Policy", urls: "320K", desc: "Online gambling, betting & lottery sites." },
-  { name: "Social Media", tier: "Productivity", urls: "80K", desc: "Facebook, X, Instagram & web messengers." },
-] as const;

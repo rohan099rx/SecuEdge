@@ -31,7 +31,7 @@
 }
 
 /* Light steel-blue rhythm band — the "navy" section without black.
-   Keeps visual cadence (cream → band → cream) in cream + blue only. */
+   Keeps the cream canvas calm. */
 .prem-navy {
   background: linear-gradient(180deg, #e9eff6 0%, #dfe8f2 100%);
   color: var(--prem-text);
@@ -329,6 +329,7 @@
 
 /* ── Product cards ───────────────────────────────────── */
 .premium-product-card {
+  position: relative;
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -337,6 +338,7 @@
   border-radius: 14px;
   background: var(--prem-surface);
   box-shadow: 0 1px 2px rgba(11, 34, 57, 0.05), 0 12px 32px -20px rgba(11, 34, 57, 0.18);
+  overflow: hidden;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s, box-shadow 0.35s;
 }
 
@@ -344,6 +346,26 @@
   transform: translateY(-4px);
   border-color: var(--prem-accent, rgba(1, 111, 237, 0.45));
   box-shadow: 0 20px 44px -20px rgba(1, 111, 237, 0.3);
+}
+
+/* Accent bar sweep — the product's accent color draws in from the left on hover. */
+.premium-product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  height: 3px;
+  background: linear-gradient(90deg, var(--prem-accent, var(--prem-blue)), transparent 140%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-product-card:hover::before,
+.premium-product-card:focus-visible::before {
+  transform: scaleX(1);
 }
 
 .premium-product-icon {
@@ -356,6 +378,90 @@
   border: 1px solid var(--prem-border);
   background: var(--prem-bg-soft);
   color: var(--prem-accent, var(--prem-blue));
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s, background 0.35s;
+}
+
+/* Icon pop — lifts, tilts and brightens while the card is hovered. */
+.premium-product-card:hover .premium-product-icon {
+  transform: translateY(-3px) rotate(-6deg) scale(1.07);
+  border-color: var(--prem-accent, var(--prem-blue));
+  background: rgba(1, 111, 237, 0.07);
+}
+
+/* Sliding arrow — every "Explore" affordance nudges right on hover. */
+.premium-link-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-product-card:hover .premium-link-arrow,
+.premium-card:hover .premium-link-arrow {
+  transform: translateX(5px);
+}
+
+/* ── Customer logos — quiet monochrome, full colour + zoom on hover ── */
+.customer-logo {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+  filter: grayscale(0.3) opacity(0.85);
+}
+
+a:hover .customer-logo,
+.customer-card:hover .customer-logo {
+  transform: scale(1.12);
+  filter: grayscale(0) opacity(1);
+}
+
+/* ── Top-level nav links — animated underline + active state ── */
+.foundation-nav__link {
+  position: relative;
+}
+
+.foundation-nav__link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #016fed;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.foundation-nav__link:hover::after,
+.foundation-nav__link.is-current::after {
+  transform: scaleX(1);
+}
+
+.foundation-nav__link.is-current {
+  color: #016fed;
+}
+
+/* Scrollspy dot — persistent blue dot on the menu that owns this route. */
+.foundation-nav__trigger.is-current i {
+  opacity: 1;
+  transform: translateY(0);
+  background: #016fed;
+}
+
+/* Chevron flips while its mega panel is open. */
+.foundation-nav__trigger.is-active .foundation-nav__chevron {
+  transform: rotate(180deg);
+}
+
+.foundation-nav__chevron {
+  transition: transform 0.25s ease;
+}
+
+/* ── Primary buttons — gentle press on hover ── */
+.premium-btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.premium-btn-ghost:hover {
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* ── Metric blocks ───────────────────────────────────── */
@@ -503,10 +609,10 @@
   border-bottom: 0;
 }
 
-/* ── Cream-theme remaps: dark-ink Tailwind utilities used inside
+/* ── Sky-theme remaps: dark-ink Tailwind utilities used inside
    premium sections are remapped to the editorial palette.
    Unlayered author CSS wins over Tailwind's layered utilities.
-   There are no dark sections left — every band is cream or pale blue. ── */
+   There are no dark sections left — every band is light sky-blue. ── */
 .premium section .text-white {
   color: var(--prem-text);
 }
@@ -697,7 +803,7 @@
   bottom: 0;
   left: 0;
   border-top: 1px solid rgba(11, 34, 57, 0.08);
-  background: rgba(250, 249, 245, 0.85);
+  background: rgba(241, 246, 253, 0.85);
 }
 
 .gateway-scene__hud .status-mark {
@@ -823,7 +929,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #30465c;
-  background: rgba(250, 249, 245, 0.85);
+  background: rgba(241, 246, 253, 0.85);
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
 }
@@ -1263,13 +1369,13 @@
 
 /* ── Site navbar: cream glass, deep navy text, blue active ── */
 .foundation-nav {
-  background: rgba(245, 242, 234, 0.9);
+  background: rgba(232, 241, 250, 0.9);
   border-bottom: 1px solid rgba(11, 34, 57, 0.1);
   backdrop-filter: blur(18px);
 }
 
 .foundation-nav--scrolled {
-  background: rgba(245, 242, 234, 0.96);
+  background: rgba(232, 241, 250, 0.96);
   border-bottom-color: rgba(11, 34, 57, 0.14);
   box-shadow: 0 8px 30px rgba(11, 34, 57, 0.08);
 }
@@ -1332,67 +1438,130 @@
   .premium-card,
   .premium-product-card,
   .premium-btn-primary,
-  .premium-btn-ghost {
+  .premium-btn-ghost,
+  .premium-product-icon,
+  .premium-link-arrow,
+  .customer-logo,
+  .premium-product-card::before,
+  .foundation-nav__link::after,
+  .foundation-nav__chevron {
     transition: none;
   }
+  .premium-product-card:hover,
+  .premium-product-card:hover .premium-product-icon,
+  a:hover .customer-logo,
+  .customer-card:hover .customer-logo {
+    transform: none;
+  }
 }
 
-/* ── Mobile-first pass: scroll, 48px targets, 16px fields (no theme change) ── */
-.foundation-site--light.foundation-site--light .foundation-mobile-nav[data-open="true"] {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
+/* ── Scroll-driven headline reveals (CSS view timeline; every section) ── */
+@keyframes zd-rise {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 900px) {
-  .foundation-nav__menu {
-    min-width: 48px;
-    min-height: 48px;
+@supports (animation-timeline: view()) {
+  .premium-section-title,
+  #premium-hero h1,
+  .display-1,
+  .display-2 {
+    animation: zd-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry -10% entry 55%;
   }
-  .foundation-mobile-nav section a {
-    min-height: 48px;
-    align-content: center;
+}
+
+/* ── Line-mask reveal wrapper ── */
+.line-reveal-mask {
+  display: block;
+  overflow: hidden;
+}
+
+/* ── Sticky steps (pinned visual, scrolling chapters) ── */
+.sticky-steps-visual {
+  position: sticky;
+  top: 7rem;
+  align-self: start;
+}
+
+.sticky-steps-active-num {
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(4rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--prem-blue);
+  font-variant-numeric: tabular-nums;
+}
+
+.sticky-steps-segs {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.sticky-steps-segs i {
+  height: 3px;
+  flex: 1;
+  border-radius: 3px;
+  background: rgba(11, 34, 57, 0.12);
+  transition: background 0.3s;
+}
+
+.sticky-steps-segs i.is-on {
+  background: var(--prem-blue);
+}
+
+@media (max-width: 1023px) {
+  .sticky-steps-visual {
+    position: static;
   }
-  .foundation-mobile-nav > a:not(.foundation-button) {
-    min-height: 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-section-title,
+  #premium-hero h1,
+  .display-1,
+  .display-2 {
+    animation: none;
   }
-  .mnav-row {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-  }
-  .mnav-row strong {
-    font-weight: 700;
-  }
-  .mnav-index {
-    font-family: var(--font-mono), monospace;
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    opacity: 0.65;
-    flex-shrink: 0;
-  }
-  .mnav-all {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    min-height: 48px;
-    align-content: center;
-    font-weight: 700;
-  }
-  /* 16px fields stop iOS auto-zoom; 48px heights for thumbs */
-  .premium input,
-  .premium select,
-  .premium textarea {
-    font-size: 16px;
-  }
-  .premium input,
-  .premium select {
-    min-height: 48px;
-  }
-  .premium .premium-btn-primary,
-  .premium .premium-btn-ghost,
-  .premium .foundation-button {
-    min-height: 48px;
-  }
+}
+
+/* ── Footer micro-metadata (status lines + link metas) ── */
+.foundation-footer__status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #526274;
+}
+
+.foundation-footer__status span {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.foundation-footer__status a {
+  color: #016fed;
+}
+
+.foundation-footer__meta {
+  margin-left: 0.45rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a94a0;
+  white-space: nowrap;
+}
+
+.foundation-footer__column a svg {
+  vertical-align: -2px;
+  margin-left: 0.25rem;
 }

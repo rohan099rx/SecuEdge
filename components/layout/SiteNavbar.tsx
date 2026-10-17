@@ -1,59 +1,66 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X, Search, ChevronDown } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Logo } from "@/components/Logo";
-import { SOLUTIONS_NAV } from "@/lib/site";
+import { SOLUTIONS_NAV, SECUEDGE_PRODUCTS, STATUS_LABEL } from "@/lib/site";
 import { GlobalSearch } from "@/components/GlobalSearch";
 
-type MenuName = "Products" | "Solutions" | "Platform" | "Resources";
-const menuNames: MenuName[] = ["Products", "Solutions", "Platform", "Resources"];
+type MenuName = "Products" | "Solutions" | "Resources";
+const menuNames: MenuName[] = ["Products", "Solutions", "Resources"];
 type MenuEntry = { name: string; detail: string; href: string; external?: boolean };
+
+/* Priority sectors first, then the full list (copy deck §1.7). */
+const PRIORITY_INDUSTRIES = [
+  { slug: "education", name: "Education" },
+  { slug: "healthcare", name: "Healthcare" },
+  { slug: "government", name: "Government" },
+  { slug: "finance", name: "Banking and finance" },
+  { slug: "manufacturing", name: "Manufacturing" },
+  { slug: "retail", name: "Retail" },
+  { slug: "hospitality", name: "Hospitality" },
+  { slug: "technology", name: "SMB and startups" },
+] as const;
+
 const menus: Record<MenuName, { kicker: string; title: string; entries: MenuEntry[] }> = {
   Products: {
-    kicker: "SecuEdge product portfolio",
-    title: "Seven products. One ecosystem.",
+    kicker: "SecuEdge products",
+    title: "One appliance family, seven products over time.",
     entries: [
-      { name: "Frontier", detail: "Next-Generation Firewall (NGFW)", href: "/products/frontier" },
-      { name: "SecuWeb", detail: "SD-WAN", href: "/products/secuweb" },
-      { name: "SecuConnect", detail: "VPN", href: "/products/secuconnect" },
-      { name: "Watchtower", detail: "Network Monitoring System", href: "/products/watchtower" },
-      { name: "Muster", detail: "Log Analyzer", href: "/products/muster" },
-      { name: "Grid", detail: "SIEM / SOAR", href: "/products/grid" },
-      { name: "SecuDefend", detail: "IPS / IDS", href: "/products/secudefend" },
+      { name: "SecuEdge Frontier", detail: "The next-generation firewall — available now", href: "/products/frontier" },
+      ...SECUEDGE_PRODUCTS.filter((p) => p.key !== "frontier").map((p) => ({
+        name: `${p.name} · ${STATUS_LABEL[p.status]}`,
+        detail: p.desc,
+        href: p.href,
+      })),
     ],
   },
   Solutions: {
-    kicker: "Deployment patterns",
+    kicker: "How SecuEdge Frontier helps",
     title: "Protection for the way you connect.",
-    entries: SOLUTIONS_NAV.slice(0, 6).map((solution) => ({
-      name: solution.name,
-      detail: "Explore SecuEdge solution options",
-      href: `/solutions/${solution.slug}`,
-    })),
-  },
-  Platform: {
-    kicker: "Frontier / product information",
-    title: "Explore the NGFW.",
     entries: [
-      { name: "Frontier architecture", detail: "See how firewall policy sits at the edge", href: "/platform" },
-      { name: "Frontier capabilities", detail: "Firewall, VPN, policy and routing", href: "/frontier/capabilities" },
-      { name: "Quick + Professional Mode", detail: "One appliance, two operating modes", href: "/frontier/dual-mode" },
-      { name: "All Frontier models", detail: "Complete SE-series portfolio — 11 models", href: "/products/frontier" },
-      { name: "Model comparison", detail: "Compare any Frontier models side by side", href: "/products/compare" },
-      { name: "Model finder", detail: "Find the right Frontier model for your needs", href: "/products/recommend" },
-      { name: "Custom Frontier", detail: "Configuration for specific requirements", href: "/products/frontier/custom" },
+      ...SOLUTIONS_NAV.map((solution) => ({
+        name: solution.name,
+        detail: "Explore SecuEdge solution options",
+        href: `/solutions/${solution.slug}`,
+      })),
+      ...PRIORITY_INDUSTRIES.map((industry) => ({
+        name: industry.name,
+        detail: "Security for your sector",
+        href: `/industries/${industry.slug}`,
+      })),
+      { name: "All industries", detail: "Every sector SecuEdge Frontier serves", href: "/industries" },
     ],
   },
   Resources: {
     kicker: "Guidance & support",
     title: "Get to know SecuEdge.",
     entries: [
-      { name: "Security guides", detail: "Practical network security articles", href: "/resources/cybersecurity-mistakes-indian-businesses-fix" },
-      { name: "Firewall buyer guide", detail: "How to evaluate a firewall", href: "/resources/why-business-needs-firewall-2025-startup" },
-      { name: "Appliance comparison", detail: "Models and pending specifications", href: "/frontier/appliances" },
-      { name: "Security assessment", detail: "Review your network security needs", href: "/assessment" },
+      { name: "Guides and articles", detail: "Practical network security articles", href: "/resources" },
+      { name: "Free security assessment", detail: "Seven questions, about two minutes", href: "/assessment" },
+      { name: "Appliances and sizing", detail: "Models and the sizing method", href: "/frontier/appliances" },
       { name: "SecuEdge blog", detail: "Visit the official SecuEdge blog", href: "https://blogs.secuedge.com/", external: true },
       { name: "Support and product questions", detail: "Contact the SecuEdge team", href: "/contact" },
     ],
@@ -62,12 +69,28 @@ const menus: Record<MenuName, { kicker: string; title: string; entries: MenuEntr
 
 export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const effectiveTone = tone;
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<MenuName | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const headerRef = useRef<HTMLElement>(null);
   const lastScrollY = useRef(0);
+
+  /* Scrollspy — the menu that owns the current route carries a
+     persistent blue dot so visitors always know where they are. */
+  const activeRoute = useMemo<MenuName | null>(() => {
+    if (pathname.startsWith("/products")) return "Products";
+    if (pathname.startsWith("/solutions")) return "Solutions";
+    /* No Platform menu — /platform and /frontier pages carry no nav highlight. */
+    if (pathname.startsWith("/resources")) return "Resources";
+    return null;
+  }, [pathname]);
+  const isCustomers = pathname.startsWith("/customers");
+  const isAbout =
+    pathname.startsWith("/about") ||
+    pathname.startsWith("/why-secuedge") ||
+    pathname.startsWith("/trust");
 
   useEffect(() => {
     const update = () => {
@@ -146,7 +169,11 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
             <button 
               key={name} 
               type="button" 
-              className={`foundation-nav__trigger${activeMenu === name ? " is-active" : ""}`}
+              className={[
+                "foundation-nav__trigger",
+                activeMenu === name && "is-active",
+                activeRoute === name && "is-current",
+              ].filter(Boolean).join(" ")}
               aria-controls="foundation-menu-panel" 
               aria-haspopup="true" 
               aria-expanded={activeMenu === name} 
@@ -154,7 +181,8 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
               onFocus={() => setActiveMenu(name)} 
               onClick={() => setActiveMenu((current) => current === name ? null : name)}
             >
-              {name}
+              <span>{name}</span>
+              <i aria-hidden="true" />
               <ChevronDown size={14} aria-hidden="true" className="foundation-nav__chevron" />
             </button>
           ))}
@@ -162,7 +190,7 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
             href="/customers" 
             onMouseEnter={() => setActiveMenu(null)} 
             onFocus={() => setActiveMenu(null)}
-            className="foundation-nav__link"
+            className={["foundation-nav__link", isCustomers && "is-current"].filter(Boolean).join(" ")}
           >
             Customers
           </Link>
@@ -170,15 +198,15 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
             href="/about" 
             onMouseEnter={() => setActiveMenu(null)} 
             onFocus={() => setActiveMenu(null)}
-            className="foundation-nav__link"
+            className={["foundation-nav__link", isAbout && "is-current"].filter(Boolean).join(" ")}
           >
-            Company
+            About
           </Link>
         </nav>
         
         <div className="foundation-nav__actions">
           <GlobalSearch />
-          <Link href="/contact" className="foundation-button foundation-button--small">Contact Sales <ArrowUpRight size={14} /></Link>
+          <Link href="/contact" className="foundation-button foundation-button--small">Book a free demo <ArrowUpRight size={14} /></Link>
         </div>
         
         <button
@@ -205,9 +233,8 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
         <div className="command-nav-panel__intro">
           <span>{menus[activeMenu ?? "Products"].kicker}</span>
           <h2>{menus[activeMenu ?? "Products"].title}</h2>
-          {activeMenu === "Platform" ? <div className="command-nav-network" aria-hidden="true"><i /><i /><i /><i /><i /><b /><b /><b /><b /></div> : null}
           <Link 
-            href={activeMenu === "Products" ? "/products" : activeMenu === "Solutions" ? "/solutions" : activeMenu === "Platform" ? "/platform" : "/resources"} 
+            href={activeMenu === "Products" ? "/products" : activeMenu === "Solutions" ? "/solutions" : "/resources"} 
             onClick={() => setActiveMenu(null)}
           >
             Explore {activeMenu?.toLowerCase() ?? "products"} <ArrowUpRight size={14} />
@@ -234,7 +261,7 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
         {menuNames.map((name) => (
           <section key={name}>
             <h2>{name}</h2>
-            {menus[name].entries.map((entry, index) => (
+            {menus[name].entries.map((entry) => (
               <Link 
                 key={entry.name} 
                 href={entry.href} 
@@ -242,23 +269,15 @@ export function SiteNavbar({ tone = "dark" }: { tone?: "dark" | "light" }) {
                 rel={entry.external ? "noreferrer" : undefined} 
                 onClick={() => setOpen(false)}
               >
-                <span className="mnav-row"><span className="mnav-index" aria-hidden>{String(index + 1).padStart(2, "0")}</span><strong>{entry.name}</strong></span><span>{entry.detail}</span>
+                {entry.name}<span>{entry.detail}</span>
               </Link>
             ))}
-            <Link
-              key={`${name}-all`}
-              href={name === "Products" ? "/products" : name === "Solutions" ? "/solutions" : name === "Platform" ? "/platform" : "/resources"}
-              onClick={() => setOpen(false)}
-              className="mnav-all"
-            >
-              View all {name.toLowerCase()} <ArrowUpRight size={13} aria-hidden />
-            </Link>
           </section>
         ))}
         <Link href="/customers" onClick={() => setOpen(false)}>Customers</Link>
-        <Link href="/about" onClick={() => setOpen(false)}>Company</Link>
+        <Link href="/about" onClick={() => setOpen(false)}>About</Link>
         <GlobalSearch />
-        <Link href="/contact" className="foundation-button" onClick={() => setOpen(false)}>Contact Sales</Link>
+        <Link href="/contact" className="foundation-button" onClick={() => setOpen(false)}>Book a free demo</Link>
       </nav>
     </header>
   );

@@ -16,7 +16,6 @@ const PRODUCT_ICONS: Record<string, IconName> = {
   secuweb: "globe",
   grid: "layers",
   secudefend: "shield",
-  secuconnect: "lock",
   muster: "server",
 };
 

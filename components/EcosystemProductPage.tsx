@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, ChevronRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ChevronRight, Zap, ShieldCheck, Layers, Server, Search } from "lucide-react";
 import { FRONTIER_PRODUCT, type EcosystemProduct, type FrontierCapability } from "@/data/ecosystem";
-import { APPLIANCES, SECUEDGE_PRODUCTS } from "@/lib/site";
+import { APPLIANCES, SECUEDGE_PRODUCTS, STATUS_LABEL } from "@/lib/site";
+import "@/components/premium/premium.css";
 
 function Capabilities({ items }: { items: FrontierCapability[] }) {
   return <div className="grid gap-3 md:grid-cols-2">
@@ -14,10 +15,20 @@ function Capabilities({ items }: { items: FrontierCapability[] }) {
   </div>;
 }
 
+/* Frontier feature pages — showcased on the SecuEdge Frontier product page
+   (the features live with Frontier, not in the top-level Products menu). */
+const FRONTIER_FEATURES = [
+  { icon: Zap, title: "Dual Mode", desc: "Quick Mode and Professional Mode, one toggle.", href: "/frontier/dual-mode" },
+  { icon: ShieldCheck, title: "Safe Environment Filter", desc: "Protection for students and patients.", href: "/frontier/safe-environment" },
+  { icon: Layers, title: "Capabilities", desc: "Firewall, VPN, SD-WAN and more on every model.", href: "/frontier/capabilities" },
+  { icon: Server, title: "Appliances and sizing", desc: "Desktop and rack-mount models, sized by users.", href: "/frontier/appliances" },
+  { icon: Search, title: "Find your model", desc: "Two questions, sized by users.", href: "/products/recommend" },
+  { icon: ArrowRight, title: "Compare models", desc: "Form factor, peak users and typical site, side by side.", href: "/products/compare" },
+] as const;
+
 export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?: EcosystemProduct }) {
   const isFrontier = product.slug === "frontier";
-  const related = SECUEDGE_PRODUCTS.filter((item) => item.key !== product.slug);
-  return <article className="premium" style={{ "--prem-accent": product.accent } as React.CSSProperties}>
+  const related = SECUEDGE_PRODUCTS.filter((item) => item.key !== product.slug);  return <article className="premium" style={{ "--prem-accent": product.accent } as React.CSSProperties}>
     <nav className="premium-nav sticky top-0 z-30" aria-label="SecuEdge product navigation">
       <div className="mx-auto flex w-full max-w-[1200px] items-center gap-4 overflow-x-auto px-6 py-2.5">
         <span className="shrink-0 font-mono text-[10px] tracking-[0.2em] text-slate-500">PRODUCTS</span>
@@ -38,14 +49,19 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
       <div className="premium-glow-orb right-[10%] top-[10%] h-[300px] w-[300px]" style={{ background: `${product.accent}26` }} aria-hidden />
       <div className="relative mx-auto grid w-full max-w-[1200px] items-center gap-10 px-6 py-16 md:py-24 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <p className="premium-eyebrow">{product.category} · Available product</p>
+          <p className="premium-eyebrow">{product.category} · {STATUS_LABEL[product.status]}</p>
           <h1 className="mt-4 text-5xl font-bold tracking-tight text-white md:text-6xl">{product.name}</h1>
           <p className="mt-3 text-xl font-medium text-slate-300">{product.summary}</p>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400">{product.description}</p>
-          <p className="mt-4 flex items-center gap-2 text-xs text-slate-500"><span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />{isFrontier ? "Frontier is an available NGFW family. Model-specific specifications vary by configuration and approved documentation." : `${product.name} is an available SecuEdge product family. Capabilities and implementation depend on the deployed configuration.`}</p>
+          <p className="mt-4 flex items-center gap-2 text-xs text-slate-500">
+            <span className={`inline-block h-1.5 w-1.5 rounded-full ${product.status === "available" ? "bg-emerald-400" : "bg-amber-400"}`} />
+            {product.status === "available"
+              ? "SecuEdge Frontier is available now. Model-specific specifications are shared on request."
+              : `${product.name} is ${STATUS_LABEL[product.status].toLowerCase()} — no launch date has been announced.`}
+          </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link className="premium-btn-primary" href="/contact">Talk to our team <ArrowRight size={16} /></Link>
-            {isFrontier ? <Link className="premium-btn-ghost" href="/frontier/appliances">Explore the Frontier family <ArrowUpRight size={15} /></Link> : null}
+            {isFrontier ? <Link className="premium-btn-ghost" href="/frontier/appliances">Find your model <ArrowUpRight size={15} /></Link> : null}
           </div>
         </div>
         <div className="premium-card flex aspect-square max-w-md items-center justify-center justify-self-center w-full" aria-hidden>
@@ -54,11 +70,26 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
       </div>
     </section>
 
+    {!isFrontier ? (
+      <section className="border-t border-white/[0.07]">
+        <div className="mx-auto w-full max-w-[1200px] px-6 py-10">
+          <div className="premium-card flex flex-col gap-4 p-7 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="premium-eyebrow">Today</p>
+              <h2 className="mt-2 text-xl font-bold text-white">SecuEdge Frontier already includes this capability.</h2>
+              <p className="mt-1 text-sm text-slate-400">Every SecuEdge Frontier model ships with this capability built in. {product.name} is the dedicated product for organisations that need more scale or depth.</p>
+            </div>
+            <Link href="/products/frontier" className="premium-btn-primary shrink-0">See SecuEdge Frontier <ArrowRight size={15} /></Link>
+          </div>
+        </div>
+      </section>
+    ) : null}
+
     <section className="border-t border-white/[0.07]">
       <div className="mx-auto grid w-full max-w-[1200px] gap-px overflow-hidden px-6 py-0 sm:grid-cols-2 lg:grid-cols-4">
         {[
           ["Product", product.name, product.category],
-          ["Status", "Available", "Current SecuEdge product family"],
+          ["Status", STATUS_LABEL[product.status], product.status === "available" ? "Current SecuEdge product" : "No launch date announced"],
           ["Operating story", `${product.story.length} connected stages`, "Visual explanation, not live telemetry"],
         ].map(([k, v, d]) => (
           <div key={k} className="border-white/[0.07] py-6 pr-6">
@@ -78,18 +109,36 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
     <section className="border-t border-white/[0.07] py-20 md:py-28">
       <div className="mx-auto w-full max-w-[1200px] px-6">
         <p className="premium-eyebrow">{product.name} · Capabilities</p>
-        <h2 className="premium-section-title mt-4 max-w-3xl">{isFrontier ? "One firewall, a complete edge toolkit." : `${product.name} makes the network easier to understand and operate.`}</h2>
+        <h2 className="premium-section-title mt-4 max-w-3xl">{isFrontier ? "One firewall, a complete edge toolkit." : `${product.name} — what it will do.`}</h2>
         <p className="premium-section-lead">Only verified product information is shown; request approved documentation for technical sizing.</p>
         <div className="mt-10">{isFrontier ? <Capabilities items={FRONTIER_PRODUCT.capabilities} /> : <div className="grid gap-3 md:grid-cols-2">{product.capabilities.map((capability, index) => { const label = typeof capability === "string" ? capability : capability.name; return <article key={label} className="premium-card p-6"><span className="font-mono text-[10px] tracking-[0.2em] text-cyan-300/70">0{index + 1} / {product.category.toUpperCase()}</span><h3 className="mt-2 text-lg font-bold text-white">{label}</h3><p className="mt-1.5 text-sm leading-relaxed text-slate-400">{product.description}</p></article>; })}</div>}</div>
       </div>
     </section>
+
+    {isFrontier ? <section className="border-t border-white/[0.07] py-20 md:py-28">
+      <div className="mx-auto w-full max-w-[1200px] px-6">
+        <p className="premium-eyebrow">SecuEdge Frontier · Features</p>
+        <h2 className="premium-section-title mt-4 max-w-3xl">Everything around the appliance.</h2>
+        <p className="premium-section-lead">Dual Mode, safeguarding, sizing and capabilities — each with its own page.</p>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {FRONTIER_FEATURES.map((f) => (
+            <Link key={f.href} href={f.href} className="premium-product-card group" style={{ "--prem-accent": product.accent } as React.CSSProperties}>
+              <span className="premium-product-icon"><f.icon size={20} /></span>
+              <h3 className="mt-4 text-lg font-bold tracking-tight text-white">{f.title}</h3>
+              <p className="mt-2 flex-1 text-[13px] leading-relaxed text-slate-400">{f.desc}</p>
+              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300">Explore <ArrowRight size={14} className="premium-link-arrow" /></span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section> : null}
 
     <section className="prem-navy border-t border-white/[0.07] py-20 md:py-28">
       <div className="mx-auto grid w-full max-w-[1200px] items-start gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <p className="premium-eyebrow">{product.name} · Product story</p>
           <h2 className="premium-section-title mt-4">{isFrontier ? "Place policy at the edge." : "A connected view of the product."}</h2>
-          <p className="premium-section-lead">{isFrontier ? "Frontier creates an inspection point between upstream networks and the zones behind the firewall." : "Follow the product story from its inputs to the operational outcome. The sequence is a concise explanation, not a live telemetry view."}</p>
+          <p className="premium-section-lead">{isFrontier ? "SecuEdge Frontier creates an inspection point between upstream networks and the zones behind the firewall." : "Follow the product story from its inputs to the operational outcome. The sequence is a concise explanation, not a live telemetry view."}</p>
         </div>
         <ol className="space-y-0">
           {product.story.map((step, index) => (
@@ -106,13 +155,13 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
     {isFrontier ? <section className="border-t border-white/[0.07] py-20 md:py-28">
       <div className="mx-auto w-full max-w-[1200px] px-6">
         <p className="premium-eyebrow">SE series · Hardware range</p>
-        <h2 className="premium-section-title mt-4">Eleven models, desktop to rack-mount.</h2>
-        <p className="premium-section-lead">Every standard model is available. “P” identifies the Professional rack-mount chassis; it is distinct from the Professional Mode software experience.</p>
+        <h2 className="premium-section-title mt-4">Every feature, on every model.</h2>
+        <p className="premium-section-lead">All SecuEdge Frontier models run the same software with the identical feature set. “P” identifies the Professional rack-mount chassis; it is distinct from the Professional Mode software experience. Sizing is by peak users — full specifications are available on request.</p>
         <div className="mt-8 flex flex-wrap gap-2.5">
           {APPLIANCES.map((appliance) => <Link href={`/products/frontier/${appliance.model.toLowerCase()}`} key={appliance.model} className="premium-card !rounded-xl px-4 py-3 transition-transform hover:!-translate-y-1">
             <span className="block font-mono text-[9px] uppercase tracking-widest text-slate-500">{appliance.formFactor}</span>
             <strong className="mt-0.5 block font-mono text-base font-bold text-white">{appliance.model}</strong>
-            <small className="mt-0.5 block text-[11px] text-slate-500">Available · {appliance.tier}</small>
+            <small className="mt-0.5 block text-[11px] text-slate-500">{appliance.userRange} peak users</small>
           </Link>)}
         </div>
         <Link href="/products/compare" className="premium-btn-primary mt-8">Compare all Frontier models <ArrowRight size={15} /></Link>
@@ -122,12 +171,13 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
     <section className="border-t border-white/[0.07] py-20 md:py-28">
       <div className="mx-auto w-full max-w-[1200px] px-6">
         <p className="premium-eyebrow">Related products</p>
-        <h2 className="mt-4 text-2xl font-bold tracking-tight text-white md:text-3xl">Explore related SecuEdge products.</h2>
+        <h2 className="mt-4 text-2xl font-bold tracking-tight text-white md:text-3xl">SecuEdge Frontier, and what comes next.</h2>
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {related.map((item) => (
             <Link key={item.key} href={item.href} className="premium-card group block p-5">
               <span className="font-mono text-[9px] uppercase tracking-[0.16em]" style={{ color: item.accent }}>{item.category}</span>
               <strong className="mt-1.5 block text-base font-bold text-white">{item.name}</strong>
+              <span className="mt-1 block text-[11px] font-semibold uppercase tracking-widest text-slate-500">{STATUS_LABEL[item.status]}</span>
               <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-cyan-300">Explore <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" /></span>
             </Link>
           ))}
@@ -138,5 +188,5 @@ export function EcosystemProductPage({ product = FRONTIER_PRODUCT }: { product?:
         </div>
       </div>
     </section>
-  </article>
+  </article>;
 }

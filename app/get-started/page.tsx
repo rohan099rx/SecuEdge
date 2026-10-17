@@ -19,21 +19,12 @@ type GetStartedData = {
   process: TitledItem[];
   formSection: { eyebrow?: string; headline: string; sub?: string; sidebarPoints?: TitledItem[] };
   faqs?: Faq[];
+  cta: { headline: string; sub: string };
 };
 
 const data = raw as unknown as GetStartedData;
 
-/* Fabricated claims are filtered at render — the JSON file itself is untouched:
-   "24/7 Monitoring" benefit, timeline + trial + 24/7-support FAQs, trial/support
-   badges, "within 24 hours" sidebar point, enterprise phone number, and the
-   "thousands of businesses" CTA sub are all excluded as unverified. */
-const benefits = data.benefits.filter((b) => b.title !== "24/7 Monitoring");
-const faqs = (data.faqs ?? []).filter(
-  (f) => !/how long does implementation|trial periods|what kind of support/i.test(f.q)
-);
-const sidebarPoints = (data.formSection.sidebarPoints ?? []).filter(
-  (p) => !/within 24 hours/i.test(p.desc)
-);
+/* Content lives in the JSON source (copy deck §7) — no render filters. */
 
 export const metadata: Metadata = buildMetadata({
   title: "Get started with SecuEdge",
@@ -44,8 +35,8 @@ export const metadata: Metadata = buildMetadata({
 const JOURNEY = [
   { step: "01 · Understand", title: "Learn the architecture", desc: "See how Frontier policy sits at the edge and how the portfolio maps to the work.", links: [["Platform architecture", "/platform"], ["All products", "/products"]] },
   { step: "02 · Evaluate", title: "Assess your exposure", desc: "Answer seven questions and get an explainable risk picture for your environment.", links: [["Take the assessment", "/assessment"], ["Find your model", "/products/recommend"]] },
-  { step: "03 · Compare", title: "Shortlist hardware honestly", desc: "Verified form factors and modes side by side; the rest available on request.", links: [["Compare models", "/products/compare"], ["Appliance range", "/frontier/appliances"]] },
-  { step: "04 · Deploy / Discuss", title: "Talk sizing with SecuEdge", desc: "Confirm the validated spec sheet and plan Quick or Professional Mode rollout.", links: [["Contact sales", "/contact"], ["Dual Mode", "/frontier/dual-mode"]] },
+  { step: "03 · Compare", title: "Shortlist hardware honestly", desc: "Sized by users, not features; full specifications available on request.", links: [["Compare models", "/products/compare"], ["Appliance range", "/frontier/appliances"]] },
+  { step: "04 · Deploy / Discuss", title: "Talk sizing with SecuEdge", desc: "Confirm the right model and plan Quick or Professional Mode rollout.", links: [["Book a free demo", "/contact"], ["Dual Mode", "/frontier/dual-mode"]] },
 ] as const;
 
 export default function GetStartedPage() {
@@ -61,11 +52,11 @@ export default function GetStartedPage() {
               <span className="text-[#0B2239]">Get started</span>
             </nav>
             <p className="premium-eyebrow mt-8">{data.hero.eyebrow}</p>
-            <h1 className="mt-4 max-w-3xl text-5xl font-extrabold leading-[1.0] tracking-[-0.035em] text-[#0B2239] md:text-6xl">Start with the right security architecture.</h1>
+            <h1 className="mt-4 max-w-3xl text-5xl font-extrabold leading-[1.0] tracking-[-0.035em] text-[#0B2239] md:text-6xl">{data.hero.headline}</h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#30465C] md:text-lg">{data.hero.sub}</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <a href="#start-form" className="premium-btn-primary">Get started now <ArrowRight size={15} /></a>
-              <Link href="/frontier" className="premium-btn-ghost">Explore Frontier</Link>
+              <a href="#start-form" className="premium-btn-primary">Book a free demo <ArrowRight size={15} /></a>
+              <Link href="/frontier" className="premium-btn-ghost">Explore SecuEdge Frontier</Link>
             </div>
           </Reveal>
         </div>
@@ -105,7 +96,7 @@ export default function GetStartedPage() {
             {data.benefitsIntro.sub ? <p className="premium-section-lead">{data.benefitsIntro.sub}</p> : null}
           </Reveal>
           <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
-            {benefits.map((b) => (
+            {data.benefits.map((b) => (
               <Item key={b.title}>
                 <article className="premium-card h-full p-6">
                   <p className="text-base font-bold text-[#0B2239]">{b.title}</p>
@@ -127,9 +118,9 @@ export default function GetStartedPage() {
             {data.formSection.sub ? (
               <p className="premium-section-lead">{data.formSection.sub}</p>
             ) : null}
-            {sidebarPoints.length ? (
+            {(data.formSection.sidebarPoints ?? []).length ? (
               <ul className="mt-8 space-y-3">
-                {sidebarPoints.map((p) => (
+                {(data.formSection.sidebarPoints ?? []).map((p) => (
                   <li key={p.title} className="premium-card p-5">
                     <p className="text-sm font-bold text-[#0B2239]">{p.title}</p>
                     <p className="mt-1 text-sm text-[#526274]">{p.desc}</p>
@@ -144,11 +135,11 @@ export default function GetStartedPage() {
         </div>
       </section>
 
-      {faqs.length ? <PremiumFaq faqs={faqs} /> : null}
+      {(data.faqs ?? []).length ? <PremiumFaq faqs={data.faqs ?? []} /> : null}
 
       <PremiumCta
-        headline="Prefer to talk it through?"
-        sub="Book a demo and see Dual Mode on your own traffic."
+        headline={data.cta.headline}
+        sub={data.cta.sub}
       />
     </div>
   );

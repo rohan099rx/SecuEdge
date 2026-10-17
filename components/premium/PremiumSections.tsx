@@ -51,7 +51,7 @@ export function PremiumCta({ headline = "Let's protect your network — correctl
           <h2 className="mx-auto max-w-3xl text-4xl font-extrabold tracking-tight text-[#0B2239] md:text-5xl">{headline}</h2>
           {sub ? <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#30465C]">{sub}</p> : null}
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link href="/contact" className="premium-btn-primary">Get a Demo <ArrowRight size={15} /></Link>
+            <Link href="/contact" className="premium-btn-primary">Book a free demo <ArrowRight size={15} /></Link>
             <Link href="/assessment" className="premium-btn-ghost">Take the free security assessment</Link>
           </div>
         </Reveal>

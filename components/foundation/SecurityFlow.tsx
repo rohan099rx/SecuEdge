@@ -24,7 +24,7 @@ export function SecurityFlow() {
       </div>
       <div className="security-flow__items">
         {flows.map((flow, index) => (
-          <div className={`security-flow__item security-flow__item--${flow.tone}${index === active ? " is-active" : ""}`} key={flow.label}>
+          <div className={["security-flow__item", `security-flow__item--${flow.tone}`, index === active && "is-active"].filter(Boolean).join(" ")} key={flow.label}>
             <span className="security-flow__icon">{flow.tone === "blocked" ? <ShieldAlert size={16} /> : <Check size={16} />}</span>
             <span>{flow.label}</span>
             <small>{flow.status}</small>

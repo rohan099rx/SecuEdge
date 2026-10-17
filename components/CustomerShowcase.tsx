@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Building2, Landmark } from "lucide-react";
-import { APPLIANCES, CUSTOMERS, SECUEDGE_PRODUCTS } from "@/lib/site";
+import { CUSTOMERS } from "@/lib/site";
 import { Reveal, Stagger, Item } from "@/components/motion";
 
 /**
@@ -31,7 +31,7 @@ export function CustomerShowcase() {
       <Stagger className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3" gap={0.05}>
         {CUSTOMERS.map((customer) => (
           <Item key={customer.name}>
-            <article className="premium-card flex h-full flex-col items-center p-6 text-center">
+            <article className="premium-card customer-card flex h-full flex-col items-center p-6 text-center">
               <div className="flex h-14 w-full items-center justify-center rounded-xl bg-white/[0.04] px-3">
                 {customer.logo ? (
                   <Image
@@ -39,7 +39,7 @@ export function CustomerShowcase() {
                     alt={`${customer.name} logo`}
                     width={150}
                     height={56}
-                    className="max-h-10 w-auto object-contain brightness-0 invert opacity-80"
+                    className="customer-logo max-h-10 w-auto object-contain"
                     loading="lazy"
                   />
                 ) : (
@@ -57,9 +57,9 @@ export function CustomerShowcase() {
 
       <Stagger className="mt-6 grid grid-cols-3 gap-3" gap={0.04}>
         {[
-          { value: String(CUSTOMERS.length), label: "Organizations featured", detail: `${SECTORS.length} industry verticals` },
-          { value: String(APPLIANCES.length), label: "Frontier models", detail: "Desktop · Rack-mount" },
-          { value: String(SECUEDGE_PRODUCTS.length), label: "Product families", detail: "One portfolio" },
+          { value: "200+", label: "Installations across India", detail: `${SECTORS.length} industry verticals` },
+          { value: "24/7", label: "India-based support", detail: "Response within 24 hours" },
+          { value: "First of 7", label: "SecuEdge products", detail: "One appliance family" },
         ].map((m) => (
           <Item key={m.label}>
             <div className="premium-metric">
@@ -83,7 +83,7 @@ export function CustomerShowcase() {
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/contact" className="premium-btn-primary">Contact Sales <ArrowRight size={15} /></Link>
+            <Link href="/contact" className="premium-btn-primary">Book a free demo <ArrowRight size={15} /></Link>
             <Link href="/customers" className="premium-btn-ghost">All customers <ArrowRight size={15} /></Link>
           </div>
         </div>

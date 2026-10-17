@@ -7,7 +7,8 @@ export const FRONTIER_MODELS = APPLIANCES.map((appliance) => ({
   model: appliance.model,
   facts: [
     { label: "Form factor", value: appliance.formFactor, source: "SecuEdge appliance roster", verified: true },
-    { label: "Deployment tier", value: `${appliance.tier} (indicative)`, source: "SecuEdge lineup grouping; confirm deployment fit", verified: false },
+    { label: "Peak users", value: appliance.userRange, source: "SecuEdge approved sizing lineup", verified: true },
+    { label: "Typical site", value: appliance.typicalSite, source: "SecuEdge approved sizing lineup", verified: true },
     { label: "Firewall throughput", value: appliance.throughput, source: null, verified: false },
     { label: "VPN throughput", value: null, source: null, verified: false },
     { label: "IPS throughput", value: null, source: null, verified: false },
@@ -19,7 +20,7 @@ export const FRONTIER_MODELS = APPLIANCES.map((appliance) => ({
     { label: "Power and dimensions", value: null, source: null, verified: false },
     { label: "SSL inspection", value: null, source: null, verified: false },
     { label: "SD-WAN model support", value: null, source: null, verified: false },
-    { label: "Quick + Professional Mode", value: "Included across Frontier models", source: "SecuEdge Frontier product information", verified: true },
+    { label: "Quick + Professional Mode", value: "Included on every model", source: "SecuEdge Frontier product information", verified: true },
   ] satisfies ModelFact[],
 }));
 

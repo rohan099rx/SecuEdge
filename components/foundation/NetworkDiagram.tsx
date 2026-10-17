@@ -14,10 +14,10 @@ export function NetworkDiagram({ compact = false }: { compact?: boolean }) {
   }, []);
 
   return (
-    <div className={`network-diagram${compact ? " network-diagram--compact" : ""}`} aria-label="SecuEdge network flow">
+    <div className={["network-diagram", compact && "network-diagram--compact"].filter(Boolean).join(" ")} aria-label="SecuEdge network flow">
       {nodes.map((node, index) => (
         <div className="network-diagram__step" key={node}>
-          <div className={`network-diagram__node${index === 1 ? " network-diagram__node--firewall" : ""}`}>
+          <div className={["network-diagram__node", index === 1 && "network-diagram__node--firewall"].filter(Boolean).join(" ")}>
             {index === 1 ? <ShieldCheck size={compact ? 15 : 18} /> : <span>{String(index + 1).padStart(2, "0")}</span>}
             <strong>{node}</strong>
             {index === packet ? <i className="network-diagram__packet" aria-hidden /> : null}

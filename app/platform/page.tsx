@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ChevronRight, ShieldCheck } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { FRONTIER_CAPABILITIES } from "@/data/ecosystem";
-import { APPLIANCES, SECUEDGE_PRODUCTS } from "@/lib/site";
+import { SECUEDGE_PRODUCTS, STATUS_LABEL } from "@/lib/site";
 import { Reveal, Stagger, Item } from "@/components/motion";
 import "@/components/premium/premium.css";
 
@@ -32,11 +32,11 @@ export default function PlatformPage() {
       <div className="relative mx-auto w-full max-w-[1200px] px-6 py-16 md:py-24">
         <Reveal>
           <p className="premium-eyebrow">SecuEdge · Frontier architecture</p>
-          <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-[1.0] tracking-tight text-white md:text-6xl">Policy starts at the edge.</h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-400">SecuEdge Frontier is the NGFW product family for controlling network paths, inspecting traffic and helping teams manage their security boundary.</p>
-          <p className="mt-5 flex items-center gap-2 text-xs text-slate-500"><ShieldCheck size={15} className="text-emerald-300" />Frontier NGFW · {APPLIANCES.length} SE-series models</p>
+          <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-[1.0] tracking-tight text-white md:text-6xl">One appliance family, one console, seven products over time.</h1>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-400">SecuEdge Frontier runs on a single operating system across every model. The roadmap products are being built on the same appliances and console, so what you buy today becomes the base for what comes next.</p>
+          <p className="mt-5 flex items-center gap-2 text-xs text-slate-500"><ShieldCheck size={15} className="text-emerald-300" />SecuEdge Frontier · Available now</p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/frontier/appliances" className="premium-btn-primary">Browse {APPLIANCES.length} models <ArrowRight size={15} /></Link>
+            <Link href="/frontier/appliances" className="premium-btn-primary">Browse models <ArrowRight size={15} /></Link>
             <Link href="/frontier/capabilities" className="premium-btn-ghost">Capability guide <ArrowRight size={15} /></Link>
           </div>
         </Reveal>
@@ -51,7 +51,7 @@ export default function PlatformPage() {
           <p className="premium-section-lead">Use this reference path to plan policy placement. The diagram is conceptual; actual interfaces and traffic flow depend on the approved hardware configuration.</p>
         </Reveal>
         <Stagger className="space-y-0" gap={0.05}>
-          {["Internet & WAN connections", "Frontier NGFW", "Firewall, NAT and inspection policy", "LAN and segmented network zones", "Approved users, services and devices"].map((item, index) => (
+          {["Internet & WAN connections", "SecuEdge Frontier", "Firewall, NAT and inspection policy", "LAN and segmented network zones", "Approved users, services and devices"].map((item, index) => (
             <Item key={item}>
               <div className="flex items-center gap-4 border-b border-white/[0.07] py-4 last:border-0">
                 <span className="font-mono text-xs text-cyan-300/70">0{index + 1}</span>
@@ -84,7 +84,7 @@ export default function PlatformPage() {
         </Stagger>
         <Reveal className="mt-8 flex flex-wrap gap-2">
           {SECUEDGE_PRODUCTS.map((p) => (
-            <Link key={p.key} href={p.href} className="premium-chip transition-colors hover:border-cyan-400/40 hover:text-white">{p.name} · {p.categoryShort}</Link>
+            <Link key={p.key} href={p.href} className="premium-chip transition-colors hover:border-cyan-400/40 hover:text-white">{p.name} · {STATUS_LABEL[p.status]}</Link>
           ))}
         </Reveal>
       </div>
@@ -94,7 +94,7 @@ export default function PlatformPage() {
       <div className="mx-auto w-full max-w-[1200px] px-6">
         <Reveal>
           <p className="premium-eyebrow">Capability map</p>
-          <h2 className="premium-section-title mt-4">Explore Frontier feature areas.</h2>
+          <h2 className="premium-section-title mt-4">Explore SecuEdge Frontier feature areas.</h2>
           <p className="premium-section-lead">Capabilities below describe the current NGFW product story. Exact behavior and availability can depend on configuration and software version.</p>
         </Reveal>
         <Stagger className="mt-10 grid gap-3 md:grid-cols-2" gap={0.05}>
@@ -137,6 +137,24 @@ export default function PlatformPage() {
             </Link>
           </Item>
         </Stagger>
+      </div>
+    </section>
+
+    <section className="border-t border-white/[0.07] bg-white/[0.015] py-20 md:py-28">
+      <div className="mx-auto w-full max-w-[1200px] px-6">
+        <Reveal>
+          <div className="premium-card flex flex-col items-start gap-4 p-7 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="premium-eyebrow">Next step</p>
+              <h3 className="mt-2 text-xl font-bold text-white">See how easy the secure setup can be.</h3>
+              <p className="mt-1 text-sm text-slate-400">Book a free demo with our team, or take the two-minute security assessment. No obligation.</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/contact" className="premium-btn-primary shrink-0">Book a free demo <ArrowRight size={16} /></Link>
+              <Link href="/assessment" className="premium-btn-ghost shrink-0">Take the assessment</Link>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   </div>;

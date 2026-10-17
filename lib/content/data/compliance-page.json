@@ -1,279 +1,246 @@
 {
   "slug": "compliance",
-  "metaTitle": "Compliance Solutions | SecuEdge",
-  "metaDescription": "Achieve and maintain regulatory compliance with SecuEdge's comprehensive compliance solutions. Meet requirements for HIPAA, PCI DSS, GDPR, and other regulations.",
+  "metaTitle": "Network Controls That Support Your Compliance | SecuEdge",
+  "metaDescription": "SecuEdge Frontier gives you network segmentation, strict access rules, threat blocking and exportable logs — controls that support DPDP, RBI, SEBI and CERT-In obligations.",
   "hero": {
-    "eyebrow": "Security Solution",
-    "headline": "Regulatory Compliance",
-    "sub": "Meet and exceed regulatory requirements with SecuEdge's comprehensive compliance solutions. Protect your data, satisfy auditors, and build trust with customers.",
+    "eyebrow": "Compliance",
+    "headline": "Network controls that support your compliance.",
+    "sub": "Regulators and auditors want to see who accessed what, that sensitive systems are separated, and that threats are blocked. SecuEdge Frontier gives you those controls and the logs to prove them. Compliance remains your responsibility; we make the network part easier.",
     "ctas": [
-      "Get Started",
-      "Schedule Demo"
+      "Talk to us",
+      "Book a free demo"
     ],
     "chips": [
-      "Simplify audits",
-      "Reduce compliance costs",
-      "Avoid penalties"
+      "Data stays in India",
+      "Exportable audit logs",
+      "Built with DPDP in mind"
     ],
-    "heroVisual": "SecuEdge Compliance Dashboard mock (Overall Compliance 94%, Compliance by Framework, Recent Findings: Password Policy Compliant / Data Encryption Verified / Access Control Review / Consent Management)"
+    "heroVisual": "SecuEdge Frontier dashboard mock (blocked threats today, per-device logs, separated network zones)"
   },
   "challenges": {
-    "headline": "Why Regulatory Compliance is Challenging",
-    "sub": "Many organizations struggle to maintain compliance due to complex requirements, limited resources, and constantly evolving regulations.",
+    "headline": "What auditors ask to see.",
+    "sub": "Whatever the framework, the network questions are the same: who accessed what, are sensitive systems separated, and are threats blocked?",
     "items": [
       {
-        "title": "Complex & Evolving Regulations",
-        "desc": "Keeping up with constantly changing regulatory requirements across different jurisdictions is time-consuming and difficult."
+        "title": "Who accessed what",
+        "desc": "A record of access to sensitive systems, per user and per device."
       },
       {
-        "title": "Resource-Intensive Audits",
-        "desc": "Preparing for and managing compliance audits drains IT resources and diverts attention from core business activities."
+        "title": "Separated sensitive systems",
+        "desc": "Billing, patient records and trading systems kept apart from guests and general staff."
       },
       {
-        "title": "High Compliance Costs",
-        "desc": "Implementing and maintaining compliance controls often requires significant investment in technology and personnel."
+        "title": "Blocked threats",
+        "desc": "Evidence that attacks, malware and malicious sites are stopped at the edge."
       },
       {
-        "title": "Identifying Compliance Gaps",
-        "desc": "Many organizations struggle to detect and address compliance gaps before they become audit findings or security incidents."
+        "title": "Controlled remote access",
+        "desc": "VPN connections limited to the people and systems that need them."
       },
       {
-        "title": "Conflicting Requirements",
-        "desc": "Different regulations may have overlapping or contradictory requirements, making compliance strategy complex."
+        "title": "Data kept in India",
+        "desc": "Traffic, logs and policy data on Indian soil by default, with no overseas routing."
       },
       {
-        "title": "Staff Training & Awareness",
-        "desc": "Ensuring all employees understand and follow compliance requirements is an ongoing challenge for most organizations."
+        "title": "Continuity",
+        "desc": "Backup internet paths and failover so critical systems stay online."
       }
     ]
   },
   "frameworksIntro": {
-    "eyebrow": "Comprehensive Coverage",
-    "headline": "Key Compliance Frameworks We Support",
-    "sub": "Our compliance solutions help organizations meet requirements across all major regulatory frameworks and industry standards.",
-    "itemsLabel": "Key Requirements:"
+    "eyebrow": "India first",
+    "headline": "Indian regulation, supported by design.",
+    "sub": "SecuEdge Frontier's controls map to what Indian regulators expect. Compliance remains your responsibility — we make the network part easier.",
+    "itemsLabel": "How SecuEdge Frontier helps:"
   },
   "frameworks": [
     {
-      "name": "PCI DSS",
-      "desc": "Payment Card Industry Data Security Standard for organizations that handle credit card data",
+      "name": "DPDP Act 2023",
+      "desc": "India's Digital Personal Data Protection Act",
       "items": [
-        "Secure network architecture",
-        "Cardholder data protection",
-        "Vulnerability management",
-        "Access control measures",
-        "Regular security testing"
+        "Data stays in India by default",
+        "Access logs you can export for your own audits",
+        "Built with the DPDP Act 2023 in mind"
       ]
     },
     {
-      "name": "HIPAA",
-      "desc": "Health Insurance Portability and Accountability Act for healthcare organizations",
+      "name": "RBI guidelines",
+      "desc": "Reserve Bank of India cybersecurity expectations",
       "items": [
-        "Patient data privacy",
-        "Technical safeguards",
-        "Administrative controls",
-        "Breach notification",
-        "Business associate compliance"
+        "Separate sensitive zones for payments and banking systems",
+        "Strict outbound rules",
+        "VPN with MFA for remote staff",
+        "Audit logs"
       ]
     },
     {
-      "name": "GDPR",
-      "desc": "General Data Protection Regulation for organizations handling EU citizens' data",
+      "name": "SEBI guidelines",
+      "desc": "Securities and Exchange Board of India expectations",
       "items": [
-        "Data subject rights",
-        "Consent management",
-        "Data processing records",
-        "Privacy by design",
-        "Cross-border data transfers"
+        "Separate trading, payments and back-office zones",
+        "Phishing and malicious-site blocking",
+        "Exportable audit logs"
       ]
     },
     {
-      "name": "ISO 27001",
-      "desc": "International standard for information security management systems",
+      "name": "CERT-In directions",
+      "desc": "Indian Computer Emergency Response Team",
       "items": [
-        "Information security policy",
-        "Risk assessment methodology",
-        "Security control implementation",
-        "Continuous monitoring",
-        "Management review process"
+        "Logs kept in India",
+        "Visibility into incidents on your network"
       ]
     },
     {
-      "name": "SOC 2",
-      "desc": "Service Organization Control reports focusing on trust service criteria",
+      "name": "International clients",
+      "desc": "For organisations that also work with overseas clients",
       "items": [
-        "Security controls",
-        "Availability safeguards",
-        "Processing integrity",
-        "Confidentiality measures",
-        "Privacy practices"
-      ]
-    },
-    {
-      "name": "Industry-Specific",
-      "desc": "Specialized compliance requirements for various industries",
-      "items": [
-        "FINRA & SEC (Financial)",
-        "NERC CIP (Energy)",
-        "CMMC (Defense)",
-        "FERPA (Education)",
-        "CCPA/CPRA (California Privacy)"
+        "The same controls help with PCI DSS requirements",
+        "The same controls help with ISO 27001 requirements",
+        "The same controls help with GDPR requirements",
+        "The same controls help with HIPAA requirements"
       ]
     }
   ],
   "approachIntro": {
-    "eyebrow": "Our Approach",
-    "headline": "The SecuEdge Compliance Solution",
-    "sub": "Our comprehensive compliance solution transforms regulatory requirements from a burden into a strategic advantage for your organization."
+    "eyebrow": "Our approach",
+    "headline": "Controls first, evidence always.",
+    "sub": "SecuEdge Frontier applies the control and keeps the log. Your auditor sees both."
   },
   "approach": [
     {
-      "title": "Unified Compliance Framework",
-      "desc": "Consolidate controls across multiple regulations to eliminate redundant efforts and streamline compliance management"
+      "title": "Separate",
+      "desc": "VLAN segmentation keeps sensitive zones apart from guests, staff and devices."
     },
     {
-      "title": "Automated Compliance Monitoring",
-      "desc": "Continuously monitor your security posture against regulatory requirements with real-time dashboards and alerts"
+      "title": "Restrict",
+      "desc": "Default-deny outbound rules and application control decide what may leave the network."
     },
     {
-      "title": "Simplified Audit Preparation",
-      "desc": "Generate comprehensive compliance reports that provide auditors with the evidence they need while minimizing your workload"
+      "title": "Block",
+      "desc": "Intrusion prevention, gateway antivirus and web filtering stop threats at the edge."
     },
     {
-      "title": "Adaptive Control Implementation",
-      "desc": "Deploy technical controls that address multiple compliance requirements simultaneously while adapting to your environment"
+      "title": "Record",
+      "desc": "Per-device logs and exportable reports give you the evidence for audits."
     }
   ],
   "capabilitiesIntro": {
-    "eyebrow": "Key Capabilities",
-    "headline": "Comprehensive Compliance Features",
-    "sub": "Our solution provides all the tools you need to achieve and maintain regulatory compliance while reducing the burden on your team."
+    "eyebrow": "Controls",
+    "headline": "The controls auditors ask about.",
+    "sub": "Every control below ships on every SecuEdge Frontier model."
   },
   "capabilities": [
     {
-      "title": "Controls Mapping",
-      "desc": "Map controls across multiple frameworks to eliminate redundancy and streamline compliance efforts"
+      "title": "Network segmentation",
+      "desc": "Separate networks for sensitive systems, guests, labs and devices."
     },
     {
-      "title": "Automated Assessment",
-      "desc": "Continuously evaluate your environment against compliance requirements with automated scanning"
+      "title": "Default-deny outbound rules",
+      "desc": "Data cannot leave by unexpected routes."
     },
     {
-      "title": "Policy Management",
-      "desc": "Create, update, and distribute compliance policies and procedures with version control"
+      "title": "Intrusion prevention and antivirus",
+      "desc": "Spots and blocks attacks as they happen; catches infected files before they reach a computer."
     },
     {
-      "title": "Evidence Collection",
-      "desc": "Automatically gather and organize compliance evidence for quick retrieval during audits"
+      "title": "Web and category filtering",
+      "desc": "Blocks harmful, adult, gambling and time-wasting sites by category."
     },
     {
-      "title": "Security Monitoring",
-      "desc": "Monitor your security controls in real-time to ensure continuous compliance"
+      "title": "VPN with MFA",
+      "desc": "Safe connections for branches and remote staff, with a second factor at login."
     },
     {
-      "title": "Compliance Dashboards",
-      "desc": "View compliance status across all frameworks with customizable real-time dashboards"
+      "title": "Per-device logs and exportable reports",
+      "desc": "Blocked and accessed logs per device, exportable as audit evidence."
     },
     {
-      "title": "Audit-Ready Reporting",
-      "desc": "Generate comprehensive reports that satisfy auditor requirements with minimal effort"
-    },
-    {
-      "title": "Risk Assessment",
-      "desc": "Identify and prioritize compliance risks with integrated risk assessment tools"
-    },
-    {
-      "title": "Role-Based Access",
-      "desc": "Control access to compliance data with granular, role-based permissions"
+      "title": "High availability and failover",
+      "desc": "A second unit takes over if the first fails; multi-WAN failover switches to a backup line."
     }
   ],
   "processIntro": {
-    "eyebrow": "Implementation Process",
-    "headline": "How We Implement Your Compliance Solution",
-    "sub": "Our proven methodology ensures a smooth transition to comprehensive compliance management with minimal disruption to your operations."
+    "eyebrow": "Getting there",
+    "headline": "From first call to audit-ready.",
+    "sub": "The same onboarding as every SecuEdge Frontier deployment, with your audit checklist in view."
   },
   "process": [
     {
       "step": 1,
-      "title": "Assessment",
-      "desc": "We begin with a thorough assessment of your current compliance posture, identifying gaps and opportunities for improvement"
+      "title": "Identify",
+      "desc": "We learn how your network is used: how many people, which sites, which systems matter most."
     },
     {
       "step": 2,
-      "title": "Planning",
-      "desc": "Based on the assessment, we develop a tailored compliance roadmap with prioritized actions and clear milestones"
+      "title": "Analyze",
+      "desc": "We recommend the right model and settings for your risks and your audit obligations."
     },
     {
       "step": 3,
-      "title": "Implementation",
-      "desc": "Our experts deploy the compliance solution, configuring it to match your specific regulatory requirements"
+      "title": "Protect",
+      "desc": "Our team or partner sets up SecuEdge Frontier and trains your team."
     },
     {
       "step": 4,
-      "title": "Validation",
-      "desc": "We validate the implementation through testing and verification to ensure all compliance controls are operating effectively"
-    },
-    {
-      "step": 5,
-      "title": "Optimization",
-      "desc": "Continuous improvement of your compliance program through regular reviews and refinements"
+      "title": "Adapt",
+      "desc": "Regular updates, quarterly security reviews and 24/7 India-based support keep you protected as things change."
     }
   ],
   "ongoingManagement": {
-    "headline": "Ongoing Compliance Management",
+    "headline": "Staying audit-ready.",
     "items": [
       {
-        "title": "Regular Assessments",
-        "desc": "Scheduled compliance assessments to identify and address new gaps"
+        "title": "Regular updates",
+        "desc": "Threat updates arrive as part of your subscription."
       },
       {
-        "title": "Regulatory Updates",
-        "desc": "Continuous monitoring of regulatory changes with timely control updates"
+        "title": "Quarterly security reviews",
+        "desc": "Our team reviews your posture with you, every quarter."
       },
       {
-        "title": "Staff Training",
-        "desc": "Ongoing compliance training to ensure all employees understand requirements"
+        "title": "24/7 India-based support",
+        "desc": "Engineers on 1800 123 0966 who understand Indian regulation."
       }
     ]
   },
   "faqsIntro": {
-    "eyebrow": "Common Questions",
-    "headline": "Frequently Asked Questions",
-    "sub": "Find answers to common questions about our compliance solutions and how they can help your organization."
+    "eyebrow": "Common questions",
+    "headline": "Frequently asked questions",
+    "sub": "Honest answers about what a firewall can and cannot do for compliance."
   },
   "faqs": [
     {
-      "q": "How does SecuEdge simplify compliance across multiple regulations?",
-      "a": "SecuEdge uses a unified control framework that maps controls across different regulations, allowing you to implement a single control that satisfies multiple requirements. This approach eliminates redundant efforts and provides a clear view of your overall compliance posture. Our platform also automates evidence collection and reporting, further reducing the complexity of managing multiple compliance frameworks."
+      "q": "Does SecuEdge Frontier make us compliant?",
+      "a": "No product alone does. SecuEdge Frontier provides network controls and logs that support your compliance programme. Compliance remains your responsibility."
     },
     {
-      "q": "How quickly can we achieve compliance using SecuEdge solutions?",
-      "a": "The timeline to achieve compliance varies based on your organization's size, complexity, and current compliance maturity. Typically, our customers see significant improvements within 2-3 months, with full compliance achievable within 4-6 months for most regulations. Our phased implementation approach allows you to prioritize critical compliance gaps first, gradually building toward comprehensive compliance while minimizing business disruption."
+      "q": "Where is our data kept?",
+      "a": "In India, by default. Traffic, logs and policy data stay on Indian soil, with no overseas routing."
     },
     {
-      "q": "Can SecuEdge help reduce the cost of compliance audits?",
-      "a": "Yes, significantly. Our customers typically report a 40-60% reduction in audit preparation time and costs. This is achieved through automated evidence collection, pre-built compliance reports, and continuous compliance monitoring that prevents audit findings. By consolidating controls across multiple regulations, we also help reduce the overall cost of maintaining compliance by eliminating redundant security measures and streamlining verification processes."
+      "q": "Can we export logs for our auditor?",
+      "a": "Yes. Per-device logs and reports are exportable as audit evidence."
     },
     {
-      "q": "How does SecuEdge handle updates to regulatory requirements?",
-      "a": "Our compliance experts continuously monitor regulatory changes across all major frameworks. When requirements change, we update our control mappings and compliance checks, then notify you of the changes and their impact on your environment. This proactive approach ensures you're always aware of new requirements and can implement necessary changes before they affect your compliance status. For significant regulatory updates, we provide detailed guidance and implementation support."
+      "q": "Our India-based team understands Indian regulation. Can you help map controls to our audit checklist?",
+      "a": "Talk to us about your audit requirements. Our India-based team understands Indian regulation and will walk through how SecuEdge Frontier controls map to your checklist."
     },
     {
-      "q": "Can we integrate SecuEdge compliance solutions with our existing security tools?",
-      "a": "Absolutely. Our compliance platform integrates with a wide range of security tools and systems, including vulnerability scanners, SIEM solutions, identity management systems, and cloud security platforms. These integrations allow us to automatically collect compliance evidence from your existing tools, reducing manual effort and providing a more accurate compliance assessment. If you have custom or legacy systems, our professional services team can develop custom integrations to include them in your compliance program."
+      "q": "We also work with overseas clients. Does that change anything?",
+      "a": "No. The same controls — segmentation, strict rules, threat blocking and logs — help with PCI DSS, ISO 27001, GDPR and HIPAA requirements."
     }
   ],
   "cta": {
-    "eyebrow": "Get Compliant",
-    "headline": "Ready to Simplify Your Regulatory Compliance?",
-    "sub": "Contact our compliance experts today to discuss your specific regulatory requirements and discover how SecuEdge can transform your compliance program.",
+    "eyebrow": "Talk to us",
+    "headline": "Talk to us about your audit requirements.",
+    "sub": "Our India-based team understands Indian regulation. Book a free demo or take the two-minute security assessment.",
     "buttons": [
-      "Schedule Consultation"
+      "Book a free demo"
     ],
     "chips": [
-      "Achieve Compliance Faster",
-      "Simplify Audit Preparation",
-      "Reduce Compliance Costs"
+      "Data stays in India",
+      "Exportable audit logs",
+      "24/7 India-based support"
     ]
   }
 }

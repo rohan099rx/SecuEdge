@@ -20,4 +20,8 @@ export type DetailContent = {
   stats?: Stat[];
   faqs?: Faq[];
   cta?: { headline?: string; sub?: string };
+  /** India-regulation context paragraph (copy deck §14/§15). */
+  indiaContext?: string;
+  /** Approved customer names from the same industry (copy deck §15). Omit when none exists. */
+  customerRef?: string;
 };

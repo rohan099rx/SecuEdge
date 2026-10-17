@@ -36,7 +36,7 @@ export function SectionHeading({
   center?: boolean;
 }) {
   return (
-    <div className={`${center ? "mx-auto text-center" : ""} max-w-3xl`}>
+    <div className={[center && "mx-auto text-center", "max-w-3xl"].filter(Boolean).join(" ")}>
       {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
       <h2 className="display-2 mt-3">{title}</h2>
       {lead ? <p className="mt-5 text-lg leading-relaxed text-muted">{lead}</p> : null}

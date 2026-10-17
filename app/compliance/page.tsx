@@ -26,12 +26,7 @@ type ComplianceData = {
 
 const data = raw as unknown as ComplianceData;
 
-/* Fabricated metrics are filtered at render — the JSON file is untouched:
-   the "how quickly" timeline FAQ and the "40–60% reduction" FAQ are excluded
-   as unverified. Framework names/descriptions and all other sections stay. */
-const faqs = data.faqs.filter(
-  (f) => !/how quickly can we achieve|reduce the cost of compliance audits/i.test(f.q)
-);
+/* Content lives in the JSON source (copy deck §10) — no render filters. */
 
 export const metadata: Metadata = buildMetadata({
   title: data.metaTitle.replace(" | SecuEdge", ""),
@@ -192,13 +187,13 @@ export default function CompliancePage() {
                   Audit-ready logs, segmentation and policy controls — delivered by one appliance family with Dual Mode.
                 </p>
               </div>
-              <Link href="/frontier" className="premium-btn-ghost shrink-0">Explore Frontier <ArrowRight size={15} /></Link>
+              <Link href="/frontier" className="premium-btn-ghost shrink-0">Explore SecuEdge Frontier <ArrowRight size={15} /></Link>
             </div>
           </Reveal>
         </div>
       </section>
 
-      <PremiumFaq faqs={faqs} />
+      <PremiumFaq faqs={data.faqs} />
 
       <section className="prem-navy border-t border-[rgba(11,34,57,0.08)] py-16 md:py-20">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col items-start gap-5 px-6 md:flex-row md:items-center md:justify-between">

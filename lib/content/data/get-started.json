@@ -1,132 +1,132 @@
 {
-  "metaTitle": "Get Started with SecuEdge | Enterprise-Grade Security Solutions",
-  "metaDescription": "Take the first step toward robust network security. Get started with SecuEdge's customized firewall solutions for your business.",
-  "hero": {
-    "eyebrow": "Start Your Security Journey",
-    "headline": "Secure Your Network Today",
-    "sub": "Take the first step toward comprehensive network protection with SecuEdge. Our expert team will guide you through every step of implementing your custom security solution.",
-    "ctas": [
-      "Get Started Now",
-      "Explore Solutions"
-    ],
-    "salesContact": {
-      "label": "Contact our Enterprise Sales team directly",
-      "phone": "1800-123-0966"
-    }
-  },
-  "benefitsIntro": {
-    "eyebrow": "Why Choose SecuEdge",
-    "headline": "Benefits of Getting Started",
-    "sub": "When you partner with SecuEdge, you gain more than just security technology. You gain a dedicated team committed to your ongoing protection."
-  },
-  "benefits": [
-    {
-      "title": "Advanced Network Protection",
-      "desc": "Comprehensive security against sophisticated threats with next-gen firewall technology"
-    },
-    {
-      "title": "Rapid Deployment",
-      "desc": "Get up and running quickly with our streamlined setup and configuration process"
-    },
-    {
-      "title": "24/7 Monitoring",
-      "desc": "Continuous threat detection and response to keep your network secure around the clock"
-    },
-    {
-      "title": "Performance Optimization",
-      "desc": "Maintain network speed while implementing robust security measures"
-    }
+ "metaTitle": "Get Started with SecuEdge Frontier | Book a Free Demo",
+ "metaDescription": "Book a free demo, get help choosing a model, or ask about becoming a partner. SecuEdge Frontier is built in India with 24/7 India-based support.",
+ "hero": {
+  "eyebrow": "Get started",
+  "headline": "Talk to SecuEdge.",
+  "sub": "Book a free demo, get help choosing a model, or ask about becoming a partner.",
+  "ctas": [
+   "Book a free demo",
+   "Find your model"
   ],
-  "processIntro": {
-    "eyebrow": "Simple Process",
-    "headline": "How It Works",
-    "sub": "Our straightforward approach ensures a smooth implementation of your security solution without disrupting your operations."
-  },
-  "process": [
-    {
-      "title": "Consultation",
-      "desc": "We'll assess your security needs and recommend the right solution"
-    },
-    {
-      "title": "Implementation",
-      "desc": "Our team handles the setup, configuration, and integration"
-    },
-    {
-      "title": "Training",
-      "desc": "Learn how to use and get the most from your security solution"
-    },
-    {
-      "title": "Ongoing Support",
-      "desc": "Continuous assistance, updates, and optimization for your protection"
-    }
-  ],
-  "formSection": {
-    "eyebrow": "Ready to Begin?",
-    "headline": "Let's Build Your Security Solution",
-    "sub": "Fill out the form and one of our security experts will get in touch to discuss your specific needs and recommend the perfect solution.",
-    "sidebarPoints": [
-      {
-        "title": "No-Obligation Consultation",
-        "desc": "Get expert advice tailored to your specific security challenges"
-      },
-      {
-        "title": "Customized Proposal",
-        "desc": "Receive a detailed plan and pricing tailored to your needs"
-      },
-      {
-        "title": "Fast Response",
-        "desc": "We'll get back to you within 24 hours to schedule your consultation"
-      }
-    ],
-    "formFields": [
-      "Full Name",
-      "Business Email",
-      "Company Name",
-      "Phone Number (Optional)",
-      "Company Size (1-10 / 11-50 / 51-200 / 201-500 / 501-1000 / 1000+ employees)",
-      "Industry (Healthcare / Finance / Retail / Education / Government / Manufacturing / Technology / Other)",
-      "Your Security Needs (message)"
-    ],
-    "submitLabel": "Request a Consultation"
-  },
-  "faqsIntro": {
-    "eyebrow": "Common Questions",
-    "headline": "Frequently Asked Questions",
-    "sub": "Find answers to common questions about getting started with SecuEdge security solutions."
-  },
-  "faqs": [
-    {
-      "q": "How long does implementation typically take?",
-      "a": "Implementation time varies based on your organization's size and requirements. For small to medium businesses, our solutions can be fully implemented in 1-2 weeks. Enterprise deployments may take 3-4 weeks to ensure proper integration with your existing infrastructure."
-    },
-    {
-      "q": "Do you offer trial periods for your solutions?",
-      "a": "Yes, we offer a 30-day evaluation period for qualified businesses. This allows you to experience the benefits of our security solutions before making a long-term commitment. During this period, you'll have access to our full support team and resources."
-    },
-    {
-      "q": "What kind of support is included?",
-      "a": "All our security solutions include 24/7 technical support, regular updates, and proactive monitoring. Our team of security experts is always available to assist with any issues or questions. We also provide quarterly security reviews to ensure your protection remains optimal."
-    },
-    {
-      "q": "Can you integrate with our existing systems?",
-      "a": "Absolutely. Our solutions are designed to integrate seamlessly with your existing IT infrastructure. We support all major network equipment vendors and can customize our implementation to work with your unique environment and applications."
-    },
-    {
-      "q": "What sets SecuEdge apart from other security providers?",
-      "a": "SecuEdge combines next-generation technology with a human approach to security. Beyond providing cutting-edge firewall solutions, we partner with your team to understand your specific challenges and business goals. Our customized approach ensures you get exactly the protection you need without unnecessary complexity."
-    }
-  ],
-  "cta": {
-    "headline": "Ready to Secure Your Network?",
-    "sub": "Join the thousands of businesses that trust SecuEdge to protect their most valuable digital assets.",
-    "buttons": [
-      "Get Started Today",
-      "Contact Sales"
-    ],
-    "badges": [
-      "30-Day Risk-Free Trial",
-      "24/7 Global Support",
-      "Enterprise-Grade Security"
-    ]
+  "salesContact": {
+   "label": "Call 24/7 India-based support",
+   "phone": "1800 123 0966"
   }
+ },
+ "benefitsIntro": {
+  "eyebrow": "Why SecuEdge Frontier",
+  "headline": "The secure setup, made easy.",
+  "sub": "One appliance with Quick Mode for business owners and Professional Mode for engineers. Every feature on every model."
+ },
+ "benefits": [
+  {
+   "title": "Quick Mode anyone can set up",
+   "desc": "Pick, set, save. One choice sets all five security engines together."
+  },
+  {
+   "title": "Professional Mode for engineers",
+   "desc": "Granular firewall and NAT, VLANs, OSPF and BGP, VPN and SD-WAN overlays, intrusion prevention, SNMP, diagnostics and CLI."
+  },
+  {
+   "title": "Sized by users, not features",
+   "desc": "Choose by how many people use your network. The smallest model has every feature."
+  },
+  {
+   "title": "Supported from India, 24/7",
+   "desc": "India-based engineers on 1800 123 0966, with a response within 24 hours."
+  }
+ ],
+ "processIntro": {
+  "eyebrow": "Onboarding",
+  "headline": "How it works",
+  "sub": "From first conversation to protected network, with training along the way."
+ },
+ "process": [
+  {
+   "title": "Consultation",
+   "desc": "We understand your network and recommend the right model."
+  },
+  {
+   "title": "Implementation",
+   "desc": "Our team handles setup, configuration and integration."
+  },
+  {
+   "title": "Training",
+   "desc": "Your team learns to use SecuEdge Frontier."
+  },
+  {
+   "title": "Ongoing support",
+   "desc": "Updates, optimisation and 24/7 help."
+  }
+ ],
+ "formSection": {
+  "eyebrow": "Ready to begin?",
+  "headline": "Book your free demo.",
+  "sub": "Tell us about your network and we will recommend the right SecuEdge Frontier model. Licences and subscriptions are available on 1-year or 3-year terms.",
+  "sidebarPoints": [
+   {
+    "title": "24/7 India-based support",
+    "desc": "Call 1800 123 0966. We respond within 24 hours."
+   },
+   {
+    "title": "Nationwide coverage",
+    "desc": "Available across India through national distributors, regional distributors and channel partners."
+   },
+   {
+    "title": "No obligation",
+    "desc": "A demo and a sizing conversation, tailored to your network."
+   }
+  ],
+  "formFields": [
+   "Full Name",
+   "Business Email",
+   "Company Name",
+   "Phone Number (Optional)",
+   "Peak users on your network",
+   "Industry",
+   "What would you like to solve? (message)"
+  ],
+  "submitLabel": "Request a demo"
+ },
+ "faqsIntro": {
+  "eyebrow": "Common questions",
+  "headline": "Frequently asked questions",
+  "sub": "Answers about demos, sizing and support."
+ },
+ "faqs": [
+  {
+   "q": "What happens in a demo?",
+   "a": "Our team shows SecuEdge Frontier set up correctly in Quick Mode, answers your questions, and recommends the right model for your user count."
+  },
+  {
+   "q": "How do I choose a model?",
+   "a": "Choose by how many people use your network at the busiest time, counting each VPN user three times. Use the model finder or ask our team."
+  },
+  {
+   "q": "What kind of support is included?",
+   "a": "24/7 technical support from India-based engineers on 1800 123 0966. We respond within 24 hours. Regular updates and quarterly security reviews are included."
+  },
+  {
+   "q": "Can SecuEdge Frontier work with our existing network?",
+   "a": "Yes. SecuEdge Frontier sits at your internet edge and works with your existing switches and Wi-Fi. Our team handles the setup."
+  },
+  {
+   "q": "Do I need a network engineer to run it?",
+   "a": "No. Quick Mode is built for business owners and IT generalists. Engineers can switch to Professional Mode at any time."
+  }
+ ],
+ "cta": {
+  "headline": "See how easy the secure setup can be.",
+  "sub": "Book a free demo with our team, or take the two-minute security assessment. No obligation.",
+  "buttons": [
+   "Book a free demo",
+   "Take the assessment"
+  ],
+  "badges": [
+   "200+ installations across India",
+   "24/7 India-based support",
+   "Made in India"
+  ]
+ }
 }

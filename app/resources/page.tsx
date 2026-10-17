@@ -31,11 +31,25 @@ export default function ResourcesPage() {
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <Reveal>
             <div className="premium-card p-6 md:p-8"><ResourceBrowser posts={BLOG_POSTS} /></div>
-            <p className="mt-8 text-sm text-[#526274]">
-              More guides are on the way — case studies and the firewall buyer&rsquo;s guide are in
-              production.
-            </p>
           </Reveal>
+          <Reveal>
+            <p className="premium-eyebrow mt-12">In production</p>
+            <h2 className="premium-section-title mt-4 !text-3xl md:!text-4xl">Coming soon to resources.</h2>
+          </Reveal>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Firewall buyer's guide", "How to evaluate a firewall for your network, in plain language."],
+              ["How to size your firewall", "Peak users, VPN users and the office-users-plus-VPN-times-three method."],
+              ["Quick Mode in 60 seconds", "A video walkthrough: pick, set, save."],
+              ["Case studies", "Measured outcomes from Indian deployments, when ready."],
+            ].map(([title, desc]) => (
+              <div key={title} className="premium-card h-full p-6">
+                <span className="premium-badge">In production</span>
+                <p className="mt-3 text-base font-bold text-[#0B2239]">{title}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-[#526274]">{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -18,7 +18,7 @@ export function LegalShell({ title, children }: { title: string; children: React
           <p className="premium-eyebrow mt-8">Legal</p>
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-[#0B2239] md:text-5xl">{title}</h1>
           <p className="mt-4 rounded-xl border border-[#B45309]/25 bg-[#B45309]/[0.06] px-4 py-3 text-sm font-medium text-[#30465C]">
-            Placeholder — replace with reviewed legal copy before launch.
+            Draft dated 12 October 2026 — to be replaced with lawyer-reviewed copy before launch.
           </p>
           <div className="mt-8 space-y-4 text-[15px] leading-[1.8] text-[#30465C]">{children}</div>
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[rgba(11,34,57,0.1)] pt-6">
