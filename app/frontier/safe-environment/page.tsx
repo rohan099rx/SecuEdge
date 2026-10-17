@@ -63,7 +63,7 @@ export default function SafeEnvironmentPage() {
 
       <section className="border-t border-white/[0.07] py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1200px] px-6">
-          <Stagger className="grid gap-4 md:grid-cols-2 lg:grid-cols-4" gap={0.06}>
+          <Stagger className="grid gap-4 md:grid-cols-2 lg:grid-cols-4" gap={0.08}>
             {STEPS.map((s) => (
               <Item key={s.n}>
                 <div className="premium-card h-full p-7">
@@ -88,7 +88,7 @@ export default function SafeEnvironmentPage() {
               <Link href="/industries/education" className="premium-btn-ghost">Education security</Link>
             </div>
           </Reveal>
-          <Stagger className="grid gap-3" gap={0.05}>
+          <Stagger className="grid gap-3" gap={0.07}>
             {[
               ["Every search engine", "Safe mode enforced on Google, Bing & YouTube — automatically."],
               ["Every device on the network", "Wired or Wi-Fi, staff or guest — nothing to install."],

@@ -1520,6 +1520,70 @@ a:hover .customer-logo,
   }
 }
 
+/* ── Clipping, not scroll containers ──────────────────────────────────
+   These boxes already clip (rounded corners, decorative glows). A plain
+   `overflow: hidden` also makes each of them the scrollport for its own
+   view timeline, which freezes the scroll-driven reveals below it.
+   `clip` looks identical and stays out of the timeline's way. */
+.premium [class*="overflow-hidden"] {
+  overflow: clip;
+}
+
+/* ── Scroll-driven reveals for content blocks ─────────────────────────
+   Same progressive-enhancement deal as the headlines above: where view
+   timelines exist, blocks rise as they come up the page, section leads
+   settle with them, rules draw themselves in and the background glows
+   drift. Blocks only animate `translate` — no opacity — so this never
+   compounds with a Reveal wrapper's fade and nothing can be left
+   invisible if a block never enters the range. */
+@keyframes blockRise {
+  from { translate: 0 24px; }
+  to { translate: 0 0; }
+}
+
+@keyframes softRise {
+  from { opacity: 0.55; translate: 0 18px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes dividerDraw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes orbDrift {
+  from { translate: 0 -26px; }
+  to { translate: 0 26px; }
+}
+
+@supports (animation-timeline: view()) {
+  .premium :is(.premium-card, .premium-panel, .customer-card, table, figure) {
+    animation: blockRise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 2% entry 52%;
+  }
+
+  .premium .premium-eyebrow,
+  .premium .premium-section-lead {
+    animation: softRise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry -12% entry 45%;
+  }
+
+  .premium .premium-divider {
+    transform-origin: left center;
+    animation: dividerDraw 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: cover 18% cover 44%;
+  }
+
+  .premium .premium-glow-orb {
+    animation: orbDrift 1s linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+}
+
 /* ── Line-mask reveal wrapper ── */
 .line-reveal-mask {
   display: block;
@@ -1571,7 +1635,12 @@ a:hover .customer-logo,
   .premium-section-title,
   #premium-hero h1,
   .display-1,
-  .display-2 {
+  .display-2,
+  .premium .premium-eyebrow,
+  .premium .premium-section-lead,
+  .premium .premium-divider,
+  .premium .premium-glow-orb,
+  .premium :is(.premium-card, .premium-panel, .customer-card, table, figure) {
     animation: none;
   }
 }

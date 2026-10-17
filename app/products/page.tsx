@@ -73,7 +73,7 @@ export default function ProductsPage() {
           <h2 className="premium-section-title mt-4">Six more products, same console.</h2>
           <p className="premium-section-lead">The roadmap products are being built on the same appliances and console as SecuEdge Frontier — no dates have been announced. SecuEdge Frontier already includes VPN, SD-WAN and intrusion prevention on every model; the dedicated products are for organisations that need more scale.</p>
         </Reveal>
-        <Stagger className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3" gap={0.06}>
+        <Stagger className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3" gap={0.08}>
           {roadmap.map((product) => {
             const Icon = PRODUCT_ICONS[product.key as keyof typeof PRODUCT_ICONS];
             return (
@@ -108,7 +108,7 @@ export default function ProductsPage() {
             ending in P are rack-mount. Larger sites get a custom design.
           </p>
         </Reveal>
-        <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.04}>
+        <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
           {APPLIANCES.map((model) => (
             <Item key={model.model}>
               <TiltCard max={4} className="h-full">

@@ -8,7 +8,7 @@ import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight, ArrowUpRight, ShieldCheck, Eye, Globe2, Layers3, ListTree,
   Waypoints, Phone, LockKeyhole, Activity, BellRing, FileSearch,
-  Boxes, Route as RouteIcon, Check, MapPin,
+  Route as RouteIcon, Check, MapPin,
   GraduationCap, HeartPulse, Landmark, Banknote, Factory, Store, Coffee, Rocket,
 } from "lucide-react";
 import {
@@ -22,7 +22,6 @@ import { CustomerMarquee } from "@/components/CustomerMarquee";
 import { SecurityFlow } from "@/components/foundation/SecurityFlow";
 import { Reveal, Stagger, Item, Parallax } from "@/components/motion";
 import { TiltCard } from "@/components/TiltCard";
-import { ScrollProgress } from "@/components/premium/ScrollProgress";
 import "@/components/premium/premium.css";
 
 const PremiumHero3D = dynamic(
@@ -252,7 +251,6 @@ export default function HomePage() {
 
   return (
     <div className="premium relative overflow-x-clip">
-      <ScrollProgress />
       {/* ══ 1 · HERO ══ */}
       <section id="premium-hero" className="relative flex min-h-[94svh] items-center overflow-hidden pb-16 pt-28">
         <div className="premium-grid-bg absolute inset-0" aria-hidden />
@@ -417,7 +415,7 @@ export default function HomePage() {
       <section id="solutions" className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Deployment patterns" title="Built around how your network actually works." lead="Nine patterns, each pointing at its full solution page. Relevant products are tagged from the existing portfolio." />
-          <Stagger className="mt-9 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-9 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3" gap={0.07}>
             {solutions.map(([number, title, description, slug, products]) => (
               <Item key={title}>
                 <Link href={`/solutions/${slug}`} className="group flex h-full flex-col border-t border-[var(--prem-border)] py-7">
@@ -449,7 +447,7 @@ export default function HomePage() {
           <Reveal className="mt-8">
             <CustomerMarquee />
           </Reveal>
-          <Stagger className="mt-8 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+          <Stagger className="mt-8 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
             {CUSTOMER_GROUPS.map((group) => (
               <Item key={group}>
                 <div className="h-full border-t border-[var(--prem-border)] py-6">
@@ -490,7 +488,7 @@ export default function HomePage() {
                 <span className="premium-chip !text-[11px]">No overseas routing</span>
               </div>
             </Reveal>
-            <Stagger className="grid gap-x-10 sm:grid-cols-2" gap={0.06}>
+            <Stagger className="grid gap-x-10 sm:grid-cols-2" gap={0.08}>
               {INDIA_POINTS.map((point, i) => (
                 <Item key={point.title}>
                   <div className="h-full border-t border-[var(--prem-border)] py-6">
@@ -534,7 +532,7 @@ export default function HomePage() {
       <section className="relative border-t border-[var(--prem-border)] py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Industries" title="Made for the way your sector works." lead="Eight priority sectors, each with its own page. Every deployment starts from the same SecuEdge Frontier appliance." />
-          <Stagger className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+          <Stagger className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
             {INDUSTRIES.map((industry) => (
               <Item key={industry.name}>
                 <Link href={industry.href} className="premium-product-card group" style={{ "--prem-accent": "#016fed" } as React.CSSProperties}>
@@ -576,7 +574,7 @@ export default function HomePage() {
             title="Indian regulation, supported by design."
             lead="Frontier's controls map to what Indian regulators expect: data that stays in India, sensitive systems kept apart, threats blocked and logs you can export. Compliance remains your responsibility — we make the network part easier."
           />
-          <Stagger className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+          <Stagger className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
             {INDIA_FRAMEWORKS.map((framework) => (
               <Item key={framework.name}>
                 <div className="premium-card flex h-full flex-col p-6">
@@ -638,7 +636,7 @@ export default function HomePage() {
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">{MISCONFIG_STAT.source}</p>
             </div>
           </Reveal>
-          <Stagger className="mx-auto mt-4 grid max-w-3xl gap-4 sm:grid-cols-2" gap={0.06}>
+          <Stagger className="mx-auto mt-4 grid max-w-3xl gap-4 sm:grid-cols-2" gap={0.08}>
             {FOUNDERS.map((founder) => (
               <Item key={founder.name}>
                 <div className="premium-card h-full p-6 text-left">
@@ -661,33 +659,6 @@ export default function HomePage() {
           <Reveal>
             <div className="mt-8 text-center">
               <Link href="/about" className="premium-btn-ghost">Read our story <ArrowRight size={15} /></Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ══ 12 · FINAL CTA ══ */}
-      <section id="cta" className="prem-navy relative overflow-hidden border-t border-[var(--prem-border)] py-24 md:py-32">
-        <div className="premium-grid-bg absolute inset-0" aria-hidden />
-        <div className="premium-glow-orb left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 bg-[#016FED]/20" aria-hidden />
-        <div className="relative mx-auto max-w-[1200px] px-6">
-          <Reveal>
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="premium-eyebrow mx-auto">Talk to SecuEdge</p>
-              <h2 className="mt-4 text-4xl font-bold leading-[1.03] tracking-tight text-[var(--prem-text)] md:text-6xl">See how easy the secure setup can be.</h2>
-              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-[var(--prem-muted)]">
-                Tell us about your sites, users and traffic. We will help you choose the right product
-                for your network and plan the rollout.
-              </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <Link href="/contact" className="premium-btn-primary">Book a free demo <ArrowRight size={16} /></Link>
-                <Link href="/assessment" className="premium-btn-ghost">Take the assessment</Link>
-              </div>
-              <div className="mt-8 flex flex-wrap justify-center gap-2">
-                <span className="premium-chip"><Boxes size={13} />{HOME_PRODUCTS.length} product families</span>
-                <span className="premium-chip"><ShieldCheck size={13} />Edge-to-insight coverage</span>
-                <span className="premium-chip"><Phone size={13} />Toll-free <a href={SUPPORT.phoneHref} className="font-semibold text-[var(--prem-blue)]">{SUPPORT.phone}</a></span>
-              </div>
             </div>
           </Reveal>
         </div>

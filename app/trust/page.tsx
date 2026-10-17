@@ -84,7 +84,7 @@ export default function TrustPage() {
             <h2 className="premium-section-title mt-4">Six facts, no fine print.</h2>
             <p className="premium-section-lead">Every claim below describes something you can ask us to show you.</p>
           </Reveal>
-          <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.07}>
             {ROWS.map((row, i) => (
               <Item key={row.label}>
                 <div className="premium-card h-full p-6">

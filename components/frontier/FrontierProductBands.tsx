@@ -152,7 +152,7 @@ export function FrontierProductBands() {
               <div className="premium-card overflow-hidden p-2"><FrontierConsolePreview /></div>
             </TiltCard>
           </Reveal>
-          <Stagger className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-[var(--prem-border)] bg-[rgba(11,34,57,0.10)] md:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-[var(--prem-border)] bg-[rgba(11,34,57,0.10)] md:grid-cols-3" gap={0.07}>
             {PRO_CAPABILITIES.map((c, i) => (
               <Item key={c.title}>
                 <div className="h-full bg-[var(--prem-bg-soft)] p-6">

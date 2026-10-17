@@ -21,7 +21,7 @@ const EASE = [0.22, 1, 0.36, 1] as const; // easeOutQuint-ish — calm, expensiv
 export function Reveal({
   children,
   delay = 0,
-  y = 16,
+  y = 28,
   className = "",
 }: {
   children: ReactNode;
@@ -33,10 +33,10 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { opacity: 0.85, y }}
+      initial={reduce ? false : { opacity: 0.7, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "120px" }}
-      transition={{ duration: 0.35, delay: Math.min(delay, 0.1), ease: EASE }}
+      viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+      transition={{ duration: 0.6, delay: Math.min(delay, 0.1), ease: EASE }}
     >
       {children}
     </motion.div>
@@ -76,7 +76,7 @@ export function FadeUp({
 export function Stagger({
   children,
   className = "",
-  gap = 0.04,
+  gap = 0.07,
 }: {
   children: ReactNode;
   className?: string;
@@ -88,7 +88,7 @@ export function Stagger({
       className={className}
       initial={reduce ? false : "hidden"}
       whileInView="show"
-      viewport={{ once: true, margin: "120px" }}
+      viewport={{ once: true, margin: "0px 0px -60px 0px" }}
       variants={{ hidden: {}, show: { transition: { staggerChildren: gap } } }}
     >
       {children}
@@ -107,8 +107,8 @@ export function Item({
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0.85, y: 12 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: EASE } },
+        hidden: { opacity: 0.72, y: 22 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
       }}
     >
       {children}

@@ -66,7 +66,7 @@ export default function CustomersPage() {
               <div key={group}>
                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#526274]">{group}</p>
                 <p className="mt-1 text-[13px] text-[#526274]">{GROUP_LINES[group]}</p>
-                <Stagger className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3" gap={0.05}>
+                <Stagger className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3" gap={0.07}>
                   {CUSTOMERS.filter((c) => c.group === group).map((customer) => (
                     <Item key={customer.name}>
                       <article className="premium-card customer-card flex h-full flex-col items-center p-6 text-center">

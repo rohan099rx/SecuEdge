@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE } from "@/lib/site";
 import { SiteNavbar } from "@/components/layout/SiteNavbar";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { ScrollProgress } from "@/components/premium/ScrollProgress";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -92,6 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <div className="foundation-site foundation-site--light">
+          <ScrollProgress />
           <SiteNavbar tone="light" />
           <main id="main">{children}</main>
           <SiteFooter tone="light" />

@@ -32,7 +32,7 @@ export default function IndustriesPage() {
 
       <section className="prem-navy border-t border-[rgba(11,34,57,0.08)] py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1200px] px-6">
-          <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+          <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.07}>
             {INDUSTRIES.map((ind) => {
               const c = INDUSTRY_CONTENT[ind.slug];
               const card = INDUSTRY_CARDS.find((x) =>

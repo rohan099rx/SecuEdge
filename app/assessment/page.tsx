@@ -52,7 +52,7 @@ export default function AssessmentPage() {
             <p className="premium-eyebrow">How scoring works</p>
             <h2 className="premium-section-title mt-4 !text-3xl md:!text-4xl">Explainable, not mysterious.</h2>
           </Reveal>
-          <Stagger className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+          <Stagger className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
             {FLOW.map(([title, desc]) => (
               <Item key={title}>
                 <div className="premium-card h-full p-5">

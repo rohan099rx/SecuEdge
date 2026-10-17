@@ -64,7 +64,7 @@ export default function AboutPage() {
           <p className="premium-eyebrow">Founders</p>
           <h2 className="premium-section-title mt-4">Two people, one problem.</h2>
         </Reveal>
-        <Stagger className="mt-8 grid gap-4 md:grid-cols-2" gap={0.06}>
+        <Stagger className="mt-8 grid gap-4 md:grid-cols-2" gap={0.08}>
           <Item>
             <article className="premium-card h-full p-7">
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#016FED] text-lg font-extrabold text-white">SD</span>
@@ -91,7 +91,7 @@ export default function AboutPage() {
           <p className="premium-eyebrow">Vision · Mission · Belief</p>
           <h2 className="premium-section-title mt-4">Why we exist.</h2>
         </Reveal>
-        <Stagger className="mt-8 grid gap-4 md:grid-cols-3" gap={0.06}>
+        <Stagger className="mt-8 grid gap-4 md:grid-cols-3" gap={0.08}>
           {[
             ["Vision", "To make cybersecurity easy and accessible to everyone."],
             ["Mission", "To build security products in India that any business can set up correctly the first time, so no organisation is left exposed because of complexity, a shortage of experts or simple human error."],
@@ -114,7 +114,7 @@ export default function AboutPage() {
           <p className="premium-eyebrow">Principles</p>
           <h2 className="premium-section-title mt-4">How we build.</h2>
         </Reveal>
-        <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+        <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
           {PRINCIPLES.map((p, i) => (
             <Item key={p.title}>
               <article className="premium-card h-full p-6">
@@ -135,7 +135,7 @@ export default function AboutPage() {
           <h2 className="premium-section-title mt-4">SecuEdge Frontier, and what comes next.</h2>
           <p className="premium-section-lead">One available product, six more on the roadmap — all sharing the same appliances and console.</p>
         </Reveal>
-        <Stagger className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" gap={0.05}>
+        <Stagger className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
           {SECUEDGE_PRODUCTS.map((p) => (
             <Item key={p.key}>
               <Link href={p.href} className="premium-card group block h-full p-5">

@@ -28,7 +28,7 @@ export function CustomerShowcase() {
         </p>
       </Reveal>
 
-      <Stagger className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3" gap={0.05}>
+      <Stagger className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3" gap={0.07}>
         {CUSTOMERS.map((customer) => (
           <Item key={customer.name}>
             <article className="premium-card customer-card flex h-full flex-col items-center p-6 text-center">
@@ -55,7 +55,7 @@ export function CustomerShowcase() {
         ))}
       </Stagger>
 
-      <Stagger className="mt-6 grid grid-cols-3 gap-3" gap={0.04}>
+      <Stagger className="mt-6 grid grid-cols-3 gap-3" gap={0.07}>
         {[
           { value: "200+", label: "Installations across India", detail: `${SECTORS.length} industry verticals` },
           { value: "24/7", label: "India-based support", detail: "Response within 24 hours" },

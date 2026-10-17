@@ -50,7 +50,7 @@ export default function PlatformPage() {
           <h2 className="premium-section-title mt-4">From the internet to protected zones.</h2>
           <p className="premium-section-lead">Use this reference path to plan policy placement. The diagram is conceptual; actual interfaces and traffic flow depend on the approved hardware configuration.</p>
         </Reveal>
-        <Stagger className="space-y-0" gap={0.05}>
+        <Stagger className="space-y-0" gap={0.07}>
           {["Internet & WAN connections", "SecuEdge Frontier", "Firewall, NAT and inspection policy", "LAN and segmented network zones", "Approved users, services and devices"].map((item, index) => (
             <Item key={item}>
               <div className="flex items-center gap-4 border-b border-white/[0.07] py-4 last:border-0">
@@ -71,7 +71,7 @@ export default function PlatformPage() {
           <h2 className="premium-section-title mt-4">How the portfolio maps to the work.</h2>
           <p className="premium-section-lead">A grouping of responsibilities across the SecuEdge product family — not a claim about internal integrations.</p>
         </Reveal>
-        <Stagger className="mt-8 grid gap-3 md:grid-cols-5" gap={0.05}>
+        <Stagger className="mt-8 grid gap-3 md:grid-cols-5" gap={0.07}>
           {LAYERS.map(([title, desc], i) => (
             <Item key={title}>
               <div className="premium-card h-full p-5">
@@ -97,7 +97,7 @@ export default function PlatformPage() {
           <h2 className="premium-section-title mt-4">Explore SecuEdge Frontier feature areas.</h2>
           <p className="premium-section-lead">Capabilities below describe the current NGFW product story. Exact behavior and availability can depend on configuration and software version.</p>
         </Reveal>
-        <Stagger className="mt-8 grid gap-3 md:grid-cols-2" gap={0.05}>
+        <Stagger className="mt-8 grid gap-3 md:grid-cols-2" gap={0.07}>
           {FRONTIER_CAPABILITIES.map((capability, index) => (
             <Item key={capability.slug}>
               <article className="premium-card h-full p-6">
@@ -119,7 +119,7 @@ export default function PlatformPage() {
           <h2 className="premium-section-title mt-4">A mode for everyday setup. A mode for deeper control.</h2>
           <p className="premium-section-lead">Both modes are part of the Frontier experience. The “P” suffix identifies hardware form factor, not Professional Mode.</p>
         </Reveal>
-        <Stagger className="mt-8 grid gap-4 md:grid-cols-2" gap={0.06}>
+        <Stagger className="mt-8 grid gap-4 md:grid-cols-2" gap={0.08}>
           <Item>
             <Link className="premium-card block p-8" href="/frontier/dual-mode">
               <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-300">01 · Simplified workflow</span>

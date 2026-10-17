@@ -65,7 +65,7 @@ export default function CompliancePage() {
             <h2 className="premium-section-title mt-4">{data.challenges.headline}</h2>
             {data.challenges.sub ? <p className="premium-section-lead">{data.challenges.sub}</p> : null}
           </Reveal>
-          <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.07}>
             {data.challenges.items.map((it) => (
               <Item key={it.title}>
                 <article className="premium-card h-full p-6">
@@ -91,7 +91,7 @@ export default function CompliancePage() {
               addresses. For scope, applicability and current documents, contact SecuEdge.
             </p>
           </Reveal>
-          <Stagger className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+          <Stagger className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3" gap={0.07}>
             {data.frameworks.map((f) => (
               <Item key={f.name}>
                 <div className="premium-card flex h-full flex-col p-7">
@@ -118,7 +118,7 @@ export default function CompliancePage() {
             <p className="premium-eyebrow">Our approach</p>
             <h2 className="premium-section-title mt-4">{data.approachIntro.headline}</h2>
           </Reveal>
-          <Stagger className="mt-8 grid gap-4 md:grid-cols-2" gap={0.05}>
+          <Stagger className="mt-8 grid gap-4 md:grid-cols-2" gap={0.07}>
             {data.approach.map((a, i) => (
               <Item key={a.title}>
                 <article className="premium-card h-full p-6">
@@ -138,7 +138,7 @@ export default function CompliancePage() {
             <p className="premium-eyebrow">Key capabilities</p>
             <h2 className="premium-section-title mt-4">Compliance capabilities, built in.</h2>
           </Reveal>
-          <Stagger className="mt-8 grid gap-x-12 gap-y-7 sm:grid-cols-2" gap={0.04}>
+          <Stagger className="mt-8 grid gap-x-12 gap-y-7 sm:grid-cols-2" gap={0.07}>
             {data.capabilities.map((it) => (
               <Item key={it.title}>
                 <div className="flex gap-4">
@@ -163,7 +163,7 @@ export default function CompliancePage() {
               <p className="premium-eyebrow">After go-live</p>
               <h2 className="premium-section-title mt-4">{data.ongoingManagement.headline}</h2>
             </Reveal>
-            <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
+            <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.07}>
               {data.ongoingManagement.items.map((it) => (
                 <Item key={it.title}>
                   <article className="premium-card h-full p-6">
