@@ -7,7 +7,6 @@ import { APPLIANCES, CUSTOM_APPLIANCE, PRO_CAPABILITIES, SECURITY_LEVELS } from 
 import { FrontierConsolePreview } from "@/components/FrontierConsolePreview";
 import { FrontierModelViewer } from "@/components/FrontierModelViewer";
 import { Reveal, Stagger, Item } from "@/components/motion";
-import { TiltCard } from "@/components/TiltCard";
 
 function SectionHead({ eyebrow, title, lead }: { eyebrow: string; title: string; lead: string }) {
   return (
@@ -148,9 +147,8 @@ export function FrontierProductBands() {
             </Reveal>
           </div>
           <Reveal className="mt-8">
-            <TiltCard max={3}>
-              <div className="premium-card overflow-hidden p-2"><FrontierConsolePreview /></div>
-            </TiltCard>
+            <div className="premium-card overflow-hidden p-2"><FrontierConsolePreview /></div>
+            <p className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Sample interface · switch Quick / Professional in the console sidebar</p>
           </Reveal>
           <Stagger className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-[var(--prem-border)] bg-[rgba(11,34,57,0.10)] md:grid-cols-3" gap={0.07}>
             {PRO_CAPABILITIES.map((c, i) => (

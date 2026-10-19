@@ -4,7 +4,7 @@ import { ArrowRight, ChevronRight, Zap, Cpu } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { FrontierConsolePreview } from "@/components/FrontierConsolePreview";
 import { SECURITY_LEVELS, PRO_CAPABILITIES } from "@/lib/site";
-import { Reveal, Stagger, Item } from "@/components/motion";
+import { Reveal } from "@/components/motion";
 import "@/components/premium/premium.css";
 
 export const metadata: Metadata = buildMetadata({
@@ -45,7 +45,7 @@ export default function DualModePage() {
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <Reveal>
             <div className="premium-card overflow-hidden p-2"><FrontierConsolePreview /></div>
-            <p className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Interactive preview · switch Quick / Professional above</p>
+            <p className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Sample interface · switch Quick / Professional in the console sidebar</p>
           </Reveal>
         </div>
       </section>
@@ -87,6 +87,9 @@ export default function DualModePage() {
               <p className="mt-2 text-sm leading-relaxed text-slate-400">
                 Granular firewall and NAT, VLANs, OSPF and BGP, VPN and SD-WAN overlays, intrusion
                 prevention, SNMP, diagnostics and CLI.
+              </p>
+              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-slate-500">
+                Overview · Configuration · Security · Monitoring — with SecuDefend IPS shown Active in the console
               </p>
               <ul className="mt-6 grid gap-2 sm:grid-cols-2">
                 {PRO_CAPABILITIES.map((c) => (
