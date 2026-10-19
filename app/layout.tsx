@@ -67,7 +67,7 @@ function OrganizationJsonLd() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+9118001230966",
+      telephone: "18001230966",
       contactType: "technical support",
       areaServed: "IN",
       availableLanguage: ["English", "Hindi"],

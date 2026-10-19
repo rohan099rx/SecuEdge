@@ -2301,6 +2301,206 @@ a:hover .customer-logo,
   to { background-position: -40% 0; }
 }
 
+/* ══════════════════════════════════════════════════════════════════════
+   7 · PHOTOGRAPHS — licensed stock frames, treated so they sit inside the
+   cream/navy system instead of on top of it. Provenance for every file is
+   recorded in public/photos/credits.json. Each one is tagged illustrative
+   because none of them depict a SecuEdge facility or a customer site.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.viz-photo {
+  position: relative;
+  display: block;
+  overflow: clip;
+  aspect-ratio: var(--viz-photo-aspect, 16 / 9);
+  border: 1.5px solid var(--prem-border);
+  border-radius: 18px;
+  background: linear-gradient(150deg, #0e2a45, #071525);
+  box-shadow:
+    0 2px 0 0 rgba(11, 34, 57, 0.05),
+    0 18px 40px -24px rgba(11, 34, 57, 0.34);
+}
+
+.viz-photo__img {
+  object-fit: cover;
+  filter: saturate(0.7) contrast(1.04) brightness(1.06);
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.viz-photo:hover .viz-photo__img {
+  transform: scale(1.045);
+}
+
+/* Theme tint: every photograph is pulled toward the navy/blue palette so a
+   licensed stock frame reads as part of the system rather than as a foreign
+   picture dropped into it. Multiply carries the navy, soft-light the brand
+   blue, and the scrim keeps the framing chips legible. The strengths are
+   deliberately low — enough to unify the hue, not enough to crush a photo
+   that was already dark. */
+.viz-photo__tone {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(150deg, #12507f 0%, #0b2239 62%, #071525 100%);
+  mix-blend-mode: multiply;
+  opacity: 0.28;
+}
+
+.viz-photo__tone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg, #016fed 0%, #22d3ee 100%);
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+}
+
+.viz-photo__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 21, 37, 0.36) 0%,
+    rgba(7, 21, 37, 0.02) 36%,
+    rgba(7, 21, 37, 0.52) 100%
+  );
+}
+
+.viz-photo__tag {
+  position: absolute;
+  left: 0.6rem;
+  bottom: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.26rem 0.52rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(7, 21, 37, 0.66);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.48rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #dbe7f6;
+  backdrop-filter: blur(3px);
+}
+
+.viz-photo__cap {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 0.7rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(233, 241, 251, 0.78);
+}
+
+/* Strips lead a card: the card's own radius and border do the framing. */
+.viz-strip {
+  border: 0;
+  border-bottom: 1.5px solid var(--prem-border);
+  border-radius: 0;
+  box-shadow: none;
+  background: #0b2239;
+}
+
+@media (min-width: 1024px) {
+  .viz-strip.viz-photo--side {
+    aspect-ratio: auto;
+    height: 100%;
+    border-right: 1.5px solid var(--prem-border);
+    border-bottom: 0;
+  }
+}
+
+/* Cards that lead with a photograph move their padding into a body wrapper. */
+.premium-card--shot,
+.premium-product-card--shot {
+  padding: 0;
+}
+
+.premium-card__body {
+  padding: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  .premium-card__body {
+    padding: 2rem;
+  }
+}
+
+/* ── Photo band: a full-bleed photograph behind a statement ── */
+.viz-band {
+  position: relative;
+  overflow: clip;
+  border-top: 3px solid var(--prem-text);
+  background: #071525;
+}
+
+.viz-band__img {
+  object-fit: cover;
+  opacity: 0.5;
+  filter: saturate(0.7) contrast(1.04) brightness(1.08);
+  animation: vizDrift 30s ease-in-out infinite alternate;
+}
+
+.viz-band__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 21, 37, 0.9) 0%,
+    rgba(7, 21, 37, 0.72) 46%,
+    rgba(7, 21, 37, 0.95) 100%
+  );
+}
+
+.viz-band__inner {
+  position: relative;
+}
+
+.viz-band__kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #8ba2bd;
+}
+
+.viz-band__quote {
+  margin-top: 0.7rem;
+  max-width: 24ch;
+  font-size: clamp(1.5rem, 4.6vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #f4f7fc;
+}
+
+.viz-band__rule {
+  margin-top: 1.1rem;
+  height: 3px;
+  width: 3.4rem;
+  border-radius: 2px;
+  background: var(--prem-blue);
+}
+
+/* The ticker sits on the photograph, so it drops its own gradient. */
+.viz-band .viz-ticker {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 0;
+  background: transparent;
+}
+
+@keyframes vizDrift {
+  from { transform: scale(1); }
+  to { transform: scale(1.09); }
+}
+
 /* ── Mobile: keep the stages inside the viewport ── */
 @media (max-width: 767px) {
   /* The hero is now taller than the viewport, so its own top padding has to
@@ -2321,6 +2521,12 @@ a:hover .customer-logo,
 
   .premium-product-card {
     padding: 1.4rem;
+  }
+
+  /* Photograph-led cards keep their edge-to-edge image on phones. */
+  .premium-product-card--shot,
+  .premium-card--shot {
+    padding: 0;
   }
 
   .premium-chip {
@@ -2389,15 +2595,18 @@ a:hover .customer-logo,
   .viz-ticker__track,
   .viz-sectors__item,
   .viz-sectors__line,
+  .viz-band__img,
   .premium-viz::after {
     animation: none;
   }
 
-  .viz-tile {
+  .viz-tile,
+  .viz-photo__img {
     transition: none;
   }
 
   .viz-tile:hover,
+  .viz-photo:hover .viz-photo__img,
   .premium-card:hover,
   .premium-product-card:hover {
     transform: none;

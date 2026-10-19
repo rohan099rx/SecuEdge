@@ -322,7 +322,7 @@ export const MISCONFIG_STAT = {
 export const SUPPORT = {
   line: "24/7 technical support from India-based engineers. Call 1800 123 0966. We respond within 24 hours.",
   phone: "1800 123 0966",
-  phoneHref: "tel:+9118001230966",
+  phoneHref: "tel:18001230966",
   response: "Response within 24 hours",
   facts: ["24/7 support", "1800 123 0966", "Response within 24 hours", "Regular updates", "Quarterly security reviews"],
 } as const;
