@@ -5,6 +5,7 @@ import {
   ShieldCheck, ArrowRight, Check, Phone, Factory, Landmark, GraduationCap, HeartPulse,
 } from "lucide-react";
 import { CUSTOMERS, SUPPORT } from "@/lib/site";
+import type { Photo } from "@/lib/photos";
 
 /**
  * Animated, theme-native "images" for the landing page.
@@ -369,7 +370,66 @@ function MobileTopology() {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   6 · Sector strip — icons that give the industries band a visual top.
+   7 · Photographs — licensed stock frames (see lib/photos.ts and
+   public/photos/credits.json). They are treated to sit inside the same
+   cream/navy system as the drawn illustrations, and each one is tagged so
+   that no photograph reads as a picture of our own facility or a customer
+   deployment.
+   ───────────────────────────────────────────────────────────────────────── */
+
+export function PhotoTile({
+  photo,
+  aspect = "16 / 9",
+  sizes = "(max-width: 767px) 100vw, 50vw",
+  strip = false,
+  side = false,
+  className = "",
+  tag,
+}: {
+  photo: Photo;
+  aspect?: string;
+  sizes?: string;
+  /** Lead a card: the card supplies the radius and border. */
+  strip?: boolean;
+  /** Sit beside content on wide screens and stretch to its height. */
+  side?: boolean;
+  className?: string;
+  /** Override the photo's own tag (pass null to show none). */
+  tag?: string | null;
+}) {
+  const label = tag === undefined ? (photo.tag ?? "Illustrative") : tag;
+  return (
+    <figure
+      className={`viz-photo ${strip ? "viz-strip" : ""} ${side ? "viz-photo--side" : ""} ${className}`}
+      style={{ "--viz-photo-aspect": aspect } as React.CSSProperties}
+    >
+      <Image src={photo.src} alt={photo.alt} fill sizes={sizes} className="viz-photo__img" loading="lazy" />
+      <span className="viz-photo__tone" aria-hidden />
+      <span className="viz-photo__scrim" aria-hidden />
+      {label ? <span className="viz-photo__tag">{label}</span> : null}
+    </figure>
+  );
+}
+
+export function PhotoBand({ photo, children }: { photo: Photo & { kicker?: string }; children: React.ReactNode }) {
+  return (
+    <section className="viz-band">
+      <Image src={photo.src} alt={photo.alt} fill sizes="100vw" className="viz-band__img" loading="lazy" />
+      <span className="viz-band__scrim" aria-hidden />
+      <div className="viz-band__inner">
+        {photo.kicker ? (
+          <div className="mx-auto w-full max-w-[1200px] px-6 pt-12 md:pt-16">
+            <p className="viz-band__kicker">{photo.kicker}</p>
+          </div>
+        ) : null}
+        {children}
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   8 · Sector strip — icons that give the industries band a visual top.
    ───────────────────────────────────────────────────────────────────────── */
 const SECTOR_ICONS = [GraduationCap, HeartPulse, Landmark, Factory];
 

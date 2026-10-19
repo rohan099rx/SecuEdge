@@ -21,8 +21,12 @@ import { CustomerMarquee } from "@/components/CustomerMarquee";
 import { NetworkDiagram } from "@/components/NetworkDiagram";
 import { SecurityFlow } from "@/components/foundation/SecurityFlow";
 import {
-  LogoWall, ResidencyPanel, DiagramStage, FactTicker, SectorStrip,
+  LogoWall, ResidencyPanel, DiagramStage, FactTicker, SectorStrip, PhotoTile, PhotoBand,
 } from "@/components/premium/Visuals";
+import {
+  PRODUCT_PHOTOS, SECTOR_PHOTOS, PHOTO_BAND, PHOTO_COMPANY, PHOTO_INDIA, PHOTO_SUPPORT,
+} from "@/lib/photos";
+import { familyStory } from "@/lib/family-copy";
 import { Reveal, Stagger, Item, Parallax, CountUp } from "@/components/motion";
 import { TiltCard } from "@/components/TiltCard";
 import "@/components/premium/premium.css";
@@ -84,11 +88,22 @@ function SectionHead({ eyebrow, title, lead }: { eyebrow: string; title: string;
   );
 }
 
-/* Distinct CSS visual metaphors per family — no extra WebGL canvases. */
+/* Distinct CSS visual metaphors per family — no extra WebGL canvases.
+   Each family keeps its own drawn diagram; the licensed photograph that
+   sits with the copy comes from lib/photos.ts. Nothing here invents
+   hardware specs or live telemetry. */
 function ProductVisual({ productKey }: { productKey: string }) {
+  return (
+    <div className="premium-panel premium-viz">
+      {productVisualBody(productKey)}
+    </div>
+  );
+}
+
+function productVisualBody(productKey: string) {
   if (productKey === "frontier") {
     return (
-      <div className="premium-panel premium-viz h-full p-6" aria-label="Frontier traffic inspection illustration">
+      <div className="p-6" aria-label="Frontier traffic inspection illustration">
         <p className="premium-panel-label">Traffic inspection · illustrative</p>
         <div className="mt-5 flex flex-wrap items-center gap-2">
           {["Internet", "Inspect", "Policy", "Allow / Block"].map((s, i) => (
@@ -108,7 +123,7 @@ function ProductVisual({ productKey }: { productKey: string }) {
   }
   if (productKey === "watchtower") {
     return (
-      <div className="premium-panel premium-viz h-full p-6" aria-label="Watchtower topology illustration">
+      <div className="p-6" aria-label="Watchtower topology illustration">
         <p className="premium-panel-label">Network topology · illustrative</p>
         <svg viewBox="0 0 400 170" className="mt-4 w-full" role="img" aria-label="Hub with connected nodes">
           {[[200, 85], [60, 40], [110, 130], [290, 130], [340, 40], [250, 30]].map(([x, y], i) => (
@@ -128,7 +143,7 @@ function ProductVisual({ productKey }: { productKey: string }) {
   }
   if (productKey === "secuweb") {
     return (
-      <div className="premium-panel premium-viz h-full p-6" aria-label="SecuWeb routing illustration">
+      <div className="p-6" aria-label="SecuWeb routing illustration">
         <p className="premium-panel-label">Secure routing · illustrative</p>
         <div className="mt-5 flex items-center justify-between gap-2 text-center">
           {[["Branch", "SE100P"], ["Hub", "SE1000P"], ["Cloud", "Policy path"]].map(([k, v], i) => (
@@ -147,7 +162,7 @@ function ProductVisual({ productKey }: { productKey: string }) {
   }
   if (productKey === "grid") {
     return (
-      <div className="premium-panel premium-viz h-full p-6" aria-label="GRID event correlation illustration">
+      <div className="p-6" aria-label="GRID event correlation illustration">
         <p className="premium-panel-label">Event correlation · illustrative shapes</p>
         <div className="mt-4 space-y-2">
           {[["Firewall deny burst", "High", "w-[85%]"], ["VPN anomaly", "Medium", "w-[55%]"], ["IDS signature match", "High", "w-[70%]"], ["Log baseline drift", "Low", "w-[35%]"]].map(([k, sev, w]) => (
@@ -163,7 +178,7 @@ function ProductVisual({ productKey }: { productKey: string }) {
   }
   if (productKey === "secudefend") {
     return (
-      <div className="premium-panel premium-viz h-full p-6" aria-label="SecuDefend interception illustration">
+      <div className="p-6" aria-label="SecuDefend interception illustration">
         <p className="premium-panel-label">Threat interception · illustrative</p>
         <div className="mt-4 space-y-2">
           {[["Perimeter scan", "Blocked"], ["Payload signature", "Blocked"], ["Internal lateral move", "Contained"]].map(([k, v]) => (
@@ -178,7 +193,7 @@ function ProductVisual({ productKey }: { productKey: string }) {
     );
   }
   return (
-    <div className="premium-panel premium-viz h-full p-6" aria-label="Muster log analysis illustration">
+    <div className="p-6" aria-label="Muster log analysis illustration">
       <p className="premium-panel-label">Log intelligence · illustrative</p>
       <div className="mt-4 rounded-lg border border-[var(--prem-border)] bg-[var(--prem-bg-soft)] p-4 font-mono text-[11px] leading-[1.9] text-slate-400">
         <div><span className="text-cyan-300/70">collect</span> · firewall · vpn · idps · system</div>
@@ -357,7 +372,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <FactTicker />
+      {/* ── Photo band — where the portfolio runs, with the fact rail across it ── */}
+      <PhotoBand photo={PHOTO_BAND}>
+        <div className="mx-auto w-full max-w-[1200px] px-6 pb-9 pt-7 md:pb-12 md:pt-9">
+          <Reveal>
+            <p className="viz-band__quote">Made in India. Kept in India. Answered in India.</p>
+            <span className="viz-band__rule" aria-hidden />
+          </Reveal>
+        </div>
+        <FactTicker />
+      </PhotoBand>
 
       {/* ══ 3 · SECURITY FLOW (animated traffic path) ══ */}
       <section id="security-flow" className="prem-navy relative overflow-hidden py-16 md:py-24">
@@ -400,19 +424,44 @@ export default function HomePage() {
             {HOME_PRODUCTS.map((p, i) => {
               const Icon = PRODUCT_ICONS[p.key as keyof typeof PRODUCT_ICONS];
               const reversed = i % 2 === 1;
+              const story = familyStory(p.key);
               return (
                 <Reveal key={p.key}>
-                  <article className="premium-card grid items-center gap-6 overflow-hidden p-7 md:p-9 lg:grid-cols-2">
-                    <div className={reversed ? "lg:order-2" : ""}>
+                  <article className="premium-card grid gap-6 overflow-hidden p-7 md:p-9 lg:grid-cols-2">
+                    <div className={`${reversed ? "lg:order-2" : ""} flex flex-col justify-center`}>
                       <p className="font-mono text-[10px] uppercase tracking-[0.2em]" data-accent-text style={{ color: p.accent }}>0{i + 1} · {p.category}</p>
                       <h3 className="mt-2 flex items-center gap-2.5 text-3xl font-bold tracking-tight text-white"><Icon size={26} data-accent-text style={{ color: p.accent }} />{p.name}</h3>
                       <p className="mt-3 max-w-lg text-sm leading-relaxed text-slate-400">{p.desc}</p>
+                      {story ? (
+                        <>
+                          <p className="mt-3 max-w-lg text-sm leading-relaxed text-slate-400">{story.body}</p>
+                          <div className="mt-5 flex flex-wrap gap-2">
+                            {story.capabilities.map((capability) => (
+                              <span key={capability} className="premium-chip !text-[11px]">{capability}</span>
+                            ))}
+                          </div>
+                          <p className="mt-4 flex items-start gap-2 text-xs text-[var(--prem-muted)]">
+                            <span
+                              className={`mt-[5px] inline-block h-1.5 w-1.5 shrink-0 rounded-full ${p.status === "available" ? "bg-emerald-500" : "bg-amber-500"}`}
+                              aria-hidden
+                            />
+                            {story.availability}
+                          </p>
+                        </>
+                      ) : null}
                       <div className="mt-6 flex flex-wrap gap-3">
                         <Link href={p.href} className="premium-btn-primary !min-h-[2.7rem] !text-[13px]">Open {p.name} <ArrowRight size={14} /></Link>
                         <Link href="/contact" className="premium-btn-ghost !min-h-[2.7rem] !text-[13px]">Discuss fit</Link>
                       </div>
                     </div>
-                    <div className={reversed ? "lg:order-1" : ""}><ProductVisual productKey={p.key} /></div>
+                    <div className={`${reversed ? "lg:order-1" : ""} flex flex-col justify-center gap-4`}>
+                      <PhotoTile
+                        photo={PRODUCT_PHOTOS[p.key]}
+                        aspect="21 / 9"
+                        sizes="(max-width: 1023px) 100vw, 46vw"
+                      />
+                      <ProductVisual productKey={p.key} />
+                    </div>
                   </article>
                 </Reveal>
               );
@@ -491,6 +540,9 @@ export default function HomePage() {
               </div>
             </Reveal>
             <Stagger className="grid gap-x-10 sm:grid-cols-2" gap={0.08}>
+              <div className="sm:col-span-2">
+                <PhotoTile photo={PHOTO_INDIA} aspect="21 / 9" sizes="(max-width: 1023px) 100vw, 55vw" />
+              </div>
               {INDIA_POINTS.map((point, i) => (
                 <Item key={point.title}>
                   <div className="h-full border-t border-[var(--prem-border)] py-6">
@@ -510,20 +562,29 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <SectionHead eyebrow="Support that answers" title="We compete on what happens the morning after something goes wrong." lead="Our India-based engineers are available 24/7 and know SecuEdge Frontier inside out, so you never have to explain your setup to an overseas queue." />
           <Reveal className="mt-8">
-            <div className="premium-card p-7 md:p-8">
-              <div className="flex flex-wrap gap-2">
-                {SUPPORT.facts.map((fact) => (
-                  <span key={fact} className="premium-chip">
-                    {fact === SUPPORT.phone ? <Phone size={13} className="text-cyan-300" /> : <Check size={13} className="text-emerald-300" />}{fact}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-5 flex max-w-3xl items-start gap-2 text-sm leading-relaxed text-slate-400">
-                <MapPin size={15} className="mt-0.5 shrink-0 text-cyan-300" />{COVERAGE.line}
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href={SUPPORT.phoneHref} className="premium-btn-primary"><Phone size={15} /> Call {SUPPORT.phone}</a>
-                <Link href="/contact" className="premium-btn-ghost">Talk to our team</Link>
+            <div className="premium-card premium-card--shot grid overflow-hidden lg:grid-cols-[0.85fr_1.15fr]">
+              <PhotoTile
+                photo={PHOTO_SUPPORT}
+                strip
+                side
+                aspect="4 / 3"
+                sizes="(max-width: 1023px) 100vw, 42vw"
+              />
+              <div className="premium-card__body">
+                <div className="flex flex-wrap gap-2">
+                  {SUPPORT.facts.map((fact) => (
+                    <span key={fact} className="premium-chip">
+                      {fact === SUPPORT.phone ? <Phone size={13} className="text-cyan-300" /> : <Check size={13} className="text-emerald-300" />}{fact}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-5 flex max-w-3xl items-start gap-2 text-sm leading-relaxed text-slate-400">
+                  <MapPin size={15} className="mt-0.5 shrink-0 text-cyan-300" />{COVERAGE.line}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a href={SUPPORT.phoneHref} className="premium-btn-primary"><Phone size={15} /> Call {SUPPORT.phone}</a>
+                  <Link href="/contact" className="premium-btn-ghost">Talk to our team</Link>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -538,7 +599,14 @@ export default function HomePage() {
           <Stagger className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
             {INDUSTRIES.map((industry) => (
               <Item key={industry.name}>
-                <Link href={industry.href} className="premium-product-card group" style={{ "--prem-accent": "#016fed" } as React.CSSProperties}>
+                <Link href={industry.href} className="premium-product-card premium-product-card--shot group" style={{ "--prem-accent": "#016fed" } as React.CSSProperties}>
+                  <PhotoTile
+                    photo={SECTOR_PHOTOS[industry.card]}
+                    strip
+                    aspect="4 / 3"
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+                  />
+                  <div className="premium-card__body flex flex-1 flex-col">
                   <span className="premium-product-icon"><industry.icon size={20} /></span>
                   <h3 className="mt-4 text-lg font-bold tracking-tight text-white">{industry.name}</h3>
                   <p className="mt-2 text-[13px] leading-relaxed text-slate-400">{industry.sub}</p>
@@ -556,6 +624,7 @@ export default function HomePage() {
                   </p>
                   <p className="mt-3 border-t border-white/[0.07] pt-3 font-mono text-[10px] leading-relaxed tracking-wide text-slate-500"><span className="text-cyan-300/70">REF · </span>{industry.ref}</p>
                   <span className="mt-4 inline-flex flex-1 items-end gap-1.5 text-sm font-semibold text-cyan-300">Explore <ArrowRight size={14} className="premium-link-arrow" /></span>
+                  </div>
                 </Link>
               </Item>
             ))}
@@ -633,7 +702,12 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal>
-            <div className="premium-card mx-auto mt-8 flex max-w-3xl flex-col items-center gap-2 p-7 text-center md:p-8">
+            <div className="mx-auto mt-8 max-w-3xl">
+              <PhotoTile photo={PHOTO_COMPANY} aspect="21 / 9" sizes="(max-width: 767px) 100vw, 768px" />
+            </div>
+          </Reveal>
+          <Reveal>
+            <div className="premium-card mx-auto mt-4 flex max-w-3xl flex-col items-center gap-2 p-7 text-center md:p-8">
               <p className="text-4xl font-extrabold tracking-tight text-[var(--prem-blue)] md:text-5xl">
                 <CountUp to={parseInt(MISCONFIG_STAT.figure, 10)} suffix="%" />
               </p>
