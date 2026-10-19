@@ -21,7 +21,7 @@ import { CustomerMarquee } from "@/components/CustomerMarquee";
 import { NetworkDiagram } from "@/components/NetworkDiagram";
 import { SecurityFlow } from "@/components/foundation/SecurityFlow";
 import {
-  ApplianceStage, LogoWall, ResidencyPanel, DiagramStage, FactTicker, SectorStrip,
+  LogoWall, ResidencyPanel, DiagramStage, FactTicker, SectorStrip,
 } from "@/components/premium/Visuals";
 import { Reveal, Stagger, Item, Parallax, CountUp } from "@/components/motion";
 import { TiltCard } from "@/components/TiltCard";
@@ -267,7 +267,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_28%_45%,rgba(245,242,234,0.88),transparent_70%)]" aria-hidden />
 
         <div className="relative z-10 mx-auto grid w-full max-w-[1200px] items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="order-2 lg:order-none lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:self-center">
+          <div>
             <p className="premium-eyebrow">SecuEdge · Network security portfolio</p>
             <h1 className="mt-5 text-[2.75rem] font-extrabold leading-[1.0] tracking-[-0.035em] text-white sm:text-6xl md:text-7xl">
               Cybersecurity, made easy.
@@ -296,34 +296,30 @@ export default function HomePage() {
             </div>
           </div>
 
-          <TiltCard max={6} className="order-1 lg:order-none lg:col-start-2 lg:row-start-1">
-            <ApplianceStage />
-          </TiltCard>
-
-          <TiltCard max={4} className="order-3 lg:order-none lg:col-start-2 lg:row-start-2">
+          <TiltCard max={6} className="relative">
             <div className="premium-card overflow-hidden p-6">
-                <div className="flex items-center justify-between">
-                  <span className="premium-badge premium-badge--live">● Available now</span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">First of seven</span>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-[var(--prem-muted)]">
-                  SecuEdge Frontier — the next-generation firewall — is available today.
-                  The other six families in the portfolio are in development and on the roadmap.
-                </p>
-                <Link href="/products" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--prem-blue)]">
-                  See the portfolio <ArrowRight size={14} className="premium-link-arrow" />
-                </Link>
-                <div className="mt-5 grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
-                  {[["200+", "Installations"], ["24/7", "India support"], ["India", "Data stays here"]].map(([k, v]) => (
-                    <div key={k}>
-                      <div className="text-xs font-bold text-white">
-                        {k === "200+" ? <CountUp to={200} suffix="+" /> : k}
-                      </div>
-                      <div className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500">{v}</div>
-                    </div>
-                  ))}
-                </div>
+              <div className="flex items-center justify-between">
+                <span className="premium-badge premium-badge--live">● Available now</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">First of seven</span>
               </div>
+              <p className="mt-4 text-sm leading-relaxed text-[var(--prem-muted)]">
+                SecuEdge Frontier — the next-generation firewall — is available today.
+                The other six families in the portfolio are in development and on the roadmap.
+              </p>
+              <Link href="/products" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--prem-blue)]">
+                See the portfolio <ArrowRight size={14} className="premium-link-arrow" />
+              </Link>
+              <div className="mt-5 grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
+                {[["200+", "Installations"], ["24/7", "India support"], ["India", "Data stays here"]].map(([k, v]) => (
+                  <div key={k}>
+                    <div className="text-xs font-bold text-white">
+                      {k === "200+" ? <CountUp to={200} suffix="+" /> : k}
+                    </div>
+                    <div className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500">{v}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </TiltCard>
         </div>
         <div className="absolute bottom-5 left-1/2 z-10 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.25em] text-slate-500">Scroll</div>
